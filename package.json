@@ -1,0 +1,31 @@
+{
+  "name": "CrawlerForOracleDoc",
+  "version": "0.0.1",
+  "description": "parser",
+  "main": "app.js",
+  "scripts": {
+    "start": "tsc && concurrently \"tsc -w\" \"supervisor src/app.js\" ",
+    "tsc": "tsc",
+    "build": "tsc -p .",
+    "tsc:w": "tsc -w",
+    "watch": "gulp watch",
+    "default": "gulp"
+  },
+  "author": "shinhwagk",
+  "license": "ISC",
+  "dependencies": {
+    "@types/request": "^0.0.33",
+    "@types/winston": "0.0.29",
+    "request": "^2.78.0",
+    "winston": "2.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^6.0.46",
+    "concurrently": "^2.2.0",
+    "gulp": "3.9.1",
+    "gulp-cli": "1.2.2",
+    "gulp-typescript": "3.0.2",
+    "supervisor": "0.11.0",
+    "typescript": "^2.2.0-dev.20161111"
+  }
+}
