@@ -14,8 +14,12 @@
   "author": "shinhwagk",
   "license": "ISC",
   "dependencies": {
+    "@types/htmlparser2": "^3.7.29",
+    "@types/parse5": "^2.2.34",
     "@types/request": "^0.0.33",
     "@types/winston": "0.0.29",
+    "htmlparser2": "^3.9.2",
+    "parse5": "^2.2.3",
     "request": "^2.78.0",
     "winston": "2.3.0"
   },

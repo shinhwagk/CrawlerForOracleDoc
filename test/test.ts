@@ -1,26 +1,48 @@
 import * as request from 'request'
-import * as fs from 'fs'
-const reg = /<li><a href\="[A-Z][\w-]+\.htm#[\w-]+"><span class="secnum">(\d+\.\d+)<\/span>([\w\s\$]+)<\/a><\/li>/g
-
-const Parameter_DynamicPerformance_DataDictionary: [string, string][] = []
-
-function getREFRN(): Promise<[string, string][]> {
-  return new Promise((resolve, rejectd) => {
-    request('http://docs.oracle.com/database/122/REFRN/toc.htm', function (error, response, body) {
-      if (!error && response.statusCode === 200) {
-        let n
-        while ((n = reg.exec(body)) !== null) {
-          Parameter_DynamicPerformance_DataDictionary.push([n[1], n[2]])
-        }
-        resolve(Parameter_DynamicPerformance_DataDictionary)
-      } else {
-        throw new Error(error)
-      }
-    })
-  })
+interface Parameter {
+  ParameterType?: string;
+  DefaultValue?: string;
+  Modifiable?: string;
+  Modifiable_in_a_PDB?: string;
+  Range_of_values?: string;
+  Oracle_RAC?: string
+  Basic?: string
+  Syntax?: string
 }
-getREFRN().then(pdd => {
-  const par = pdd.filter(([s1, s2]) => s1.startsWith("1"))
-  console.info(par)
 
-})
+// // const abc: ABC = { a: 1 }
+
+
+// import * as htmlparser from "htmlparser2"
+
+// request('http://docs.oracle.com/database/122/REFRN/XML_DB_EVENTS.htm', function (error, response, body) {
+//   if (!error && response.statusCode === 200) {
+//     var parser = new htmlparser.Parser({
+//       onopentagname: (name: string)=>{
+        
+//       }
+//       ontext: (text: string) => {
+//         console.log("-->", text);
+//       },
+//       onclosetag: (tagname: string) => {
+//         if (tagname === "script") {
+//           console.log("That's it?!");
+//         }
+//       }
+//     });
+
+//     parser.write(body);
+//     parser.parseChunk
+//     parser.end();
+//   }
+// })
+
+import  parse5 = require('parse5');
+
+var fragment     = parse5.parseFragment('<td>Yo!</td>');
+
+console.info(fragment.childNodes[0].childNodes[0].value)
+
+
+
+
