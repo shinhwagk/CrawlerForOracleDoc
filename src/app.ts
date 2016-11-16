@@ -1,6 +1,5 @@
 import * as request from 'request'
 import * as fs from 'fs'
-import parse5 = require('parse5');
 
 
 const Parameter_DynamicPerformance_DataDictionary: [string, string][] = []
@@ -41,6 +40,8 @@ getREFRN().then(pdd => {
   const DynamicPerformanceViews: [string, string][] = pdd.filter(filterDynamicPerformanceView)
   // Parameters.forEach(([n, s]) => console.info(Number(n.toString().split('.')[1])))
   console.info("count: " + DataDictionaryViews.length)
+  console.info("count: " + Parameters.length)
+  console.info("count: " + DynamicPerformanceViews.length)
   // fs.writeFile('tmp.json',JSON.stringify(DataDictionaryViews))
 })
 
