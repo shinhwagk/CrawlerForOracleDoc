@@ -37,12 +37,17 @@ interface Parameter {
 //   }
 // })
 
-import  parse5 = require('parse5');
+import * as app from '../src/app'
 
-var fragment     = parse5.parseFragment('<td>Yo!</td>');
+app.parserParameterHtml("SERVICE_NAMES")
+ 
+// var document     = parse5.parse('<!DOCTYPE html><html><body>Hi there!</body></html>');
+// var documentHtml = parse5.serialize(document.);
+// console.info(documentHtml)
 
-console.info(fragment.childNodes[0].childNodes[0].value)
 
 
+const vvv = /ab(\w)/
 
-
+console.info(vvv.exec("abcabdabgh")[1])
+console.info(vvv.exec("abcabdabgh")[1])

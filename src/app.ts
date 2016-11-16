@@ -1,10 +1,13 @@
 import * as request from 'request'
 import * as fs from 'fs'
-const reg = /<li><a href\="[A-Z][\w-]+\.htm#[\w-]+"><span class="secnum">(\d+\.\d+)<\/span>([\w\s\$]+)<\/a><\/li>/g
+import parse5 = require('parse5');
+
 
 const Parameter_DynamicPerformance_DataDictionary: [string, string][] = []
 
 function getREFRN(): Promise<[string, string][]> {
+  const reg = /<li><a href\="[A-Z][\w-]+\.htm#[\w-]+"><span class="secnum">(\d+\.\d+)<\/span>([\w\s\$]+)<\/a><\/li>/g
+
   return new Promise((resolve, rejectd) => {
     request('http://docs.oracle.com/database/122/REFRN/toc.htm', function (error, response, body) {
       if (!error && response.statusCode === 200) {
@@ -41,6 +44,27 @@ getREFRN().then(pdd => {
   // fs.writeFile('tmp.json',JSON.stringify(DataDictionaryViews))
 })
 
+export function parserParameterHtml(name: string) {
+  // return new Promise((resolve, rejectd) => {
+  const reg = /<p><span class\="bold">([\s\w]*)<\/span><\/p>\s*<\/td>\s*<td class\="[\w\d]+" headers\="[\w\d\s]*">\s*(.*)\s*<\/td>/g
+
+  request(`http://docs.oracle.com/database/122/REFRN/${name}.htm`, function (error, response, body) {
+    if (!error && response.statusCode === 200) {
+      // console.info(regx.exec(body)[1])
+      // console.info(regx.exec(body)[1])
+      // console.info(regx.exec(body)[1])
+      let column = []
+      let n
+      while ((n = reg.exec(body)) !== null) {
+        column.push([n[1],n[2]])
+      }
+      console.info(column)
+    } else {
+      throw new Error(error)
+    }
+  })
+  // })
+}
 
 // function extractName()
 
