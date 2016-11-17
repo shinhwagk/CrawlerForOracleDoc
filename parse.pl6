@@ -119,6 +119,57 @@ sub parserParameter($name) {
   say $name ~ " parser and save success";
 }
 
-for @Parameters[0].list -> $r {
-  parserParameter($r[0]);
+# exec Parameters to file
+# for @Parameters[0].list -> $r {
+#   parserParameter($r[0]);
+# }
+
+
+# parser view 
+sub DataDictionaryViewsParserForUser($name) {
+  # say "start $name";
+
+  my regex cont { .*? }
+
+  my regex DDV-doc {
+    '</h1>' \s* '<div>' <cont> '</div>' \s* '<!-- class="section" -->'
+  }
+
+  if $name.starts-with("USER") {
+    my $response = $client.get("http://docs.oracle.com/database/122/REFRN/" ~ $name ~".htm");
+    if ($response.success) {
+      my $html = $response.content;
+      if $html ~~ / <DDV-doc> / {
+        spurt 'data/DataDictionaryViews/' ~ $name ~ '.text', "$/<DDV-doc><cont>";
+      } else {
+        die "DDV-doc parser $name faile;";
+      }
+
+      if $html ~~ / '<th class="' \w+ '" id="' \w+ '">Column</th>' / {
+        my regex cont { \w+ }
+        my regex trr {
+          '<tr>' \s* '<td class="' \w+ '" id="' \w+ '" headers="' \w+ '">' \s* '<p><code>' \w+ '</code></p>' \s* '</td>' \s* '</tr>'
+        }
+        if $html ~~ m:g/ <trr> / {
+          say $/;
+        } else {
+          say "paer failse";
+        }
+        say "$name have table.............";
+      } else {
+        # say "$name success";
+      }
+    }
+  }
 }
+
+my $data2 = slurp "data/DataDictionaryViews.json";
+@DataDictionaryViews = from-json $data2;
+
+# say @DataDictionaryViews[0];
+
+for @DataDictionaryViews[0].list -> $r {
+  DataDictionaryViewsParserForUser($r[0]);
+}
+
+# DataDictionaryViewsParserForUser 'USER_APPLY_ERROR';
