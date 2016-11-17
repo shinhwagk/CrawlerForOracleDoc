@@ -1,9 +1,0 @@
-'*':
-  core:
-    customFileTypes:
-      'source.perl6fe': [
-        # Any extensions you'd like to override
-        'p6'
-        'pm6'
-        't'
-      ]
