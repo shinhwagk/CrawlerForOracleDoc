@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>DBA_LOCKDOWN_PROFILES</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="DBA_LOCKDOWN_PROFILES provides information about lockdown profiles." />
+<meta name="keywords" content="DBA_LOCKDOWN_PROFILES view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="DBA_LOCK_INTERNAL.htm" title="Previous" type="text/html" />
+<link rel="Next" href="DBA_LOCKS.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-2DEBBEBC-7A6B-4984-A7E7-90314971182E"></a> <span id="PAGE" style="display:none;">1245/2822</span> <!-- End Header -->
+<script  >
+//<![CDATA[
+window.name='DBA_LOCKDOWN_PROFILES'
+//]]>
+</script> <script  >
+    function footdisplay(footnum,footnote) {
+    var msg = window.open('', 'NewWindow' + footnum,
+        'directories=no,height=120,location=no,menubar=no,resizable=yes,' +
+        'scrollbars=yes,status=no,toolbar=no,width=598');
+    msg.document.open('text/html');
+    msg.document.write('<!DOCTYPE html ');
+    msg.document.write('PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" ');
+
+    msg.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">');
+    msg.document.write('<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><title>');
+    msg.document.write('Footnote&amp;nbsp; ' + footnum);
+    msg.document.write('<\/title><meta http-equiv="Content-Type" ');
+    msg.document.write('content="text/html; charset=utf-8" />');
+    msg.document.write('');
+    msg.document.write('<style> <![CDATA[ ');
+    msg.document.write('h1 {text-align: center; font-size: 14pt;}');
+    msg.document.write('fieldset {border: none;}');
+    msg.document.write('form {text-align: center;}');
+    msg.document.write(' ]]\u003e <\/style>');
+    msg.document.write('<\/head><body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><h1>Footnote&nbsp; ' + footnum + '<\/h1><p>');
+    msg.document.write(footnote);
+    msg.document.write('<\/p><form action="" method="post"><fieldset>');
+    msg.document.write('<input type="button" value="OK" ');
+    msg.document.write('onclick="window.close();" />');
+    msg.document.write('<\/fieldset><\/form><\/body><\/html>');
+    msg.document.close();
+    msg.focus();
+}
+</script><noscript>
+<p>The script content on this page is for navigation purposes only and does not alter the content in any way.</p>
+</noscript>
+<h1 id="REFRN-GUID-2DEBBEBC-7A6B-4984-A7E7-90314971182E" class="sect1"><span class="enumeration_section">5.147</span> DBA_LOCKDOWN_PROFILES</h1>
+<div>
+<p><code>DBA_LOCKDOWN_PROFILES</code> provides information about lockdown profiles.</p>
+<div class="section">
+<p>The <code>PRIVATE_DBAAS</code>, <code>PUBLIC_DBAAS</code>, and <code>SAAS</code> lockdown profiles are empty placeholder profiles for the lockdown profiles of their corresponding deployment type. You can modify and add restrictions to these profiles based on their deployment purpose. For example, if you have a Software as a Service (SAAS) application, you can modify the <code>SAAS</code> lockdown profile and use it. You can also delete and re-create these profiles.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-2DEBBEBC-7A6B-4984-A7E7-90314971182E__GUID-21316C00-F0E2-42AC-B014-66AAD1A3EDCB">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d1111496e182">Column</th>
+<th class="cellalignment3905" id="d1111496e186">Datatype</th>
+<th class="cellalignment3906" id="d1111496e190">NULL</th>
+<th class="cellalignment3907" id="d1111496e194">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d1111496e200" headers="d1111496e182">
+<p><code>PROFILE_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1111496e200 d1111496e186">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1111496e200 d1111496e190">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1111496e200 d1111496e194">
+<p>Name of the lockdown profile</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1111496e220" headers="d1111496e182">
+<p><code>RULE_TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1111496e220 d1111496e186">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1111496e220 d1111496e190">&nbsp;</td>
+<td class="cellalignment3907" headers="d1111496e220 d1111496e194">
+<p>Rule type. A lockdown profile is used to restrict operations that can be performed by users connected to a given PDB. It provides the ability to add or remove different types of rules like STATEMENT, FEATURES or OPTIONS which will be restricted in the PDB.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1111496e240" headers="d1111496e182">
+<p><code>RULE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1111496e240 d1111496e186">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1111496e240 d1111496e190">&nbsp;</td>
+<td class="cellalignment3907" headers="d1111496e240 d1111496e194">
+<p>Rule to be enabled or disabled</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1111496e260" headers="d1111496e182">
+<p><code>CLAUSE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1111496e260 d1111496e186">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1111496e260 d1111496e190">&nbsp;</td>
+<td class="cellalignment3907" headers="d1111496e260 d1111496e194">
+<p>Clause of the statement</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1111496e280" headers="d1111496e182">
+<p><code>CLAUSE_OPTION</code></p>
+</td>
+<td class="cellalignment3905" headers="d1111496e280 d1111496e186">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1111496e280 d1111496e190">&nbsp;</td>
+<td class="cellalignment3907" headers="d1111496e280 d1111496e194">
+<p>Option of the clause</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1111496e300" headers="d1111496e182">
+<p><code>OPTION_VALUE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1111496e300 d1111496e186">
+<p><code>VARCHAR2(4000)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1111496e300 d1111496e190">&nbsp;</td>
+<td class="cellalignment3907" headers="d1111496e300 d1111496e194">
+<p>Value of the option</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1111496e316" headers="d1111496e182">
+<p><code>MIN_VALUE</code><a id="GUID-2DEBBEBC-7A6B-4984-A7E7-90314971182E__THISCOLUMNISAVAILABLESTARTINGWITHOR-35344936" href="#GUID-2DEBBEBC-7A6B-4984-A7E7-90314971182E__THISCOLUMNISAVAILABLESTARTINGWITHOR-35344936" onclick='footdisplay(1,"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1).")'><sup>Foot&nbsp;1</sup></a><a id="fnsrc_d1111496e325" href="#fnsrc_d1111496e325" onclick='footdisplay(, \"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1).")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+<td class="cellalignment3905" headers="d1111496e316 d1111496e186">
+<p><code>VARCHAR2(4000)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1111496e316 d1111496e190">&nbsp;</td>
+<td class="cellalignment3907" headers="d1111496e316 d1111496e194">
+<p>Minimum value allowed for the option</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1111496e339" headers="d1111496e182">
+<p><code>MAX_VALUE</code><a id="fnsrc_d1111496e343" href="#fnsrc_d1111496e343" onclick='footdisplay(, \"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1).")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+<td class="cellalignment3905" headers="d1111496e339 d1111496e186">
+<p><code>VARCHAR2(4000)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1111496e339 d1111496e190">&nbsp;</td>
+<td class="cellalignment3907" headers="d1111496e339 d1111496e194">
+<p>Maximum value allowed for the option</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1111496e357" headers="d1111496e182">
+<p><code>LIST</code><a id="fnsrc_d1111496e361" href="#fnsrc_d1111496e361" onclick='footdisplay(, \"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1).")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+<td class="cellalignment3905" headers="d1111496e357 d1111496e186">
+<p><code>VARCHAR2(4000)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1111496e357 d1111496e190">&nbsp;</td>
+<td class="cellalignment3907" headers="d1111496e357 d1111496e194">
+<p>List of allowed values for the option</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1111496e375" headers="d1111496e182">
+<p><code>STATUS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1111496e375 d1111496e186">
+<p><code>VARCHAR2(7)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1111496e375 d1111496e190">&nbsp;</td>
+<td class="cellalignment3907" headers="d1111496e375 d1111496e194">
+<p>Status of the lockdown profile:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>ENABLE</code></p>
+</li>
+<li>
+<p><code>DISABLE</code></p>
+</li>
+<li>
+<p><code>EMPTY</code></p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<p class="tablefootnote"><sup class="tablefootnote">Footnote&nbsp;1</sup> This column is available starting with Oracle Database 12<span class="italic">c</span> Release 2 (12.2.0.1).</p>
+<div class="section">
+<div class="infobox-note" id="GUID-2DEBBEBC-7A6B-4984-A7E7-90314971182E__GUID-24DE3DD8-ED07-4A2B-91A1-CFEA2DD43EBC">
+<p class="notep1">Note:</p>
+This view is available starting with Oracle Database 12<span class="italic">c</span> Release 2 (12.2.0.1).</div>
+<div class="infoboxnotealso" id="GUID-2DEBBEBC-7A6B-4984-A7E7-90314971182E__GUID-721C5181-66A2-478D-B146-BFAC84EB08E8">
+<p class="notep1">See Also:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="q">"<a href="PDB_LOCKDOWN.htm#GUID-27072E94-1E1D-4BB0-AEAE-D7AFDC02E0A1">PDB_LOCKDOWN</a>"</span></p>
+</li>
+<li>
+<p><a class="olink CNCPT-GUID-1F6D3E4F-786A-47A0-A36C-83BAB75FCDAE" target="_blank" href="../CNCPT/overview-of-the-multitenant-architecture.htm#CNCPT-GUID-1F6D3E4F-786A-47A0-A36C-83BAB75FCDAE"><span><cite>Oracle Database Concepts</cite></span></a> for an introduction to PDB lockdown profiles</p>
+</li>
+<li>
+<p><a class="olink SQLRF-GUID-1CDEC3A3-F3F1-4279-9370-36AACF416E0A" target="_blank" href="../SQLRF/CREATE-LOCKDOWN-PROFILE.htm#SQLRF-GUID-1CDEC3A3-F3F1-4279-9370-36AACF416E0A"><span><cite>Oracle Database SQL Language Reference</cite></span></a> for more information about creating lockdown profiles</p>
+</li>
+<li>
+<p><a class="olink SQLRF-GUID-62D428C1-5081-43CA-B45D-7FF1B81363E7" target="_blank" href="../SQLRF/DROP-LOCKDOWN-PROFILE.htm#SQLRF-GUID-62D428C1-5081-43CA-B45D-7FF1B81363E7"><span><cite>Oracle Database SQL Language Reference</cite></span></a> for more information about dropping lockdown profiles</p>
+</li>
+<li>
+<p><a class="olink SQLRF-GUID-B4029154-54A8-4B78-97C3-9CED416F1C34" target="_blank" href="../SQLRF/ALTER-LOCKDOWN-PROFILE.htm#SQLRF-GUID-B4029154-54A8-4B78-97C3-9CED416F1C34"><span><cite>Oracle Database SQL Language Reference</cite></span></a> for more information about altering lockdown profiles</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="DBA_LOCK_INTERNAL.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="DBA_LOCKS.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+</body>
+</html>

@@ -1,20 +1,11 @@
 use HTTP::Client;
+use lib 'lib';
+use Tools;
+use Init;
 
 my $client = HTTP::Client.new;
 
-mkdir 'data';
-mkdir 'data/html/Parameters';
-mkdir 'data/html/DataDictionaryViews';
-mkdir 'data/html/DynamicPerformanceViews';
-
-say "start download toc.html;";
-my $response = $client.get("http://docs.oracle.com/database/122/REFRN/toc.htm");
-if ($response.success) {
-  spurt "data/html/toc.htm", $$response.content;
-  say "download toc.htm success.";
-} else {
-  die "download url: http://docs.oracle.com/database/122/REFRN/toc.htm. error!";
-}
+# downloadFile("http://docs.oracle.com/database/122/REFRN/toc.htm","data/html/toc.htm");
 
 my $toc-htm = slurp "data/html/toc.htm";
 
@@ -24,6 +15,8 @@ my regex number { \d+ }
 my regex reg {
   '<li><a href="' <urlname> '.htm#' .*? '"><span class="secnum">' <number> '.' \d+ '</span>'\s+ <itemname> '</a></li>'
 }
+
+my @urls;
 
 if $toc-htm ~~ m:g/ <reg> / {
   # my $a = ~$/;
@@ -40,17 +33,46 @@ if $toc-htm ~~ m:g/ <reg> / {
 
     my $url = "http://docs.oracle.com/database/122/REFRN/" ~ ~$reg<urlname> ~ ".htm";
 
-    say "start download $reg<itemname>; url: $url";
-    # my $client = HTTP::Client.new;
-    my $response = $client.get($url);
-    if ($response.success) {
-      my $html = $response.content;
-      if $html ~~ / '<body>' $<content> = .*? '</body>' / {
-        spurt "data/html/" ~ $type ~ "/" ~ $reg<itemname>.chomp ~ ".htm", ~$<content>;
-      }
-    } else {
-      die "download url: http://docs.oracle.com/database/122/REFRN/" ~ $$reg<urlname>.chomp ~".htm." ~ " error!";
-    }
-    say "download html: $reg<itemname>.html success.";
+    my @info = $url,~$reg<itemname>,$type;
+
+    @urls.push(@info);
+
+  #   say "start download $reg<itemname>; url: $url";
+  #   # my $client = HTTP::Client.new;
+  #   my $response = $client.get($url);
+  #   if ($response.success) {
+  #     my $html = $response.content;
+  #     if $html ~~ / '<body>' $<content> = .*? '</body>' / {
+  #       spurt "data/html/" ~ $type ~ "/" ~ $reg<itemname>.chomp ~ ".htm", ~$<content>;
+  #     }
+  #   } else {
+  #     die "download url: http://docs.oracle.com/database/122/REFRN/" ~ ~$reg<urlname> ~".htm." ~ " error!";
+  #   }
+  #   say "download html: $reg<itemname>.html success.";
   }
 }
+
+my $Parameters_cnt = 0;
+my $DataDictionaryViews_cnt = 0;
+my $DynamicPerformanceViews_cnt = 0;
+
+sub squared(@url-info) {
+    my Str $u = @url-info[0];
+    my Str $n = @url-info[1];
+    my Str $t = @url-info[2];
+
+    downloadFile($u,"data/html/" ~ $t ~ "/" ~ $n ~ ".htm");
+
+    given $t {
+      when 'Parameters' { $Parameters_cnt += 1; }
+      when 'DataDictionaryViews' { $DataDictionaryViews_cnt += 1; }
+      when 'DynamicPerformanceViews' { $DynamicPerformanceViews_cnt += 1; }
+    }
+}
+
+for @urls -> @url {
+  squared(@url);
+  say "$Parameters_cnt / $DataDictionaryViews_cnt / $DynamicPerformanceViews_cnt";
+}
+
+say "success.";

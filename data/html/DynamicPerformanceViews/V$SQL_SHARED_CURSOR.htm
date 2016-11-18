@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>V$SQL_SHARED_CURSOR</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="V$SQL_SHARED_CURSOR view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="V-SQL_REDIRECTION.htm" title="Previous" type="text/html" />
+<link rel="Next" href="V-SQL_SHARED_MEMORY.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-4993A6DE-5658-4745-B43E-F5AD9DB8DCCC"></a> <span id="PAGE" style="display:none;">2718/2822</span> <!-- End Header -->
+<a id="REFRN30254"></a>
+<h1 id="REFRN-GUID-4993A6DE-5658-4745-B43E-F5AD9DB8DCCC" class="sect1"><span class="enumeration_section">9.63</span> V$SQL_SHARED_CURSOR</h1>
+<div>
+<div class="section">
+<p><code>V$SQL_SHARED_CURSOR</code> explains why a particular child cursor is not shared with existing child cursors. Each column identifies a specific reason why the cursor cannot be shared.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-4993A6DE-5658-4745-B43E-F5AD9DB8DCCC__GUID-CF18C5F8-BF42-41CF-933B-97C7558B8D4B">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d2059589e168">Column</th>
+<th class="cellalignment3905" id="d2059589e171">Datatype</th>
+<th class="cellalignment3908" id="d2059589e174">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d2059589e179" headers="d2059589e168">
+<p><code>SQL_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e179 d2059589e171">
+<p><code>VARCHAR2(13)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e179 d2059589e174">
+<p>SQL identifier</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e191" headers="d2059589e168">
+<p><code>ADDRESS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e191 d2059589e171">
+<p><code>RAW(4 | 8)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e191 d2059589e174">
+<p>Address of the parent cursor</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e203" headers="d2059589e168">
+<p><code>CHILD_ADDRESS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e203 d2059589e171">
+<p><code>RAW(4 | 8)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e203 d2059589e174">
+<p>Address of the child cursor</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e215" headers="d2059589e168">
+<p><code>CHILD_NUMBER</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e215 d2059589e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e215 d2059589e174">
+<p>Child number</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e227" headers="d2059589e168">
+<p><code>UNBOUND_CURSOR</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e227 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e227 d2059589e174">
+<p>(<code>Y|N</code>) The existing child cursor was not fully built (in other words, it was not optimized)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e242" headers="d2059589e168">
+<p><code>SQL_TYPE_MISMATCH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e242 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e242 d2059589e174">
+<p>(<code>Y|N</code>) The SQL type does not match the existing child cursor</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e257" headers="d2059589e168">
+<p><code>OPTIMIZER_MISMATCH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e257 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e257 d2059589e174">
+<p>(<code>Y|N</code>) The optimizer environment does not match the existing child cursor</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e272" headers="d2059589e168">
+<p><code>OUTLINE_MISMATCH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e272 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e272 d2059589e174">
+<p>(<code>Y|N</code>) The outlines do not match the existing child cursor</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e287" headers="d2059589e168">
+<p><code>STATS_ROW_MISMATCH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e287 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e287 d2059589e174">
+<p>(<code>Y|N</code>) The existing statistics do not match the existing child cursor</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e302" headers="d2059589e168">
+<p><code>LITERAL_MISMATCH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e302 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e302 d2059589e174">
+<p>(<code>Y|N</code>) Non-data literal values do not match the existing child cursor</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e317" headers="d2059589e168">
+<p><code>FORCE_HARD_PARSE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e317 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e317 d2059589e174">
+<p>(<code>Y|N</code>) For internal use</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e333" headers="d2059589e168">
+<p><code>EXPLAIN_PLAN_CURSOR</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e333 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e333 d2059589e174">
+<p>(<code>Y|N</code>) The child cursor is an explain plan cursor and should not be shared</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e348" headers="d2059589e168">
+<p><code>BUFFERED_DML_MISMATCH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e348 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e348 d2059589e174">
+<p>(<code>Y|N</code>) Buffered DML does not match the existing child cursor</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e363" headers="d2059589e168">
+<p><code>PDML_ENV_MISMATCH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e363 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e363 d2059589e174">
+<p>(<code>Y|N</code>) PDML environment does not match the existing child cursor</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e378" headers="d2059589e168">
+<p><code>INST_DRTLD_MISMATCH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e378 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e378 d2059589e174">
+<p>(<code>Y|N</code>) Insert direct load does not match the existing child cursor</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e393" headers="d2059589e168">
+<p><code>SLAVE_QC_MISMATCH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e393 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e393 d2059589e174">
+<p>(<code>Y|N</code>) The existing child cursor is a slave cursor and the new one was issued by the coordinator (or, the existing child cursor was issued by the coordinator and the new one is a slave cursor)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e408" headers="d2059589e168">
+<p><code>TYPECHECK_MISMATCH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e408 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e408 d2059589e174">
+<p>(<code>Y|N</code>) The existing child cursor is not fully optimized</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e423" headers="d2059589e168">
+<p><code>AUTH_CHECK_MISMATCH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e423 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e423 d2059589e174">
+<p>(<code>Y|N</code>) Authorization/translation check failed for the existing child cursor</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e438" headers="d2059589e168">
+<p><code>BIND_MISMATCH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e438 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e438 d2059589e174">
+<p>(<code>Y|N</code>) The bind metadata does not match the existing child cursor</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e453" headers="d2059589e168">
+<p><code>DESCRIBE_MISMATCH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e453 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e453 d2059589e174">
+<p>(<code>Y|N</code>) The typecheck heap is not present during the describe for the child cursor</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e468" headers="d2059589e168">
+<p><code>LANGUAGE_MISMATCH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e468 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e468 d2059589e174">
+<p>(<code>Y|N</code>) The language handle does not match the existing child cursor</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e483" headers="d2059589e168">
+<p><code>TRANSLATION_MISMATCH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e483 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e483 d2059589e174">
+<p>(<code>Y|N</code>) The base objects of the existing child cursor do not match</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e499" headers="d2059589e168">
+<p><code>BIND_EQUIV_FAILURE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e499 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e499 d2059589e174">
+<p>(<code>Y|N</code>) The bind value's selectivity does not match that used to optimize the existing child cursor</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e514" headers="d2059589e168">
+<p><code>INSUFF_PRIVS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e514 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e514 d2059589e174">
+<p>(<code>Y|N</code>) Insufficient privileges on objects referenced by the existing child cursor</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e529" headers="d2059589e168">
+<p><code>INSUFF_PRIVS_REM</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e529 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e529 d2059589e174">
+<p>(<code>Y|N</code>) Insufficient privileges on remote objects referenced by the existing child cursor</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e544" headers="d2059589e168">
+<p><code>REMOTE_TRANS_MISMATCH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e544 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e544 d2059589e174">
+<p>(<code>Y|N</code>) The remote base objects of the existing child cursor do not match</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e559" headers="d2059589e168">
+<p><code>LOGMINER_SESSION_MISMATCH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e559 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e559 d2059589e174">
+<p>(<code>Y|N</code>) LogMiner Session parameters mismatch</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e574" headers="d2059589e168">
+<p><code>INCOMP_LTRL_MISMATCH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e574 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e574 d2059589e174">
+<p>(<code>Y|N</code>) Cursor might have some binds (literals) which may be unsafe/non-data. Value mismatch.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e589" headers="d2059589e168">
+<p><code>OVERLAP_TIME_MISMATCH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e589 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e589 d2059589e174">
+<p>(<code>Y|N</code>) Mismatch caused by setting session parameter <code>ERROR_ON_OVERLAP_TIME</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e606" headers="d2059589e168">
+<p><code>EDITION_MISMATCH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e606 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e606 d2059589e174">
+<p>(<code>Y|N</code>) Cursor edition mismatch</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e621" headers="d2059589e168">
+<p><code>MV_QUERY_GEN_MISMATCH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e621 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e621 d2059589e174">
+<p>(<code>Y|N</code>) Internal, used to force a hard-parse when analyzing materialized view queries</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e636" headers="d2059589e168">
+<p><code>USER_BIND_PEEK_MISMATCH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e636 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e636 d2059589e174">
+<p>(<code>Y|N</code>) Cursor is not shared because value of one or more user binds is different and this has a potential to change the execution plan</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e651" headers="d2059589e168">
+<p><code>TYPCHK_DEP_MISMATCH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e651 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e651 d2059589e174">
+<p>(<code>Y|N</code>) Cursor has typecheck dependencies</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e667" headers="d2059589e168">
+<p><code>NO_TRIGGER_MISMATCH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e667 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e667 d2059589e174">
+<p>(<code>Y|N</code>) Cursor and child have no trigger mismatch</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e682" headers="d2059589e168">
+<p><code>FLASHBACK_CURSOR</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e682 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e682 d2059589e174">
+<p>(<code>Y|N</code>) Cursor non-shareability due to flashback</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e697" headers="d2059589e168">
+<p><code>ANYDATA_TRANSFORMATION</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e697 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e697 d2059589e174">
+<p>(<code>Y|N</code>) Is criteria for opaque type transformation and does not match</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e712" headers="d2059589e168">
+<p><code>PDDL_ENV_MISMATCH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e712 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e712 d2059589e174">
+<p>(<code>Y</code>|<code>N</code>) Environment setting mismatch for parallel DDL cursor (that is, one or more of the following parameter values have changed: <code>PARALLEL_EXECUTION_ENABLED</code>, <code>PARALLEL_DDL_MODE</code>, <code>PARALLEL_DDL_FORCED_DEGREE</code>, or <code>PARALLEL_DDL_FORCED_INSTANCES</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e743" headers="d2059589e168">
+<p><code>TOP_LEVEL_RPI_CURSOR</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e743 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e743 d2059589e174">
+<p>(<code>Y|N</code>) Is top level RPI cursor</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e758" headers="d2059589e168">
+<p><code>DIFFERENT_LONG_LENGTH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e758 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e758 d2059589e174">
+<p>(<code>Y|N</code>) Value of <code>LONG</code> does not match</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e776" headers="d2059589e168">
+<p><code>LOGICAL_STANDBY_APPLY</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e776 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e776 d2059589e174">
+<p>(<code>Y|N</code>) Logical standby apply context does not match</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e791" headers="d2059589e168">
+<p><code>DIFF_CALL_DURN</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e791 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e791 d2059589e174">
+<p>(<code>Y|N</code>) If Slave SQL cursor/single call</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e806" headers="d2059589e168">
+<p><code>BIND_UACS_DIFF</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e806 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e806 d2059589e174">
+<p>(<code>Y|N</code>) One cursor has bind UACs and one does not</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e821" headers="d2059589e168">
+<p><code>PLSQL_CMP_SWITCHS_DIFF</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e821 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e821 d2059589e174">
+<p>(<code>Y|N</code>) PL/SQL anonymous block compiled with different PL/SQL compiler switches</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e836" headers="d2059589e168">
+<p><code>CURSOR_PARTS_MISMATCH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e836 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e836 d2059589e174">
+<p>(<code>Y|N</code>) Cursor was compiled with subexecution (cursor parts were executed)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e852" headers="d2059589e168">
+<p><code>STB_OBJECT_MISMATCH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e852 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e852 d2059589e174">
+<p>(<code>Y|N</code>) STB is an internal name for a SQL Management Object Mismatch. A SQL Management Object Mismatch means that either a SQL plan baseline, or a SQL profile, or a SQL patch has been created for your SQL statement between the executions. Because a cursor is a read-only entity, a hard parse is forced to be able to create a new cursor that contains information about the new SQL management object related to this SQL statement.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e867" headers="d2059589e168">
+<p><code>CROSSEDITION_TRIGGER_MISMATCH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e867 d2059589e171">
+<p>VARCHAR2(1)</p>
+</td>
+<td class="cellalignment3908" headers="d2059589e867 d2059589e174">
+<p>(<code>Y|N</code>) The set of crossedition triggers to execute might differ</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e881" headers="d2059589e168">
+<p><code>PQ_SLAVE_MISMATCH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e881 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e881 d2059589e174">
+<p>(<code>Y|N</code>) Top-level slave decides not to share cursor</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e896" headers="d2059589e168">
+<p><code>TOP_LEVEL_DDL_MISMATCH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e896 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e896 d2059589e174">
+<p>(<code>Y|N</code>) Is top-level DDL cursor</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e911" headers="d2059589e168">
+<p><code>MULTI_PX_MISMATCH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e911 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e911 d2059589e174">
+<p>(<code>Y|N</code>) Cursor has multiple parallelizers and is slave-compiled</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e926" headers="d2059589e168">
+<p><code>BIND_PEEKED_PQ_MISMATCH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e926 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e926 d2059589e174">
+<p>(<code>Y|N</code>) Cursor based around bind peeked values</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e941" headers="d2059589e168">
+<p><code>MV_REWRITE_MISMATCH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e941 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e941 d2059589e174">
+<p>(<code>Y|N</code>) Cursor needs recompilation because an SCN was used during compile time due to being rewritten by materialized view</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e956" headers="d2059589e168">
+<p><code>ROLL_INVALID_MISMATCH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e956 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e956 d2059589e174">
+<p>(<code>Y|N</code>) Marked for rolling invalidation and invalidation window exceeded</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e971" headers="d2059589e168">
+<p><code>OPTIMIZER_MODE_MISMATCH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e971 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e971 d2059589e174">
+<p>(<code>Y|N</code>) Parameter <code>OPTIMIZER_MODE</code> mismatch (for example, all_rows versus first_rows_1)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e989" headers="d2059589e168">
+<p><code>PX_MISMATCH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e989 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e989 d2059589e174">
+<p>(<code>Y|N</code>) Mismatch in one parameter affecting the parallelization of a SQL statement. For example, one cursor was compiled with parallel DML enabled while the other was not.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e1004" headers="d2059589e168">
+<p><code>MV_STALEOBJ_MISMATCH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e1004 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e1004 d2059589e174">
+<p>(<code>Y|N</code>) Cursor cannot be shared because there is a mismatch in the list of materialized views which were stale when the cursor was built</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e1020" headers="d2059589e168">
+<p><code>FLASHBACK_TABLE_MISMATCH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e1020 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e1020 d2059589e174">
+<p>(<code>Y|N</code>) Cursor cannot be shared because there is a mismatch with triggers being enabled and/or referential integrity constraints being deferred</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e1035" headers="d2059589e168">
+<p><code>LITREP_COMP_MISMATCH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e1035 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e1035 d2059589e174">
+<p>(<code>Y|N</code>) Mismatch in use of literal replacement</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e1050" headers="d2059589e168">
+<p><code>PLSQL_DEBUG</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e1050 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e1050 d2059589e174">
+<p>(<code>Y|N</code>) Value of the <code>PLSQL_DEBUG</code> parameter for the current session does not match the value used to build the cursor</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e1068" headers="d2059589e168">
+<p><code>LOAD_OPTIMIZER_STATS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e1068 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e1068 d2059589e174">
+<p>(<code>Y|N</code>) A hard parse is forced to initialize extended cursor sharing</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e1083" headers="d2059589e168">
+<p><code>ACL_MISMATCH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e1083 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e1083 d2059589e174">
+<p>(<code>Y|N</code>) Cached ACL evaluation result stored in the child cursor is not valid for the current session or user</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e1098" headers="d2059589e168">
+<p><code>FLASHBACK_ARCHIVE_MISMATCH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e1098 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e1098 d2059589e174">
+<p>(<code>Y|N</code>) Value of the <code>FLASHBACK_DATA_ARCHIVE_INTERNAL_CURSOR</code> parameter for the current session does not match the value used to build the cursor</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e1116" headers="d2059589e168">
+<p><code>LOCK_USER_SCHEMA_FAILED</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e1116 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e1116 d2059589e174">
+<p>(<code>Y|N</code>) User or schema used to build the cursor no longer exists</p>
+<p><span class="bold">Note:</span> This sharing criterion is deprecated</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e1135" headers="d2059589e168">
+<p><code>REMOTE_MAPPING_MISMATCH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e1135 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e1135 d2059589e174">
+<p>(<code>Y|N</code>) Reloaded cursor was previously remote-mapped and is currently not remote-mapped. Therefore, the cursor must be reparsed.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e1150" headers="d2059589e168">
+<p><code>LOAD_RUNTIME_HEAP_FAILED</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e1150 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e1150 d2059589e174">
+<p>(<code>Y|N</code>) Loading of run-time heap for the new cursor (or reload of aged out cursor) failed</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e1165" headers="d2059589e168">
+<p><code>HASH_MATCH_FAILED</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e1165 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e1165 d2059589e174">
+<p>(<code>Y|N</code>) No existing child cursors have the unsafe literal bind hash values required by the current cursor</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e1180" headers="d2059589e168">
+<p><code>PURGED_CURSOR</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e1180 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e1180 d2059589e174">
+<p>(<code>Y|N</code>) Child cursor is marked for purging</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e1196" headers="d2059589e168">
+<p><code>BIND_LENGTH_UPGRADEABLE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e1196 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e1196 d2059589e174">
+<p>(<code>Y|N</code>) Bind length(s) required for the current cursor are longer than the bind length(s) used to build the child cursor</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e1211" headers="d2059589e168">
+<p><code>USE_FEEDBACK_STATS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e1211 d2059589e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e1211 d2059589e174">
+<p>(<code>Y|N</code>) A hard parse is forced so that the optimizer can reoptimize the query with improved optimizer inputs (for example, cardinality estimates)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e1226" headers="d2059589e168">
+<p><code>REASON</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e1226 d2059589e171">
+<p><code>CLOB</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e1226 d2059589e174">
+<p>Child number, id, and reason the cursor is not shared. The content of this column is structured using XML.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2059589e1238" headers="d2059589e168">
+<p><code>CON_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2059589e1238 d2059589e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2059589e1238 d2059589e174">
+<p>The ID of the container to which the data pertains. Possible values include:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>0</code>: This value is used for rows containing data that pertain to the entire CDB. This value is also used for rows in non-CDBs.</p>
+</li>
+<li>
+<p><code>1</code>: This value is used for rows containing data that pertain to only the root</p>
+</li>
+<li>
+<p><span class="italic">n</span>: Where <span class="italic">n</span> is the applicable container ID for the rows containing data</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="V-SQL_REDIRECTION.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="V-SQL_SHARED_MEMORY.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

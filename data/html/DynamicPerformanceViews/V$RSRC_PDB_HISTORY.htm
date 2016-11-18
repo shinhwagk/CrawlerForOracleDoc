@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>V$RSRC_PDB_HISTORY</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="V$RSRC_PDB_HISTORY displays a history of consumer group statistics for each entry in V$RSRC_PDB that has a non-NULL plan by pluggable database (PDB)." />
+<meta name="keywords" content="V$RSRC_PDB_HISTORY view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="V-RSRC_PDB.htm" title="Previous" type="text/html" />
+<link rel="Next" href="V-RSRC_PLAN.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-154F256B-A574-42B9-BDD7-373FF9464FD8"></a> <span id="PAGE" style="display:none;">2643/2822</span> <!-- End Header -->
+<h1 id="REFRN-GUID-154F256B-A574-42B9-BDD7-373FF9464FD8" class="sect1"><span class="enumeration_section">8.187</span> V$RSRC_PDB_HISTORY</h1>
+<div>
+<p><code>V$RSRC_PDB_HISTORY</code> displays a history of consumer group statistics for each entry in <code>V$RSRC_PDB</code> that has a non-NULL plan by pluggable database (PDB).</p>
+<div class="section">
+<p>When the <code>STATISTICS_LEVEL</code> is set to <code>TYPICAL</code> or <code>ALL</code>, this view contains information about CPU utilization and wait times even when no Resource Manager plan is set or when the Resource Manager plan does not monitor CPU or session resources.</p>
+<p>A new window is created in <code>V$RSRC_PDB_HISTORY</code> when a multitenant container database (CDB) changes its resource plan. The plan windows for the CDB are not impacted by a PDB resource plan change.</p>
+<p><code>V$RSRC_PDB_HISTORY</code> covers the same time period for all PDBs. This view is specifically designed for comparing statistics across different PDBs.</p>
+<p>Since <code>V$RSRC_PDB_HISTORY</code> does not contain information at the consumer group level, it is not useful for comparing consumer groups inside a PDB.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-154F256B-A574-42B9-BDD7-373FF9464FD8__GUID-2C3B562E-0C45-4A0A-9D62-AFD24F679CD7">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d1958988e195">Column</th>
+<th class="cellalignment3905" id="d1958988e199">Datatype</th>
+<th class="cellalignment3908" id="d1958988e203">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d1958988e209" headers="d1958988e195">
+<p><code>SEQUENCE#</code></p>
+</td>
+<td class="cellalignment3905" headers="d1958988e209 d1958988e199">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1958988e209 d1958988e203">
+<p>A sequential counter that uniquely describes the <code>V$RSRC_PDB</code> entry to which these consumer group statistics apply. When the instance is restarted, this value is reset to zero.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1958988e227" headers="d1958988e195">
+<p><code>PDB_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1958988e227 d1958988e199">
+<p><code>VARCHAR2(32)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1958988e227 d1958988e203">
+<p>PBD name</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1958988e242" headers="d1958988e195">
+<p><code>CPU_WAIT_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1958988e242 d1958988e199">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1958988e242 d1958988e203">
+<p>Cumulative amount of time that sessions waited for CPU because of resource management. This does not include waits due to latch or enqueue contention, I/O waits, and so on. When CPU resources are not being actively managed, this value is set to zero.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1958988e257" headers="d1958988e195">
+<p><code>CPU_WAITS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1958988e257 d1958988e199">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1958988e257 d1958988e203">
+<p>Cumulative number of times all sessions in the consumer group had to wait for CPU because of resource management. This does not include waits due to latch or enqueue contention, I/O waits, and so on. When CPU resources are not being actively managed, this value is set to zero.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1958988e272" headers="d1958988e195">
+<p><code>CONSUMED_CPU_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1958988e272 d1958988e199">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1958988e272 d1958988e203">
+<p>Cumulative amount of CPU time consumed by all sessions in the consumer group (in milliseconds)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1958988e287" headers="d1958988e195">
+<p><code>YIELDS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1958988e287 d1958988e199">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1958988e287 d1958988e203">
+<p>Cumulative number of times that sessions in the consumer group had to yield CPU to other sessions because of quantum expiration. When CPU resources are not being actively managed, this value is set to zero.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1958988e302" headers="d1958988e195">
+<p><code>IO_SERVICE_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1958988e302 d1958988e199">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1958988e302 d1958988e203">
+<p>Cumulative I/O wait time (in milliseconds)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1958988e317" headers="d1958988e195">
+<p><code>IO_SERVICE_WAITS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1958988e317 d1958988e199">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1958988e317 d1958988e203">
+<p>Total number of wait requests</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1958988e332" headers="d1958988e195">
+<p><code>SMALL_READ_MEGABYTES</code></p>
+</td>
+<td class="cellalignment3905" headers="d1958988e332 d1958988e199">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1958988e332 d1958988e203">
+<p>Number of single block megabytes read</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1958988e347" headers="d1958988e195">
+<p><code>SMALL_WRITE_MEGABYTES</code></p>
+</td>
+<td class="cellalignment3905" headers="d1958988e347 d1958988e199">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1958988e347 d1958988e203">
+<p>Number of single block megabytes written</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1958988e362" headers="d1958988e195">
+<p><code>LARGE_READ_MEGABYTES</code></p>
+</td>
+<td class="cellalignment3905" headers="d1958988e362 d1958988e199">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1958988e362 d1958988e203">
+<p>Number of multiblock megabytes read</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1958988e378" headers="d1958988e195">
+<p><code>LARGE_WRITE_MEGABYTES</code></p>
+</td>
+<td class="cellalignment3905" headers="d1958988e378 d1958988e199">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1958988e378 d1958988e203">
+<p>Number of multiblock megabytes written</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1958988e393" headers="d1958988e195">
+<p><code>SMALL_READ_REQUESTS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1958988e393 d1958988e199">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1958988e393 d1958988e203">
+<p>Number of single block read requests</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1958988e408" headers="d1958988e195">
+<p><code>SMALL_WRITE_REQUESTS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1958988e408 d1958988e199">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1958988e408 d1958988e203">
+<p>Number of single block write requests</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1958988e423" headers="d1958988e195">
+<p><code>LARGE_READ_REQUESTS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1958988e423 d1958988e199">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1958988e423 d1958988e203">
+<p>Number of multiblock read requests</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1958988e438" headers="d1958988e195">
+<p><code>LARGE_WRITE_REQUESTS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1958988e438 d1958988e199">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1958988e438 d1958988e203">
+<p>Number of multiblock write requests</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1958988e453" headers="d1958988e195">
+<p><code>PQS_COMPLETED</code></p>
+</td>
+<td class="cellalignment3905" headers="d1958988e453 d1958988e199">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1958988e453 d1958988e203">
+<p>Total number of completed parallel statements in the consumer group</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1958988e468" headers="d1958988e195">
+<p><code>PQ_SERVERS_USED</code></p>
+</td>
+<td class="cellalignment3905" headers="d1958988e468 d1958988e199">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1958988e468 d1958988e203">
+<p>Total number of parallel servers used by completed parallel statements in the consumer group</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1958988e483" headers="d1958988e195">
+<p><code>PQS_QUEUED</code></p>
+</td>
+<td class="cellalignment3905" headers="d1958988e483 d1958988e199">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1958988e483 d1958988e203">
+<p>Number of times that sessions in the consumer group were queued when trying to run parallel statements</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1958988e498" headers="d1958988e195">
+<p><code>PQ_ACTIVE_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1958988e498 d1958988e199">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1958988e498 d1958988e203">
+<p>Cumulative sum of the parallel active times for all completed parallel statements in the consumer group (in milliseconds)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1958988e513" headers="d1958988e195">
+<p><code>PQ_QUEUED_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1958988e513 d1958988e199">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1958988e513 d1958988e203">
+<p>Total amount of time that sessions in the consumer group were queued when trying to run parallel statements (in milliseconds)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1958988e528" headers="d1958988e195">
+<p><code>PQ_QUEUE_TIME_OUTS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1958988e528 d1958988e199">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1958988e528 d1958988e203">
+<p>Number of times that parallel statements from sessions in the consumer group timed out because their queue time exceeded the Resource Manager plan's <code>PARALLEL_QUEUE_TIMEOUT</code> limit</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1958988e547" headers="d1958988e195">
+<p><code>CON_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1958988e547 d1958988e199">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1958988e547 d1958988e203">
+<p>The ID of the container to which the data pertains. Possible values include:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>0</code>: This value is used for rows containing data that pertain to the entire CDB. This value is also used for rows in non-CDBs.</p>
+</li>
+<li>
+<p><code>1</code>: This value is used for rows containing data that pertain to only the root</p>
+</li>
+<li>
+<p><span class="italic">n</span>: Where <span class="italic">n</span> is the applicable container ID for the rows containing data</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<div class="section">
+<div class="infobox-note" id="GUID-154F256B-A574-42B9-BDD7-373FF9464FD8__GUID-FE2B23CB-1B2A-4493-8FA8-DCB2FD274258">
+<p class="notep1">Note:</p>
+<p>This view is available starting with Oracle Database 12<span class="italic">c</span> Release 2 (12.2.0.1).</p>
+</div>
+<div class="infoboxnotealso" id="GUID-154F256B-A574-42B9-BDD7-373FF9464FD8__GUID-D3B78983-5BD6-43E0-B3CF-40851B4B40A3">
+<p class="notep1">See Also:</p>
+<p><span class="q">"<a href="V-RSRC_CONS_GROUP_HISTORY.htm#GUID-9CFE4B17-AD29-4BD0-A9A4-E53964485041">V$RSRC_CONS_GROUP_HISTORY</a>"</span></p>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="V-RSRC_PDB.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="V-RSRC_PLAN.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

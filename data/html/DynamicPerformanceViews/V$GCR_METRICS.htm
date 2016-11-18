@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>V$GCR_METRICS</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="V$GCR_METRICS displays information about the current status of the metrics defined to the GCR component that runs under the LMHB background process to detect and mitigate potential issues in the cluster instances." />
+<meta name="keywords" content="V$GCR_METRICS view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="V-GCR_LOG.htm" title="Previous" type="text/html" />
+<link rel="Next" href="V-GCR_STATUS.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-39F6E641-74A6-44C5-A4CC-05FE718A795A"></a> <span id="PAGE" style="display:none;">2420/2822</span> <!-- End Header -->
+<h1 id="REFRN-GUID-39F6E641-74A6-44C5-A4CC-05FE718A795A" class="sect1"><span class="enumeration_section">7.231</span> V$GCR_METRICS</h1>
+<div>
+<p><code>V$GCR_METRICS</code> displays information about the current status of the metrics defined to the GCR component that runs under the LMHB background process to detect and mitigate potential issues in the cluster instances.</p>
+<div class="section"></div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-39F6E641-74A6-44C5-A4CC-05FE718A795A__GUID-968B5DC8-0E0E-4B43-9182-3B7CB5A9C84A">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d1727173e167">Column</th>
+<th class="cellalignment3905" id="d1727173e171">Datatype</th>
+<th class="cellalignment3908" id="d1727173e175">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d1727173e181" headers="d1727173e167">
+<p><code>METRIC_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1727173e181 d1727173e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1727173e181 d1727173e175">
+<p>Metric identification number as used internally to refer to the metric</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1727173e196" headers="d1727173e167">
+<p><code>METRIC_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1727173e196 d1727173e171">
+<p><code>VARCHAR2(40)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1727173e196 d1727173e175">
+<p>Name of the metric</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1727173e211" headers="d1727173e167">
+<p><code>ENVIRONMENT</code></p>
+</td>
+<td class="cellalignment3905" headers="d1727173e211 d1727173e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1727173e211 d1727173e175">
+<p>Environment that the metric should run in:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>0</code>: Nowhere (do not run)</p>
+</li>
+<li>
+<p><code>1</code>: Oracle ASM instance only</p>
+</li>
+<li>
+<p><code>2</code>: Oracle Database instance only</p>
+</li>
+<li>
+<p><code>3</code>: Oracle ASM and Oracle Database instance</p>
+</li>
+<li>
+<p><code>4</code>: Standby instance</p>
+</li>
+<li>
+<p><code>5</code>: Oracle ASM and Standby instance</p>
+</li>
+<li>
+<p><code>6</code>: Oracle Database and Standby instance</p>
+</li>
+<li>
+<p><code>7</code>: Oracle Database, Oracle ASM, and Standby instance</p>
+</li>
+<li>
+<p><code>15</code>: All instance types</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1727173e272" headers="d1727173e167">
+<p><code>FREQUENCY</code></p>
+</td>
+<td class="cellalignment3905" headers="d1727173e272 d1727173e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1727173e272 d1727173e175">
+<p>How often the metric runs, in seconds</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1727173e287" headers="d1727173e167">
+<p><code>SCOPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1727173e287 d1727173e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1727173e287 d1727173e175">
+<p>The scope of sharing of the metric:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>0</code>: The metric does not have associated data</p>
+</li>
+<li>
+<p><code>1</code>: Global - shared with all other instances in the cluster</p>
+</li>
+<li>
+<p><code>2</code>: Local - used only locally (not shared)</p>
+</li>
+<li>
+<p><code>4</code>: Node Global - shared with other instances in the cluster on the same node only</p>
+</li>
+<li>
+<p><code>8</code>: DB Only - Shared with other instances of the same database only</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1727173e328" headers="d1727173e167">
+<p><code>DATA_TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1727173e328 d1727173e171">
+<p><code>VARCHAR2(7)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1727173e328 d1727173e175">
+<p>The type of the data associated with this metric:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>0</code>: None</p>
+</li>
+<li>
+<p><code>1</code>: Boolean</p>
+</li>
+<li>
+<p><code>2</code>: Numeric</p>
+</li>
+<li>
+<p><code>3</code>: Process</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1727173e364" headers="d1727173e167">
+<p><code>STATUS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1727173e364 d1727173e171">
+<p><code>VARCHAR2(9)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1727173e364 d1727173e175">
+<div class="p">Indicates the status of the metric:
+<ul style="list-style-type: disc;">
+<li>
+<p><code>ACTIVE</code>: Indicates that the metric is active.</p>
+</li>
+<li>
+<p><code>INACTIVE</code>: Indicates that the metric is turned off.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1727173e387" headers="d1727173e167">
+<p><code>STATUS_CHANGE_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1727173e387 d1727173e171">
+<p><code>TIMESTAMP(6)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1727173e387 d1727173e175">
+<p>Time of last metric change of status</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1727173e399" headers="d1727173e167">
+<p><code>LAST_RAN_ITERATION</code></p>
+</td>
+<td class="cellalignment3905" headers="d1727173e399 d1727173e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1727173e399 d1727173e175">
+<p>Iteration of the last time the metric ran</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1727173e411" headers="d1727173e167">
+<p><code>LAST_RAN_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1727173e411 d1727173e171">
+<p><code>TIMESTAMP(6)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1727173e411 d1727173e175">
+<p>Time of last run</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1727173e423" headers="d1727173e167">
+<p><code>LAST_PASS_ITERATION</code></p>
+</td>
+<td class="cellalignment3905" headers="d1727173e423 d1727173e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1727173e423 d1727173e175">
+<p>Iteration of last time the metric passed</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1727173e436" headers="d1727173e167">
+<p><code>LAST_PASS_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1727173e436 d1727173e171">
+<p><code>TIMESTAMP(6)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1727173e436 d1727173e175">
+<p>Time of last metric pass</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1727173e448" headers="d1727173e167">
+<p><code>TOTAL_PASSES</code></p>
+</td>
+<td class="cellalignment3905" headers="d1727173e448 d1727173e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1727173e448 d1727173e175">
+<p>Total number of times the metric passed since start of LMHB</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1727173e460" headers="d1727173e167">
+<p><code>LAST_FAIL_ITERATION</code></p>
+</td>
+<td class="cellalignment3905" headers="d1727173e460 d1727173e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1727173e460 d1727173e175">
+<p>Iteration of last time the metric failed</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1727173e472" headers="d1727173e167">
+<p><code>LAST_FAIL_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1727173e472 d1727173e171">
+<p><code>TIMESTAMP(6)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1727173e472 d1727173e175">
+<p>Time of last metric failure</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1727173e484" headers="d1727173e167">
+<p><code>TOTAL_FAILS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1727173e484 d1727173e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1727173e484 d1727173e175">
+<p>Total number of times the metric has failed since start of LMHB</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1727173e496" headers="d1727173e167">
+<p><code>CON_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1727173e496 d1727173e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1727173e496 d1727173e175">
+<p>The ID of the container to which the data pertains. Possible values include:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>0</code>: This value is used for rows containing data that pertain to the entire CDB. This value is also used for rows in non-CDBs.</p>
+</li>
+<li>
+<p><code>1</code>: This value is used for rows containing data that pertain to only the root</p>
+</li>
+<li>
+<p><span class="italic">n</span>: Where <span class="italic">n</span> is the applicable container ID for the rows containing data</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<div class="section">
+<div class="infobox-note" id="GUID-39F6E641-74A6-44C5-A4CC-05FE718A795A__GUID-F22141C9-D855-4364-8554-7BE326053519">
+<p class="notep1">Note:</p>
+<p>This view is available starting with Oracle Database 12<span class="italic">c</span> Release 2 (12.2.0.1).</p>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="V-GCR_LOG.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="V-GCR_STATUS.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>DBA_WORKLOAD_REPLAYS</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="DBA_WORKLOAD_REPLAYS view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="DBA_WORKLOAD_REPLAY_SCHEDULES.htm" title="Previous" type="text/html" />
+<link rel="Next" href="DBA_WORKLOAD_SCHEDULE_CAPTURES.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-EAAAECF2-77B5-4BD9-8A43-AE8E2F3410AA"></a> <span id="PAGE" style="display:none;">1614/2822</span> <!-- End Header -->
+<script  >
+//<![CDATA[
+window.name='DBA_WORKLOAD_REPLAYS'
+//]]>
+</script> <script  >
+    function footdisplay(footnum,footnote) {
+    var msg = window.open('', 'NewWindow' + footnum,
+        'directories=no,height=120,location=no,menubar=no,resizable=yes,' +
+        'scrollbars=yes,status=no,toolbar=no,width=598');
+    msg.document.open('text/html');
+    msg.document.write('<!DOCTYPE html ');
+    msg.document.write('PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" ');
+
+    msg.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">');
+    msg.document.write('<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><title>');
+    msg.document.write('Footnote&amp;nbsp; ' + footnum);
+    msg.document.write('<\/title><meta http-equiv="Content-Type" ');
+    msg.document.write('content="text/html; charset=utf-8" />');
+    msg.document.write('');
+    msg.document.write('<style> <![CDATA[ ');
+    msg.document.write('h1 {text-align: center; font-size: 14pt;}');
+    msg.document.write('fieldset {border: none;}');
+    msg.document.write('form {text-align: center;}');
+    msg.document.write(' ]]\u003e <\/style>');
+    msg.document.write('<\/head><body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><h1>Footnote&nbsp; ' + footnum + '<\/h1><p>');
+    msg.document.write(footnote);
+    msg.document.write('<\/p><form action="" method="post"><fieldset>');
+    msg.document.write('<input type="button" value="OK" ');
+    msg.document.write('onclick="window.close();" />');
+    msg.document.write('<\/fieldset><\/form><\/body><\/html>');
+    msg.document.close();
+    msg.focus();
+}
+</script><noscript>
+<p>The script content on this page is for navigation purposes only and does not alter the content in any way.</p>
+</noscript><a id="REFRN23631"></a>
+<h1 id="REFRN-GUID-EAAAECF2-77B5-4BD9-8A43-AE8E2F3410AA" class="sect1"><span class="enumeration_section">6.132</span> DBA_WORKLOAD_REPLAYS</h1>
+<div>
+<div class="section">
+<p><code>DBA_WORKLOAD_REPLAYS</code> displays all the workload replays that have been performed in the current database. It also lists replays on which <code>DBMS_WORKLOAD_REPLAY.GET_REPLAY_INFO()</code> has been called. Each row contains information about one workload replay.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-EAAAECF2-77B5-4BD9-8A43-AE8E2F3410AA__GUID-CD08BA7E-CD98-4C8C-A8FF-1F4947E652FA">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d1348518e172">Column</th>
+<th class="cellalignment3905" id="d1348518e175">Datatype</th>
+<th class="cellalignment3906" id="d1348518e178">NULL</th>
+<th class="cellalignment3907" id="d1348518e181">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d1348518e186" headers="d1348518e172">
+<p><code>ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e186 d1348518e175">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e186 d1348518e178">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1348518e186 d1348518e181">
+<p>Internal key for the workload replay</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e202" headers="d1348518e172">
+<p><code>NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e202 d1348518e175">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e202 d1348518e178">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1348518e202 d1348518e181">
+<p>Name of the workload replay</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e218" headers="d1348518e172">
+<p><code>DBID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e218 d1348518e175">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e218 d1348518e178">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1348518e218 d1348518e181">
+<p>ID of the database in which the workload was replayed</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e234" headers="d1348518e172">
+<p><code>DBNAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e234 d1348518e175">
+<p><code>VARCHAR2(10)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e234 d1348518e178">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1348518e234 d1348518e181">
+<p>Name of the database in which the workload was replayed</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e250" headers="d1348518e172">
+<p><code>DBVERSION</code></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e250 d1348518e175">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e250 d1348518e178">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1348518e250 d1348518e181">
+<p>Version of the database in which the workload was replayed</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e266" headers="d1348518e172">
+<p><code>PARALLEL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e266 d1348518e175">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e266 d1348518e178">&nbsp;</td>
+<td class="cellalignment3907" headers="d1348518e266 d1348518e181">
+<p>Indicates whether the database in which the workload was replayed was an Oracle RAC database (<code>YES</code>) or a single instance database (<code>NO</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e288" headers="d1348518e172">
+<p><code>DIRECTORY</code></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e288 d1348518e175">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e288 d1348518e178">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1348518e288 d1348518e181">
+<p>Name of the directory object for the workload replay</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e304" headers="d1348518e172">
+<p><code>CAPTURE_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e304 d1348518e175">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e304 d1348518e178">&nbsp;</td>
+<td class="cellalignment3907" headers="d1348518e304 d1348518e181">
+<p>ID of the capture (<code>DBA_WORKLOAD_CAPTURES.ID</code>) that was replayed. If the replay involves a replay schedule, the <code>CAPTURE_ID</code> will be null.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e326" headers="d1348518e172">
+<p><code>STATUS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e326 d1348518e175">
+<p><code>VARCHAR2(40)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e326 d1348518e178">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1348518e326 d1348518e181">
+<p>Current status of the workload replay:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>PREPARE</code> - Workload prepare has been started and is waiting for clients to join</p>
+</li>
+<li>
+<p><code>IN PROGRESS</code> - Workload replay is in progress</p>
+</li>
+<li>
+<p><code>COMPLETED</code> - Workload replay has successfully completed</p>
+</li>
+<li>
+<p><code>CANCELLED</code> - Workload replay or the workload prepare has been cancelled</p>
+</li>
+<li>
+<p><code>FAILED</code> - Workload replay was aborted due to errors encountered. See the <code>COMMENTS</code> column for further information.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e371" headers="d1348518e172">
+<p><code>PREPARE_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e371 d1348518e175">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e371 d1348518e178">&nbsp;</td>
+<td class="cellalignment3907" headers="d1348518e371 d1348518e181">
+<p>Datetime at which the workload prepare started</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e387" headers="d1348518e172">
+<p><code>START_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e387 d1348518e175">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e387 d1348518e178">&nbsp;</td>
+<td class="cellalignment3907" headers="d1348518e387 d1348518e181">
+<p>Datetime when the replay began</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e404" headers="d1348518e172">
+<p><code>END_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e404 d1348518e175">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e404 d1348518e178">&nbsp;</td>
+<td class="cellalignment3907" headers="d1348518e404 d1348518e181">
+<p>Datetime when the replay completed or cancelled; NULL if the replay is still in progress</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e420" headers="d1348518e172">
+<p><code>DURATION_SECS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e420 d1348518e175">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e420 d1348518e178">&nbsp;</td>
+<td class="cellalignment3907" headers="d1348518e420 d1348518e181">
+<p>Duration of the workload replay (in seconds)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e436" headers="d1348518e172">
+<p><code>NUM_CLIENTS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e436 d1348518e175">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e436 d1348518e178">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1348518e436 d1348518e181">
+<p>Number of workload replay client processes that were used in this workload replay</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e452" headers="d1348518e172">
+<p><code>NUM_CLIENTS_DONE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e452 d1348518e175">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e452 d1348518e178">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1348518e452 d1348518e181">
+<p>Number of workload replay client processes that have finished replay</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e468" headers="d1348518e172">
+<p><code>FILTER_SET_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e468 d1348518e175">
+<p><code>VARCHAR2(1000)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e468 d1348518e178">&nbsp;</td>
+<td class="cellalignment3907" headers="d1348518e468 d1348518e181">
+<p>Name of the filter set used for the replay</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e482" headers="d1348518e172">
+<p><code>DEFAULT_ACTION</code></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e482 d1348518e175">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e482 d1348518e178">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1348518e482 d1348518e181">
+<p>Reserved for future use</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e498" headers="d1348518e172">
+<p><code>SYNCHRONIZATION</code></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e498 d1348518e175">
+<p><code>VARCHAR2(9)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e498 d1348518e178">&nbsp;</td>
+<td class="cellalignment3907" headers="d1348518e498 d1348518e181">
+<p>Indicates whether recorded transaction semantics should be maintained (<code>TRUE</code>) or not (<code>FALSE</code>)</p>
+<p>When synchronization is on, the commit order observed during the original workload capture will be preserved. Every action that is replayed will be executed only after all of its dependent commits have been executed. Dependent commits are commits that were issued before the given action in the original workload capture.</p>
+<p><span class="bold">See Also:</span> <code>DBMS_WORKLOAD_REPLAY.PREPARE_REPLAY()</code> in <a class="olink ARPLS69086" target="_blank" href="../ARPLS/DBMS_WORKLOAD_REPLAY.htm#ARPLS69086"><span class="italic">Oracle Database PL/SQL Packages and Types Reference</span></a> for a detailed explanation of this replay parameter</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e534" headers="d1348518e172">
+<p><code>CONNECT_TIME_SCALE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e534 d1348518e175">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e534 d1348518e178">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1348518e534 d1348518e181">
+<p>Connection time scaling factor for captured streams during replay. The value is interpreted as a percentage.The default value of 100 means 100 percent.</p>
+<p><span class="bold">See Also:</span> <code>DBMS_WORKLOAD_REPLAY.PREPARE_REPLAY()</code> in <a class="olink ARPLS69086" target="_blank" href="../ARPLS/DBMS_WORKLOAD_REPLAY.htm#ARPLS69086"><span class="italic">Oracle Database PL/SQL Packages and Types Reference</span></a> for a detailed explanation of this replay parameter</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e562" headers="d1348518e172">
+<p><code>THINK_TIME_SCALE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e562 d1348518e175">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e562 d1348518e178">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1348518e562 d1348518e181">
+<p>Think time scaling factor for captured streams during replay. It scales the thinking time elapsed between two successive user calls from the same captured stream. The input is interpreted as a percentage. The default value of 100 means 100 percent.</p>
+<p><span class="bold">See Also:</span> <code>DBMS_WORKLOAD_REPLAY.PREPARE_REPLAY()</code> in <a class="olink ARPLS69086" target="_blank" href="../ARPLS/DBMS_WORKLOAD_REPLAY.htm#ARPLS69086"><span class="italic">Oracle Database PL/SQL Packages and Types Reference</span></a> for a detailed explanation of this replay parameter</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e590" headers="d1348518e172">
+<p><code>THINK_TIME_AUTO_CORRECT</code></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e590 d1348518e175">
+<p><code>VARCHAR2(5)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e590 d1348518e178">&nbsp;</td>
+<td class="cellalignment3907" headers="d1348518e590 d1348518e181">
+<p>Indicates whether the think time should be automatically corrected between calls (<code>TRUE</code>) or not (<code>FALSE</code>)</p>
+<p>A value of <code>TRUE</code> reduces think time if replay goes slower than capture.</p>
+<p>A value of <code>FALSE</code> results in no action.</p>
+<p><span class="bold">See Also:</span> <code>DBMS_WORKLOAD_REPLAY.PREPARE_REPLAY()</code> in <a class="olink ARPLS69086" target="_blank" href="../ARPLS/DBMS_WORKLOAD_REPLAY.htm#ARPLS69086"><span class="italic">Oracle Database PL/SQL Packages and Types Reference</span></a> for a detailed explanation of this replay parameter</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e634" headers="d1348518e172">
+<p><code>SCALE_UP_MULTIPLIER</code></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e634 d1348518e175">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e634 d1348518e178">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1348518e634 d1348518e181">
+<p>Before the multiple-capture replay, <code>SCALE_UP_MULTIPLIER</code> is used to scale up the query part of a workload capture. The queries from each captured session are replayed concurrently as many times as the value of <code>SCALE_UP_MULTIPLIER</code>.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e657" headers="d1348518e172">
+<p><code>USER_CALLS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e657 d1348518e175">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e657 d1348518e178">&nbsp;</td>
+<td class="cellalignment3907" headers="d1348518e657 d1348518e181">
+<p>Total number of user calls replayed</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e673" headers="d1348518e172">
+<p><code>DBTIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e673 d1348518e175">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e673 d1348518e178">&nbsp;</td>
+<td class="cellalignment3907" headers="d1348518e673 d1348518e181">
+<p>Accumulated database time (in microseconds) for the replay</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e689" headers="d1348518e172">
+<p><code>NETWORK_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e689 d1348518e175">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e689 d1348518e178">&nbsp;</td>
+<td class="cellalignment3907" headers="d1348518e689 d1348518e181">
+<p>Accumulated network time for the replay (in microseconds)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e705" headers="d1348518e172">
+<p><code>THINK_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e705 d1348518e175">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e705 d1348518e178">&nbsp;</td>
+<td class="cellalignment3907" headers="d1348518e705 d1348518e181">
+<p>Accumulated think time (in microseconds) for the replay</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e721" headers="d1348518e172">
+<p><code>PAUSE_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e721 d1348518e175">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e721 d1348518e178">&nbsp;</td>
+<td class="cellalignment3907" headers="d1348518e721 d1348518e181">
+<p>The total time (in seconds) that the replay has been paused (by calling the PAUSE_REPLAY procedure)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e735" headers="d1348518e172">
+<p><code>PLSQL_CALLS</code><a id="GUID-EAAAECF2-77B5-4BD9-8A43-AE8E2F3410AA__THISCOLUMNISAVAILABLESTARTINGWITHOR-6B54BAAE" href="#GUID-EAAAECF2-77B5-4BD9-8A43-AE8E2F3410AA__THISCOLUMNISAVAILABLESTARTINGWITHOR-6B54BAAE" onclick='footdisplay(1,"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Foot&nbsp;1</sup></a><a id="fnsrc_d1348518e745" href="#fnsrc_d1348518e745" onclick='footdisplay(, \"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e735 d1348518e175">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e735 d1348518e178">&nbsp;</td>
+<td class="cellalignment3907" headers="d1348518e735 d1348518e181">
+<p>Total number of replayed top-level PL/SQL calls</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e758" headers="d1348518e172">
+<p><code>PLSQL_SUBCALLS</code><a id="fnsrc_d1348518e762" href="#fnsrc_d1348518e762" onclick='footdisplay(, \"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e758 d1348518e175">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e758 d1348518e178">&nbsp;</td>
+<td class="cellalignment3907" headers="d1348518e758 d1348518e181">
+<p>Total number of replayed calls for SQL executed from PL/SQL</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e775" headers="d1348518e172">
+<p><code>PLSQL_DBTIME</code><a id="fnsrc_d1348518e779" href="#fnsrc_d1348518e779" onclick='footdisplay(, \"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e775 d1348518e175">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e775 d1348518e178">&nbsp;</td>
+<td class="cellalignment3907" headers="d1348518e775 d1348518e181">
+<p>Total amount of database time (in microseconds) from PL/SQL calls</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e792" headers="d1348518e172">
+<p><code>ELAPSED_TIME_DIFF</code></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e792 d1348518e175">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e792 d1348518e178">&nbsp;</td>
+<td class="cellalignment3907" headers="d1348518e792 d1348518e181">
+<p>Reserved for future use</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e808" headers="d1348518e172">
+<p><code>AWR_DBID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e808 d1348518e175">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e808 d1348518e178">&nbsp;</td>
+<td class="cellalignment3907" headers="d1348518e808 d1348518e181">
+<p>Database ID of the AWR snapshots that correspond to this workload replay. For replays that were performed in the current database, this value is equal to the current database's DBID. For replays that were performed in other databases, this value will either be NULL or will be populated by <code>DBMS_WORKLOAD_REPLAY.IMPORT_AWR()</code>.</p>
+<p><span class="bold">See Also:</span> DBMS_WORKLOAD_REPLAY.IMPORT_AWR() in <a class="olink ARPLS69081" target="_blank" href="../ARPLS/DBMS_WORKLOAD_REPLAY.htm#ARPLS69081"><span class="italic">Oracle Database PL/SQL Packages and Types Reference</span></a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e835" headers="d1348518e172">
+<p><code>AWR_BEGIN_SNAP</code></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e835 d1348518e175">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e835 d1348518e178">&nbsp;</td>
+<td class="cellalignment3907" headers="d1348518e835 d1348518e181">
+<p>Begin snapshot ID of the AWR snapshots that correspond to this workload replay</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e852" headers="d1348518e172">
+<p><code>AWR_END_SNAP</code></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e852 d1348518e175">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e852 d1348518e178">&nbsp;</td>
+<td class="cellalignment3907" headers="d1348518e852 d1348518e181">
+<p>End snapshot ID of the AWR snapshots that correspond to this workload replay</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e868" headers="d1348518e172">
+<p><code>AWR_EXPORTED</code></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e868 d1348518e175">
+<p><code>VARCHAR2(12)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e868 d1348518e178">&nbsp;</td>
+<td class="cellalignment3907" headers="d1348518e868 d1348518e181">
+<p>Indicates whether the AWR snapshots that correspond to this workload replay have been exported using <code>DBMS_WORKLOAD_REPLAY.EXPORT_AWR()</code> (<code>YES</code>) or not (<code>NO</code>), or whether AWR snapshots cannot be exported because the replay is still in progress, has run to completion successfully, or was done in a different database from which it was not exported (<code>NOT POSSIBLE</code>)</p>
+<p><span class="bold">See Also:</span> DBMS_WORKLOAD_REPLAY.EXPORT_AWR() in <a class="olink ARPLS69077" target="_blank" href="../ARPLS/DBMS_WORKLOAD_REPLAY.htm#ARPLS69077"><span class="italic">Oracle Database PL/SQL Packages and Types Reference</span></a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e904" headers="d1348518e172">
+<p><code>ERROR_CODE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e904 d1348518e175">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e904 d1348518e178">&nbsp;</td>
+<td class="cellalignment3907" headers="d1348518e904 d1348518e181">
+<p>Error code for this workload replay</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e920" headers="d1348518e172">
+<p><code>ERROR_MESSAGE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e920 d1348518e175">
+<p><code>VARCHAR2(300)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e920 d1348518e178">&nbsp;</td>
+<td class="cellalignment3907" headers="d1348518e920 d1348518e181">
+<p>Error message for this workload replay</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e936" headers="d1348518e172">
+<p><code>DIR_PATH</code></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e936 d1348518e175">
+<p><code>VARCHAR2(4000)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e936 d1348518e178">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1348518e936 d1348518e181">
+<p>Full directory path for the replay directory object</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e952" headers="d1348518e172">
+<p><code>REPLAY_DIR_NUMBER</code></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e952 d1348518e175">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e952 d1348518e178">&nbsp;</td>
+<td class="cellalignment3907" headers="d1348518e952 d1348518e181">
+<p>A hash value computed based on the values of other columns in this view, such as the <code>NAME</code>, <code>DBID</code>, <code>DBNAME</code>, <code>PREPARE_TIME</code>, <code>START_TIME</code>, and <code>END_TIME</code> columns. It should be fairly unique for any replay. The value is used to create a subdirectory under the replay directory.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e985" headers="d1348518e172">
+<p><code>SQLSET_OWNER</code></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e985 d1348518e175">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e985 d1348518e178">&nbsp;</td>
+<td class="cellalignment3907" headers="d1348518e985 d1348518e181">
+<p>User name of the SQL tuning set owner</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e999" headers="d1348518e172">
+<p><code>SQLSET_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e999 d1348518e175">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e999 d1348518e178">&nbsp;</td>
+<td class="cellalignment3907" headers="d1348518e999 d1348518e181">
+<p>Name of the SQL tuning set for this workload replay</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e1013" headers="d1348518e172">
+<p><code>SCHEDULE_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e1013 d1348518e175">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e1013 d1348518e178">&nbsp;</td>
+<td class="cellalignment3907" headers="d1348518e1013 d1348518e181">
+<p>The name of a schedule to be replayed. It defines one or multiple workload captures, and the order to start their replays.</p>
+<p>If <code>SCHEDULE_NAME</code> is <code>NULL</code>, the replay is a regular replay introduced since Oracle Database 11<span class="italic">g</span>, done with existing APIs from <code>DBMS_WORKLOAD_REPLAY</code>: <code>INITIALIZE_REPLAY</code>, <code>PREPARE_REPLAY</code>, and <code>START_REPLAY</code>.</p>
+<p>If <code>SCHEDULE_NAME</code> is not <code>NULL</code>, the replay is a new consolidated replay introduced in Oracle Database 12<span class="italic">c</span>. That is, it is a replay of one or more workload captures done with new APIs at <code>DBMS_WORKLOAD_REPLAY</code>: <code>INITIALIZE_CONSOLIDATED_REPLAY</code>, <code>PREPARE_CONSOLIDATED_REPLAY</code>, and <code>START_CONSOLIDATED_REPLAY</code>.</p>
+<p><span class="bold">See Also:</span> <code>DBMS_WORKLOAD_REPLAY</code> in <a class="olink ARPLS208" target="_blank" href="../ARPLS/DBMS_WORKLOAD_REPLAY.htm#ARPLS208"><span class="italic">Oracle Database PL/SQL Packages and Types Reference</span></a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e1086" headers="d1348518e172">
+<p><code>DIVERGENCE_LOAD_STATUS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e1086 d1348518e175">
+<p><code>VARCHAR2(5)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e1086 d1348518e178">&nbsp;</td>
+<td class="cellalignment3907" headers="d1348518e1086 d1348518e181">
+<p>Indicates whether replay divergence data have been loaded (<code>TRUE</code>) or not (<code>FALSE</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e1106" headers="d1348518e172">
+<p><code>PLSQL_MODE</code><a id="fnsrc_d1348518e1110" href="#fnsrc_d1348518e1110" onclick='footdisplay(, \"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e1106 d1348518e175">
+<p><code>VARCHAR2(23)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e1106 d1348518e178">&nbsp;</td>
+<td class="cellalignment3907" headers="d1348518e1106 d1348518e181">
+<p>Replay options for PL/SQL calls. Possible values:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>TOP_LEVEL</code>: Top-level PL/SQL only</p>
+</li>
+<li>
+<p><code>EXTENDED</code>: SQL executed from PL/SQL or top-level PL/SQL if there is no SQL recorded inside the PL/SQL</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e1135" headers="d1348518e172">
+<p><code>CONNECT_TIME_AUTO_CORRECT</code></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e1135 d1348518e175">
+<p><code>VARCHAR2(12)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e1135 d1348518e178">&nbsp;</td>
+<td class="cellalignment3907" headers="d1348518e1135 d1348518e181">
+<p>Indicates whether the waiting time for a new session to be connected is automatically reduced when the replay proceeds faster than its capture. The reduced amount is determined by the elapsed-time difference between the replay and the capture of the slowest session. The default value is true.</p>
+<p>There is no impact when the replay proceeds slower than the capture.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e1152" headers="d1348518e172">
+<p><code>RAC_MODE</code><a id="fnsrc_d1348518e1156" href="#fnsrc_d1348518e1156" onclick='footdisplay(, \"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e1152 d1348518e175">
+<p><code>VARCHAR2(19)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e1152 d1348518e178">&nbsp;</td>
+<td class="cellalignment3907" headers="d1348518e1152 d1348518e181">
+<p>Replay options in an Oracle RAC environment:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>GLOBAL_SYNC</code>: Synchronization is across all instances. This is the default.</p>
+<p>Database connections from workload replay client (wrc) are done based on connection remapping.</p>
+</li>
+<li>
+<p><code>PER_INSTANCE_CLIENT</code>: Synchronization is across all instances.</p>
+<p>All database connections from one wrc are connected to only one instance.</p>
+</li>
+<li>
+<p><code>PER_INSTANCE_SYNC</code>: Synchronization is within one instance.</p>
+<p>All database connections from one wrc are connected to only one instance.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1348518e1191" headers="d1348518e172">
+<p><code>QUERY_ONLY</code><a id="fnsrc_d1348518e1195" href="#fnsrc_d1348518e1195" onclick='footdisplay(, \"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+<td class="cellalignment3905" headers="d1348518e1191 d1348518e175">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1348518e1191 d1348518e178">&nbsp;</td>
+<td class="cellalignment3907" headers="d1348518e1191 d1348518e181">
+<p>Indicates whether only the query-only workload from the current workload capture will be replayed, skipping all the DML/DDL that might update the database (<code>Y</code>) or not (<code>N</code>)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<p class="tablefootnote"><sup class="tablefootnote">Footnote&nbsp;1</sup></p>
+<p>This column is available starting with Oracle Database 12<span class="italic">c</span> Release 2 (12.2.0.1).</p>
+<div class="section">
+<div class="infoboxnotealso" id="GUID-EAAAECF2-77B5-4BD9-8A43-AE8E2F3410AA__GUID-11D5E2FE-CB2A-40A7-9CBF-064738CEFE4D">
+<p class="notep1">See Also:</p>
+<p><a class="olink ARPLS208" target="_blank" href="../ARPLS/DBMS_WORKLOAD_REPLAY.htm#ARPLS208"><span class="italic">Oracle Database PL/SQL Packages and Types Reference</span></a> for more information about the <code>DBMS_WORKLOAD_REPLAY</code> package</p>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="DBA_WORKLOAD_REPLAY_SCHEDULES.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="DBA_WORKLOAD_SCHEDULE_CAPTURES.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+</body>
+</html>

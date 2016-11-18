@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>V$SQL_REDIRECTION</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="V$SQL_REDIRECTION view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="V-SQL_PLAN_STATISTICS_ALL.htm" title="Previous" type="text/html" />
+<link rel="Next" href="V-SQL_SHARED_CURSOR.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+                    <script type="text/javascript">
+                      var w=window;
+                      if(w.performance||w.mozPerformance||w.msPerformance||w.webkitPerformance){var d=document,AKSB=AKSB||{};AKSB.q=[];AKSB.mark=function(a,b){AKSB.q.push(["mark",a,b||(new Date).getTime()])};AKSB.measure=function(a,b,c){AKSB.q.push(["measure",a,b,c||(new Date).getTime()])};AKSB.done=function(a){AKSB.q.push(["done",a])};AKSB.mark("firstbyte",(new Date).getTime());AKSB.prof={custid:"322179",ustr:"UNKNOWN",originlat:0,clientrtt:0,ghostip:"65.158.95.60",
+                      ipv6:false,pct:10,clientip:"101.231.34.38",requestid:"4536762e",protocol:"",blver:10,akM:"dscx",akN:"ae",akTT:"O",akTX:"1",akTI:"4536762e",ai:"206465",ra:"false",pmgn:"",pmgi:"",pmp:""};(function(a){var b=
+                      d.createElement("script");b.async="async";b.src=a;a=d.getElementsByTagName("script");a=a[a.length-1];a.parentNode.insertBefore(b,a)})(("https:"===d.location.protocol?"https:":"http:")+"//ds-aksb-a.akamaihd.net/aksb.min.js")};
+                    </script>
+                    </head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-521AC074-FB3A-400A-9D8F-18753A7B658F"></a> <span id="PAGE" style="display:none;">2717/2822</span> <!-- End Header -->
+<a id="REFRN30253"></a>
+<h1 id="REFRN-GUID-521AC074-FB3A-400A-9D8F-18753A7B658F" class="sect1"><span class="enumeration_section">9.62</span> V$SQL_REDIRECTION</h1>
+<div>
+<div class="section">
+<p><code>V$SQL_REDIRECTION</code> displays SQL statements that are redirected.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-521AC074-FB3A-400A-9D8F-18753A7B658F__GUID-1AA1C8F7-C125-4962-A788-96B529663816">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d2058519e168">Column</th>
+<th class="cellalignment3905" id="d2058519e171">Datatype</th>
+<th class="cellalignment3908" id="d2058519e174">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d2058519e179" headers="d2058519e168">
+<p><code>ADDRESS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2058519e179 d2058519e171">
+<p><code>RAW(4 | 8)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2058519e179 d2058519e174">
+<p>Address of the cursor handle</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2058519e191" headers="d2058519e168">
+<p><code>PARENT_HANDLE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2058519e191 d2058519e171">
+<p><code>RAW(4 | 8)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2058519e191 d2058519e174">
+<p>Address of the parent cursor handle</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2058519e203" headers="d2058519e168">
+<p><code>HASH_VALUE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2058519e203 d2058519e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2058519e203 d2058519e174">
+<p>Hash value of the SQL statement</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2058519e215" headers="d2058519e168">
+<p><code>SQL_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2058519e215 d2058519e171">
+<p><code>VARCHAR2(13)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2058519e215 d2058519e174">
+<p>SQL identifier of the SQL statement</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2058519e227" headers="d2058519e168">
+<p><code>CHILD_NUMBER</code></p>
+</td>
+<td class="cellalignment3905" headers="d2058519e227 d2058519e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2058519e227 d2058519e174">
+<p>Number of the child (instance) for the hash</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2058519e239" headers="d2058519e168">
+<p><code>PARSING_USER_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2058519e239 d2058519e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2058519e239 d2058519e174">
+<p>Parsing user ID</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2058519e251" headers="d2058519e168">
+<p><code>PARSING_SCHEMA_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2058519e251 d2058519e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2058519e251 d2058519e174">
+<p>Parsing schema ID</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2058519e263" headers="d2058519e168">
+<p><code>COMMAND_TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2058519e263 d2058519e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2058519e263 d2058519e174">
+<p><code>SELECT</code>, <code>UPDATE</code>, <code>INSERT</code>, <code>MERGE</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2058519e285" headers="d2058519e168">
+<p><code>REASON</code></p>
+</td>
+<td class="cellalignment3905" headers="d2058519e285 d2058519e171">
+<p><code>VARCHAR2(14)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2058519e285 d2058519e174">
+<p>Reason for redirection (<code>'INVALID OBJECT'</code>, <code>'ROWID'</code>, <code>'QUERY REWRITE'</code>, <code>'READ ONLY'</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2058519e309" headers="d2058519e168">
+<p><code>ERROR_CODE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2058519e309 d2058519e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2058519e309 d2058519e174">
+<p>Error code for local parse</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2058519e321" headers="d2058519e168">
+<p><code>POSITION</code></p>
+</td>
+<td class="cellalignment3905" headers="d2058519e321 d2058519e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2058519e321 d2058519e174">
+<p>Error position, 0 if unknown</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2058519e334" headers="d2058519e168">
+<p><code>SQL_TEXT_PIECE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2058519e334 d2058519e171">
+<p><code>VARCHAR2(1000)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2058519e334 d2058519e174">
+<p>SQL Text containing position, usually a (qualified) identifier</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2058519e346" headers="d2058519e168">
+<p><code>ERROR_MESSAGE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2058519e346 d2058519e171">
+<p><code>VARCHAR2(1000)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2058519e346 d2058519e174">
+<p>Error code's corresponding error message resolved in the database language, no arguments resolved</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2058519e358" headers="d2058519e168">
+<p><code>CON_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2058519e358 d2058519e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2058519e358 d2058519e174">
+<p>The ID of the container to which the data pertains. Possible values include:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>0</code>: This value is used for rows containing data that pertain to the entire CDB. This value is also used for rows in non-CDBs.</p>
+</li>
+<li>
+<p><code>1</code>: This value is used for rows containing data that pertain to only the root</p>
+</li>
+<li>
+<p><span class="italic">n</span>: Where <span class="italic">n</span> is the applicable container ID for the rows containing data</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="V-SQL_PLAN_STATISTICS_ALL.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="V-SQL_SHARED_CURSOR.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

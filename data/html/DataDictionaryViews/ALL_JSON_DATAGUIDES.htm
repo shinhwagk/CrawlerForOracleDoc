@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>ALL_JSON_DATAGUIDES</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="ALL_JSON_DATAGUIDES provides information on the JavaScript Object Notation (JSON) columns accessible to the current user that have data guide enabled." />
+<meta name="keywords" content="ALL_JSON_DATAGUIDES view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="ALL_JSON_COLUMNS.htm" title="Previous" type="text/html" />
+<link rel="Next" href="ALL_LIBRARIES.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-36B8E1C7-614E-4085-B75F-57875795890A"></a> <span id="PAGE" style="display:none;">535/2822</span> <!-- End Header -->
+<h1 id="REFRN-GUID-36B8E1C7-614E-4085-B75F-57875795890A" class="sect1"><span class="enumeration_section">2.192</span> ALL_JSON_DATAGUIDES</h1>
+<div>
+<p><code>ALL_JSON_DATAGUIDES</code> provides information on the JavaScript Object Notation (JSON) columns accessible to the current user that have data guide enabled.</p>
+<div class="section">
+<p class="subhead1">Related Views</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>DBA_JSON_DATAGUIDES</code> provides information on the JavaScript Object Notation (JSON) columns in the database that have data guide enabled. Its columns are the same as those in <code>ALL_JSON_DATAGUIDES</code>.</p>
+</li>
+<li>
+<p><code>USER_JSON_DATAGUIDES</code> provides information on the JavaScript Object Notation (JSON) columns owned by the current user that have data guide enabled. This view does not display the <code>OWNER</code> column.</p>
+</li>
+</ul>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-36B8E1C7-614E-4085-B75F-57875795890A__GUID-6060423C-94E4-4334-B833-5905C6C06021">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d392370e194">Column</th>
+<th class="cellalignment3905" id="d392370e198">Datatype</th>
+<th class="cellalignment3906" id="d392370e202">NULL</th>
+<th class="cellalignment3907" id="d392370e206">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d392370e212" headers="d392370e194">
+<p><code>OWNER</code></p>
+</td>
+<td class="cellalignment3905" headers="d392370e212 d392370e198">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d392370e212 d392370e202">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d392370e212 d392370e206">
+<p>Owner of the table containing the JSON column</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d392370e232" headers="d392370e194">
+<p><code>TABLE_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d392370e232 d392370e198">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d392370e232 d392370e202">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d392370e232 d392370e206">
+<p>Name of the table containing the JSON column</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d392370e252" headers="d392370e194">
+<p><code>COLUMN_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d392370e252 d392370e198">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d392370e252 d392370e202">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d392370e252 d392370e206">
+<p>Name of the JSON column that has data guide enabled</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d392370e272" headers="d392370e194">
+<p><code>DATAGUIDE</code></p>
+</td>
+<td class="cellalignment3905" headers="d392370e272 d392370e198">
+<p><code>CLOB</code></p>
+</td>
+<td class="cellalignment3906" headers="d392370e272 d392370e202">&nbsp;</td>
+<td class="cellalignment3907" headers="d392370e272 d392370e206">
+<p>The data guide of the JSON column in flat format</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<div class="section">
+<div class="infobox-note" id="GUID-36B8E1C7-614E-4085-B75F-57875795890A__GUID-C9E7CF38-7B5B-468D-AD77-E9C57392E028">
+<p class="notep1">Note:</p>
+<p>This view is available starting with Oracle Database 12<span class="italic">c</span> Release 2 (12.2.0.1).</p>
+</div>
+<div class="infoboxnotealso" id="GUID-36B8E1C7-614E-4085-B75F-57875795890A__GUID-1051F9D7-4E50-4F95-B57B-991BABB2021A">
+<p class="notep1">See Also:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="q">"<a href="DBA_JSON_DATAGUIDES.htm#GUID-A3858817-95BA-4168-AE4F-12DF952852F6" title="DBA_JSON_DATAGUIDES provides information on the JavaScript Object Notation (JSON) columns in the database that have data guide enabled. Its columns are the same as those in ALL_JSON_DATAGUIDES.">DBA_JSON_DATAGUIDES</a>"</span></p>
+</li>
+<li>
+<p><span class="q">"<a href="USER_JSON_DATAGUIDES.htm#GUID-59563BC4-59C2-46F2-B300-338547CA1F01" title="USER_JSON_DATAGUIDES provides information on the JavaScript Object Notation (JSON) columns owned by the current user that have data guide enabled. Its columns (except for OWNER) are the same as those in ALL_JSON_DATAGUIDES.">USER_JSON_DATAGUIDES</a>"</span></p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="ALL_JSON_COLUMNS.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="ALL_LIBRARIES.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

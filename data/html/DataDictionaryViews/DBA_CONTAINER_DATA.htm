@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>DBA_CONTAINER_DATA</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="DBA_CONTAINER_DATA view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="DBA_CONSTRAINTS.htm" title="Previous" type="text/html" />
+<link rel="Next" href="DBA_CONTEXT.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-094B1D4B-F6BB-43CE-A1FC-3D6DA51CE1BA"></a> <span id="PAGE" style="display:none;">936/2822</span> <!-- End Header -->
+<a id="REFRN23866"></a>
+<h1 id="REFRN-GUID-094B1D4B-F6BB-43CE-A1FC-3D6DA51CE1BA" class="sect1"><span class="enumeration_section">4.169</span> DBA_CONTAINER_DATA</h1>
+<div>
+<div class="section">
+<p><code>DBA_CONTAINER_DATA</code> displays default (user-level) and object-specific <code>CONTAINER_DATA</code> attributes for container data objects.</p>
+<p>Objects created with the <code>CONTAINER_DATA</code> clause include <code>CONTAINER_DATA</code> attributes.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-094B1D4B-F6BB-43CE-A1FC-3D6DA51CE1BA__GUID-AEAFFF7B-FBB9-4E49-88CB-E8FC4780BD33">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d831255e180">Column</th>
+<th class="cellalignment3905" id="d831255e183">Datatype</th>
+<th class="cellalignment3906" id="d831255e186">NULL</th>
+<th class="cellalignment3907" id="d831255e189">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d831255e194" headers="d831255e180">
+<p><code>USERNAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d831255e194 d831255e183">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d831255e194 d831255e186">&nbsp;</td>
+<td class="cellalignment3907" headers="d831255e194 d831255e189">
+<p>Name of the user whose attribute is described by this row</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d831255e210" headers="d831255e180">
+<p><code>DEFAULT_ATTR</code></p>
+</td>
+<td class="cellalignment3905" headers="d831255e210 d831255e183">
+<p><code>CHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d831255e210 d831255e186">&nbsp;</td>
+<td class="cellalignment3907" headers="d831255e210 d831255e189">
+<p>An indicator of whether the attribute is a default attribute</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d831255e226" headers="d831255e180">
+<p><code>OWNER</code></p>
+</td>
+<td class="cellalignment3905" headers="d831255e226 d831255e183">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d831255e226 d831255e186">&nbsp;</td>
+<td class="cellalignment3907" headers="d831255e226 d831255e189">
+<p>Name of the object owner if the attribute is object-specific</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d831255e242" headers="d831255e180">
+<p><code>OBJECT_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d831255e242 d831255e183">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d831255e242 d831255e186">&nbsp;</td>
+<td class="cellalignment3907" headers="d831255e242 d831255e189">
+<p>Name of the object if the attribute is object-specific</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d831255e258" headers="d831255e180">
+<p><code>ALL_CONTAINERS</code></p>
+</td>
+<td class="cellalignment3905" headers="d831255e258 d831255e183">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d831255e258 d831255e186">&nbsp;</td>
+<td class="cellalignment3907" headers="d831255e258 d831255e189">
+<p>An indicator of whether this attribute applies to all containers</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d831255e274" headers="d831255e180">
+<p><code>CONTAINER_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d831255e274 d831255e183">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d831255e274 d831255e186">&nbsp;</td>
+<td class="cellalignment3907" headers="d831255e274 d831255e189">
+<p>Name of a container included in this attribute if it does not apply to all containers</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<div class="section">
+<div class="infoboxnotealso" id="GUID-094B1D4B-F6BB-43CE-A1FC-3D6DA51CE1BA__GUID-A6B47B66-2C13-4FA9-AEE1-E9CA06045CCC">
+<p class="notep1">See Also:</p>
+<p>For more information about container data objects:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="q">"<a href="cdb_-views.htm#GUID-2B8A1B8B-4F5B-4FBB-AE0B-68B6F8BA7D5E">CDB_* Views</a>"</span></p>
+</li>
+<li>
+<p><span class="q">"<a href="ALL_TABLES.htm#GUID-6823CD28-0681-468E-950B-966C6F71325D">ALL_TABLES</a>"</span></p>
+</li>
+<li>
+<p><span class="q">"<a href="ALL_VIEWS.htm#GUID-0FE29B36-0882-47AE-A54E-A01FC9C4100A">ALL_VIEWS</a>"</span></p>
+</li>
+<li>
+<p><span class="q">"<a href="ALL_VIEWS_AE.htm#GUID-DEFCF513-F6E9-4D4C-BB26-D2920A3ED27E">ALL_VIEWS_AE</a>"</span></p>
+</li>
+<li>
+<p><span class="q">"<a href="about-dynamic-performance-views.htm#GUID-2B9DD73A-4C3A-467A-A934-01B705AB77A8">V$ Views</a>"</span></p>
+</li>
+<li>
+<p><span class="q">"<a href="about-dynamic-performance-views.htm#GUID-884B21B1-7C87-41E1-8F97-C4668704AF30">GV$ Views</a>"</span></p>
+</li>
+<li>
+<p><a class="olink ADMIN13719" target="_blank" href="../ADMIN/viewing-information-about-cdbs-and-pdbs-with-sql-plus.htm#ADMIN13719"><span class="italic">Oracle Database Administrator's Guide</span></a></p>
+</li>
+<li>
+<p><a class="olink DBSEG803" target="_blank" href="../DBSEG/configuring-privilege-and-role-authorization.htm#DBSEG803"><span class="italic">Oracle Database Security Guide</span></a></p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="DBA_CONSTRAINTS.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="DBA_CONTEXT.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

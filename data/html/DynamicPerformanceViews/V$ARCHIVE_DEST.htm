@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>V$ARCHIVE_DEST</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="V$ARCHIVE_DEST view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="V-ARCHIVE.htm" title="Previous" type="text/html" />
+<link rel="Next" href="V-ARCHIVE_DEST_STATUS.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-B70F0435-96AE-4AB4-9329-F035188C413F"></a> <span id="PAGE" style="display:none;">2216/2822</span> <!-- End Header -->
+<a id="REFRN30007"></a>
+<h1 id="REFRN-GUID-B70F0435-96AE-4AB4-9329-F035188C413F" class="sect1"><span class="enumeration_section">7.27</span> V$ARCHIVE_DEST</h1>
+<div>
+<div class="section">
+<p><code>V$ARCHIVE_DEST</code> displays, for the current instance, all of the destinations in the Data Guard configuration, including each destination's current value, mode, and status.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-B70F0435-96AE-4AB4-9329-F035188C413F__GUID-454F84C6-AD15-4E3A-8BE0-CDAB46ADA102">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d1504807e168">Column</th>
+<th class="cellalignment3905" id="d1504807e171">Datatype</th>
+<th class="cellalignment3908" id="d1504807e174">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d1504807e179" headers="d1504807e168">
+<p><code>DEST_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1504807e179 d1504807e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1504807e179 d1504807e174">
+<p>Log archive destination parameter identifier (<code>1</code> to <code>31</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1504807e197" headers="d1504807e168">
+<p><code>DEST_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1504807e197 d1504807e171">
+<p><code>VARCHAR2(256)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1504807e197 d1504807e174">
+<p>Log archive destination parameter name</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1504807e209" headers="d1504807e168">
+<p><code>STATUS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1504807e209 d1504807e171">
+<p><code>VARCHAR2(9)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1504807e209 d1504807e174">
+<p>Identifies the current status of the destination:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>VALID</code> - Initialized and available</p>
+</li>
+<li>
+<p><code>INACTIVE</code> - No destination information</p>
+</li>
+<li>
+<p><code>DEFERRED</code> - Manually disabled by the user</p>
+</li>
+<li>
+<p><code>ERROR</code> - Error during open or copy</p>
+</li>
+<li>
+<p><code>DISABLED</code> - Disabled after error</p>
+</li>
+<li>
+<p><code>BAD PARAM</code> - Parameter has errors</p>
+</li>
+<li>
+<p><code>ALTERNATE</code> - Destination is available as an alternate</p>
+</li>
+<li>
+<p><code>FULL</code> - Exceeded quota size for the destination</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1504807e262" headers="d1504807e168">
+<p><code>BINDING</code></p>
+</td>
+<td class="cellalignment3905" headers="d1504807e262 d1504807e171">
+<p><code>VARCHAR2(9)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1504807e262 d1504807e174">
+<p>Specifies how failure will affect the archival operation:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>MANDATORY</code> - Successful archival is required</p>
+</li>
+<li>
+<p><code>OPTIONAL</code> - Successful archival is not required (depends on <code>LOG_ARCHIVE_MIN_SUCCEED_DEST</code>)</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1504807e288" headers="d1504807e168">
+<p><code>NAME_SPACE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1504807e288 d1504807e171">
+<p><code>VARCHAR2(7)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1504807e288 d1504807e174">
+<p>Identifies the scope of parameter setting:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>SYSTEM</code> - System definition</p>
+</li>
+<li>
+<p><code>SESSION</code> - Session definition</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1504807e311" headers="d1504807e168">
+<p><code>TARGET</code></p>
+</td>
+<td class="cellalignment3905" headers="d1504807e311 d1504807e171">
+<p><code>VARCHAR2(7)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1504807e311 d1504807e174">
+<p>Specifies whether the archive destination is local or remote to the primary database:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>PRIMARY</code> - local</p>
+</li>
+<li>
+<p><code>STANDBY</code> - remote</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1504807e334" headers="d1504807e168">
+<p><code>ARCHIVER</code></p>
+</td>
+<td class="cellalignment3905" headers="d1504807e334 d1504807e171">
+<p><code>VARCHAR2(10)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1504807e334 d1504807e174">
+<p>Identifies the archiver process relative to the database where the query is issued:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>ARC</code><span class="italic"><code>n</code></span></p>
+</li>
+<li>
+<p><code>FOREGROUND</code></p>
+</li>
+<li>
+<p><code>LGWR</code></p>
+</li>
+<li>
+<p><code>RFS</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1504807e366" headers="d1504807e168">
+<p><code>SCHEDULE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1504807e366 d1504807e171">
+<p><code>VARCHAR2(8)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1504807e366 d1504807e174">
+<p>Indicates whether the archival of this destination is <code>INACTIVE</code>, <code>PENDING</code>, <code>ACTIVE</code>, or <code>LATENT</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1504807e389" headers="d1504807e168">
+<p><code>DESTINATION</code></p>
+</td>
+<td class="cellalignment3905" headers="d1504807e389 d1504807e171">
+<p><code>VARCHAR2(256)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1504807e389 d1504807e174">
+<p>Specifies the location where the archived redo logs are to be archived</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1504807e401" headers="d1504807e168">
+<p><code>LOG_SEQUENCE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1504807e401 d1504807e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1504807e401 d1504807e174">
+<p>Identifies the sequence number of the last archived redo log to be archived</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1504807e413" headers="d1504807e168">
+<p><code>REOPEN_SECS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1504807e413 d1504807e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1504807e413 d1504807e174">
+<p>Identifies the retry time (in seconds) after error</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1504807e426" headers="d1504807e168">
+<p><code>DELAY_MINS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1504807e426 d1504807e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1504807e426 d1504807e174">
+<p>Identifies the delay interval (in minutes) before the archived redo log is automatically applied to a standby database</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1504807e438" headers="d1504807e168">
+<p><code>MAX_CONNECTIONS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1504807e438 d1504807e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1504807e438 d1504807e174">
+<p>Maximum number of connections</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1504807e450" headers="d1504807e168">
+<p><code>NET_TIMEOUT</code></p>
+</td>
+<td class="cellalignment3905" headers="d1504807e450 d1504807e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1504807e450 d1504807e174">
+<p>Number of seconds the log writer process will wait for status from the network server of a network operation issued by the log writer process</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1504807e462" headers="d1504807e168">
+<p><code>PROCESS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1504807e462 d1504807e171">
+<p><code>VARCHAR2(10)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1504807e462 d1504807e174">
+<p>Identifies the archiver process relative to the primary database, even if the query is issued on the standby database:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>ARC</code><span class="italic"><code>n</code></span></p>
+</li>
+<li>
+<p><code>FOREGROUND</code></p>
+</li>
+<li>
+<p><code>LGWR</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1504807e490" headers="d1504807e168">
+<p><code>REGISTER</code></p>
+</td>
+<td class="cellalignment3905" headers="d1504807e490 d1504807e171">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1504807e490 d1504807e174">
+<p>Indicates whether the archived redo log is registered in the remote destination control file (<code>YES</code>) or not (<code>NO</code>). If the archived redo log is registered, it is available to log apply services.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1504807e508" headers="d1504807e168">
+<p><code>FAIL_DATE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1504807e508 d1504807e171">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3908" headers="d1504807e508 d1504807e174">
+<p>Date and time of last error</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1504807e520" headers="d1504807e168">
+<p><code>FAIL_SEQUENCE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1504807e520 d1504807e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1504807e520 d1504807e174">
+<p>Sequence number of the archived redo log being archived when the last error occurred</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1504807e532" headers="d1504807e168">
+<p><code>FAIL_BLOCK</code></p>
+</td>
+<td class="cellalignment3905" headers="d1504807e532 d1504807e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1504807e532 d1504807e174">
+<p>Block number of the archived redo log being archived when the last error occurred</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1504807e544" headers="d1504807e168">
+<p><code>FAILURE_COUNT</code></p>
+</td>
+<td class="cellalignment3905" headers="d1504807e544 d1504807e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1504807e544 d1504807e174">
+<p>Current number of contiguous archival operation failures that have occurred for the destination</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1504807e556" headers="d1504807e168">
+<p><code>MAX_FAILURE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1504807e556 d1504807e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1504807e556 d1504807e174">
+<p>Allows you to control the number of times log transport services will attempt to reestablish communication and resume archival operations with a failed destination</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1504807e568" headers="d1504807e168">
+<p><code>ERROR</code></p>
+</td>
+<td class="cellalignment3905" headers="d1504807e568 d1504807e171">
+<p><code>VARCHAR2(256)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1504807e568 d1504807e174">
+<p>Displays the error text</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1504807e581" headers="d1504807e168">
+<p><code>ALTERNATE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1504807e581 d1504807e171">
+<p><code>VARCHAR2(256)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1504807e581 d1504807e174">
+<p>Alternate destination, if any</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1504807e593" headers="d1504807e168">
+<p><code>DEPENDENCY</code></p>
+</td>
+<td class="cellalignment3905" headers="d1504807e593 d1504807e171">
+<p><code>VARCHAR2(256)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1504807e593 d1504807e174">
+<p>Reserved for future use</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1504807e605" headers="d1504807e168">
+<p><code>REMOTE_TEMPLATE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1504807e605 d1504807e171">
+<p><code>VARCHAR2(256)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1504807e605 d1504807e174">
+<p>Specifies the template to be used to derive the location to be recorded</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1504807e617" headers="d1504807e168">
+<p><code>QUOTA_SIZE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1504807e617 d1504807e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1504807e617 d1504807e174">
+<p>Destination quotas, expressed in bytes</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1504807e629" headers="d1504807e168">
+<p><code>QUOTA_USED</code></p>
+</td>
+<td class="cellalignment3905" headers="d1504807e629 d1504807e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1504807e629 d1504807e174">
+<p>Size of all the archived redo logs currently residing on the specified destination</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1504807e641" headers="d1504807e168">
+<p><code>MOUNTID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1504807e641 d1504807e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1504807e641 d1504807e174">
+<p>Instance mount identifier</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1504807e653" headers="d1504807e168">
+<p><code>TRANSMIT_MODE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1504807e653 d1504807e171">
+<p><code>VARCHAR2(12)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1504807e653 d1504807e174">
+<p>Specifies network transmission mode:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>SYNCHRONOUS</code></p>
+</li>
+<li>
+<p><code>PARALLELSYNC</code></p>
+</li>
+<li>
+<p><code>ASYNCHRONOUS</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1504807e678" headers="d1504807e168">
+<p><code>ASYNC_BLOCKS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1504807e678 d1504807e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1504807e678 d1504807e174">
+<p>Number of blocks specified for the <code>ASYNC</code> attribute</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1504807e693" headers="d1504807e168">
+<p><code>AFFIRM</code></p>
+</td>
+<td class="cellalignment3905" headers="d1504807e693 d1504807e171">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1504807e693 d1504807e174">
+<p>Specifies disk I/O mode</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1504807e705" headers="d1504807e168">
+<p><code>TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1504807e705 d1504807e171">
+<p><code>VARCHAR2(7)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1504807e705 d1504807e174">
+<p>Indicates whether the archived log destination definition is <code>PUBLIC</code> or <code>PRIVATE</code>. Only <code>PUBLIC</code> destinations can be modified at run time using the <code>ALTER SYSTEM SET</code> or <code>ALTER SESSION SET</code> statements. By default, all archived log destinations are <code>PUBLIC</code>.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1504807e736" headers="d1504807e168">
+<p><code>VALID_NOW</code></p>
+</td>
+<td class="cellalignment3905" headers="d1504807e736 d1504807e171">
+<p><code>VARCHAR2(16)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1504807e736 d1504807e174">
+<p>Indicates whether the destination is valid right now for archival operations:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>YES</code> - Redo log type and database role for this destination are valid for the current database</p>
+</li>
+<li>
+<p><code>WRONG VALID_TYPE</code> - Redo log type specified for this destination is not valid for the current database role. For example, <code>WRONG VALID_TYPE</code> would be returned if a destination specified with the <code>VALID_FOR=(STANDBY_LOGFILE,STANDBY_ROLE)</code> attribute is running in the standby database role but does not have standby redo logs implemented.</p>
+</li>
+<li>
+<p><code>WRONG VALID_ROLE</code> - Database role specified for this destination is not the role in which the database is currently running. For example, the WRONG <code>VALID_ROLE</code> would be returned when a destination defined with the <code>VALID_FOR=(ONLINE_LOGFILE,STANDBY_ROLE)</code> attribute is running in the primary database role.</p>
+</li>
+<li>
+<p><code>INACTIVE</code> - Destination is inactive, probably due to an error</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1504807e782" headers="d1504807e168">
+<p><code>VALID_TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1504807e782 d1504807e171">
+<p><code>VARCHAR2(15)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1504807e782 d1504807e174">
+<p>Redo log type or types that are valid for the destination:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>ONLINE_LOGFILE</code></p>
+</li>
+<li>
+<p><code>STANDBY_LOGFILE</code></p>
+</li>
+<li>
+<p><code>ALL_LOGFILES</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1504807e807" headers="d1504807e168">
+<p><code>VALID_ROLE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1504807e807 d1504807e171">
+<p><code>VARCHAR2(12)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1504807e807 d1504807e174">
+<p>Database role or roles that are valid for the destination:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>PRIMARY_ROLE</code></p>
+</li>
+<li>
+<p><code>STANDBY_ROLE</code></p>
+</li>
+<li>
+<p><code>ALL_ROLES</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1504807e832" headers="d1504807e168">
+<p><code>DB_UNIQUE_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1504807e832 d1504807e171">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1504807e832 d1504807e174">
+<p>Unique database name</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1504807e844" headers="d1504807e168">
+<p><code>VERIFY</code></p>
+</td>
+<td class="cellalignment3905" headers="d1504807e844 d1504807e171">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1504807e844 d1504807e174">
+<p>Indicates whether the value of the <code>VERIFY</code> attribute on the <code>LOG_ARCHIVE_DEST_</code><span class="italic"><code>n</code></span> parameter is verified (<code>YES</code>) or not verified (<code>NO</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1504807e871" headers="d1504807e168">
+<p><code>COMPRESSION</code></p>
+</td>
+<td class="cellalignment3905" headers="d1504807e871 d1504807e171">
+<p><code>VARCHAR2(7)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1504807e871 d1504807e174">
+<div class="p">Indicates whether network compression is <code>ENABLED</code> or <code>DISABLED</code>, or whether the <code>ZLIB</code> or <code>LZO</code> algorithm is in use. These values correspond to the values accepted by the <code>COMPRESSION</code> attribute for the database initialization parameter <code>LOG_ARCHIVE_DEST_n</code>. The possible values include:
+<ul style="list-style-type: disc;">
+<li>
+<p><code>DISABLE</code>: Compression is disabled.</p>
+</li>
+<li>
+<p><code>ENABLE</code>: Compression is enabled. The <code>ZLIB</code> compression algorithm is used.</p>
+</li>
+<li>
+<p><code>ZLIB</code>: <code>ZLIB</code> compression is used.</p>
+</li>
+<li>
+<p><code>LZO</code>: <code>LZO</code> compression is used.</p>
+</li>
+</ul>
+</div>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1504807e932" headers="d1504807e168">
+<p><code>APPLIED_SCN</code></p>
+</td>
+<td class="cellalignment3905" headers="d1504807e932 d1504807e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1504807e932 d1504807e174">
+<p>For a destination that corresponds to a physical or logical standby database, the SCN of the last applied redo. For a destination that corresponds to a snapshot standby database, the SCN of the last redo applied before conversion to a snapshot standby database. This column is only valid for enabled and active standby database destinations on a primary or cascading standby database.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1504807e944" headers="d1504807e168">
+<p><code>CON_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1504807e944 d1504807e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1504807e944 d1504807e174">
+<p>The ID of the container to which the data pertains. Possible values include:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>0</code>: This value is used for rows containing data that pertain to the entire CDB. This value is also used for rows in non-CDBs.</p>
+</li>
+<li>
+<p><code>1</code>: This value is used for rows containing data that pertain to only the root</p>
+</li>
+<li>
+<p><span class="italic">n</span>: Where <span class="italic">n</span> is the applicable container ID for the rows containing data</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1504807e975" headers="d1504807e168">
+<p><code>ENCRYPTION</code></p>
+</td>
+<td class="cellalignment3905" headers="d1504807e975 d1504807e171">
+<p><code>VARCHAR2(7)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1504807e975 d1504807e174">
+<p>Indicates whether encryption of the redo stream sent to Zero Data Loss Recovery Appliance (Recovery Appliance) is enabled (<code>ENABLED</code>) or not (<code>DISABLED</code>)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<div class="section">
+<div class="infoboxnotealso" id="GUID-B70F0435-96AE-4AB4-9329-F035188C413F__GUID-AA1EFD8C-6B69-451E-A25E-006F57BDBF87">
+<p class="notep1">See Also:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a class="olink AMAGD107" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=E66230-01&amp;id=AMAGD107"><span class="italic">Zero Data Loss Recovery Appliance Administrator's Guide</span></a> for introductory information about Recovery Appliance</p>
+</li>
+<li>
+<p><span class="q">"<a href="LOG_ARCHIVE_DEST.htm#GUID-AACE967D-EF85-43F4-B895-5E510ABADCC3">LOG_ARCHIVE_DEST</a>"</span> and <span class="q">"<a href="LOG_ARCHIVE_DEST_n.htm#GUID-10BD97BF-6295-4E85-A1A3-854E15E05A44">LOG_ARCHIVE_DEST_n</a>"</span></p>
+</li>
+<li>
+<p><span class="q">"<a href="LOG_ARCHIVE_DUPLEX_DEST.htm#GUID-BFE38666-0024-40D2-8A72-D620188C7569">LOG_ARCHIVE_DUPLEX_DEST</a>"</span> and <span class="q">"<a href="LOG_ARCHIVE_DEST_STATE_n.htm#GUID-983A9C52-3046-4286-AEA7-800741EE0561">LOG_ARCHIVE_DEST_STATE_n</a>"</span></p>
+</li>
+<li>
+<p><span class="q">"<a href="STANDBY_ARCHIVE_DEST.htm#GUID-D744D04F-136D-4B2B-B2E7-96DE8CDBB1C7">STANDBY_ARCHIVE_DEST</a>"</span></p>
+</li>
+<li>
+<p><span class="q">"<a href="LOG_ARCHIVE_MIN_SUCCEED_DEST.htm#GUID-009C36AE-8DA3-450A-8988-8C03CB0D82F5">LOG_ARCHIVE_MIN_SUCCEED_DEST</a>"</span></p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="V-ARCHIVE.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="V-ARCHIVE_DEST_STATUS.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

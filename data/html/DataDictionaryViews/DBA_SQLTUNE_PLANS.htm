@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>DBA_SQLTUNE_PLANS</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="DBA_SQLTUNE_PLANS view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="DBA_SQLTUNE_BINDS.htm" title="Previous" type="text/html" />
+<link rel="Next" href="DBA_SQLTUNE_RATIONALE_PLAN.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-51D5E937-D1EF-48F2-8BB8-2449B04124E3"></a> <span id="PAGE" style="display:none;">1464/2822</span> <!-- End Header -->
+<a id="REFRN23472"></a>
+<h1 id="REFRN-GUID-51D5E937-D1EF-48F2-8BB8-2449B04124E3" class="sect1"><span class="enumeration_section">5.366</span> DBA_SQLTUNE_PLANS</h1>
+<div>
+<div class="section">
+<p><code>DBA_SQLTUNE_PLANS</code> displays information about the execution plans generated for all SQL statements in the database during a SQL tuning session.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Related View</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p><code>USER_SQLTUNE_PLANS</code> displays information about the execution plans generated for the SQL statements owned by the current user during a SQL tuning session.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-51D5E937-D1EF-48F2-8BB8-2449B04124E3__GUID-430C510A-2C36-4A00-A9E6-25671BDC4D66">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d1232348e177">Column</th>
+<th class="cellalignment3905" id="d1232348e180">Datatype</th>
+<th class="cellalignment3906" id="d1232348e183">NULL</th>
+<th class="cellalignment3907" id="d1232348e186">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d1232348e191" headers="d1232348e177">
+<p><code>TASK_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1232348e191 d1232348e180">
+<p><code>NUMBER(38)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1232348e191 d1232348e183">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1232348e191 d1232348e186">
+<p>Advisor task ID</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1232348e207" headers="d1232348e177">
+<p><code>EXECUTION_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1232348e207 d1232348e180">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1232348e207 d1232348e183">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1232348e207 d1232348e186">
+<p>Advisor task execution</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1232348e223" headers="d1232348e177">
+<p><code>OBJECT_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1232348e223 d1232348e180">
+<p><code>NUMBER(38)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1232348e223 d1232348e183">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1232348e223 d1232348e186">
+<p>Advisor object ID</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1232348e239" headers="d1232348e177">
+<p><code>ATTRIBUTE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1232348e239 d1232348e180">
+<p><code>VARCHAR2(34)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1232348e239 d1232348e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d1232348e239 d1232348e186">
+<p>Text string identifying the type of the execution plan:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>Original</code> - Original plan of the query</p>
+</li>
+<li>
+<p><code>Original with adjusted cost</code> - Same as <code>Original</code> but with adjusted cost</p>
+</li>
+<li>
+<p><code>Using SQL profile</code> - Plan with SQL profile applied</p>
+</li>
+<li>
+<p><code>Using new indices</code> - Plan with indexes applied</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1232348e279" headers="d1232348e177">
+<p><code>STATEMENT_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1232348e279 d1232348e180">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1232348e279 d1232348e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d1232348e279 d1232348e186">
+<p>Optional statement identifier specified in the <code>EXPLAIN PLAN</code> statement</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1232348e298" headers="d1232348e177">
+<p><code>PLAN_HASH_VALUE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1232348e298 d1232348e180">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1232348e298 d1232348e183">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1232348e298 d1232348e186">
+<p>Numerical representation of the execution plan</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1232348e314" headers="d1232348e177">
+<p><code>PLAN_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1232348e314 d1232348e180">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1232348e314 d1232348e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d1232348e314 d1232348e186">
+<p>Plan identifier</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1232348e330" headers="d1232348e177">
+<p><code>TIMESTAMP</code></p>
+</td>
+<td class="cellalignment3905" headers="d1232348e330 d1232348e180">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3906" headers="d1232348e330 d1232348e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d1232348e330 d1232348e186">
+<p>Date and time when the <code>EXPLAIN PLAN</code> statement was issued</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1232348e349" headers="d1232348e177">
+<p><code>REMARKS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1232348e349 d1232348e180">
+<p><code>VARCHAR2(4000)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1232348e349 d1232348e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d1232348e349 d1232348e186">
+<p>Place for comments that can be added to the steps of the execution plan</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1232348e365" headers="d1232348e177">
+<p><code>OPERATION</code></p>
+</td>
+<td class="cellalignment3905" headers="d1232348e365 d1232348e180">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1232348e365 d1232348e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d1232348e365 d1232348e186">
+<p>Name of the operation performed at this step</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1232348e381" headers="d1232348e177">
+<p><code>OPTIONS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1232348e381 d1232348e180">
+<p><code>VARCHAR2(255)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1232348e381 d1232348e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d1232348e381 d1232348e186">
+<p>Options used for the operation performed at this step</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1232348e398" headers="d1232348e177">
+<p><code>OBJECT_NODE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1232348e398 d1232348e180">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1232348e398 d1232348e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d1232348e398 d1232348e186">
+<p>Name of the database link used to reference the object</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1232348e414" headers="d1232348e177">
+<p><code>OBJECT_OWNER</code></p>
+</td>
+<td class="cellalignment3905" headers="d1232348e414 d1232348e180">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1232348e414 d1232348e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d1232348e414 d1232348e186">
+<p>Owner of the object</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1232348e430" headers="d1232348e177">
+<p><code>OBJECT_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1232348e430 d1232348e180">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1232348e430 d1232348e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d1232348e430 d1232348e186">
+<p>Name of the object</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1232348e446" headers="d1232348e177">
+<p><code>OBJECT_ALIAS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1232348e446 d1232348e180">
+<p><code>VARCHAR2(261)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1232348e446 d1232348e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d1232348e446 d1232348e186">
+<p>Object alias</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1232348e462" headers="d1232348e177">
+<p><code>OBJECT_INSTANCE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1232348e462 d1232348e180">
+<p><code>NUMBER(38)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1232348e462 d1232348e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d1232348e462 d1232348e186">
+<p>Numbered position of the object name in the original SQL statement</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1232348e478" headers="d1232348e177">
+<p><code>OBJECT_TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1232348e478 d1232348e180">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1232348e478 d1232348e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d1232348e478 d1232348e186">
+<p>Descriptive modifier that further describes the type of object</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1232348e494" headers="d1232348e177">
+<p><code>OPTIMIZER</code></p>
+</td>
+<td class="cellalignment3905" headers="d1232348e494 d1232348e180">
+<p><code>VARCHAR2(255)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1232348e494 d1232348e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d1232348e494 d1232348e186">
+<p>Current mode of the optimizer</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1232348e510" headers="d1232348e177">
+<p><code>SEARCH_COLUMNS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1232348e510 d1232348e180">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1232348e510 d1232348e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d1232348e510 d1232348e186">
+<p>Number of index columns with start and stop keys (that is, the number of columns with matching predicates)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1232348e526" headers="d1232348e177">
+<p><code>ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1232348e526 d1232348e180">
+<p><code>NUMBER(38)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1232348e526 d1232348e183">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1232348e526 d1232348e186">
+<p>Identification number for this step in the execution plan</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1232348e542" headers="d1232348e177">
+<p><code>PARENT_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1232348e542 d1232348e180">
+<p><code>NUMBER(38)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1232348e542 d1232348e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d1232348e542 d1232348e186">
+<p>ID of the next step that operates on the results of this step</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1232348e558" headers="d1232348e177">
+<p><code>DEPTH</code></p>
+</td>
+<td class="cellalignment3905" headers="d1232348e558 d1232348e180">
+<p><code>NUMBER(38)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1232348e558 d1232348e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d1232348e558 d1232348e186">
+<p>Depth</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1232348e575" headers="d1232348e177">
+<p><code>POSITION</code></p>
+</td>
+<td class="cellalignment3905" headers="d1232348e575 d1232348e180">
+<p><code>NUMBER(38)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1232348e575 d1232348e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d1232348e575 d1232348e186">
+<p>Order of processing for steps with the same parent ID</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1232348e591" headers="d1232348e177">
+<p><code>COST</code></p>
+</td>
+<td class="cellalignment3905" headers="d1232348e591 d1232348e180">
+<p><code>NUMBER(38)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1232348e591 d1232348e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d1232348e591 d1232348e186">
+<p>Cost of the current operation estimated by the cost-based optimizer (CBO)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1232348e607" headers="d1232348e177">
+<p><code>CARDINALITY</code></p>
+</td>
+<td class="cellalignment3905" headers="d1232348e607 d1232348e180">
+<p><code>NUMBER(38)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1232348e607 d1232348e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d1232348e607 d1232348e186">
+<p>Number of rows returned by the current operation (estimated by the CBO)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1232348e623" headers="d1232348e177">
+<p><code>BYTES</code></p>
+</td>
+<td class="cellalignment3905" headers="d1232348e623 d1232348e180">
+<p><code>NUMBER(38)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1232348e623 d1232348e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d1232348e623 d1232348e186">
+<p>Number of bytes returned by the current operation</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1232348e639" headers="d1232348e177">
+<p><code>OTHER_TAG</code></p>
+</td>
+<td class="cellalignment3905" headers="d1232348e639 d1232348e180">
+<p><code>VARCHAR2(255)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1232348e639 d1232348e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d1232348e639 d1232348e186">
+<p>Describes the function of the SQL text in the <code>OTHER</code> column. Values for <code>OTHER_TAG</code> are:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>SERIAL</code> - SQL is the text of a locally-executed, serial query plan. Currently, SQL is not loaded in <code>OTHER</code> for this case.</p>
+</li>
+<li>
+<p><code>SERIAL_FROM_REMOTE</code> - SQL text shown in the <code>OTHER</code> column will be executed at a remote site</p>
+</li>
+<li>
+<p><code>PARALLEL_COMBINED_WITH_PARENT</code> - Parent of this operation is a DFO that performs both operations in the parallel execution plan</p>
+</li>
+<li>
+<p><code>PARALLEL_COMBINED_WITH_CHILD</code> - Child of this operation is a DFO that performs both operations in the parallel execution plan.</p>
+</li>
+<li>
+<p><code>PARALLEL_TO_SERIAL</code> - SQL text shown in the <code>OTHER</code> column is the top-level of the parallel plan.</p>
+</li>
+<li>
+<p><code>PARALLEL_TO_PARALLEL</code> - SQL text shown in the <code>OTHER</code> column is executed and output in parallel</p>
+</li>
+<li>
+<p><code>PARALLEL_FROM_SERIAL</code> - Operation consumes data from a serial operation and outputs it in parallel</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1232348e709" headers="d1232348e177">
+<p><code>PARTITION_START</code></p>
+</td>
+<td class="cellalignment3905" headers="d1232348e709 d1232348e180">
+<p><code>VARCHAR2(255)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1232348e709 d1232348e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d1232348e709 d1232348e186">
+<p>Start partition of a range of accessed partitions</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1232348e725" headers="d1232348e177">
+<p><code>PARTITION_STOP</code></p>
+</td>
+<td class="cellalignment3905" headers="d1232348e725 d1232348e180">
+<p><code>VARCHAR2(255)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1232348e725 d1232348e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d1232348e725 d1232348e186">
+<p>Stop partition of a range of accessed partitions</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1232348e741" headers="d1232348e177">
+<p><code>PARTITION_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1232348e741 d1232348e180">
+<p><code>NUMBER(38)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1232348e741 d1232348e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d1232348e741 d1232348e186">
+<p>Step that has computed the pair of values of the <code>PARTITION_START</code> and <code>PARTITION_STOP</code> columns</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1232348e763" headers="d1232348e177">
+<p><code>OTHER</code></p>
+</td>
+<td class="cellalignment3905" headers="d1232348e763 d1232348e180">
+<p><code>LONG</code></p>
+</td>
+<td class="cellalignment3906" headers="d1232348e763 d1232348e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d1232348e763 d1232348e186">
+<p>Information about parallel execution servers and parallel queries</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1232348e779" headers="d1232348e177">
+<p><code>DISTRIBUTION</code></p>
+</td>
+<td class="cellalignment3905" headers="d1232348e779 d1232348e180">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1232348e779 d1232348e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d1232348e779 d1232348e186">
+<p>Distribution method</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1232348e795" headers="d1232348e177">
+<p><code>CPU_COST</code></p>
+</td>
+<td class="cellalignment3905" headers="d1232348e795 d1232348e180">
+<p><code>NUMBER(38)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1232348e795 d1232348e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d1232348e795 d1232348e186">
+<p>User-defined CPU cost</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1232348e812" headers="d1232348e177">
+<p><code>IO_COST</code></p>
+</td>
+<td class="cellalignment3905" headers="d1232348e812 d1232348e180">
+<p><code>NUMBER(38)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1232348e812 d1232348e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d1232348e812 d1232348e186">
+<p>User-defined I/O cost</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1232348e828" headers="d1232348e177">
+<p><code>TEMP_SPACE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1232348e828 d1232348e180">
+<p><code>NUMBER(38)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1232348e828 d1232348e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d1232348e828 d1232348e186">
+<p>Temporary space usage of the operation (sort or hash-join) as estimated by the CBO</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1232348e844" headers="d1232348e177">
+<p><code>ACCESS_PREDICATES</code></p>
+</td>
+<td class="cellalignment3905" headers="d1232348e844 d1232348e180">
+<p><code>VARCHAR2(4000)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1232348e844 d1232348e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d1232348e844 d1232348e186">
+<p>Predicates used to locate rows in an access structure. For example, start or stop predicates for an index range scan.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1232348e860" headers="d1232348e177">
+<p><code>FILTER_PREDICATES</code></p>
+</td>
+<td class="cellalignment3905" headers="d1232348e860 d1232348e180">
+<p><code>VARCHAR2(4000)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1232348e860 d1232348e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d1232348e860 d1232348e186">
+<p>Predicates used to filter rows before producing them</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1232348e876" headers="d1232348e177">
+<p><code>PROJECTION</code></p>
+</td>
+<td class="cellalignment3905" headers="d1232348e876 d1232348e180">
+<p><code>VARCHAR2(4000)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1232348e876 d1232348e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d1232348e876 d1232348e186">
+<p>Expressions produced by the operation</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1232348e892" headers="d1232348e177">
+<p><code>TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1232348e892 d1232348e180">
+<p><code>NUMBER(38)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1232348e892 d1232348e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d1232348e892 d1232348e186">
+<p>Elapsed time (in seconds) of the operation as estimated by the CBO</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1232348e908" headers="d1232348e177">
+<p><code>QBLOCK_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1232348e908 d1232348e180">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1232348e908 d1232348e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d1232348e908 d1232348e186">
+<p>Name of the query block</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1232348e924" headers="d1232348e177">
+<p><code>OTHER_XML</code></p>
+</td>
+<td class="cellalignment3905" headers="d1232348e924 d1232348e180">
+<p><code>CLOB</code></p>
+</td>
+<td class="cellalignment3906" headers="d1232348e924 d1232348e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d1232348e924 d1232348e186">
+<p>Provides extra information specific to an execution step of the execution plan. The content of this column is structured using XML because it allows multiple pieces of information to be stored, including the following:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Name of the schema against which the query was parsed</p>
+</li>
+<li>
+<p>Release number of the Oracle Database that produced the explain plan</p>
+</li>
+<li>
+<p>Hash value associated with the execution plan</p>
+</li>
+<li>
+<p>Name (if any) of the outline or the SQL profile used to build the execution plan</p>
+</li>
+<li>
+<p>Indication of whether or not dynamic statistics were used to produce the plan</p>
+</li>
+<li>
+<p>The outline data, a set of optimizer hints that can be used to regenerate the same plan</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<div class="section">
+<div class="infoboxnotealso" id="GUID-51D5E937-D1EF-48F2-8BB8-2449B04124E3__GUID-B8982201-5959-4208-A2A6-8757C1A0E3BD">
+<p class="notep1">See Also:</p>
+<p><span class="q">"<a href="USER_SQLTUNE_PLANS.htm#GUID-1DE386DE-EB45-49FF-8EB8-73A6BF34123A">USER_SQLTUNE_PLANS</a>"</span></p>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="DBA_SQLTUNE_BINDS.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="DBA_SQLTUNE_RATIONALE_PLAN.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

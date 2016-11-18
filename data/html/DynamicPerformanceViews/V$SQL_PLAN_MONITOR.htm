@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>V$SQL_PLAN_MONITOR</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="V$SQL_PLAN_MONITOR view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="V-SQL_PLAN.htm" title="Previous" type="text/html" />
+<link rel="Next" href="V-SQL_PLAN_STATISTICS.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-85354ECB-7E2E-4D4B-AE78-243A4BB6E523"></a> <span id="PAGE" style="display:none;">2714/2822</span> <!-- End Header -->
+<a id="REFRN30480"></a>
+<h1 id="REFRN-GUID-85354ECB-7E2E-4D4B-AE78-243A4BB6E523" class="sect1"><span class="enumeration_section">9.59</span> V$SQL_PLAN_MONITOR</h1>
+<div>
+<div class="section">
+<p><code>V$SQL_PLAN_MONITOR</code> displays plan level monitoring statistics for each SQL statement found in <code>V$SQL_MONITOR</code>. Each row in <code>V$SQL_PLAN_MONITOR</code> corresponds to an operation of the execution plan being monitored. As with <code>V$SQL_MONITOR</code>, statistics exposed in <code>V$SQL_PLAN_MONITOR</code> are generally updated every second when the statement executes. These statistics are recycled on the same basis as <code>V$SQL_MONITOR</code>.</p>
+<p>To eliminate the overhead of SQL plan monitoring, statistics collected for each operation of the plan do not record timing information such as elapsed time, CPU time, or I/O time. Instead, this timing information can be estimated quite accurately by joining <code>V$SQL_PLAN_MONITOR</code> with <code>V$ACTIVE_SESSION_HISTORY</code> on <code>SQL_ID</code>, <code>SQL_EXEC_START</code>, <code>SQL_EXEC_ID</code>, and <code>SQL_PLAN_LINE_ID</code> (simply named <code>PLAN_LINE_ID</code> in <code>V$SQL_PLAN_MONITOR</code>). The result of that join is a sample of the activity performed by each operation in the plan, from which an estimate of CPU time and wait time can be derived. This can be achieved by breaking statement level monitoring time statistics found in <code>V$SQL_MONITOR</code> in proportion to the number of samples found in <code>V$ACTIVE_SESSION_HISTORY</code> for the corresponding activity type.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-85354ECB-7E2E-4D4B-AE78-243A4BB6E523__GUID-0B4C1723-5A61-43DE-96A9-3FFBE4A47C15">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d2046254e216">Column</th>
+<th class="cellalignment3905" id="d2046254e219">Datatype</th>
+<th class="cellalignment3908" id="d2046254e222">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d2046254e227" headers="d2046254e216">
+<p><code>CON_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e227 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e227 d2046254e222">
+<p>The ID of the container to which the data pertains. Possible values include:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>0</code>: This value is used for rows containing data that pertain to the entire CDB. This value is also used for rows in non-CDBs.</p>
+</li>
+<li>
+<p><code>1</code>: This value is used for rows containing data that pertain to only the root</p>
+</li>
+<li>
+<p><span class="italic">n</span>: Where <span class="italic">n</span> is the applicable container ID for the rows containing data</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e258" headers="d2046254e216">
+<p><code>KEY</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e258 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e258 d2046254e222">
+<p>Foreign key to efficiently join <code>V$SQL_PLAN_MONITOR</code> with <code>V$SQL_MONITOR</code> (see <code>V$SQL_MONITOR</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e279" headers="d2046254e216">
+<p><code>STATUS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e279 d2046254e219">
+<p><code>VARCHAR2(19)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e279 d2046254e222">
+<p>SQL execution status:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>EXECUTING</code> - SQL statement is still executing</p>
+</li>
+<li>
+<p><code>DONE (ERROR)</code> - Execution terminated with an error</p>
+</li>
+<li>
+<p><code>DONE (FIRST N ROWS)</code> - Execution terminated by the application before all rows were fetched</p>
+</li>
+<li>
+<p><code>DONE (ALL ROWS)</code> - Execution terminated and all rows were fetched</p>
+</li>
+<li>
+<p><code>DONE</code> - Execution terminated (parallel execution)</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e317" headers="d2046254e216">
+<p><code>FIRST_REFRESH_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e317 d2046254e219">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e317 d2046254e222">
+<p>Time when monitoring of the SQL statement started</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e329" headers="d2046254e216">
+<p><code>LAST_REFRESH_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e329 d2046254e219">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e329 d2046254e222">
+<p>Time when statistics were last updated for the SQL statement</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e341" headers="d2046254e216">
+<p><code>FIRST_CHANGE_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e341 d2046254e219">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e341 d2046254e222">
+<p>First time a row was produced by this operation</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e353" headers="d2046254e216">
+<p><code>LAST_CHANGE_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e353 d2046254e219">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e353 d2046254e222">
+<p>Last time a row was produced by this operation</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e365" headers="d2046254e216">
+<p><code>REFRESH_COUNT</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e365 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e365 d2046254e222">
+<p>Number of times statistics have been refreshed</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e377" headers="d2046254e216">
+<p><code>SID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e377 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e377 d2046254e222">
+<p>Session identifier executing (or having executed) the SQL statement being monitored</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e389" headers="d2046254e216">
+<p><code>PROCESS_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e389 d2046254e219">
+<p><code>VARCHAR2(5)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e389 d2046254e222">
+<p>Process name identifier</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e401" headers="d2046254e216">
+<p><code>SQL_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e401 d2046254e219">
+<p><code>VARCHAR2(13)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e401 d2046254e222">
+<p>SQL identifier</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e414" headers="d2046254e216">
+<p><code>SQL_EXEC_START</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e414 d2046254e219">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e414 d2046254e222">
+<p>Time when the execution started</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e426" headers="d2046254e216">
+<p><code>SQL_EXEC_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e426 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e426 d2046254e222">
+<p>Execution identifier</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e438" headers="d2046254e216">
+<p><code>SQL_PLAN_HASH_VALUE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e438 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e438 d2046254e222">
+<p>SQL plan hash value</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e450" headers="d2046254e216">
+<p><code>SQL_CHILD_ADDRESS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e450 d2046254e219">
+<p><code>RAW(4 | 8)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e450 d2046254e222">
+<p>Address of the child cursor</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e462" headers="d2046254e216">
+<p><code>PLAN_PARENT_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e462 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e462 d2046254e222">
+<p>ID of the next execution step that operates on the output of the current step</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e474" headers="d2046254e216">
+<p><code>PLAN_LINE_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e474 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e474 d2046254e222">
+<p>Plan line number for the entry</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e486" headers="d2046254e216">
+<p><code>PLAN_OPERATION</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e486 d2046254e219">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e486 d2046254e222">
+<p>Plan operation name (from <code>V$SQL_PLAN</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e501" headers="d2046254e216">
+<p><code>PLAN_OPTIONS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e501 d2046254e219">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e501 d2046254e222">
+<p>Plan option name (from <code>V$SQL_PLAN</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e516" headers="d2046254e216">
+<p><code>PLAN_OBJECT_OWNER</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e516 d2046254e219">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e516 d2046254e222">
+<p>Name of the user who owns the schema containing the table or index</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e528" headers="d2046254e216">
+<p><code>PLAN_OBJECT_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e528 d2046254e219">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e528 d2046254e222">
+<p>Name of the table or index</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e540" headers="d2046254e216">
+<p><code>PLAN_OBJECT_TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e540 d2046254e219">
+<p><code>VARCHAR2(20)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e540 d2046254e222">
+<p>Type of the object</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e553" headers="d2046254e216">
+<p><code>PLAN_DEPTH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e553 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e553 d2046254e222">
+<p>Depth (or level) of the operation in the tree. It is not necessary to issue a <code>CONNECT BY</code> statement to get the level information, which is generally used to indent the rows from the <code>PLAN_TABLE</code> table. The root operation (statement) is level 0.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e571" headers="d2046254e216">
+<p><code>PLAN_POSITION</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e571 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e571 d2046254e222">
+<p>Order of processing for all operations that have the same <code>PARENT_ID</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e585" headers="d2046254e216">
+<p><code>PLAN_COST</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e585 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e585 d2046254e222">
+<p>Cost of the operation as estimated by the optimizer's cost-based approach. For statements that use the rule-based approach, this column is NULL.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e597" headers="d2046254e216">
+<p><code>PLAN_CARDINALITY</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e597 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e597 d2046254e222">
+<p>Estimate, by the cost-based optimizer, of the number of rows produced by the operation</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e609" headers="d2046254e216">
+<p><code>PLAN_BYTES</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e609 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e609 d2046254e222">
+<p>Estimate, by the cost-based optimizer, of the number of bytes produced by the operation</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e621" headers="d2046254e216">
+<p><code>PLAN_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e621 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e621 d2046254e222">
+<p>Elapsed time (in seconds) of the operation as estimated by the optimizer's cost-based approach. For statements that use the rule-based approach, this column is NULL.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e633" headers="d2046254e216">
+<p><code>PLAN_PARTITION_START</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e633 d2046254e219">
+<p><code>VARCHAR2(64)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e633 d2046254e222">
+<p>Start partition of a range of accessed partitions</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e645" headers="d2046254e216">
+<p><code>PLAN_PARTITION_STOP</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e645 d2046254e219">
+<p><code>VARCHAR2(64)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e645 d2046254e222">
+<p>Stop partition of a range of accessed partitions</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e657" headers="d2046254e216">
+<p><code>PLAN_CPU_COST</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e657 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e657 d2046254e222">
+<p>CPU cost of the operation as estimated by the optimizer's cost-based approach. For statements that use the rule-based approach, this column is NULL.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e669" headers="d2046254e216">
+<p><code>PLAN_IO_COST</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e669 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e669 d2046254e222">
+<p>I/O cost of the operation as estimated by the optimizer's cost-based approach. For statements that use the rule-based approach, this column is NULL.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e681" headers="d2046254e216">
+<p><code>PLAN_TEMP_SPACE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e681 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e681 d2046254e222">
+<p>Temporary space usage of the operation (sort or hash-join) as estimated by the optimizer's cost-based approach. For statements that use the rule-based approach, this column is NULL.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e694" headers="d2046254e216">
+<p><code>STARTS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e694 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e694 d2046254e222">
+<p>Number of times this operation was executed. For example, an operation is executed multiple times when it is on the right side of a nested-loop join (once for each row of the left input of that nested-loop join).</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e706" headers="d2046254e216">
+<p><code>OUTPUT_ROWS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e706 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e706 d2046254e222">
+<p>Number of rows produced by this operation since the execution started. This number is cumulated for all executions of this operation. Divide by the value of the STARTS column to compute the average number of rows per execution of the operation. Note that the value in the <code>STARTS</code> column is equal to or higher than the value in the <code>OUTPUT_ROWS</code> column. The value will usually be equal, but depending on internal optimizations a higher value may be seen.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e724" headers="d2046254e216">
+<p><code>IO_INTERCONNECT_BYTES</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e724 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e724 d2046254e222">
+<p>Number of I/O bytes exchanged between Oracle Database and the storage system. Maintained only after Oracle starts to monitor the execution.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e736" headers="d2046254e216">
+<p><code>PHYSICAL_READ_REQUESTS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e736 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e736 d2046254e222">
+<p>Number of physical read I/O requests issued by the monitored SQL. Maintained only after Oracle starts to monitor the execution.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e748" headers="d2046254e216">
+<p><code>PHYSICAL_READ_BYTES</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e748 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e748 d2046254e222">
+<p>Number of bytes read from disks by the monitored SQL. Maintained only after Oracle starts to monitor the execution.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e760" headers="d2046254e216">
+<p><code>PHYSICAL_WRITE_REQUESTS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e760 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e760 d2046254e222">
+<p>Number of physical write I/O requests issued by the monitored SQL. Maintained only after Oracle starts to monitor the execution.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e772" headers="d2046254e216">
+<p><code>PHYSICAL_WRITE_BYTES</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e772 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e772 d2046254e222">
+<p>Number of bytes written to disks by the monitored SQL. Maintained only after Oracle starts to monitor the execution.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e784" headers="d2046254e216">
+<p><code>WORKAREA_MEM</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e784 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e784 d2046254e222">
+<p>Amount of memory (in bytes) used by the operation when the query is executing; NULL if the execution is done. This applies only to operations using a work area, such as sort, hash-join, group-by, and so on.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e796" headers="d2046254e216">
+<p><code>WORKAREA_MAX_MEM</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e796 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e796 d2046254e222">
+<p>Maximum value (in bytes) for <code>WORKAREA_MEM</code>; NULL if the operation is not using a work area. When the execution is finished, this value will hold the maximum amount of memory consumed by this operation during the execution of the statement.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e811" headers="d2046254e216">
+<p><code>WORKAREA_TEMPSEG</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e811 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e811 d2046254e222">
+<p>Amount of temporary space (in bytes) used by the operation when the query is executing; NULL if the operation has not spilled to disk or if the execution is finished</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e823" headers="d2046254e216">
+<p><code>WORKAREA_MAX_TEMPSEG</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e823 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e823 d2046254e222">
+<p>Maximum value (in bytes) for <code>WORKAREA_TEMPSEG</code>; NULL if this operation never spilled to disk. When the execution is done, this value will hold the maximum amount of temporary space consumed by this operation during the entire execution.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e839" headers="d2046254e216">
+<p><code>OTHERSTAT_GROUP_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e839 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e839 d2046254e222">
+<p>Plan line statistic group identifier (see <code>GROUP_ID</code> column in <code>V$SQL_MONITOR_STATNAME</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e857" headers="d2046254e216">
+<p><code>OTHERSTAT_1_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e857 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e857 d2046254e222">
+<p>Statistic identifier (see <code>ID</code> column in <code>V$SQL_MONITOR_STATNAME</code>) for statistic number 1 of that plan line</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e875" headers="d2046254e216">
+<p><code>OTHERSTAT_1_TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e875 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e875 d2046254e222">
+<p>Reserved for internal use</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e887" headers="d2046254e216">
+<p><code>OTHERSTAT_1_VALUE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e887 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e887 d2046254e222">
+<p>Value of statistic number 1 of that plan line</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e899" headers="d2046254e216">
+<p><code>OTHERSTAT_2_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e899 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e899 d2046254e222">
+<p>Statistic identifier (see <code>ID</code> column in <code>V$SQL_MONITOR_STATNAME</code>) for statistic number 2 of that plan line</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e917" headers="d2046254e216">
+<p><code>OTHERSTAT_2_TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e917 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e917 d2046254e222">
+<p>Reserved for internal use</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e929" headers="d2046254e216">
+<p><code>OTHERSTAT_2_VALUE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e929 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e929 d2046254e222">
+<p>Value of statistic number 2 of that plan line</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e941" headers="d2046254e216">
+<p><code>OTHERSTAT_3_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e941 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e941 d2046254e222">
+<p>Statistic identifier (see <code>ID</code> column in <code>V$SQL_MONITOR_STATNAME</code>) for statistic number 3 of that plan line</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e959" headers="d2046254e216">
+<p><code>OTHERSTAT_3_TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e959 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e959 d2046254e222">
+<p>Reserved for internal use</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e971" headers="d2046254e216">
+<p><code>OTHERSTAT_3_VALUE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e971 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e971 d2046254e222">
+<p>Value of statistic number 3 of that plan line</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e983" headers="d2046254e216">
+<p><code>OTHERSTAT_4_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e983 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e983 d2046254e222">
+<p>Statistic identifier (see <code>ID</code> column in <code>V$SQL_MONITOR_STATNAME</code>) for statistic number 4 of that plan line</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e1002" headers="d2046254e216">
+<p><code>OTHERSTAT_4_TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e1002 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e1002 d2046254e222">
+<p>Reserved for internal use</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e1014" headers="d2046254e216">
+<p><code>OTHERSTAT_4_VALUE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e1014 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e1014 d2046254e222">
+<p>Value of statistic number 4 of that plan line</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e1026" headers="d2046254e216">
+<p><code>OTHERSTAT_5_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e1026 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e1026 d2046254e222">
+<p>Statistic identifier (see <code>ID</code> column in <code>V$SQL_MONITOR_STATNAME</code>) for statistic number 5 of that plan line</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e1044" headers="d2046254e216">
+<p><code>OTHERSTAT_5_TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e1044 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e1044 d2046254e222">
+<p>Reserved for internal use</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e1056" headers="d2046254e216">
+<p><code>OTHERSTAT_5_VALUE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e1056 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e1056 d2046254e222">
+<p>Value of statistic number 5 of that plan line</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e1068" headers="d2046254e216">
+<p><code>OTHERSTAT_6_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e1068 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e1068 d2046254e222">
+<p>Statistic identifier (see <code>ID</code> column in <code>V$SQL_MONITOR_STATNAME</code>) for statistic number 6 of that plan line</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e1086" headers="d2046254e216">
+<p><code>OTHERSTAT_6_TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e1086 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e1086 d2046254e222">
+<p>Reserved for internal use</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e1098" headers="d2046254e216">
+<p><code>OTHERSTAT_6_VALUE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e1098 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e1098 d2046254e222">
+<p>Value of statistic number 6 of that plan line</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e1110" headers="d2046254e216">
+<p><code>OTHERSTAT_7_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e1110 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e1110 d2046254e222">
+<p>Statistic identifier (see <code>ID</code> column in <code>V$SQL_MONITOR_STATNAME</code>) for statistic number 7 of that plan line</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e1128" headers="d2046254e216">
+<p><code>OTHERSTAT_7_TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e1128 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e1128 d2046254e222">
+<p>Reserved for internal use</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e1140" headers="d2046254e216">
+<p><code>OTHERSTAT_7_VALUE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e1140 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e1140 d2046254e222">
+<p>Value of statistic number 7 of that plan line</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e1153" headers="d2046254e216">
+<p><code>OTHERSTAT_8_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e1153 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e1153 d2046254e222">
+<p>Statistic identifier (see <code>ID</code> column in <code>V$SQL_MONITOR_STATNAME</code>) for statistic number 8 of that plan line</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e1171" headers="d2046254e216">
+<p><code>OTHERSTAT_8_TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e1171 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e1171 d2046254e222">
+<p>Reserved for internal use</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e1183" headers="d2046254e216">
+<p><code>OTHERSTAT_8_VALUE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e1183 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e1183 d2046254e222">
+<p>Value of statistic number 8 of that plan line</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e1195" headers="d2046254e216">
+<p><code>OTHERSTAT_9_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e1195 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e1195 d2046254e222">
+<p>Statistic identifier (see <code>ID</code> column in <code>V$SQL_MONITOR_STATNAME</code>) for statistic number 9 of that plan line</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e1213" headers="d2046254e216">
+<p><code>OTHERSTAT_9_TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e1213 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e1213 d2046254e222">
+<p>Reserved for internal use</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e1225" headers="d2046254e216">
+<p><code>OTHERSTAT_9_VALUE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e1225 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e1225 d2046254e222">
+<p>Value of statistic number 9 of that plan line</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e1237" headers="d2046254e216">
+<p><code>OTHERSTAT_10_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e1237 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e1237 d2046254e222">
+<p>Statistic identifier (see <code>ID</code> column in <code>V$SQL_MONITOR_STATNAME</code>) for statistic number 10 of that plan line</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e1255" headers="d2046254e216">
+<p><code>OTHERSTAT_10_TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e1255 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e1255 d2046254e222">
+<p>Reserved for internal use</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e1267" headers="d2046254e216">
+<p><code>OTHERSTAT_10_VALUE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e1267 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e1267 d2046254e222">
+<p>Value of statistic number 10 of that plan line</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e1279" headers="d2046254e216">
+<p><code>OTHER_XML</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e1279 d2046254e219">
+<p><code>CLOB</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e1279 d2046254e222">
+<p>Provides extra information specific to an execution step of the execution plan. The content of this column is structured using XML because it allows multiple pieces of information to be stored, including the following:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Name of the schema against which the query was parsed</p>
+</li>
+<li>
+<p>Release number of the Oracle Database that produced the explain plan</p>
+</li>
+<li>
+<p>Hash value associated with the execution plan</p>
+</li>
+<li>
+<p>Name (if any) of the outline or the SQL profile used to build the execution plan</p>
+</li>
+<li>
+<p>Indication of whether or not dynamic statistics were used to produce the plan</p>
+</li>
+<li>
+<p>The outline data, a set of optimizer hints that can be used to regenerate the same plan</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2046254e1310" headers="d2046254e216">
+<p><code>PLAN_OPERATION_INACTIVE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2046254e1310 d2046254e219">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2046254e1310 d2046254e222">
+<p>Indicates whether this plan operation was part of the final resolved plan</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<div class="section">
+<div class="infoboxnotealso" id="GUID-85354ECB-7E2E-4D4B-AE78-243A4BB6E523__GUID-0F6A5EC4-9A62-4B98-AC3C-BB9D24B82401">
+<p class="notep1">See Also:</p>
+<p><span class="q">"<a href="V-SQL_MONITOR_STATNAME.htm#GUID-0548ED49-A959-4BFA-A8E0-36881CBCFA20">V$SQL_MONITOR_STATNAME</a>"</span></p>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="V-SQL_PLAN.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="V-SQL_PLAN_STATISTICS.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

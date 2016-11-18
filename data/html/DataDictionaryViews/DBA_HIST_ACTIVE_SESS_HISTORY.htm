@@ -1,0 +1,1590 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>DBA_HIST_ACTIVE_SESS_HISTORY</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="DBA_HIST_ACTIVE_SESS_HISTORY view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="DBA_HIGH_WATER_MARK_STATISTICS.htm" title="Previous" type="text/html" />
+<link rel="Next" href="DBA_HIST_APPLY_SUMMARY.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-335EC838-FEA0-4872-9E14-67C5A1908B35"></a> <span id="PAGE" style="display:none;">1051/2822</span> <!-- End Header -->
+<script  >
+//<![CDATA[
+window.name='DBA_HIST_ACTIVE_SESS_HISTORY'
+//]]>
+</script> <script  >
+    function footdisplay(footnum,footnote) {
+    var msg = window.open('', 'NewWindow' + footnum,
+        'directories=no,height=120,location=no,menubar=no,resizable=yes,' +
+        'scrollbars=yes,status=no,toolbar=no,width=598');
+    msg.document.open('text/html');
+    msg.document.write('<!DOCTYPE html ');
+    msg.document.write('PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" ');
+
+    msg.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">');
+    msg.document.write('<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><title>');
+    msg.document.write('Footnote&amp;nbsp; ' + footnum);
+    msg.document.write('<\/title><meta http-equiv="Content-Type" ');
+    msg.document.write('content="text/html; charset=utf-8" />');
+    msg.document.write('');
+    msg.document.write('<style> <![CDATA[ ');
+    msg.document.write('h1 {text-align: center; font-size: 14pt;}');
+    msg.document.write('fieldset {border: none;}');
+    msg.document.write('form {text-align: center;}');
+    msg.document.write(' ]]\u003e <\/style>');
+    msg.document.write('<\/head><body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><h1>Footnote&nbsp; ' + footnum + '<\/h1><p>');
+    msg.document.write(footnote);
+    msg.document.write('<\/p><form action="" method="post"><fieldset>');
+    msg.document.write('<input type="button" value="OK" ');
+    msg.document.write('onclick="window.close();" />');
+    msg.document.write('<\/fieldset><\/form><\/body><\/html>');
+    msg.document.close();
+    msg.focus();
+}
+</script><noscript>
+<p>The script content on this page is for navigation purposes only and does not alter the content in any way.</p>
+</noscript><a id="REFRN23400"></a>
+<h1 id="REFRN-GUID-335EC838-FEA0-4872-9E14-67C5A1908B35" class="sect1"><span class="enumeration_section">4.284</span> DBA_HIST_ACTIVE_SESS_HISTORY</h1>
+<div>
+<div class="section">
+<p><code>DBA_HIST_ACTIVE_SESS_HISTORY</code> displays the history of the contents of the in-memory active session history of recent system activity. This view contains snapshots of <code>V$ACTIVE_SESSION_HISTORY</code>. See <span class="q">"<a href="V-ACTIVE_SESSION_HISTORY.htm#GUID-69CEA3A1-6C5E-43D6-982C-F353CD4B984C">V$ACTIVE_SESSION_HISTORY</a>"</span> for further interpretation details for many of these columns (except <code>SNAP_ID</code>, <code>DBID</code>, and <code>INSTANCE_NUMBER</code>).</p>
+<div class="infobox-note" id="GUID-335EC838-FEA0-4872-9E14-67C5A1908B35__GUID-BDE226A0-9CAE-4156-A482-74FB850FD5C7">
+<p class="notep1">Note:</p>
+<p>If you want to perform a join with the snapshots view, use the <code>DBA_HIST_ASH_SNAPSHOT</code> view instead of the <code>DBA_HIST_SNAPSHOT</code> view.</p>
+</div>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-335EC838-FEA0-4872-9E14-67C5A1908B35__GUID-821A237A-B37A-4D02-BD6F-E57246365A73">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d875115e195">Column</th>
+<th class="cellalignment3905" id="d875115e198">Datatype</th>
+<th class="cellalignment3906" id="d875115e201">NULL</th>
+<th class="cellalignment3907" id="d875115e204">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d875115e209" headers="d875115e195">
+<p><code>SNAP_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e209 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e209 d875115e201">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d875115e209 d875115e204">
+<p>Unique snapshot ID</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e225" headers="d875115e195">
+<p><code>DBID</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e225 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e225 d875115e201">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d875115e225 d875115e204">
+<p>Database ID for the snapshot</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e241" headers="d875115e195">
+<p><code>INSTANCE_NUMBER</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e241 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e241 d875115e201">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d875115e241 d875115e204">
+<p>Instance number for the snapshot</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e257" headers="d875115e195">
+<p><code>SAMPLE_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e257 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e257 d875115e201">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d875115e257 d875115e204">
+<p>ID of the sample</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e273" headers="d875115e195">
+<p><code>SAMPLE_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e273 d875115e198">
+<p><code>TIMESTAMP(3)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e273 d875115e201">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d875115e273 d875115e204">
+<p>Time of the sample</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e289" headers="d875115e195">
+<p><code>SAMPLE_TIME_UTC</code><a id="GUID-335EC838-FEA0-4872-9E14-67C5A1908B35__THISCOLUMNISAVAILABLESTARTINGWITHOR-692956CB" href="#GUID-335EC838-FEA0-4872-9E14-67C5A1908B35__THISCOLUMNISAVAILABLESTARTINGWITHOR-692956CB" onclick='footdisplay(1,"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Foot&nbsp;1</sup></a><a id="fnsrc_d875115e299" href="#fnsrc_d875115e299" onclick='footdisplay(, \"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+<td class="cellalignment3905" headers="d875115e289 d875115e198">
+<p><code>TIMESTAMP(3)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e289 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e289 d875115e204">
+<p><code>SAMPLE_TIME</code> in UTC</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e315" headers="d875115e195">
+<p><code>USECS_PER_ROW</code><a id="fnsrc_d875115e319" href="#fnsrc_d875115e319" onclick='footdisplay(, \"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+<td class="cellalignment3905" headers="d875115e315 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e315 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e315 d875115e204">
+<p>Time in microseconds since the last active session history sample</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e333" headers="d875115e195">
+<p><code>SESSION_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e333 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e333 d875115e201">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d875115e333 d875115e204">
+<p>Session identifier</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e349" headers="d875115e195">
+<p><code>SESSION_SERIAL#</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e349 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e349 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e349 d875115e204">
+<p>Session serial number (used to uniquely identify a session's objects)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e365" headers="d875115e195">
+<p><code>SESSION_TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e365 d875115e198">
+<p><code>VARCHAR2(10)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e365 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e365 d875115e204">
+<p>Session type:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>FOREGROUND</code></p>
+</li>
+<li>
+<p><code>BACKGROUND</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e390" headers="d875115e195">
+<p><code>FLAGS</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e390 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e390 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e390 d875115e204">
+<p>Reserved for future use</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e407" headers="d875115e195">
+<p><code>USER_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e407 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e407 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e407 d875115e204">
+<p>Oracle user identifier</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e423" headers="d875115e195">
+<p><code>SQL_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e423 d875115e198">
+<p><code>VARCHAR2(13)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e423 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e423 d875115e204">
+<p>SQL identifier of the SQL statement that is currently being executed</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e439" headers="d875115e195">
+<p><code>IS_SQLID_CURRENT</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e439 d875115e198">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e439 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e439 d875115e204">
+<p>Indicates whether the SQL identifier in the <code>SQL_ID</code> column is being executed (<code>Y</code>) or not (<code>N</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e464" headers="d875115e195">
+<p><code>SQL_CHILD_NUMBER</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e464 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e464 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e464 d875115e204">
+<p>Child number of the SQL statement that is currently being executed</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e480" headers="d875115e195">
+<p><code>SQL_OPCODE</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e480 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e480 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e480 d875115e204">
+<p>Indicates what phase of operation the SQL statement is in</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e495" headers="d875115e195">
+<p><code>SQL_OPNAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e495 d875115e198">
+<p><code>VARCHAR2(64)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e495 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e495 d875115e204">
+<p>SQL command name</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e510" headers="d875115e195">
+<p><code>FORCE_MATCHING_SIGNATURE</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e510 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e510 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e510 d875115e204">
+<p>Signature used when the <code>CURSOR_SHARING</code> parameter is set to <code>FORCE</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e530" headers="d875115e195">
+<p><code>TOP_LEVEL_SQL_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e530 d875115e198">
+<p><code>VARCHAR2(13)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e530 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e530 d875115e204">
+<p>SQL identifier of the top level SQL statement</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e545" headers="d875115e195">
+<p><code>TOP_LEVEL_SQL_OPCODE</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e545 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e545 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e545 d875115e204">
+<p>Indicates what phase of operation the top level SQL statement was in</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e560" headers="d875115e195">
+<p><code>SQL_PLAN_HASH_VALUE</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e560 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e560 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e560 d875115e204">
+<p>Numerical representation of the SQL plan for the cursor</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e576" headers="d875115e195">
+<p><code>SQL_FULL_PLAN_HASH_VALUE</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e576 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e576 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e576 d875115e204">
+<p>Numerical representation of the complete SQL plan for the cursor being executed by this session</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e592" headers="d875115e195">
+<p><code>SQL_ADAPTIVE_PLAN_RESOLVED</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e592 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e592 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e592 d875115e204">
+<p>Indicates whether the SQL plan of the sampled database session is a resolved adaptive plan or not</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e607" headers="d875115e195">
+<p><code>SQL_PLAN_LINE_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e607 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e607 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e607 d875115e204">
+<p>SQL plan line ID</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e622" headers="d875115e195">
+<p><code>SQL_PLAN_OPERATION</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e622 d875115e198">
+<p><code>VARCHAR2(64)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e622 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e622 d875115e204">
+<p>Plan operation name</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e637" headers="d875115e195">
+<p><code>SQL_PLAN_OPTIONS</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e637 d875115e198">
+<p><code>VARCHAR2(64)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e637 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e637 d875115e204">
+<p>Plan operation options</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e652" headers="d875115e195">
+<p><code>SQL_EXEC_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e652 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e652 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e652 d875115e204">
+<p>SQL execution identifier</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e667" headers="d875115e195">
+<p><code>SQL_EXEC_START</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e667 d875115e198">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e667 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e667 d875115e204">
+<p>Time when the execution of the SQL started</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e682" headers="d875115e195">
+<p><code>PLSQL_ENTRY_OBJECT_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e682 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e682 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e682 d875115e204">
+<p>Object ID of the top-most PL/SQL subprogram on the stack (or NULL if there is no PL/SQL subprogram on the stack)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e697" headers="d875115e195">
+<p><code>PLSQL_ENTRY_SUBPROGRAM_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e697 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e697 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e697 d875115e204">
+<p>Subprogram ID of the top-most PL/SQL subprogram on the stack (or NULL if there is no PL/SQL subprogram on the stack)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e712" headers="d875115e195">
+<p><code>PLSQL_OBJECT_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e712 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e712 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e712 d875115e204">
+<p>Object ID of the currently executing PL/SQL subprogram (or NULL if executing SQL)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e727" headers="d875115e195">
+<p><code>PLSQL_SUBPROGRAM_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e727 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e727 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e727 d875115e204">
+<p>Subprogram ID of the currently executing PL/SQL object (or NULL if executing SQL)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e742" headers="d875115e195">
+<p><code>QC_INSTANCE_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e742 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e742 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e742 d875115e204">
+<p>Query coordinator instance ID</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e759" headers="d875115e195">
+<p><code>QC_SESSION_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e759 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e759 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e759 d875115e204">
+<p>Query coordinator session ID</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e775" headers="d875115e195">
+<p><code>QC_SESSION_SERIAL#</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e775 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e775 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e775 d875115e204">
+<p>Query coordinator session serial number</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e790" headers="d875115e195">
+<p><code>PX_FLAGS</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e790 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e790 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e790 d875115e204">
+<p>Reserved for internal use</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e805" headers="d875115e195">
+<p><code>EVENT</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e805 d875115e198">
+<p><code>VARCHAR2(64)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e805 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e805 d875115e204">
+<p>If <code>SESSION_STATE = WAITING</code>, then the event for which the session was waiting at the time of sampling.</p>
+<p>If <code>SESSION_STATE = ON CPU</code>, then this column will be NULL.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e828" headers="d875115e195">
+<p><code>EVENT_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e828 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e828 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e828 d875115e204">
+<p>Identifier of the resource or event for which the session is waiting or for which the session last waited</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e843" headers="d875115e195">
+<p><code>SEQ#</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e843 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e843 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e843 d875115e204">
+<p>Sequence number that uniquely identifies the wait (incremented for each wait)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e858" headers="d875115e195">
+<p><code>P1TEXT</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e858 d875115e198">
+<p><code>VARCHAR2(64)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e858 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e858 d875115e204">
+<p>Text of first additional parameter</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e873" headers="d875115e195">
+<p><code>P1</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e873 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e873 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e873 d875115e204">
+<p>First additional parameter</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e888" headers="d875115e195">
+<p><code>P2TEXT</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e888 d875115e198">
+<p><code>VARCHAR2(64)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e888 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e888 d875115e204">
+<p>Text of second additional parameter</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e903" headers="d875115e195">
+<p><code>P2</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e903 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e903 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e903 d875115e204">
+<p>Second additional parameter</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e918" headers="d875115e195">
+<p><code>P3TEXT</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e918 d875115e198">
+<p><code>VARCHAR2(64)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e918 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e918 d875115e204">
+<p>Text of third additional parameter</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e934" headers="d875115e195">
+<p><code>P3</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e934 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e934 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e934 d875115e204">
+<p>Third additional parameter</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e949" headers="d875115e195">
+<p><code>WAIT_CLASS</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e949 d875115e198">
+<p><code>VARCHAR2(64)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e949 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e949 d875115e204">
+<p>Wait class name of the event for which the session was waiting at the time of sampling. Interpretation is similar to that of the <code>EVENT</code> column. Maps to <code>V$SESSION.WAIT_CLASS</code>.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e970" headers="d875115e195">
+<p><code>WAIT_CLASS_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e970 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e970 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e970 d875115e204">
+<p>Wait class identifier of the event for which the session was waiting at the time of sampling. Interpretation is similar to that of the <code>EVENT</code> column. Maps to <code>V$SESSION.WAIT_CLASS_ID</code>.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e991" headers="d875115e195">
+<p><code>WAIT_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e991 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e991 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e991 d875115e204">
+<p>Total wait time (in microseconds) for the event for which the session last waited (<code>0</code> if currently waiting)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1009" headers="d875115e195">
+<p><code>SESSION_STATE</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1009 d875115e198">
+<p><code>VARCHAR2(7)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1009 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1009 d875115e204">
+<p>Session state:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>WAITING</code></p>
+</li>
+<li>
+<p><code>ON</code> <code>CPU</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1036" headers="d875115e195">
+<p><code>TIME_WAITED</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1036 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1036 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1036 d875115e204">
+<p>Time that the current session actually spent waiting for the event (in microseconds). This column is set for waits that were in progress at the time the sample was taken.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1051" headers="d875115e195">
+<p><code>BLOCKING_SESSION_STATUS</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1051 d875115e198">
+<p><code>VARCHAR2(11)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1051 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1051 d875115e204">
+<p>Status of the blocking session:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>VALID</code></p>
+</li>
+<li>
+<p><code>NO HOLDER</code></p>
+</li>
+<li>
+<p><code>GLOBAL</code></p>
+</li>
+<li>
+<p><code>NOT IN WAIT</code></p>
+</li>
+<li>
+<p><code>UNKNOWN</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1087" headers="d875115e195">
+<p><code>BLOCKING_SESSION</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1087 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1087 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1087 d875115e204">
+<p>Session identifier of the blocking session. Populated only when the session was waiting for enqueues or a "buffer busy" wait. Maps to <code>V$SESSION.BLOCKING_SESSION</code>.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1105" headers="d875115e195">
+<p><code>BLOCKING_SESSION_SERIAL#</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1105 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1105 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1105 d875115e204">
+<p>Serial number of the blocking session</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1120" headers="d875115e195">
+<p><code>BLOCKING_INST_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1120 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1120 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1120 d875115e204">
+<p>Instance number of the blocker shown in <code>BLOCKING_SESSION</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1138" headers="d875115e195">
+<p><code>BLOCKING_HANGCHAIN_INFO</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1138 d875115e198">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1138 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1138 d875115e204">
+<p>Indicates whether the information about <code>BLOCKING_SESSION</code> comes from the hang chain (<code>Y</code>) or not (<code>N</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1164" headers="d875115e195">
+<p><code>CURRENT_OBJ#</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1164 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1164 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1164 d875115e204">
+<p>Object ID of the object that the session is currently referencing. This information is only available if the session was waiting for Application, Cluster, Concurrency, and User I/O wait events. Maps to <code>V$SESSION.ROW_WAIT_OBJ#</code>.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1183" headers="d875115e195">
+<p><code>CURRENT_FILE#</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1183 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1183 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1183 d875115e204">
+<p>File number of the file containing the block that the session is currently referencing. This information is only available if the session was waiting for Cluster, Concurrency, and User I/O wait events. Maps to <code>V$SESSION.ROW_WAIT_FILE#</code>.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1202" headers="d875115e195">
+<p><code>CURRENT_BLOCK#</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1202 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1202 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1202 d875115e204">
+<p>ID of the block that the session is currently referencing</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1218" headers="d875115e195">
+<p><code>CURRENT_ROW#</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1218 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1218 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1218 d875115e204">
+<p>Row identifier that the session is referencing</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1233" headers="d875115e195">
+<p><code>TOP_LEVEL_CALL#</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1233 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1233 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1233 d875115e204">
+<p>Oracle top level call number</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1248" headers="d875115e195">
+<p><code>TOP_LEVEL_CALL_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1248 d875115e198">
+<p><code>VARCHAR2(64)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1248 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1248 d875115e204">
+<p>Oracle top level call name</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1263" headers="d875115e195">
+<p><code>CONSUMER_GROUP_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1263 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1263 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1263 d875115e204">
+<p>Consumer group ID</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1278" headers="d875115e195">
+<p><code>XID</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1278 d875115e198">
+<p><code>RAW(8)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1278 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1278 d875115e204">
+<p>Transaction ID that the session was working on at the time of sampling. <code>V$SESSION</code> does not contain this information.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1296" headers="d875115e195">
+<p><code>REMOTE_INSTANCE#</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1296 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1296 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1296 d875115e204">
+<p>Remote instance identifier that will serve the block that this session is waiting for. This information is only available if the session was waiting for cluster events.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1312" headers="d875115e195">
+<p><code>TIME_MODEL</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1312 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1312 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1312 d875115e204">
+<p>Time model information</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1328" headers="d875115e195">
+<p><code>IN_CONNECTION_MGMT</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1328 d875115e198">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1328 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1328 d875115e204">
+<p>Indicates whether the session was doing connection management at the time of sampling (<code>Y</code>) or not (<code>N</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1351" headers="d875115e195">
+<p><code>IN_PARSE</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1351 d875115e198">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1351 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1351 d875115e204">
+<p>Indicates whether the session was parsing at the time of sampling (<code>Y</code>) or not (<code>N</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1373" headers="d875115e195">
+<p><code>IN_HARD_PARSE</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1373 d875115e198">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1373 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1373 d875115e204">
+<p>Indicates whether the session was hard parsing at the time of sampling (<code>Y</code>) or not (<code>N</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1395" headers="d875115e195">
+<p><code>IN_SQL_EXECUTION</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1395 d875115e198">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1395 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1395 d875115e204">
+<p>Indicates whether the session was executing SQL statements at the time of sampling (<code>Y</code>) or not (<code>N</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1417" headers="d875115e195">
+<p><code>IN_PLSQL_EXECUTION</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1417 d875115e198">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1417 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1417 d875115e204">
+<p>Indicates whether the session was executing PL/SQL at the time of sampling (<code>Y</code>) or not (<code>N</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1439" headers="d875115e195">
+<p><code>IN_PLSQL_RPC</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1439 d875115e198">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1439 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1439 d875115e204">
+<p>Indicates whether the session was executing inbound PL/SQL RPC calls at the time of sampling (<code>Y</code>) or not (<code>N</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1461" headers="d875115e195">
+<p><code>IN_PLSQL_COMPILATION</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1461 d875115e198">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1461 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1461 d875115e204">
+<p>Indicates whether the session was compiling PL/SQL at the time of sampling (<code>Y</code>) or not (<code>N</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1483" headers="d875115e195">
+<p><code>IN_JAVA_EXECUTION</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1483 d875115e198">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1483 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1483 d875115e204">
+<p>Indicates whether the session was executing Java at the time of sampling (<code>Y</code>) or not (<code>N</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1505" headers="d875115e195">
+<p><code>IN_BIND</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1505 d875115e198">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1505 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1505 d875115e204">
+<p>Indicates whether the session was doing bind operations at the time of sampling (<code>Y</code>) or not (<code>N</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1527" headers="d875115e195">
+<p><code>IN_CURSOR_CLOSE</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1527 d875115e198">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1527 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1527 d875115e204">
+<p>Indicates whether the session was closing a cursor at the time of sampling (<code>Y</code>) or not (<code>N</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1549" headers="d875115e195">
+<p><code>IN_SEQUENCE_LOAD</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1549 d875115e198">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1549 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1549 d875115e204">
+<p>Indicates whether the session is loading in sequence (in sequence load code) (<code>Y</code>) or not (<code>N</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1571" headers="d875115e195">
+<p><code>IN_INMEMORY_QUERY</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1571 d875115e198">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1571 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1571 d875115e204">
+<p>Indicates whether the session was querying the In-Memory Column Store (IM column store) at the time of sampling (<code>Y</code>) or not (<code>N</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1593" headers="d875115e195">
+<p><code>IN_INMEMORY_POPULATE</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1593 d875115e198">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1593 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1593 d875115e204">
+<p>Indicates whether the session was populating the IM column store at the time of sampling (<code>Y</code>) or not (<code>N</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1614" headers="d875115e195">
+<p><code>IN_INMEMORY_PREPOPULATE</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1614 d875115e198">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1614 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1614 d875115e204">
+<p>Indicates whether the session was prepopulating the IM column store at the time of sampling (<code>Y</code>) or not (<code>N</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1635" headers="d875115e195">
+<p><code>IN_INMEMORY_REPOPULATE</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1635 d875115e198">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1635 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1635 d875115e204">
+<p>Indicates whether the session was repopulating the IM column store at the time of sampling (<code>Y</code>) or not (<code>N</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1656" headers="d875115e195">
+<p><code>IN_INMEMORY_TREPOPULATE</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1656 d875115e198">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1656 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1656 d875115e204">
+<p>Indicates whether the session was trickle repopulating the IM column store at the time of sampling (<code>Y</code>) or not (<code>N</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1677" headers="d875115e195">
+<p><code>IN_TABLESPACE_ENCRYPTION</code><a id="fnsrc_d875115e1681" href="#fnsrc_d875115e1681" onclick='footdisplay(, \"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1677 d875115e198">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1677 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1677 d875115e204">
+<p>Indicates whether encryption or decryption of a tablespace occurred at the time of sampling (<code>Y</code>) or not (<code>N</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1700" headers="d875115e195">
+<p><code>CAPTURE_OVERHEAD</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1700 d875115e198">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1700 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1700 d875115e204">
+<p>Indicates whether the session is executing capture code (<code>Y</code>) or not (<code>N</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1722" headers="d875115e195">
+<p><code>REPLAY_OVERHEAD</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1722 d875115e198">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1722 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1722 d875115e204">
+<p>Indicates whether the session is executing replay code (<code>Y</code>) or not (<code>N</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1744" headers="d875115e195">
+<p><code>IS_CAPTURED</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1744 d875115e198">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1744 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1744 d875115e204">
+<p>Indicates whether the session is being captured (<code>Y</code>) or not (<code>N</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1766" headers="d875115e195">
+<p><code>IS_REPLAYED</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1766 d875115e198">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1766 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1766 d875115e204">
+<p>Indicates whether the session is being replayed (<code>Y</code>) or not (<code>N</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1788" headers="d875115e195">
+<p><code>IS_REPLAY_SYNC_TOKEN_HOLDER</code><a id="fnsrc_d875115e1792" href="#fnsrc_d875115e1792" onclick='footdisplay(, \"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1788 d875115e198">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1788 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1788 d875115e204">
+<p>Indicates whether the session is holding a synchronization token (<code>Y</code>) or not (<code>N</code>) during workload replay</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1812" headers="d875115e195">
+<p><code>SERVICE_HASH</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1812 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1812 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1812 d875115e204">
+<p>Hash that identifies the Service</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1829" headers="d875115e195">
+<p><code>PROGRAM</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1829 d875115e198">
+<p><code>VARCHAR2(64)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1829 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1829 d875115e204">
+<p>Name of the operating system program</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1845" headers="d875115e195">
+<p><code>MODULE</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1845 d875115e198">
+<p><code>VARCHAR2(64)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1845 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1845 d875115e204">
+<p>Name of the currently executing module as set by the <code>DBMS_APPLICATION_INFO.SET_MODULE</code> procedure</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1864" headers="d875115e195">
+<p><code>ACTION</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1864 d875115e198">
+<p><code>VARCHAR2(64)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1864 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1864 d875115e204">
+<p>Name of the currently executing action as set by the <code>DBMS_APPLICATION_INFO.SET_ACTION</code> procedure</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1883" headers="d875115e195">
+<p><code>CLIENT_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1883 d875115e198">
+<p><code>VARCHAR2(64)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1883 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1883 d875115e204">
+<p>Client identifier of the session</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1899" headers="d875115e195">
+<p><code>MACHINE</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1899 d875115e198">
+<p><code>VARCHAR2(64)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1899 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1899 d875115e204">
+<p>Client's operating system machine name</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1914" headers="d875115e195">
+<p><code>PORT</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1914 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1914 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1914 d875115e204">
+<p>Client port number</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1929" headers="d875115e195">
+<p><code>ECID</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1929 d875115e198">
+<p><code>VARCHAR2(64)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1929 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1929 d875115e204">
+<p>Execution context identifier (sent by Application Server)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1945" headers="d875115e195">
+<p><code>DBREPLAY_FILE_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1945 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1945 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1945 d875115e204">
+<p>If the session is being captured or replayed, then <code>DBREPLAY_FILE_ID</code> is the file ID for the workload capture or workload replay; otherwise it is NULL.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1963" headers="d875115e195">
+<p><code>DBREPLAY_CALL_COUNTER</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1963 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1963 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1963 d875115e204">
+<p>If the session is being captured or replayed, then <code>DBREPLAY_CALL_COUNTER</code> is the call counter of the user call that is being captured or replayed; otherwise it is NULL.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e1981" headers="d875115e195">
+<p><code>TM_DELTA_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e1981 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e1981 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e1981 d875115e204">
+<p>Time interval (in microseconds) over which <code>TM_DELTA_CPU_TIME</code> and <code>TM_DELTA_DB_TIME</code> are accumulated</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e2003" headers="d875115e195">
+<p><code>TM_DELTA_CPU_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e2003 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e2003 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e2003 d875115e204">
+<p>Amount of time this session spent on CPU over the last <code>TM_DELTA_TIME</code> microseconds</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e2023" headers="d875115e195">
+<p><code>TM_DELTA_DB_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e2023 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e2023 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e2023 d875115e204">
+<p>Amount of time spent by this session in database calls over the last <code>TM_DELTA_TIME</code> microseconds</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e2042" headers="d875115e195">
+<p><code>DELTA_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e2042 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e2042 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e2042 d875115e204">
+<p>Time interval (in microseconds) since the last time this session was sampled or created, over which the next five statistics are accumulated</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e2058" headers="d875115e195">
+<p><code>DELTA_READ_IO_REQUESTS</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e2058 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e2058 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e2058 d875115e204">
+<p>Number of read I/O requests made by this session over the last <code>DELTA_TIME</code> microseconds</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e2077" headers="d875115e195">
+<p><code>DELTA_WRITE_IO_REQUESTS</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e2077 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e2077 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e2077 d875115e204">
+<p>Number of write I/O requests made by this session over the last <code>DELTA_TIME</code> microseconds</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e2096" headers="d875115e195">
+<p><code>DELTA_READ_IO_BYTES</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e2096 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e2096 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e2096 d875115e204">
+<p>Number of I/O bytes read by this session over the last <code>DELTA_TIME</code> microseconds</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e2115" headers="d875115e195">
+<p><code>DELTA_WRITE_IO_BYTES</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e2115 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e2115 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e2115 d875115e204">
+<p>Number of I/O bytes written by this session over the last <code>DELTA_TIME</code> microseconds</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e2134" headers="d875115e195">
+<p><code>DELTA_INTERCONNECT_IO_BYTES</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e2134 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e2134 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e2134 d875115e204">
+<p>Number of I/O bytes sent over the I/O interconnect over the last <code>DELTA_TIME</code> microseconds</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e2153" headers="d875115e195">
+<p><code>PGA_ALLOCATED</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e2153 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e2153 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e2153 d875115e204">
+<p>Amount of PGA memory (in bytes) consumed by this session at the time this sample was taken</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e2169" headers="d875115e195">
+<p><code>TEMP_SPACE_ALLOCATED</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e2169 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e2169 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e2169 d875115e204">
+<p>Amount of TEMP memory (in bytes) consumed by this session at the time this sample was taken</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e2185" headers="d875115e195">
+<p><code>DBOP_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e2185 d875115e198">
+<p><code>VARCHAR2(64)</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e2185 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e2185 d875115e204">
+<p>Database operation name. If the type is SQL, the <code>DBOP_NAME</code> will be <code>NULL</code>.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e2206" headers="d875115e195">
+<p><code>DBOP_EXEC_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e2206 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e2206 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e2206 d875115e204">
+<p>Database operation execution identifier for the current execution. If the type is SQL, the <code>DBOP_EXEC_ID</code> will be <code>NULL</code>.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e2228" headers="d875115e195">
+<p><code>CON_DBID</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e2228 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e2228 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e2228 d875115e204">
+<p>The database ID of the PDB for the sampled session</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d875115e2243" headers="d875115e195">
+<p><code>CON_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d875115e2243 d875115e198">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d875115e2243 d875115e201">&nbsp;</td>
+<td class="cellalignment3907" headers="d875115e2243 d875115e204">
+<p>The ID of the container that <code>CON_DBID</code> identifies. Possible values include:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>0</code>: This value is used for rows containing data that pertain to the entire CDB. This value is also used for rows in non-CDBs.</p>
+</li>
+<li>
+<p><code>1</code>: This value is used for rows containing data that pertain to only the root</p>
+</li>
+<li>
+<p><span class="italic">n</span>: Where <span class="italic">n</span> is the applicable container ID for the rows containing data</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<p class="tablefootnote"><sup class="tablefootnote">Footnote&nbsp;1</sup></p>
+<p>This column is available starting with Oracle Database 12<span class="italic">c</span> Release 2 (12.2.0.1).</p>
+<div class="section">
+<div class="infoboxnotealso" id="GUID-335EC838-FEA0-4872-9E14-67C5A1908B35__GUID-ACD341DA-29CB-48C0-BFF0-2895D5DBBCCE">
+<p class="notep1">See Also:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="q">"<a href="DBA_HIST_ASH_SNAPSHOT.htm#GUID-B099E22C-B4C6-4895-9E74-63DC0A5FB6A0">DBA_HIST_ASH_SNAPSHOT</a>"</span></p>
+</li>
+<li>
+<p><span class="q">"<a href="DBA_HIST_SNAPSHOT.htm#GUID-542B6CA6-793B-4D15-AAFD-4D3E6550C0B6">DBA_HIST_SNAPSHOT</a>"</span></p>
+</li>
+<li>
+<p><a class="olink ARPLS003" target="_blank" href="../ARPLS/DBMS_APPLICATION_INFO.htm#ARPLS003"><span class="italic">Oracle Database PL/SQL Packages and Types Reference</span></a> for more information about the <code>DBMS_APPLICATION_INFO</code> package</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="DBA_HIGH_WATER_MARK_STATISTICS.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="DBA_HIST_APPLY_SUMMARY.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+</body>
+</html>

@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>DBFS_CONTENT</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="DBFS_CONTENT view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="DBA_ZONEMAPS.htm" title="Previous" type="text/html" />
+<link rel="Next" href="DBFS_CONTENT_PROPERTIES.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-E1198419-8D74-4901-AF86-49E7AB7EEB1B"></a> <span id="PAGE" style="display:none;">1658/2822</span> <!-- End Header -->
+<a id="REFRN29148"></a>
+<h1 id="REFRN-GUID-E1198419-8D74-4901-AF86-49E7AB7EEB1B" class="sect1"><span class="enumeration_section">6.176</span> DBFS_CONTENT</h1>
+<div>
+<div class="section">
+<p><code>DBFS_CONTENT</code> displays all the path items from all available content stores in the system.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-E1198419-8D74-4901-AF86-49E7AB7EEB1B__GUID-78FD4D72-9DE8-42D4-ABDD-D3CD396076AA">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d1371655e169">Column</th>
+<th class="cellalignment3905" id="d1371655e172">Datatype</th>
+<th class="cellalignment3906" id="d1371655e175">NULL</th>
+<th class="cellalignment3907" id="d1371655e178">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d1371655e183" headers="d1371655e169">
+<p><code>STORE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1371655e183 d1371655e172">
+<p><code>VARCHAR2(256)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1371655e183 d1371655e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1371655e183 d1371655e178">
+<p>Name of store</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1371655e199" headers="d1371655e169">
+<p><code>MOUNT</code></p>
+</td>
+<td class="cellalignment3905" headers="d1371655e199 d1371655e172">
+<p><code>VARCHAR2(256)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1371655e199 d1371655e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1371655e199 d1371655e178">
+<p>Location at which instance of store is mounted</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1371655e215" headers="d1371655e169">
+<p><code>PATHNAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1371655e215 d1371655e172">
+<p><code>VARCHAR2(1024)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1371655e215 d1371655e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1371655e215 d1371655e178">
+<p>Name of path to item</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1371655e231" headers="d1371655e169">
+<p><code>PATHTYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1371655e231 d1371655e172">
+<p><code>VARCHAR2(32)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1371655e231 d1371655e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1371655e231 d1371655e178">
+<p>Type of path item (see <code>DBMS_DBFS_CONTENT</code> Constants - Path Name Types)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1371655e250" headers="d1371655e169">
+<p><code>FILEDATA</code></p>
+</td>
+<td class="cellalignment3905" headers="d1371655e250 d1371655e172">
+<p><code>BLOB</code></p>
+</td>
+<td class="cellalignment3906" headers="d1371655e250 d1371655e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1371655e250 d1371655e178">
+<p>BLOB locator that can be used to access data in the path item</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1371655e266" headers="d1371655e169">
+<p><code>STD_ACCESS_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1371655e266 d1371655e172">
+<p><code>TIMESTAMP(6)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1371655e266 d1371655e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1371655e266 d1371655e178">
+<p>Time of last access of a path name's contents</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1371655e282" headers="d1371655e169">
+<p><code>STD_ACL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1371655e282 d1371655e172">
+<p><code>VARCHAR2(1024)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1371655e282 d1371655e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1371655e282 d1371655e178">
+<p>Access Control List (in standard ACL syntax)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1371655e298" headers="d1371655e169">
+<p><code>STD_CHANGE_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1371655e298 d1371655e172">
+<p><code>TIMESTAMP(6)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1371655e298 d1371655e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1371655e298 d1371655e178">
+<p>Time of last change to the path name</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1371655e314" headers="d1371655e169">
+<p><code>STD_CHILDREN</code></p>
+</td>
+<td class="cellalignment3905" headers="d1371655e314 d1371655e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1371655e314 d1371655e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1371655e314 d1371655e178">
+<p>Number of child directories/folders a directory/folder path has (this property should be available in providers that support the <code>FEATURE_FOLDERS</code> feature)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1371655e333" headers="d1371655e169">
+<p><code>STD_CONTENT_TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1371655e333 d1371655e172">
+<p><code>VARCHAR2(1024)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1371655e333 d1371655e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1371655e333 d1371655e178">
+<p>One or more client-supplied mime-types (in standard RFC syntax) describing the path name which is typically of <code>TYPE_FILE</code>. The content type is not necessarily interpreted by the store.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1371655e352" headers="d1371655e169">
+<p><code>STD_CREATION_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1371655e352 d1371655e172">
+<p><code>TIMESTAMP(6)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1371655e352 d1371655e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1371655e352 d1371655e178">
+<p>Time at which the item was created. Once set, this value remains the same for the lifetime of the path name.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1371655e369" headers="d1371655e169">
+<p><code>STD_DELETED</code></p>
+</td>
+<td class="cellalignment3905" headers="d1371655e369 d1371655e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1371655e369 d1371655e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1371655e369 d1371655e178">
+<p>Set to a nonzero number if the path name has been soft-deleted but not yet purged (see <code>DBMS_DBFS_CONTENT</code> Constants - Store Features)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1371655e388" headers="d1371655e169">
+<p><code>STD_GUID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1371655e388 d1371655e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1371655e388 d1371655e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1371655e388 d1371655e178">
+<p>Store-specific unique identifier for a path name. Clients must not depend on the GUID being unique across different stores, but a given (store-name, store-specific-path name) has a stable and unique GUID for its lifetime.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1371655e404" headers="d1371655e169">
+<p><code>STD_MODIFICATION_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1371655e404 d1371655e172">
+<p><code>TIMESTAMP(6)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1371655e404 d1371655e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1371655e404 d1371655e178">
+<p>Time of last change to the data associated with a path name. Changes to the content of a <code>TYPE_FILE</code> or <code>TYPE_REFERENCE</code> path, the referent of the <code>TYPE_LINK</code> path, and addition or deletion of immediate children in a <code>TYPE_DIRECTORY</code> path, all constitute data changes.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1371655e432" headers="d1371655e169">
+<p><code>STD_OWNER</code></p>
+</td>
+<td class="cellalignment3905" headers="d1371655e432 d1371655e172">
+<p><code>VARCHAR2(32)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1371655e432 d1371655e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1371655e432 d1371655e178">
+<p>Client-supplied (or implicit) owner name for the path name</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1371655e448" headers="d1371655e169">
+<p><code>STD_PARENT_GUID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1371655e448 d1371655e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1371655e448 d1371655e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1371655e448 d1371655e178">
+<p>Store-specific unique identifier for the parent of a path name. Clients must not depend on the GUID being unique across different stores, but a given (store-name, store-specific-path name) has a stable and unique GUID for its lifetime.</p>
+<p>The GUID of the parent of this path name (that is that std_parent_guid(pathname) == std_guid(parent(pathname))).</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1371655e466" headers="d1371655e169">
+<p><code>STD_REFERENT</code></p>
+</td>
+<td class="cellalignment3905" headers="d1371655e466 d1371655e172">
+<p><code>VARCHAR2(1024)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1371655e466 d1371655e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1371655e466 d1371655e178">
+<p>Content of the symbolic link of a <code>TYPE_LINK</code> path, otherwise NULL. The <code>STD_REFERENT</code> can be an arbitrary string and must not necessarily be interpreted as path name by clients (or such interpretation should be done with great care).</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1371655e488" headers="d1371655e169">
+<p><code>OPT_HASH_TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1371655e488 d1371655e172">
+<p><code>VARCHAR2(32)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1371655e488 d1371655e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1371655e488 d1371655e178">
+<p>Type of hash provided in the <code>OPT_HASH_VALUE</code> property (see <code>DBMS_CRYPTO</code> for possible options)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1371655e510" headers="d1371655e169">
+<p><code>OPT_HASH_VALUE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1371655e510 d1371655e172">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1371655e510 d1371655e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1371655e510 d1371655e178">
+<p>Hash value of type <code>OPT_HASH_TYPE</code> describing the content of the path name</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1371655e529" headers="d1371655e169">
+<p><code>OPT_LOCK_COUNT</code></p>
+</td>
+<td class="cellalignment3905" headers="d1371655e529 d1371655e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1371655e529 d1371655e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1371655e529 d1371655e178">
+<p>Number of compatible locks placed on a path name. If different principals are allowed to place compatible (read) locks on a path, the <code>OPT_LOCKER</code> must specify all lockers with repeats so that lock counts can be correctly maintained.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1371655e548" headers="d1371655e169">
+<p><code>OPT_LOCK_DATA</code></p>
+</td>
+<td class="cellalignment3905" headers="d1371655e548 d1371655e172">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1371655e548 d1371655e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1371655e548 d1371655e178">
+<p>Client-supplied user-data associated with a user-lock, uninterpreted by the store</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1371655e564" headers="d1371655e169">
+<p><code>OPT_LOCKER</code></p>
+</td>
+<td class="cellalignment3905" headers="d1371655e564 d1371655e172">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1371655e564 d1371655e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1371655e564 d1371655e178">
+<p>One or more implicit or client-specified principals that applied a user-lock on a path name</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1371655e581" headers="d1371655e169">
+<p><code>OPT_LOCK_STATUS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1371655e581 d1371655e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1371655e581 d1371655e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1371655e581 d1371655e178">
+<p>One of the (<code>LOCK_READ_ONLY</code>, <code>LOCK_WRITE_ONLY</code>, <code>LOCK_READ_WRITE</code>) values describing the type of lock currently applied on a path name</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1371655e606" headers="d1371655e169">
+<p><code>OPT_VERSION</code></p>
+</td>
+<td class="cellalignment3905" headers="d1371655e606 d1371655e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1371655e606 d1371655e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1371655e606 d1371655e178">
+<p>Sequence number for linear versioning of a path name</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1371655e622" headers="d1371655e169">
+<p><code>OPT_VERSION_PATH</code></p>
+</td>
+<td class="cellalignment3905" headers="d1371655e622 d1371655e172">
+<p><code>VARCHAR2(1024)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1371655e622 d1371655e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1371655e622 d1371655e178">
+<p>Version path name for hierarchical versioning of a path name</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1371655e638" headers="d1371655e169">
+<p><code>OPT_CONTENT_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1371655e638 d1371655e172">
+<p><code>RAW(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1371655e638 d1371655e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1371655e638 d1371655e178">
+<p>A provider-generated store-specific unique contentID in the form of a string for a file element (that may optionally not be associated with a path (see <code>FEATURE_CONTENT_ID</code> and <code>FEATURE_LAZY_PATH</code> in <code>DBMS_DBFS_CONTENT</code> Constants - Store Features)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<div class="section">
+<div class="infoboxnotealso" id="GUID-E1198419-8D74-4901-AF86-49E7AB7EEB1B__GUID-4C1466FA-8185-4CC2-A8A0-8D60E66865FB">
+<p class="notep1">See Also:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a class="olink ARPLS72478" target="_blank" href="../ARPLS/DBMS_DBFS_CONTENT.htm#ARPLS72478"><span class="italic">Oracle Database PL/SQL Packages and Types Reference</span></a> for more information about DBMS_DBFS_CONTENT Constants - Path Name Types and DBMS_DBFS_CONTENT Constants - Store Features</p>
+</li>
+<li>
+<p><a class="olink ARPLS664" target="_blank" href="../ARPLS/DBMS_CRYPTO.htm#ARPLS664"><span class="italic">Oracle Database PL/SQL Packages and Types Reference</span></a> for more information about the DBMS_CRYPTO package</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="DBA_ZONEMAPS.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="DBFS_CONTENT_PROPERTIES.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

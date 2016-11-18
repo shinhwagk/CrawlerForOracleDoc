@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>PLSCOPE_SETTINGS</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="PLSCOPE_SETTINGS initialization parameter, initialization parameters, PLSCOPE_SETTINGS" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="PGA_AGGREGATE_TARGET.htm" title="Previous" type="text/html" />
+<link rel="Next" href="PLSQL_CCFLAGS.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-E420D72D-4199-4444-9D9A-080CBEA09DD4"></a> <span id="PAGE" style="display:none;">252/2822</span> <!-- End Header -->
+<a id="REFRN10271"></a>
+<h1 id="REFRN-GUID-E420D72D-4199-4444-9D9A-080CBEA09DD4" class="sect1"><span class="enumeration_section">1.246</span> PLSCOPE_SETTINGS</h1>
+<div>
+<div class="section"></div>
+<!-- class="section" -->
+<div class="tblformal" id="GUID-E420D72D-4199-4444-9D9A-080CBEA09DD4__GUID-E0306909-5D37-4300-B2EC-02AB1634CEC0">
+<hr />
+<table class="cellalignment3900" summary="This table describes the properties for this initialization parameter">
+<thead align="left">
+<tr>
+<th class="cellalignment3901" id="d155332e167">Property</th>
+<th class="cellalignment3902" id="d155332e170">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3901" id="d155332e175" headers="d155332e167">
+<p><span class="bold">Parameter type</span></p>
+</td>
+<td class="cellalignment3902" headers="d155332e175 d155332e170">
+<p>String</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3901" id="d155332e183" headers="d155332e167">
+<p><span class="bold">Syntax</span></p>
+</td>
+<td class="cellalignment3902" headers="d155332e183 d155332e170">
+<p><code>PLSCOPE_SETTINGS = &lsquo;value_clause [, value_clause ]&rsquo;</code></p>
+<p><span class="bold">value_clause::=</span></p>
+<p><code>{ IDENTIFIERS | STATEMENTS } : { ALL | NONE | PUBLIC (for IDENTIFIERS only) | SQL (for IDENTIFIERS only) | PLSQL (for IDENTIFIERS only) }</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3901" id="d155332e198" headers="d155332e167">
+<p><span class="bold">Default value</span></p>
+</td>
+<td class="cellalignment3902" headers="d155332e198 d155332e170">
+<p><code>&lsquo;IDENTIFIERS:NONE&rsquo;</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3901" id="d155332e207" headers="d155332e167">
+<p><span class="bold">Modifiable</span></p>
+</td>
+<td class="cellalignment3902" headers="d155332e207 d155332e170">
+<p><code>ALTER SESSION</code>, <code>ALTER SYSTEM</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3901" id="d155332e219" headers="d155332e167">
+<p><span class="bold">Modifiable in a PDB</span></p>
+</td>
+<td class="cellalignment3902" headers="d155332e219 d155332e170">
+<p>Yes</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3901" id="d155332e227" headers="d155332e167">
+<p><span class="bold">Basic</span></p>
+</td>
+<td class="cellalignment3902" headers="d155332e227 d155332e170">
+<p>No</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<div class="section">
+<p><code>PLSCOPE_SETTINGS</code> controls the compile time collection, cross-reference, and storage of PL/SQL source code identifier data.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Values</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<ul style="list-style-type: disc;">
+<li>
+<p><code>IDENTIFIERS:ALL</code></p>
+<p>Enables the collection of all source code identifier data.</p>
+</li>
+<li>
+<p><code>IDENTIFIERS:NONE</code></p>
+<p>Disables the collection of all source code identifier data.</p>
+</li>
+<li>
+<p><code>IDENTIFIERS: PUBLIC</code></p>
+<p>Enables the collection of all PUBLIC user identifier data (except for <code>DEFINITION</code>)</p>
+</li>
+<li>
+<p><code>IDENTIFIERS:SQL</code></p>
+<p>Enables the collection of all SQL identifier data.</p>
+</li>
+<li>
+<p><code>IDENTIFIERS:PLSQL</code></p>
+<p>Enables the collection of all PLSQL identifier data.</p>
+</li>
+<li>
+<p><code>STATEMENTS:ALL</code></p>
+<p>Enables the collection of all SQL statements used in PL/SQL.</p>
+</li>
+<li>
+<p><code>STATEMENTS:NONE</code></p>
+<p>Disables the collection of all statements.</p>
+</li>
+</ul>
+<p><code>PLSCOPE_SETTINGS</code> can be set on a session, system, or per-library unit (<code>ALTER COMPILE</code>) basis. The current setting of <code>PLSCOPE_SETTINGS</code> for any library unit can be attained by querying the <code>*_PLSQL_OBJECT_SETTINGS</code> views. Any identifier data collected by setting this parameter can be accessed using the <code>*_IDENTIFIERS</code> views.</p>
+<div class="p">When a <code>STATEMENTS</code> setting is not specified, and <code>IDENTIFIERS</code> is specified but set to a value other than <code>NONE</code>, <code>STATEMENTS</code> defaults to a setting of <code>ALL</code>, which is equal to:
+<pre dir="ltr">
+IDENTIFIERS: [ALL|PLSQL|PLSQL|PUBLIC]
+</pre></div>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Examples</p>
+<p>The following parameter setting causes PL/SQL and SQL identifiers and statements to be collected:</p>
+<pre dir="ltr">
+PLSCOPE_SETTINGS = 'IDENTIFIERS:ALL, STATEMENTS:ALL'
+</pre>
+<p>The following parameter setting causes only SQL identifiers and statements to be collected:</p>
+<pre dir="ltr">
+PLSCOPE_SETTINGS = 'IDENTIFIERS:SQL, STATEMENTS:ALL'
+</pre>
+<p>The following parameter setting causes only PL/SQL identifiers to be collected:</p>
+<pre dir="ltr">
+PLSCOPE_SETTINGS = 'IDENTIFIERS:PLSQL, STATEMENTS:NONE'
+</pre>
+<p>The following parameter setting causes no identifier data to be collected, and drops any existing identifier data:</p>
+<pre dir="ltr">
+PLSCOPE_SETTINGS = 'IDENTIFIERS: NONE'
+</pre>
+<div class="infoboxnotealso" id="GUID-E420D72D-4199-4444-9D9A-080CBEA09DD4__GUID-D03610FE-B2B2-40D2-844D-91BE19AFC25A">
+<p class="notep1">See Also:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="q">"<a href="ALL_PLSQL_OBJECT_SETTINGS.htm#GUID-7EF7B6E3-50B1-43C3-A56E-40955B47C65D">ALL_PLSQL_OBJECT_SETTINGS</a>,"</span> <span class="q">"<a href="DBA_PLSQL_OBJECT_SETTINGS.htm#GUID-F4DC9C6E-66E1-47F3-8970-0EFF213BA089">DBA_PLSQL_OBJECT_SETTINGS</a>,"</span> and <span class="q">"<a href="USER_PLSQL_OBJECT_SETTINGS.htm#GUID-2EFFBBB7-53BE-40D4-BFB2-F8485AF8FA0B">USER_PLSQL_OBJECT_SETTINGS</a>"</span></p>
+</li>
+<li>
+<p><span class="q">"<a href="ALL_IDENTIFIERS.htm#GUID-F4B4C9F7-6335-42FF-97F4-FEB902A15E6E">ALL_IDENTIFIERS</a>,"</span><span class="q">"<a href="DBA_IDENTIFIERS.htm#GUID-74FDC89B-5092-4519-B13E-E1EBC5F2D210">DBA_IDENTIFIERS</a>,"</span> and <span class="q">"<a href="USER_IDENTIFIERS.htm#GUID-885A201B-7DC2-4092-9421-EC0EEF7C5F19">USER_IDENTIFIERS</a>"</span></p>
+</li>
+<li>
+<p><a class="olink LNPLS188" target="_blank" href="../LNPLS/overview.htm#LNPLS188"><span><cite>Oracle Database PL/SQL Language Reference</cite></span></a> for more information about this parameter</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="PGA_AGGREGATE_TARGET.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="PLSQL_CCFLAGS.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en-US" >
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>INMEMORY_CLAUSE_DEFAULT</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="INMEMORY_CLAUSE_DEFAULT initialization parameter, In-Memory Column Store, IM column store. See In-Memory Column Store, initialization parameters, INMEMORY_CLAUSE_DEFAULT" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="INMEMORY_ADG_ENABLED.htm" title="Previous" type="text/html" />
+<link rel="Next" href="INMEMORY_EXPRESSIONS_USAGE.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns" dir="ltr">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-5772F775-2A3E-4BC8-AA03-B8FF383BEE52"></a> <span id="PAGE" style="display:none;">138/2822</span> <!-- End Header -->
+<script  >
+//<![CDATA[
+window.name='INMEMORY_CLAUSE_DEFAULT'
+//]]>
+</script> <script  >
+    function footdisplay(footnum,footnote) {
+    var msg = window.open('', 'NewWindow' + footnum,
+        'directories=no,height=120,location=no,menubar=no,resizable=yes,' +
+        'scrollbars=yes,status=no,toolbar=no,width=598');
+    msg.document.open('text/html');
+    msg.document.write('<!DOCTYPE html ');
+    msg.document.write('PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" ');
+
+    msg.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">');
+    msg.document.write('<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><title>');
+    msg.document.write('Footnote&amp;nbsp; ' + footnum);
+    msg.document.write('<\/title><meta http-equiv="Content-Type" ');
+    msg.document.write('content="text/html; charset=utf-8" />');
+    msg.document.write('');
+    msg.document.write('<style> <![CDATA[ ');
+    msg.document.write('h1 {text-align: center; font-size: 14pt;}');
+    msg.document.write('fieldset {border: none;}');
+    msg.document.write('form {text-align: center;}');
+    msg.document.write(' ]]\u003e <\/style>');
+    msg.document.write('<\/head><body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><h1>Footnote&nbsp; ' + footnum + '<\/h1><p>');
+    msg.document.write(footnote);
+    msg.document.write('<\/p><form action="" method="post"><fieldset>');
+    msg.document.write('<input type="button" value="OK" ');
+    msg.document.write('onclick="window.close();" />');
+    msg.document.write('<\/fieldset><\/form><\/body><\/html>');
+    msg.document.close();
+    msg.focus();
+}
+</script><noscript>
+<p>The script content on this page is for navigation purposes only and does not alter the content in any way.</p>
+</noscript><a id="REFRN10350"></a>
+<h1 id="REFRN-GUID-5772F775-2A3E-4BC8-AA03-B8FF383BEE52" class="sect1"><span class="enumeration_section">1.132</span> INMEMORY_CLAUSE_DEFAULT</h1>
+<div>
+<div class="section"></div>
+<!-- class="section" -->
+<div class="tblformal" id="GUID-5772F775-2A3E-4BC8-AA03-B8FF383BEE52__GUID-64E0985E-AC42-4AC0-A3E3-ECE6DF14CD71">
+<hr />
+<table class="cellalignment3900" summary="This table describes the properties for this initialization parameter">
+<thead align="left">
+<tr>
+<th class="cellalignment3941" id="d93911e171">Property</th>
+<th class="cellalignment3943" id="d93911e174">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3941" id="d93911e179" headers="d93911e171">
+<p><span class="bold">Parameter type</span></p>
+</td>
+<td class="cellalignment3943" headers="d93911e179 d93911e174">
+<p>String</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3941" id="d93911e187" headers="d93911e171">
+<p><span class="bold">Syntax</span></p>
+</td>
+<td class="cellalignment3943" headers="d93911e187 d93911e174">
+<p><code>INMEMORY_CLAUSE_DEFAULT = '[INMEMORY] [NO INMEMORY] [other-clauses]</code>'</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3941" id="d93911e197" headers="d93911e171">
+<p><span class="bold">Syntax</span></p>
+</td>
+<td class="cellalignment3943" headers="d93911e197 d93911e174">
+<p><span class="bold">other-clauses::=</span></p>
+<p><code>[compression-clause] [priority-clause] [rac-clause]</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3941" id="d93911e210" headers="d93911e171">
+<p><span class="bold">Syntax</span></p>
+</td>
+<td class="cellalignment3943" headers="d93911e210 d93911e174">
+<p><span class="bold">compression-clause::=</span></p>
+<p><code>NO MEMCOMPRESS | MEMCOMPRESS FOR { DML | QUERY [ LOW | HIGH ] | CAPACITY [LOW | HIGH] }</code><a id="GUID-5772F775-2A3E-4BC8-AA03-B8FF383BEE52__SEEFORMOREINFORMATIONABOUTTHISCLAUS-627BA486" href="#GUID-5772F775-2A3E-4BC8-AA03-B8FF383BEE52__SEEFORMOREINFORMATIONABOUTTHISCLAUS-627BA486" onclick='footdisplay(1,"See Table 1-2 for more information about this clause. ")'><sup>Foot&nbsp;1</sup></a><a id="fnsrc_d93911e229" href="#fnsrc_d93911e229" onclick='footdisplay(, \"See Table 1-2 for more information about this clause. ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3941" id="d93911e232" headers="d93911e171">
+<p><span class="bold">Syntax</span></p>
+</td>
+<td class="cellalignment3943" headers="d93911e232 d93911e174">
+<p><span class="bold">priority-clause::=</span></p>
+<p><code>PRIORITY { LOW | MEDIUM | HIGH | CRITICAL | NONE }</code><a id="fnsrc_d93911e243" href="#fnsrc_d93911e243" onclick='footdisplay(, \"See Table 1-2 for more information about this clause. ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3941" id="d93911e246" headers="d93911e171">
+<p><span class="bold">Syntax</span></p>
+</td>
+<td class="cellalignment3943" headers="d93911e246 d93911e174">
+<p><span class="bold">rac-clause::=</span></p>
+<p><code>[distribute-clause] [duplicate-clause]</code><a id="fnsrc_d93911e257" href="#fnsrc_d93911e257" onclick='footdisplay(, \"See Table 1-2 for more information about this clause. ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3941" id="d93911e260" headers="d93911e171">
+<p><span class="bold">Syntax</span></p>
+</td>
+<td class="cellalignment3943" headers="d93911e260 d93911e174">
+<p><span class="bold">distribute-clause::=</span></p>
+<p><code>DISTRIBUTE [ AUTO | BY ROWID RANGE | BY PARTITION | BY SUBPARTITION ]</code><a id="fnsrc_d93911e271" href="#fnsrc_d93911e271" onclick='footdisplay(, \"See Table 1-2 for more information about this clause. ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3941" id="d93911e274" headers="d93911e171">
+<p><span class="bold">Syntax</span></p>
+</td>
+<td class="cellalignment3943" headers="d93911e274 d93911e174">
+<p><span class="bold">duplicate-clause::=</span></p>
+<p><code>NO DUPLICATE | DUPLICATE [ ALL ]</code><a id="fnsrc_d93911e285" href="#fnsrc_d93911e285" onclick='footdisplay(, \"See Table 1-2 for more information about this clause. ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3941" id="d93911e288" headers="d93911e171">
+<p><span class="bold">Default value</span></p>
+</td>
+<td class="cellalignment3943" headers="d93911e288 d93911e174">
+<p>An empty string</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3941" id="d93911e296" headers="d93911e171">
+<p><span class="bold">Modifiable</span></p>
+</td>
+<td class="cellalignment3943" headers="d93911e296 d93911e174">
+<p><code>ALTER SESSION, ALTER SYSTEM</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3941" id="d93911e305" headers="d93911e171">
+<p><span class="bold">Modifiable in a PDB</span></p>
+</td>
+<td class="cellalignment3943" headers="d93911e305 d93911e174">
+<p>Yes</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3941" id="d93911e314" headers="d93911e171">
+<p><span class="bold">Basic</span></p>
+</td>
+<td class="cellalignment3943" headers="d93911e314 d93911e174">
+<p>No</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3941" id="d93911e322" headers="d93911e171">
+<p><span class="bold">Oracle RAC</span></p>
+</td>
+<td class="cellalignment3943" headers="d93911e322 d93911e174">
+<p>All instances should use the same value</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<p class="tablefootnote"><sup class="tablefootnote">Footnote&nbsp;1</sup></p>
+<p>See <a href="INMEMORY_CLAUSE_DEFAULT.htm#GUID-5772F775-2A3E-4BC8-AA03-B8FF383BEE52__BABHACDH" title="This table describes INMEMORY_CLAUSE_DEFAULT parameter values">Table 1-2</a> for more information about this clause.</p>
+<div class="section">
+<p><code>INMEMORY_CLAUSE_DEFAULT</code> enables you to specify a default In-Memory Column Store (IM column store) clause for new tables and materialized views.</p>
+<p>If the <code>INMEMORY_CLAUSE_DEFAULT</code> parameter is unset or set to an empty string (the default), only tables and materialized views explicitly specified as <code>INMEMORY</code> will be populated into the IM column store. Setting the value of the <code>INMEMORY_CLAUSE_DEFAULT</code> parameter to <code>NO INMEMORY</code> has the same effect as setting it to the default value.</p>
+<p>If the <code>INMEMORY_CLAUSE_DEFAULT</code> parameter is set, then any <span class="italic">newly created</span> table or materialized view specified as <code>INMEMORY</code> will inherit unspecified attributes from this parameter. This can force certain in-memory options by default that are not explicitly specified in the syntax. For example, if the <code>INMEMORY_CLAUSE_DEFAULT</code> parameter is set to <code>MEMCOMPRESS FOR CAPACITY LOW</code> and a table is created as <code>INMEMORY PRIORITY HIGH</code>, then the table is treated as if it was declared as <code>INMEMORY MEMCOMPRESS FOR CAPACITY LOW PRIORITY HIGH</code>.</p>
+<p>If <code>INMEMORY</code> is specified as part of this parameter, then all newly created tables and materialized views will be populated into the IM column store, except tables and materialized views explicitly specified as <code>NO INMEMORY</code>. For example, if this parameter is set to <code>INMEMORY MEMCOMPRESS FOR CAPACITY HIGH</code>, then all new tables will be created as if this clause were present in the SQL <code>CREATE TABLE</code> statement. If there is a default <code>INMEMORY</code> value for the tablespace for a given segment, then it will override the value for this parameter.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformal" id="GUID-5772F775-2A3E-4BC8-AA03-B8FF383BEE52__BABHACDH">
+<hr />
+<p class="titleintable">Table 1-2 Meaning of INMEMORY_CLAUSE_DEFAULT Parameter Values</p>
+<table class="cellalignment3900" title="Meaning of INMEMORY_CLAUSE_DEFAULT Parameter Values" summary="This table describes INMEMORY_CLAUSE_DEFAULT parameter values">
+<thead align="left">
+<tr>
+<th class="cellalignment3918" id="d93911e399">Syntax</th>
+<th class="cellalignment3919" id="d93911e402">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3918" id="d93911e407" headers="d93911e399">
+<p><code>INMEMORY</code></p>
+</td>
+<td class="cellalignment3919" headers="d93911e407 d93911e402">
+<p>Specifies that all newly-created tables and materialized views populate the IM column store unless they are specified as <code>NO INMEMORY</code> in the SQL <code>CREATE TABLE</code> or <code>CREATE MATERIALIZED VIEW</code> statement</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3918" id="d93911e424" headers="d93911e399">
+<p><code>NO INMEMORY</code></p>
+</td>
+<td class="cellalignment3919" headers="d93911e424 d93911e402">
+<p>Specifies that only tables and materialized views explicitly specified as <code>INMEMORY</code> in the SQL <code>CREATE TABLE</code> or <code>CREATE MATERIALIZED VIEW</code> statements populate the IM column store</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3918" id="d93911e441" headers="d93911e399">
+<p><code>compression-clause</code></p>
+</td>
+<td class="cellalignment3919" headers="d93911e441 d93911e402">
+<p>Specifies that in-memory compression should be used for the instance. Use the <code>MEMCOMPRESS FOR</code> values to specify the in-memory compression level.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3918" id="d93911e452" headers="d93911e399">
+<p><code>NO MEMCOMPRESS</code></p>
+</td>
+<td class="cellalignment3919" headers="d93911e452 d93911e402">
+<p>When <code>NO MEMCOMPRESS</code> is specified, no in-memory compression is done in the IM column store.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3918" id="d93911e463" headers="d93911e399">
+<p><code>MEMCOMPRESS FOR</code></p>
+</td>
+<td class="cellalignment3919" headers="d93911e463 d93911e402">
+<p><code>MEMCOMPRESS FOR</code> is used to indicate the in-memory compression level for the IM column store.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3918" id="d93911e473" headers="d93911e399">
+<p><code>DML</code></p>
+</td>
+<td class="cellalignment3919" headers="d93911e473 d93911e402">
+<p>When <code>DML</code> is specified, the IM column store is optimized for DML operations, and some lightweight in-memory compression may be done.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3918" id="d93911e484" headers="d93911e399">
+<p><code>QUERY</code></p>
+</td>
+<td class="cellalignment3919" headers="d93911e484 d93911e402">
+<p>When <code>QUERY</code> is specified, the in-memory compression level is for high performance. If <code>QUERY</code> is specified without <code>LOW</code> or <code>HIGH</code>, it defaults to <code>QUERY LOW</code>.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3918" id="d93911e507" headers="d93911e399">
+<p><code>QUERY LOW</code></p>
+</td>
+<td class="cellalignment3919" headers="d93911e507 d93911e402">
+<p>When <code>QUERY LOW</code> is specified, the in-memory compression level provides the highest performance.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3918" id="d93911e518" headers="d93911e399">
+<p><code>QUERY HIGH</code></p>
+</td>
+<td class="cellalignment3919" headers="d93911e518 d93911e402">
+<p>When <code>QUERY HIGH</code> is specified, the in-memory compression level provides a balance between compression and performance, weighted toward performance.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3918" id="d93911e529" headers="d93911e399">
+<p><code>CAPACITY</code></p>
+</td>
+<td class="cellalignment3919" headers="d93911e529 d93911e402">
+<p>When <code>CAPACITY</code> is specified without <code>LOW</code> or <code>HIGH</code>, it defaults to <code>CAPACITY LOW</code>.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3918" id="d93911e549" headers="d93911e399">
+<p><code>CAPACITY LOW</code></p>
+</td>
+<td class="cellalignment3919" headers="d93911e549 d93911e402">
+<p>When <code>CAPACITY LOW</code> is specified, the in-memory compression level is a balance between compression and performance, weighted toward capacity.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3918" id="d93911e561" headers="d93911e399">
+<p><code>CAPACITY HIGH</code></p>
+</td>
+<td class="cellalignment3919" headers="d93911e561 d93911e402">
+<p>When <code>CAPACITY HIGH</code> is specified, the in-memory compression level is for highest capacity.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3918" id="d93911e572" headers="d93911e399">
+<p><code>priority-clause</code></p>
+</td>
+<td class="cellalignment3919" headers="d93911e572 d93911e402">
+<p>Specifies the priority to use when populating tables in the IM column store. Use the <code>PRIORITY</code> values to specify the priority.</p>
+<p>By default, the population of a table in the IM column store can be delayed until the database determines it is useful.</p>
+<p>On database instance startup, tables are populated in priority order.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3918" id="d93911e587" headers="d93911e399">
+<p><code>PRIORITY NONE</code></p>
+</td>
+<td class="cellalignment3919" headers="d93911e587 d93911e402">
+<p>When <code>PRIORITY NONE</code> is specified, the population of a table in the IM column store can be delayed until the database determines it is useful.</p>
+<p>This is the default value when no priority is specified.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3918" id="d93911e600" headers="d93911e399">
+<p><code>PRIORITY LOW</code></p>
+</td>
+<td class="cellalignment3919" headers="d93911e600 d93911e402">
+<p>When <code>PRIORITY LOW</code> is specified for a table or tables, the population of those tables in the IM column store is done before tables that have no priority specified.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3918" id="d93911e611" headers="d93911e399">
+<p><code>PRIORITY MEDIUM</code></p>
+</td>
+<td class="cellalignment3919" headers="d93911e611 d93911e402">
+<p>When <code>PRIORITY MEDIUM</code> is specified for a table or tables, the population of those tables in the IM column store is done before tables that have no priority and <code>PRIORITY LOW</code> specified.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3918" id="d93911e625" headers="d93911e399">
+<p><code>PRIORITY HIGH</code></p>
+</td>
+<td class="cellalignment3919" headers="d93911e625 d93911e402">
+<p>When <code>PRIORITY HIGH</code> is specified for a table or tables, the population of those tables in the IM column store is done before tables that have no priority, <code>PRIORITY LOW</code>, and <code>PRIORITY MEDIUM</code> specified.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3918" id="d93911e642" headers="d93911e399">
+<p><code>PRIORITY CRITICAL</code></p>
+</td>
+<td class="cellalignment3919" headers="d93911e642 d93911e402">
+<p>When <code>PRIORITY CRITICAL</code> is specified for a table or tables, the population of those tables in the IM column store is done before tables that have no priority, <code>PRIORITY LOW</code>, <code>PRIORITY MEDIUM</code>, and <code>PRIORITY HIGH</code> specified.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3918" id="d93911e662" headers="d93911e399">
+<p><code>rac-clause</code></p>
+</td>
+<td class="cellalignment3919" headers="d93911e662 d93911e402">
+<p>Specifies how tables in the IM column store will be managed among Oracle Real Application Clusters (Oracle RAC) instances. Use the <code>distribute-clause</code> and <code>duplicate-clause</code> to specify how tables in the IM store will be managed in Oracle RAC instances.</p>
+<p>For a non-Oracle RAC database, these settings have no effect, because the whole table or partition has to be on the single instance.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3918" id="d93911e678" headers="d93911e399">
+<p><code>distribute-clause</code></p>
+</td>
+<td class="cellalignment3919" headers="d93911e678 d93911e402">
+<p>Specifies how a table is distributed among Oracle RAC instances.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3918" id="d93911e686" headers="d93911e399">
+<p><code>DISTRIBUTE AUTO</code></p>
+</td>
+<td class="cellalignment3919" headers="d93911e686 d93911e402">
+<p>Specifies that the database will automatically decide how to distribute tables in the IM column store across the Oracle RAC instances based on the type of partitioning and the value of the <code>duplicate-clause</code>.</p>
+<p><code>DISTRIBUTE AUTO</code> is the default, and it is also used when <code>DISTRIBUTE</code> is specified by itself.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3918" id="d93911e704" headers="d93911e399">
+<p><code>DISTRIBUTE BY ROWID RANGE</code></p>
+</td>
+<td class="cellalignment3919" headers="d93911e704 d93911e402">
+<p>Specifies that the tables in the IM column store will be distributed by rowid range to different Oracle RAC instances.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3918" id="d93911e713" headers="d93911e399">
+<p><code>DISTRIBUTE BY PARTITION</code></p>
+</td>
+<td class="cellalignment3919" headers="d93911e713 d93911e402">
+<p>Specifies that partitions in the IM column store will be distributed to different Oracle RAC instances.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3918" id="d93911e721" headers="d93911e399">
+<p><code>DISTRIBUTE BY SUBPARTITION</code></p>
+</td>
+<td class="cellalignment3919" headers="d93911e721 d93911e402">
+<p>Specifies that subpartitions in the IM column store will be distributed to different Oracle RAC instances.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3918" id="d93911e729" headers="d93911e399">
+<p><code>duplicate-clause</code></p>
+</td>
+<td class="cellalignment3919" headers="d93911e729 d93911e402">
+<p>Specifies how many copies of each In-Memory Compression Unit (IMCU) of the tables in the IM column store will be spread across all the Oracle RAC instances.</p>
+<p><span class="bold">Note:</span> The <code>duplicate-clause</code> is only applicable if you are using Oracle Real Application Clusters (Oracle RAC) on an engineered system. Otherwise, the <code>duplicate-clause</code> is ignored and there is only one copy of each IMCU in memory.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3918" id="d93911e747" headers="d93911e399">
+<p><code>NO DUPLICATE</code></p>
+</td>
+<td class="cellalignment3919" headers="d93911e747 d93911e402">
+<p>Data is not duplicated across Oracle RAC instances. This is the default.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3918" id="d93911e755" headers="d93911e399">
+<p><code>DUPLICATE</code></p>
+</td>
+<td class="cellalignment3919" headers="d93911e755 d93911e402">
+<p>Data is duplicated on another Oracle RAC instance, resulting in data existing on a total of two Oracle RAC instances..</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3918" id="d93911e763" headers="d93911e399">
+<p><code>DUPLICATE ALL</code></p>
+</td>
+<td class="cellalignment3919" headers="d93911e763 d93911e402">
+<p>Data is duplicated across all Oracle RAC instances. If you specify <code>DUPLICATE ALL</code>, then the database uses the <code>DISTRIBUTE AUTO</code> setting, regardless of whether or how you specify the <code>distribute-clause</code>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<div class="section">
+<p class="subhead1">Examples</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p>The following statement causes no tables to populate the IM column store:</p>
+<pre >
+alter system set INMEMORY_CLAUSE_DEFAULT='NO INMEMORY'
+scope=both;
+</pre>
+<p>The following statement causes new tables and materialized views (except those specified as <code>NO INMEMORY</code>) to populate the IM column store at the high capacity compression level:</p>
+<pre dir="ltr">
+alter system set
+INMEMORY_CLAUSE_DEFAULT='INMEMORY MEMCOMPRESS FOR CAPACITY HIGH'
+scope=both;
+</pre>
+<p>The following statement causes new tables (even those specified as <code>NO INMEMORY</code>) to populate the IM column store at the highest performance compression level at <code>LOW</code> priority:</p>
+<pre dir="ltr">
+alter system set
+INMEMORY_CLAUSE_DEFAULT='INMEMORY MEMCOMPRESS FOR QUERY LOW PRIORITY LOW'
+scope=both;
+</pre>
+<p>The following statement causes new tables (even those specified as <code>NO INMEMORY</code>) to populate the IM column store without any in-memory compression:</p>
+<pre dir="ltr">
+alter system set
+INMEMORY_CLAUSE_DEFAULT='INMEMORY NO MEMCOMPRESS'
+scope=both;
+</pre>
+<p>The following statement causes tables in the IM column store to be duplicated on every Oracle RAC instance, unless on a non-engineered system. For a non-engineered system, the <code>duplicate-clause</code> (<code>DUPLICATE ALL</code>) will be ignored and tables in the column store will be automatically distributed across the Oracle RAC instance, with only one copy of each IMCU in the tables in the IM column store:</p>
+<pre dir="ltr">
+alter system set
+INMEMORY_CLAUSE_DEFAULT='INMEMORY MEMCOMPRESS FOR QUERY
+DISTRIBUTE AUTO DUPLICATE ALL'
+scope=both;
+</pre>
+<p>The following statement sets the value of the <code>INMEMORY_CLAUSE_DEFAULT</code> parameter back to its default value, the empty string:</p>
+<pre dir="ltr">
+alter system set
+INMEMORY_CLAUSE_DEFAULT=''
+scope=both;
+</pre>
+<div class="infoboxnotealso" id="GUID-5772F775-2A3E-4BC8-AA03-B8FF383BEE52__GUID-9597B141-47B7-42FE-B6DC-E1FC75889D2F">
+<p class="notep1">See Also:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="q">"<a href="INMEMORY_FORCE.htm#GUID-1CAEDEBC-AE38-428D-B07E-6718A7225548">INMEMORY_FORCE</a>"</span></p>
+</li>
+<li>
+<p><span class="q">"<a href="INMEMORY_QUERY.htm#GUID-5B9BDBE2-6835-4598-9717-64D2C9D622AB">INMEMORY_QUERY</a>"</span></p>
+</li>
+<li>
+<p><span class="q">"<a href="INMEMORY_SIZE.htm#GUID-B5BEB6BF-5308-485F-920D-CBB584DDDE8F">INMEMORY_SIZE</a>"</span></p>
+</li>
+<li>
+<p><span class="q">"<a href="V-IM_SEGMENTS.htm#GUID-1CD070FD-2864-452D-B2AA-50E977C4885A">V$IM_SEGMENTS</a>"</span></p>
+</li>
+<li>
+<p><span class="q">"<a href="V-IM_USER_SEGMENTS.htm#GUID-7A0586D4-337E-42F1-83CB-0D92121D3E29">V$IM_USER_SEGMENTS</a>"</span></p>
+</li>
+<li>
+<p><a class="olink INMEM-GUID-BFA53515-7643-41E5-A296-654AB4A9F9E7" target="_blank" href="../INMEM/intro-to-in-memory-column-store.htm#INMEM-GUID-BFA53515-7643-41E5-A296-654AB4A9F9E7"><span><cite>Oracle Database In-Memory Guide</cite></span></a> for an introduction to the IM column store</p>
+</li>
+<li>
+<p><a class="olink INMEM-GUID-EEA265EE-8FBA-4457-8C3F-315B9EEA2224" target="_blank" href="../INMEM/in-memory-column-store-architecture.htm#INMEM-GUID-EEA265EE-8FBA-4457-8C3F-315B9EEA2224"><span><cite>Oracle Database In-Memory Guide</cite></span></a> for more information about the IM column store</p>
+</li>
+<li>
+<p><a class="olink INMEM-GUID-1965B8FE-B34E-42D9-9E97-45D6579162A4" target="_blank" href="../INMEM/populating-objects-in-memory.htm#INMEM-GUID-1965B8FE-B34E-42D9-9E97-45D6579162A4"><span><cite>Oracle Database In-Memory Guide</cite></span></a> for more information on IM column store compression methods</p>
+</li>
+<li>
+<p><a class="olink INMEM-GUID-B37DCA18-7CDA-425A-883B-036B70714F85" target="_blank" href="../INMEM/populating-objects-in-memory.htm#INMEM-GUID-B37DCA18-7CDA-425A-883B-036B70714F85"><span><cite>Oracle Database In-Memory Guide</cite></span></a> for more information on priority levels for populating a database object in the IM column store</p>
+</li>
+<li>
+<p><a class="olink SQLRF01402" target="_blank" href="../SQLRF/CREATE-TABLE.htm#SQLRF01402"><span class="italic">Oracle Database SQL Language Reference</span></a> for more information on the CREATE TABLE statement</p>
+</li>
+<li>
+<p><a class="olink SQLRF01302" target="_blank" href="../SQLRF/CREATE-MATERIALIZED-VIEW.htm#SQLRF01302"><span class="italic">Oracle Database SQL Language Reference</span></a> for more information on the CREATE MATERIALIZED VIEW statement</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="INMEMORY_ADG_ENABLED.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="INMEMORY_EXPRESSIONS_USAGE.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+</body>
+</html>

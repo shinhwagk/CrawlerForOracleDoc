@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>SGA_TARGET</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="SGA_TARGET initialization parameter, initialization parameters, SGA_TARGET" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="SGA_MIN_SIZE.htm" title="Previous" type="text/html" />
+<link rel="Next" href="SHADOW_CORE_DUMP.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-4702FDB7-BADC-4997-BC49-1B91088234AE"></a> <span id="PAGE" style="display:none;">298/2822</span> <!-- End Header -->
+<a id="REFRN10256"></a>
+<h1 id="REFRN-GUID-4702FDB7-BADC-4997-BC49-1B91088234AE" class="sect1"><span class="enumeration_section">1.292</span> SGA_TARGET</h1>
+<div>
+<div class="tblformal" id="GUID-4702FDB7-BADC-4997-BC49-1B91088234AE__GUID-C5B8107D-8BBD-4ECA-915D-F89E64ADEA6B">
+<hr />
+<table class="cellalignment3900" summary="This table describes the properties for this initialization parameter">
+<thead align="left">
+<tr>
+<th class="cellalignment3901" id="d175283e166">Property</th>
+<th class="cellalignment3902" id="d175283e169">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3901" id="d175283e174" headers="d175283e166">
+<p><span class="bold">Parameter type</span></p>
+</td>
+<td class="cellalignment3902" headers="d175283e174 d175283e169">
+<p>Big integer</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3901" id="d175283e182" headers="d175283e166">
+<p><span class="bold">Syntax</span></p>
+</td>
+<td class="cellalignment3902" headers="d175283e182 d175283e169">
+<p><code>SGA_TARGET =</code> <span class="italic"><code>integer</code></span> <code>[K | M | G]</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3901" id="d175283e196" headers="d175283e166">
+<p><span class="bold">Default value</span></p>
+</td>
+<td class="cellalignment3902" headers="d175283e196 d175283e169">
+<p><code>0</code> (SGA autotuning is disabled for <code>DEFERRED</code> mode autotuning requests, but allowed for <code>IMMEDIATE</code> mode autotuning requests)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3901" id="d175283e212" headers="d175283e166">
+<p><span class="bold">Modifiable</span></p>
+</td>
+<td class="cellalignment3902" headers="d175283e212 d175283e169">
+<p><code>ALTER SYSTEM</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3901" id="d175283e221" headers="d175283e166">
+<p><span class="bold">Modifiable in a PDB</span></p>
+</td>
+<td class="cellalignment3902" headers="d175283e221 d175283e169">
+<p>Yes</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3901" id="d175283e229" headers="d175283e166">
+<p><span class="bold">Range of values</span></p>
+</td>
+<td class="cellalignment3902" headers="d175283e229 d175283e169">
+<p>64 MB to operating system-dependent</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3901" id="d175283e237" headers="d175283e166">
+<p><span class="bold">Basic</span></p>
+</td>
+<td class="cellalignment3902" headers="d175283e237 d175283e169">
+<p>Yes</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<div class="section">
+<p><code>SGA_TARGET</code> specifies the total size of all SGA components. If <code>SGA_TARGET</code> is specified, then the following memory pools are automatically sized:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Buffer cache (<code>DB_CACHE_SIZE</code>)</p>
+</li>
+<li>
+<p>Shared pool (<code>SHARED_POOL_SIZE</code>)</p>
+</li>
+<li>
+<p>Large pool (<code>LARGE_POOL_SIZE</code>)</p>
+</li>
+<li>
+<p>Java pool (<code>JAVA_POOL_SIZE</code>)</p>
+</li>
+<li>
+<p>Streams pool (<code>STREAMS_POOL_SIZE</code>)</p>
+</li>
+<li>
+<p>Data transfer cache (<code>DATA_TRANSFER_CACHE_SIZE</code>)</p>
+</li>
+</ul>
+<p>If these automatically tuned memory pools are set to nonzero values, then those values are used as minimum levels by Automatic Shared Memory Management. You would set minimum values if an application component needs a minimum amount of memory to function properly.</p>
+<p>The following pools are manually sized components and are not affected by Automatic Shared Memory Management:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Log buffer</p>
+</li>
+<li>
+<p>Other buffer caches, such as <code>KEEP</code>, <code>RECYCLE</code>, and other block sizes</p>
+</li>
+<li>
+<p>Fixed SGA and other internal allocations</p>
+</li>
+</ul>
+<p>The memory allocated to these pools is deducted from the total available for <code>SGA_TARGET</code> when Automatic Shared Memory Management computes the values of the automatically tuned memory pools.</p>
+<p>In the <span class="bold">Default value</span> field, <code>IMMEDIATE</code> mode autotuning requests are necessary to avoid <code>ORA-04031</code> errors. The <code>DEFERRED</code> and <code>IMMEDIATE</code> modes are reflected in the <code>OPER_MODE</code> column of the <code>V$MEMORY_RESIZE_OPS</code> view.</p>
+<p>If Automatic Memory Management is enabled (<code>MEMORY_TARGET</code> is set to a positive value) and <code>SGA_TARGET</code> is also set to a positive value, the <code>SGA_TARGET</code> value acts as the minimum value for the size of the SGA.</p>
+<div class="infobox-note" id="GUID-4702FDB7-BADC-4997-BC49-1B91088234AE__GUID-5E83F279-462F-4C0C-9851-6A1479F7440C">
+<p class="notep1">Note:</p>
+<p>This parameter is optional for pluggable databases (PDBs). When this parameter is set for a PDB, it specifies the maximum SGA that the PDB can use at any time. When this parameter is not set at the PDB level, the PDB has no limit for the amount of SGA it can use, other than the CDB's SGA size.</p>
+<p>To be able to use Resource Manager in a CDB to control the amount of memory each PDB can use:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>The <code>NONCDB_COMPATIBLE</code> initialization parameter must be set to <code>FALSE</code> at the CDB level (in the root of the CDB).</p>
+</li>
+<li>
+<p>The <code>MEMORY_TARGET</code> initialization parameter must not be set at the CDB level.</p>
+</li>
+<li>
+<p>You must set the <code>SGA_TARGET</code> initialization parameter at the CDB level.</p>
+</li>
+<li>
+<p>You must set <code>SGA_TARGET</code> in a PDB to a value that is less than or equal to the <code>SGA_TARGET</code> value set at the CDB level.</p>
+<p>If you set a PDB&rsquo;s <code>SGA_TARGET</code> value and <code>SGA_TARGET</code> is not set at the CDB level, you will not receive an error message and the PDB&rsquo;s <code>SGA_TARGET</code> value will not be enforced.</p>
+<p>If you set <code>SGA_TARGET</code> in a PDB to a value that is greater than the <code>SGA_TARGET</code> value at the CDB level, you receive an error. If this requirement is violated after the PDB&rsquo;s parameter is set (for example, if the <code>SGA_TARGET</code> value is changed at the CDB level, Oracle will adjust the PDB&rsquo;s value to meet this requirement</p>
+</li>
+</ul>
+</div>
+<div class="infoboxnotealso" id="GUID-4702FDB7-BADC-4997-BC49-1B91088234AE__GUID-43BB3E02-ACCC-4536-B89B-1B30A57A77A9">
+<p class="notep1">See Also:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="q">"<a href="DB_CACHE_SIZE.htm#GUID-68F83472-D74F-4C1D-B515-FC80C40CC61B">DB_CACHE_SIZE</a>"</span></p>
+</li>
+<li>
+<p><span class="q">"<a href="SHARED_POOL_SIZE.htm#GUID-6D9E390B-472A-46C4-B89B-E263492FCB4F">SHARED_POOL_SIZE</a>"</span></p>
+</li>
+<li>
+<p><span class="q">"<a href="LARGE_POOL_SIZE.htm#GUID-B35A7519-E6F9-4C49-BB9B-5319FCCFBAF8">LARGE_POOL_SIZE</a>"</span></p>
+</li>
+<li>
+<p><span class="q">"<a href="JAVA_POOL_SIZE.htm#GUID-F24C4770-0B7C-42BD-9AAD-0EC1E92A90F6">JAVA_POOL_SIZE</a>"</span></p>
+</li>
+<li>
+<p><span class="q">"<a href="STREAMS_POOL_SIZE.htm#GUID-3FFF66CB-5A1E-43AF-B30A-A8E189BFF3FF">STREAMS_POOL_SIZE</a>"</span></p>
+</li>
+<li>
+<p><span class="q">"<a href="V-MEMORY_RESIZE_OPS.htm#GUID-5798EF22-3698-4916-A3DD-F130211D2B78">V$MEMORY_RESIZE_OPS</a>"</span></p>
+</li>
+<li>
+<p><span class="q">"<a href="MEMORY_TARGET.htm#GUID-186DE5CB-8104-4C8B-B673-6B831DFB42DB">MEMORY_TARGET</a>"</span></p>
+</li>
+<li>
+<p><span class="q">"<a href="PGA_AGGREGATE_TARGET.htm#GUID-DEBBD3F7-9F6D-4AC8-952C-0E0B2E62312D">PGA_AGGREGATE_TARGET</a>"</span></p>
+</li>
+<li>
+<p><a class="olink ADMIN-GUID-A3459A8B-A36A-44D4-9FCD-75CA0E3D3252#GUID-A3459A8B-A36A-44D4-9FCD-75CA0E3D3252/GUID-73A434E4-F48C-4440-BA3C-56844D263C76" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=E66230-01&amp;id=ADMIN-GUID-A3459A8B-A36A-44D4-9FCD-75CA0E3D3252#GUID-A3459A8B-A36A-44D4-9FCD-75CA0E3D3252/GUID-73A434E4-F48C-4440-BA3C-56844D263C76"><span><cite>Oracle Database Administrator&rsquo;s Guide</cite></span></a> for more information about the initialization parameters that control the memory usage of PDBs</p>
+</li>
+<li>
+<p><a class="olink ADMIN11200" target="_blank" href="../ADMIN/managing-memory.htm#ADMIN11200"><span class="italic">Oracle Database Administrator's Guide</span></a> for information on automatic memory management</p>
+</li>
+<li>
+<p><a class="olink ADMIN11202" target="_blank" href="../ADMIN/managing-memory.htm#ADMIN11202"><span class="italic">Oracle Database Administrator's Guide</span></a> for information on managing the SGA manually</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="SGA_MIN_SIZE.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="SHADOW_CORE_DUMP.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

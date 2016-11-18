@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>CLUSTER_DATABASE_INSTANCES</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="CLUSTER_DATABASE_INSTANCES initialization parameter, initialization parameters, CLUSTER_DATABASE_INSTANCES, Real Application Clusters" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="CLUSTER_DATABASE.htm" title="Previous" type="text/html" />
+<link rel="Next" href="CLUSTER_INTERCONNECTS.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-1AA3E1E9-38CF-4378-8C5E-31E6FA61899E"></a> <span id="PAGE" style="display:none;">44/2822</span> <!-- End Header -->
+<a id="REFRN10016"></a>
+<h1 id="REFRN-GUID-1AA3E1E9-38CF-4378-8C5E-31E6FA61899E" class="sect1"><span class="enumeration_section">1.38</span> CLUSTER_DATABASE_INSTANCES</h1>
+<div>
+<div class="section"></div>
+<!-- class="section" -->
+<div class="tblformal" id="GUID-1AA3E1E9-38CF-4378-8C5E-31E6FA61899E__GUID-245D3850-4F36-4D53-B2BA-3D6BF078DBA7">
+<hr />
+<table class="cellalignment3900" summary="This table describes the properties for this initialization parameter">
+<thead align="left">
+<tr>
+<th class="cellalignment3901" id="d53009e173">Property</th>
+<th class="cellalignment3902" id="d53009e176">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3901" id="d53009e181" headers="d53009e173">
+<p><span class="bold">Parameter type</span></p>
+</td>
+<td class="cellalignment3902" headers="d53009e181 d53009e176">
+<p>Integer</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3901" id="d53009e189" headers="d53009e173">
+<p><span class="bold">Default value</span></p>
+</td>
+<td class="cellalignment3902" headers="d53009e189 d53009e176">
+<p>If <code>CLUSTER_DATABASE</code> is set to <code>false</code>, then <code>1</code></p>
+<p>If <code>CLUSTER_DATABASE</code> is set to <code>true</code>, the number of configured Oracle RAC instances</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3901" id="d53009e213" headers="d53009e173">
+<p><span class="bold">Modifiable</span></p>
+</td>
+<td class="cellalignment3902" headers="d53009e213 d53009e176">
+<p>No</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3901" id="d53009e221" headers="d53009e173">
+<p><span class="bold">Modifiable in a PDB</span></p>
+</td>
+<td class="cellalignment3902" headers="d53009e221 d53009e176">
+<p>No</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3901" id="d53009e229" headers="d53009e173">
+<p><span class="bold">Range of values</span></p>
+</td>
+<td class="cellalignment3902" headers="d53009e229 d53009e176">
+<p>Any nonzero value</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3901" id="d53009e237" headers="d53009e173">
+<p><span class="bold">Basic</span></p>
+</td>
+<td class="cellalignment3902" headers="d53009e237 d53009e176">
+<p>No</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3901" id="d53009e245" headers="d53009e173">
+<p><span class="bold">Oracle RAC</span></p>
+</td>
+<td class="cellalignment3902" headers="d53009e245 d53009e176">
+<p>Multiple instances should have the same value.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<div class="section">
+<p><code>CLUSTER_DATABASE_INSTANCES</code> is an Oracle RAC parameter that specifies the number of instances that are configured as part of the cluster database. You must set this parameter for every instance. Normally you should set this parameter to the number of instances in your Oracle RAC environment. A proper setting for this parameter can improve memory use.</p>
+<div class="infoboxnotealso" id="GUID-1AA3E1E9-38CF-4378-8C5E-31E6FA61899E__GUID-009FDF2D-8585-4E06-8476-85EC67EE6F4C">
+<p class="notep1">See Also:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a class="olink TGSQL94713" target="_blank" href="../TGSQL/reading-execution-plans.htm#TGSQL94713"><span class="italic">Oracle Database SQL Tuning Guide</span></a> for more information about parallel execution</p>
+</li>
+<li>
+<p><a class="olink RACAD1111" target="_blank" href="../RACAD/introduction-to-oracle-rac.htm#RACAD1111"><span class="italic">Oracle Real Application Clusters Administration and Deployment Guide</span></a> for information on Real Application Clusters</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="CLUSTER_DATABASE.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="CLUSTER_INTERCONNECTS.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

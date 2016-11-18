@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>V$IOS_CLIENT</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="V$IOS_CLIENT provides more information about IO Server clients." />
+<meta name="keywords" content="V$IOS_CLIENT view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="V-IOFUNCMETRIC_HISTORY.htm" title="Previous" type="text/html" />
+<link rel="Next" href="V-IOSTAT_CONSUMER_GROUP.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-034A4DD8-56E5-48C0-A45E-A8490E3577C8"></a> <span id="PAGE" style="display:none;">2472/2822</span> <!-- End Header -->
+<h1 id="REFRN-GUID-034A4DD8-56E5-48C0-A45E-A8490E3577C8" class="sect1"><span class="enumeration_section">8.16</span> V$IOS_CLIENT</h1>
+<div>
+<p><code>V$IOS_CLIENT</code> provides more information about IO Server clients.</p>
+<div class="section"></div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-034A4DD8-56E5-48C0-A45E-A8490E3577C8__GUID-CD7BABEB-1776-460F-82A4-D8688BD3C388">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d1782469e167">Column</th>
+<th class="cellalignment3905" id="d1782469e171">Datatype</th>
+<th class="cellalignment3908" id="d1782469e175">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d1782469e181" headers="d1782469e167">
+<p><code>CLIENT_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1782469e181 d1782469e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1782469e181 d1782469e175">
+<p>The unique ID for this client instance</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1782469e196" headers="d1782469e167">
+<p><code>CLUSTER_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1782469e196 d1782469e171">
+<p><code>VARCHAR2(33)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1782469e196 d1782469e175">
+<p>The GUID of the cluster where the client instance is running</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1782469e211" headers="d1782469e167">
+<p><code>CLUSTER_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1782469e211 d1782469e171">
+<p><code>VARCHAR2(16)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1782469e211 d1782469e175">
+<p>When the query is executed on an Oracle IOServer (IOS) instance, this column shows the name of the cluster where the client (database) instance is running.</p>
+<p>When the query is executed on a database instance, this column shows the name of the cluster where the IOS instance that the database is connected to is running.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1782469e225" headers="d1782469e167">
+<p><code>NODE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1782469e225 d1782469e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1782469e225 d1782469e175">
+<p>Number of the node within the cluster where the client instance is running</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1782469e240" headers="d1782469e167">
+<p><code>INSTANCE_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1782469e240 d1782469e171">
+<p><code>VARCHAR2(64)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1782469e240 d1782469e175">
+<p>Instance name of the database client instance</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1782469e255" headers="d1782469e167">
+<p><code>DB_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1782469e255 d1782469e171">
+<p><code>VARCHAR2(64)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1782469e255 d1782469e175">
+<p>Database name of the database client instance</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1782469e270" headers="d1782469e167">
+<p><code>CON_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1782469e270 d1782469e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1782469e270 d1782469e175">
+<p>The ID of the container to which the data pertains. Possible values include:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>0</code>: This value is used for rows containing data that pertain to the entire multitenant container database (CDB). This value is also used for rows in non-CDBs.</p>
+</li>
+<li>
+<p><code>1</code>: This value is used for rows containing data that pertain to only the root</p>
+</li>
+<li>
+<p><span class="italic">n</span>: Where <span class="italic">n</span> is the applicable container ID for the rows containing data</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<div class="section">
+<div class="infobox-note" id="GUID-034A4DD8-56E5-48C0-A45E-A8490E3577C8__GUID-20F96788-8792-4A47-81AB-8F89C8701D2F">
+<p class="notep1">Note:</p>
+<p>This view is available starting with Oracle Database 12<span class="italic">c</span> Release 2 (12.2.0.1).</p>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="V-IOFUNCMETRIC_HISTORY.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="V-IOSTAT_CONSUMER_GROUP.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

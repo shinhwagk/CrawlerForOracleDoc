@@ -1,0 +1,1082 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>V$LOGMNR_CONTENTS</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="V$LOGMNR_CONTENTS view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="V-LOGHIST.htm" title="Previous" type="text/html" />
+<link rel="Next" href="V-LOGMNR_DICTIONARY.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-B9196942-07BF-4935-B603-FA875064F5C3"></a> <span id="PAGE" style="display:none;">2504/2822</span> <!-- End Header -->
+<a id="REFRN30132"></a>
+<h1 id="REFRN-GUID-B9196942-07BF-4935-B603-FA875064F5C3" class="sect1"><span class="enumeration_section">8.48</span> V$LOGMNR_CONTENTS</h1>
+<div>
+<div class="section">
+<p><code>V$LOGMNR_CONTENTS</code> contains log history information. To query this view, you must have the <code>LOGMINING</code> privilege.</p>
+<p>When a <code>SELECT</code> statement is executed against the <code>V$LOGMNR_CONTENTS</code> view, the archive redo log files are read sequentially. Translated records from the redo log files are returned as rows in the <code>V$LOGMNR_CONTENTS</code> view. This continues until either the filter criteria specified at startup (<code>EndTime</code> or <code>endScn</code>) are met or the end of the archive log file is reached.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-B9196942-07BF-4935-B603-FA875064F5C3__GUID-01FE6D2B-14EE-428F-8755-802566013E7E">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d1811398e188">Column</th>
+<th class="cellalignment3905" id="d1811398e191">Datatype</th>
+<th class="cellalignment3908" id="d1811398e194">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d1811398e199" headers="d1811398e188">
+<p><code>SCN</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e199 d1811398e191">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e199 d1811398e194">
+<p>System change number (SCN) when the database change was made</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e211" headers="d1811398e188">
+<p><code>START_SCN</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e211 d1811398e191">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e211 d1811398e194">
+<p>System change number (SCN) when the transaction that contains this change started; only meaningful if the <code>COMMITTED_DATA_ONLY</code> option was chosen in a <code>DBMS_LOGMNR.START_LOGMNR()</code> invocation, NULL otherwise. This column may also be NULL if the query is run over a time/SCN range that does not contain the start of the transaction.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e229" headers="d1811398e188">
+<p><code>COMMIT_SCN</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e229 d1811398e191">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e229 d1811398e194">
+<p>System change number (SCN) when the transaction committed; only meaningful if the <code>COMMITTED_DATA_ONLY</code> option was chosen in a <code>DBMS_LOGMNR.START_LOGMNR()</code> invocation</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e247" headers="d1811398e188">
+<p><code>TIMESTAMP</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e247 d1811398e191">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e247 d1811398e194">
+<p>Timestamp when the database change was made</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e259" headers="d1811398e188">
+<p><code>START_TIMESTAMP</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e259 d1811398e191">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e259 d1811398e194">
+<p>Timestamp when the transaction that contains this change started; only meaningful if the <code>COMMITTED_DATA_ONLY</code> option was chosen in a <code>DBMS_LOGMNR.START_LOGMNR()</code> invocation, NULL otherwise. This column may also be NULL if the query is run over a time/SCN range that does not contain the start of the transaction.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e277" headers="d1811398e188">
+<p><code>COMMIT_TIMESTAMP</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e277 d1811398e191">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e277 d1811398e194">
+<p>Timestamp when the transaction committed; only meaningful if the <code>COMMITTED_DATA_ONLY</code> option was chosen in a <code>DBMS_LOGMNR.START_LOGMNR()</code> invocation</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e295" headers="d1811398e188">
+<p><code>XIDUSN</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e295 d1811398e191">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e295 d1811398e194">
+<p>Transaction ID undo segment number of the transaction that generated the change</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e307" headers="d1811398e188">
+<p><code>XIDSLT</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e307 d1811398e191">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e307 d1811398e194">
+<p>Transaction ID slot number of the transaction that generated the change</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e319" headers="d1811398e188">
+<p><code>XIDSQN</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e319 d1811398e191">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e319 d1811398e194">
+<p>Transaction ID sequence number of the transaction that generated the change</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e331" headers="d1811398e188">
+<p><code>XID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e331 d1811398e191">
+<p><code>RAW(8)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e331 d1811398e194">
+<p>Raw representation of the transaction identifier</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e343" headers="d1811398e188">
+<p><code>PXIDUSN</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e343 d1811398e191">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e343 d1811398e194">
+<p>Parent transaction ID undo segment number of a parallel transaction</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e356" headers="d1811398e188">
+<p><code>PXIDSLT</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e356 d1811398e191">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e356 d1811398e194">
+<p>Parent transaction ID slot number of a parallel transaction</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e368" headers="d1811398e188">
+<p><code>PXIDSQN</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e368 d1811398e191">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e368 d1811398e194">
+<p>Parent transaction ID sequence number of a parallel transaction</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e380" headers="d1811398e188">
+<p><code>PXID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e380 d1811398e191">
+<p><code>RAW(8)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e380 d1811398e194">
+<p>Raw representation of the parent transaction identifier</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e392" headers="d1811398e188">
+<p><code>TX_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e392 d1811398e191">
+<p><code>VARCHAR2(256)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e392 d1811398e194">
+<p>Name of the transaction that made the change; only meaningful if the transaction is a named transaction</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e404" headers="d1811398e188">
+<p><code>OPERATION</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e404 d1811398e191">
+<p><code>VARCHAR2(32)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e404 d1811398e194">
+<p>User level SQL operation that made the change:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>INSERT - Change was caused by an insert statement</p>
+</li>
+<li>
+<p>UPDATE - Change was caused by an update statement</p>
+</li>
+<li>
+<p>DELETE - Change was caused by a delete statement</p>
+</li>
+<li>
+<p>DDL - Change was caused by a DDL statement</p>
+</li>
+<li>
+<p>START - Change was caused by the start of a transaction</p>
+</li>
+<li>
+<p>COMMIT - Change was caused by the commit of a transaction</p>
+</li>
+<li>
+<p>ROLLBACK - Change was caused by a full rollback of a transaction</p>
+</li>
+<li>
+<p>LOB_WRITE - Change was caused by an invocation of <code>DBMS_LOB.WRITE</code></p>
+</li>
+<li>
+<p>LOB_TRIM - Change was caused by an invocation of <code>DBMS_LOB.TRIM</code></p>
+</li>
+<li>
+<p>LOB_ERASE - Change was caused by an invocation of <code>DBMS_LOB.ERASE</code></p>
+</li>
+<li>
+<p>SELECT_FOR_UPDATE - Operation was a <code>SELECT FOR UPDATE</code> statement</p>
+</li>
+<li>
+<p>SEL_LOB_LOCATOR - Operation was a <code>SELECT</code> statement that returned a LOB locator</p>
+</li>
+<li>
+<p>MISSING_SCN - LogMiner encountered a gap in the redo records. This is most likely because not all redo logs were registered with LogMiner.</p>
+</li>
+<li>
+<p>INTERNAL - Change was caused by internal operations initiated by the database</p>
+</li>
+<li>
+<p>XML DOC BEGIN - Beginning of a change to an XMLType column or table</p>
+</li>
+<li>
+<p>XML DOC WRITE - Data for an XML document</p>
+</li>
+<li>
+<p>XML DOC END - End of the Data for an XML document</p>
+</li>
+<li>
+<p>UNSUPPORTED - Change was caused by operations not currently supported by LogMiner (for example, changes made to nested tables)</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e484" headers="d1811398e188">
+<p><code>OPERATION_CODE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e484 d1811398e191">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e484 d1811398e194">
+<p>Number of the operation code:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>0 - INTERNAL</p>
+</li>
+<li>
+<p>1 - INSERT</p>
+</li>
+<li>
+<p>2 - DELETE</p>
+</li>
+<li>
+<p>3 - UPDATE</p>
+</li>
+<li>
+<p>5 - DDL</p>
+</li>
+<li>
+<p>6 - START</p>
+</li>
+<li>
+<p>7 - COMMIT</p>
+</li>
+<li>
+<p>9 - SELECT_LOB_LOCATOR</p>
+</li>
+<li>
+<p>10 - LOB_WRITE</p>
+</li>
+<li>
+<p>11 - LOB_TRIM</p>
+</li>
+<li>
+<p>25 - SELECT_FOR_UPDATE</p>
+</li>
+<li>
+<p>28 - LOB_ERASE</p>
+</li>
+<li>
+<p>34 - MISSING_SCN</p>
+</li>
+<li>
+<p>68 - XML DOC BEGIN</p>
+</li>
+<li>
+<p>70 = XML DOC WRITE</p>
+</li>
+<li>
+<p>71 = XML DOC END</p>
+</li>
+<li>
+<p>36 - ROLLBACK</p>
+</li>
+<li>
+<p>255 - UNSUPPORTED</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e552" headers="d1811398e188">
+<p><code>ROLLBACK</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e552 d1811398e191">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e552 d1811398e194">
+<p>1 = if the redo record was generated because of a partial or a full rollback of the associated transaction</p>
+<p>0 = otherwise</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e566" headers="d1811398e188">
+<p><code>SEG_OWNER</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e566 d1811398e191">
+<p><code>VARCHAR2(32)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e566 d1811398e194">
+<p>Owner of the modified data segment</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e578" headers="d1811398e188">
+<p><code>SEG_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e578 d1811398e191">
+<p><code>VARCHAR2(256)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e578 d1811398e194">
+<p>Name of the modified data segment</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e590" headers="d1811398e188">
+<p><code>TABLE_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e590 d1811398e191">
+<p><code>VARCHAR2(32)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e590 d1811398e194">
+<p>Name of the modified table (in case the redo pertains to a table modification)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e602" headers="d1811398e188">
+<p><code>SEG_TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e602 d1811398e191">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e602 d1811398e194">
+<p>Type of the modified data segment:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>0 - UNKNOWN</p>
+</li>
+<li>
+<p>1 - INDEX</p>
+</li>
+<li>
+<p>2 - TABLE</p>
+</li>
+<li>
+<p>19 - TABLE PARTITION</p>
+</li>
+<li>
+<p>20 - INDEX PARTITION</p>
+</li>
+<li>
+<p>34 - TABLE SUBPARTITION</p>
+</li>
+<li>
+<p>All other values - UNSUPPORTED</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e637" headers="d1811398e188">
+<p><code>SEG_TYPE_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e637 d1811398e191">
+<p><code>VARCHAR2(32)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e637 d1811398e194">
+<p>Segment type name:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>UNKNOWN</p>
+</li>
+<li>
+<p>INDEX</p>
+</li>
+<li>
+<p>TABLE</p>
+</li>
+<li>
+<p>TABLE PARTITION</p>
+</li>
+<li>
+<p>INDEX PARTITION</p>
+</li>
+<li>
+<p>TABLE SUBPARTITION</p>
+</li>
+<li>
+<p>UNSUPPORTED</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e671" headers="d1811398e188">
+<p><code>TABLE_SPACE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e671 d1811398e191">
+<p><code>VARCHAR2(32)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e671 d1811398e194">
+<p>Name of the tablespace containing the modified data segment. This column is not populated for rows where the value of the <code>OPERATION</code> column is DDL. This is because DDL may operate on more than one tablespace.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e686" headers="d1811398e188">
+<p><code>ROW_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e686 d1811398e191">
+<p><code>VARCHAR2(18)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e686 d1811398e194">
+<p>Row ID of the row modified by the change (only meaningful if the change pertains to a DML). This will be NULL if the redo record is not associated with a DML.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e698" headers="d1811398e188">
+<p><code>USERNAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e698 d1811398e191">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e698 d1811398e194">
+<p>Name of the user who executed the transaction</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e710" headers="d1811398e188">
+<p><code>OS_USERNAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e710 d1811398e191">
+<p><code>VARCHAR2(4000)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e710 d1811398e194">
+<p>Name of the operating system user</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e722" headers="d1811398e188">
+<p><code>MACHINE_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e722 d1811398e191">
+<p><code>VARCHAR2(4000)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e722 d1811398e194">
+<p>Machine from which the user connected to the database</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e734" headers="d1811398e188">
+<p><code>AUDIT_SESSIONID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e734 d1811398e191">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e734 d1811398e194">
+<p>Audit session ID associated with the user session making the change</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e746" headers="d1811398e188">
+<p><code>SESSION#</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e746 d1811398e191">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e746 d1811398e194">
+<p>Session number of the session that made the change</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e758" headers="d1811398e188">
+<p><code>SERIAL#</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e758 d1811398e191">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e758 d1811398e194">
+<p>Serial number of the session that made the change</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e770" headers="d1811398e188">
+<p><code>SESSION_INFO</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e770 d1811398e191">
+<p><code>VARCHAR2(4000)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e770 d1811398e194">
+<p>Information about the database session that executed the transaction. Contains process information, machine name from which the user logged in, and so on. A possible <code>SESSION_INFO</code> column may contain the following:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>login_username = HR</p>
+</li>
+<li>
+<p>client_info =</p>
+</li>
+<li>
+<p>OS_username = jkundu</p>
+</li>
+<li>
+<p>Machine_name = nirvan</p>
+</li>
+<li>
+<p>OS_terminal = pts/31</p>
+</li>
+<li>
+<p>OS_program_name = sqlplus@nirvan (TNS V1-V3)</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e804" headers="d1811398e188">
+<p><code>THREAD#</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e804 d1811398e191">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e804 d1811398e194">
+<p>Number of the thread that made the change to the database</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e817" headers="d1811398e188">
+<p><code>SEQUENCE#</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e817 d1811398e191">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e817 d1811398e194">
+<p>Sequence number of the SQL statement within the transaction. If you are mining without the <code>COMMITED_DATA_ONLY</code> option set, then this value is 1.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e832" headers="d1811398e188">
+<p><code>RBASQN</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e832 d1811398e191">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e832 d1811398e194">
+<p>Sequence# associated with the Redo Block Address (RBA) of the redo record associated with the change</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e844" headers="d1811398e188">
+<p><code>RBABLK</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e844 d1811398e191">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e844 d1811398e194">
+<p>RBA block number within the log file</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e856" headers="d1811398e188">
+<p><code>RBABYTE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e856 d1811398e191">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e856 d1811398e194">
+<p>RBA byte offset within the block</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e868" headers="d1811398e188">
+<p><code>UBAFIL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e868 d1811398e191">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e868 d1811398e194">
+<p>Undo Block Address (UBA) file number identifying the file containing the undo block</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e880" headers="d1811398e188">
+<p><code>UBABLK</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e880 d1811398e191">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e880 d1811398e194">
+<p>UBA block number for the undo block</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e892" headers="d1811398e188">
+<p><code>UBAREC</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e892 d1811398e191">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e892 d1811398e194">
+<p>UBA record index within the undo block</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e904" headers="d1811398e188">
+<p><code>UBASQN</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e904 d1811398e191">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e904 d1811398e194">
+<p>UBA undo block sequence number</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e916" headers="d1811398e188">
+<p><code>ABS_FILE#</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e916 d1811398e191">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e916 d1811398e194">
+<p>Data block absolute file number of the block changed by the transaction</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e928" headers="d1811398e188">
+<p><code>REL_FILE#</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e928 d1811398e191">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e928 d1811398e194">
+<p>Data block relative file number. The file number is relative to the tablespace of the object.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e940" headers="d1811398e188">
+<p><code>DATA_BLK#</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e940 d1811398e191">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e940 d1811398e194">
+<p>Data block number within the file</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e953" headers="d1811398e188">
+<p><code>DATA_OBJ#</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e953 d1811398e191">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e953 d1811398e194">
+<p>Data block object number identifying the object</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e965" headers="d1811398e188">
+<p><code>DATA_OBJV#</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e965 d1811398e191">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e965 d1811398e194">
+<p>Version number of the table being modified</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e977" headers="d1811398e188">
+<p><code>DATA_OBJD#</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e977 d1811398e191">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e977 d1811398e194">
+<p>Data block data object number identifying the object within the tablespace</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e989" headers="d1811398e188">
+<p><code>SQL_REDO</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e989 d1811398e191">
+<p><code>VARCHAR2(4000)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e989 d1811398e194">
+<p>Reconstructed SQL statement that is equivalent to the original SQL statement that made the change. Refer to <a class="olink SUTIL019" target="_blank" href="../SUTIL/oracle-logminer-utility.htm#SUTIL019"><span class="italic">Oracle Database Utilities</span></a> before executing <code>SQL_REDO</code> to your database.</p>
+<p>LogMiner does not generate SQL redo for temporary tables. In such a case, this column will contain the string <code>"/* No SQL_REDO for temporary tables */"</code>.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e1014" headers="d1811398e188">
+<p><code>SQL_UNDO</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e1014 d1811398e191">
+<p><code>VARCHAR2(4000)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e1014 d1811398e194">
+<p>Reconstructed SQL statement that can be used to undo the effect of the original statement that made the change. DDL statements have no corresponding <code>SQL_UNDO</code>. Refer to <a class="olink SUTIL019" target="_blank" href="../SUTIL/oracle-logminer-utility.htm#SUTIL019"><span class="italic">Oracle Database Utilities</span></a> before executing <code>SQL_UNDO</code> to your database.</p>
+<p>LogMiner does not generate SQL undo for temporary tables. In such a case, this column will contain the string <code>"/* No SQL_UNDO for temporary tables */"</code>.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e1042" headers="d1811398e188">
+<p><code>RS_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e1042 d1811398e191">
+<p><code>VARCHAR2(32)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e1042 d1811398e194">
+<p>Record set ID. The tuple (<code>RS_ID</code>, <code>SSN</code>) together uniquely identifies a logical row change. This will usually mean one row from <code>V$LOGMNR_CONTENTS</code>, but could be more than one row if a single SQL statement for either the Redo or Undo would be too large to fit within the respective columns <code>SQL_UNDO</code> or <code>SQL_REDO</code>. <code>RS_ID</code> uniquely identifies the redo record that generated the row.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e1073" headers="d1811398e188">
+<p><code>SSN</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e1073 d1811398e191">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e1073 d1811398e194">
+<p>SQL sequence number. Used in conjunction with <code>RS_ID</code>, this uniquely identifies a logical row change, shown as one or more rows from the <code>V$LOGMNR_CONTENTS</code> view.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e1091" headers="d1811398e188">
+<p><code>CSF</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e1091 d1811398e191">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e1091 d1811398e194">
+<p>Continuation SQL flag. Possible values are:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>0 - Indicates <code>SQL_REDO</code> and <code>SQL_UNDO</code> is contained within the same row</p>
+</li>
+<li>
+<p>1 - Indicates that either <code>SQL_REDO</code> or <code>SQL_UNDO</code> is greater than <code>4000</code> bytes in size and is continued in the next row returned by the view</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e1125" headers="d1811398e188">
+<p><code>INFO</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e1125 d1811398e191">
+<p><code>VARCHAR2(64)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e1125 d1811398e194">
+<p>Informational message about the row. For instance, the string "USER DDL" indicates that the DDL statement returned in the <code>SQL_REDO</code> column was the top-level DDL executed by the user and the string "INTERNAL DDL" indicates that the DDL statement returned in the <code>SQL_REDO</code> column was executed internally by the RDBMS.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e1143" headers="d1811398e188">
+<p><code>STATUS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e1143 d1811398e191">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e1143 d1811398e194">
+<p>A value of <code>0</code> indicates that the reconstructed SQL statements as shown in the <code>SQL_REDO</code> and <code>SQL_UNDO</code> columns are valid executable SQL statements. Otherwise, the reconstructed SQL statements are not executable. This may be because no data dictionary was provided to LogMiner for the analysis, or that the data dictionary provided did not have the definition of the object being mined.</p>
+<p>A value of <code>5</code> indicates that this row is part of a change to an XMLType column or table and the XML document must be assembled before being applied.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e1169" headers="d1811398e188">
+<p><code>REDO_VALUE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e1169 d1811398e191">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e1169 d1811398e194">
+<p>Used as input to the <code>DBMS_LOGMNR.MINE_VALUE()</code> and <code>DBMS_LOGMNR.COLUMN_PRESENT()</code> functions</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e1188" headers="d1811398e188">
+<p><code>UNDO_VALUE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e1188 d1811398e191">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e1188 d1811398e194">
+<p>Used as input to the <code>DBMS_LOGMNR.MINE_VALUE()</code> and <code>DBMS_LOGMNR.COLUMN_PRESENT()</code> functions</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e1206" headers="d1811398e188">
+<p><code>SAFE_RESUME_SCN</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e1206 d1811398e191">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e1206 d1811398e194">
+<p>Reserved for future use</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e1218" headers="d1811398e188">
+<p><code>CSCN</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e1218 d1811398e191">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e1218 d1811398e194">
+<p>This column is deprecated in favor of the <code>COMMIT_SCN</code> column</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e1233" headers="d1811398e188">
+<p><code>OBJECT_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e1233 d1811398e191">
+<p><code>RAW(16)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e1233 d1811398e194">
+<p>Object identifier for DMLs to XMLType tables. For changes to non-typed tables, this column is NULL.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e1245" headers="d1811398e188">
+<p><code>EDITION_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e1245 d1811398e191">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e1245 d1811398e194">
+<p>Identifies the edition in which a DDL statement was executed</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e1257" headers="d1811398e188">
+<p><code>CLIENT_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e1257 d1811398e191">
+<p><code>VARCHAR2(64)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e1257 d1811398e194">
+<p>Client identifier in the session that performed the operation, if available.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e1269" headers="d1811398e188">
+<p><code>SRC_CON_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e1269 d1811398e191">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e1269 d1811398e194">
+<p>Contains the pluggable database (PDB) name. This information will only be available when mining with a current LogMiner dictionary.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e1281" headers="d1811398e188">
+<p><code>SRC_CON_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e1281 d1811398e191">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e1281 d1811398e194">
+<p>Contains the PDB ID (the PDB_ID column from the DBA_PDBS view). This information will be available only with a current LogMiner dictionary.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e1293" headers="d1811398e188">
+<p><code>SRC_CON_UID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e1293 d1811398e191">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e1293 d1811398e194">
+<p>Contains the PDB UID (the CON_UID column from the DBA_PDBS view). This information will be available with or without a current LogMiner dictionary.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e1305" headers="d1811398e188">
+<p><code>SRC_CON_DBID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e1305 d1811398e191">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e1305 d1811398e194">
+<p>Contains the PDB identifier (the DBID column from the DBA_PDBS view). This information will only be available when mining with a current LogMiner dictionary.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e1317" headers="d1811398e188">
+<p><code>SRC_CON_GUID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e1317 d1811398e191">
+<p><code>RAW(16)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e1317 d1811398e194">
+<p>Contains the GUID associated with the PDB (the GUID column from the DBA_PDBS view). This information will only be available when mining with a current LogMiner dictionary.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1811398e1330" headers="d1811398e188">
+<p><code>CON_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1811398e1330 d1811398e191">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1811398e1330 d1811398e194">
+<p>The ID of the container to which the data pertains. Possible values include:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>0</code>: This value is used for rows containing data that pertain to the entire CDB. This value is also used for rows in non-CDBs.</p>
+</li>
+<li>
+<p><code>1</code>: This value is used for rows containing data that pertain to only the root</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<div class="section">
+<div class="infoboxnotealso" id="GUID-B9196942-07BF-4935-B603-FA875064F5C3__GUID-8625039C-87FD-422E-A570-8573F59DCF62">
+<p class="notep1">See Also:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a class="olink ARPLS022" target="_blank" href="../ARPLS/DBMS_LOGMNR.htm#ARPLS022"><span class="italic">Oracle Database PL/SQL Packages and Types Reference</span></a> for more information about the <code>DBMS_LOGMNR</code> package</p>
+</li>
+<li>
+<p><a class="olink ARPLS020" target="_blank" href="../ARPLS/DBMS_LOB.htm#ARPLS020"><span class="italic">Oracle Database PL/SQL Packages and Types Reference</span></a> for more information about the <code>DBMS_LOB</code> package</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="V-LOGHIST.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="V-LOGMNR_DICTIONARY.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

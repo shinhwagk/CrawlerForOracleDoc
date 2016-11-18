@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>ALL_IND_STATISTICS</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="ALL_IND_STATISTICS view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="ALL_IND_PENDING_STATS.htm" title="Previous" type="text/html" />
+<link rel="Next" href="ALL_IND_SUBPARTITIONS.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-AAC726B8-B9E6-43D8-9C7A-93DC5B4766B9"></a> <span id="PAGE" style="display:none;">512/2822</span> <!-- End Header -->
+<a id="REFRN20360"></a>
+<h1 id="REFRN-GUID-AAC726B8-B9E6-43D8-9C7A-93DC5B4766B9" class="sect1"><span class="enumeration_section">2.169</span> ALL_IND_STATISTICS</h1>
+<div>
+<div class="section">
+<p><code>ALL_IND_STATISTICS</code> displays optimizer statistics for the indexes on the tables accessible to the current user collected using the <code>DBMS_STATS</code> package.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Related Views</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<ul style="list-style-type: disc;">
+<li>
+<p><code>DBA_IND_STATISTICS</code> displays optimizer statistics for all indexes in the database.</p>
+</li>
+<li>
+<p><code>USER_IND_STATISTICS</code> displays optimizer statistics for the indexes on the tables owned by the current user. This view does not display the <code>OWNER</code> column.</p>
+</li>
+</ul>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-AAC726B8-B9E6-43D8-9C7A-93DC5B4766B9__GUID-5887AACF-8289-44C5-84E6-B533C87CB0DC">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d361539e190">Column</th>
+<th class="cellalignment3905" id="d361539e193">Datatype</th>
+<th class="cellalignment3906" id="d361539e196">NULL</th>
+<th class="cellalignment3907" id="d361539e199">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d361539e204" headers="d361539e190">
+<p><code>OWNER</code></p>
+</td>
+<td class="cellalignment3905" headers="d361539e204 d361539e193">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d361539e204 d361539e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d361539e204 d361539e199">
+<p>Owner of the index</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d361539e219" headers="d361539e190">
+<p><code>INDEX_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d361539e219 d361539e193">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d361539e219 d361539e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d361539e219 d361539e199">
+<p>Name of the index</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d361539e234" headers="d361539e190">
+<p><code>TABLE_OWNER</code></p>
+</td>
+<td class="cellalignment3905" headers="d361539e234 d361539e193">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d361539e234 d361539e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d361539e234 d361539e199">
+<p>Owner of the indexed object</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d361539e249" headers="d361539e190">
+<p><code>TABLE_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d361539e249 d361539e193">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d361539e249 d361539e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d361539e249 d361539e199">
+<p>Name of the indexed object</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d361539e264" headers="d361539e190">
+<p><code>PARTITION_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d361539e264 d361539e193">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d361539e264 d361539e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d361539e264 d361539e199">
+<p>Name of the partition</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d361539e279" headers="d361539e190">
+<p><code>PARTITION_POSITION</code></p>
+</td>
+<td class="cellalignment3905" headers="d361539e279 d361539e193">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d361539e279 d361539e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d361539e279 d361539e199">
+<p>Position of the partition within the index</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d361539e294" headers="d361539e190">
+<p><code>SUBPARTITION_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d361539e294 d361539e193">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d361539e294 d361539e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d361539e294 d361539e199">
+<p>Name of the subpartition</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d361539e309" headers="d361539e190">
+<p><code>SUBPARTITION_POSITION</code></p>
+</td>
+<td class="cellalignment3905" headers="d361539e309 d361539e193">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d361539e309 d361539e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d361539e309 d361539e199">
+<p>Position of the subpartition within the partition</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d361539e324" headers="d361539e190">
+<p><code>OBJECT_TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d361539e324 d361539e193">
+<p><code>VARCHAR2(12)</code></p>
+</td>
+<td class="cellalignment3906" headers="d361539e324 d361539e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d361539e324 d361539e199">
+<p>Type of the object:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>INDEX</code></p>
+</li>
+<li>
+<p><code>PARTITION</code></p>
+</li>
+<li>
+<p><code>SUBPARTITION</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d361539e352" headers="d361539e190">
+<p><code>BLEVEL</code></p>
+</td>
+<td class="cellalignment3905" headers="d361539e352 d361539e193">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d361539e352 d361539e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d361539e352 d361539e199">
+<p>B-Tree level</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d361539e367" headers="d361539e190">
+<p><code>LEAF_BLOCKS</code></p>
+</td>
+<td class="cellalignment3905" headers="d361539e367 d361539e193">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d361539e367 d361539e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d361539e367 d361539e199">
+<p>Number of leaf blocks in the index</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d361539e383" headers="d361539e190">
+<p><code>DISTINCT_KEYS</code></p>
+</td>
+<td class="cellalignment3905" headers="d361539e383 d361539e193">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d361539e383 d361539e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d361539e383 d361539e199">
+<p>Number of distinct keys in the index</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d361539e398" headers="d361539e190">
+<p><code>AVG_LEAF_BLOCKS_PER_KEY</code></p>
+</td>
+<td class="cellalignment3905" headers="d361539e398 d361539e193">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d361539e398 d361539e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d361539e398 d361539e199">
+<p>Average number of leaf blocks per key</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d361539e413" headers="d361539e190">
+<p><code>AVG_DATA_BLOCKS_PER_KEY</code></p>
+</td>
+<td class="cellalignment3905" headers="d361539e413 d361539e193">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d361539e413 d361539e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d361539e413 d361539e199">
+<p>Average number of data blocks per key</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d361539e428" headers="d361539e190">
+<p><code>CLUSTERING_FACTOR</code></p>
+</td>
+<td class="cellalignment3905" headers="d361539e428 d361539e193">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d361539e428 d361539e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d361539e428 d361539e199">
+<p>Indicates the amount of order of the rows in the table based on the values of the index.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>If the value is near the number of blocks, then the table is very well ordered. In this case, the index entries in a single leaf block tend to point to rows in the same data blocks.</p>
+</li>
+<li>
+<p>If the value is near the number of rows, then the table is very randomly ordered. In this case, it is unlikely that index entries in the same leaf block point to rows in the same data blocks.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d361539e450" headers="d361539e190">
+<p><code>NUM_ROWS</code></p>
+</td>
+<td class="cellalignment3905" headers="d361539e450 d361539e193">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d361539e450 d361539e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d361539e450 d361539e199">
+<p>Number of rows in the index</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d361539e465" headers="d361539e190">
+<p><code>AVG_CACHED_BLOCKS</code></p>
+</td>
+<td class="cellalignment3905" headers="d361539e465 d361539e193">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d361539e465 d361539e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d361539e465 d361539e199">
+<p>Average number of blocks in the buffer cache</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d361539e480" headers="d361539e190">
+<p><code>AVG_CACHE_HIT_RATIO</code></p>
+</td>
+<td class="cellalignment3905" headers="d361539e480 d361539e193">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d361539e480 d361539e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d361539e480 d361539e199">
+<p>Average cache hit ratio for the object</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d361539e495" headers="d361539e190">
+<p><code>SAMPLE_SIZE</code></p>
+</td>
+<td class="cellalignment3905" headers="d361539e495 d361539e193">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d361539e495 d361539e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d361539e495 d361539e199">
+<p>Sample size used in analyzing the index</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d361539e510" headers="d361539e190">
+<p><code>LAST_ANALYZED</code></p>
+</td>
+<td class="cellalignment3905" headers="d361539e510 d361539e193">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3906" headers="d361539e510 d361539e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d361539e510 d361539e199">
+<p>Date of the most recent time the index was analyzed</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d361539e525" headers="d361539e190">
+<p><code>GLOBAL_STATS</code></p>
+</td>
+<td class="cellalignment3905" headers="d361539e525 d361539e193">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3906" headers="d361539e525 d361539e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d361539e525 d361539e199">
+<p><code>GLOBAL_STATS</code> will be <code>YES</code> if statistics are gathered or incrementally maintained, otherwise it will be <code>NO</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d361539e547" headers="d361539e190">
+<p><code>USER_STATS</code></p>
+</td>
+<td class="cellalignment3905" headers="d361539e547 d361539e193">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3906" headers="d361539e547 d361539e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d361539e547 d361539e199">
+<p>Indicates whether statistics were entered directly by the user (<code>YES</code>) or not (<code>NO</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d361539e569" headers="d361539e190">
+<p><code>STATTYPE_LOCKED</code></p>
+</td>
+<td class="cellalignment3905" headers="d361539e569 d361539e193">
+<p><code>VARCHAR2(5)</code></p>
+</td>
+<td class="cellalignment3906" headers="d361539e569 d361539e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d361539e569 d361539e199">
+<p>Type of statistics lock</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d361539e584" headers="d361539e190">
+<p><code>STALE_STATS</code></p>
+</td>
+<td class="cellalignment3905" headers="d361539e584 d361539e193">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3906" headers="d361539e584 d361539e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d361539e584 d361539e199">
+<p>Whether statistics for the object are stale or not</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d361539e599" headers="d361539e190">
+<p><code>SCOPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d361539e599 d361539e193">
+<p><code>VARCHAR2(7)</code></p>
+</td>
+<td class="cellalignment3906" headers="d361539e599 d361539e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d361539e599 d361539e199">
+<p>The value is <code>SHARED</code> for statistics gathered on any table other than global temporary tables.</p>
+<p>For a global tempoary table, the possible values are:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>SESSION</code> - Indicates that the statistics are session-specific</p>
+</li>
+<li>
+<p><code>SHARED</code> - Indicates that the statistics are shared across all sessions</p>
+</li>
+</ul>
+<p>See <a class="olink ARPLS68486" target="_blank" href="../ARPLS/DBMS_STATS.htm#ARPLS68486"><span class="italic">Oracle Database PL/SQL Packages and Types Reference</span></a> for information about using the <code>GLOBAL_TEMP_TABLE_STATS</code> preference of the <code>DBMS_STATS</code> package to control whether to gather session or shared statistics for global temporary tables.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<div class="section">
+<div class="infoboxnotealso" id="GUID-AAC726B8-B9E6-43D8-9C7A-93DC5B4766B9__GUID-8D8B2C23-6AF4-4B8C-9ED6-1B664D44FD16">
+<p class="notep1">See Also:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="q">"<a href="DBA_IND_STATISTICS.htm#GUID-4FA62597-881E-4F3C-888E-718C7808BE81">DBA_IND_STATISTICS</a>"</span></p>
+</li>
+<li>
+<p><span class="q">"<a href="USER_IND_STATISTICS.htm#GUID-9407F92C-D627-4FBC-B475-C821BA6AE2E9">USER_IND_STATISTICS</a>"</span></p>
+</li>
+<li>
+<p><a class="olink ARPLS059" target="_blank" href="../ARPLS/DBMS_STATS.htm#ARPLS059"><span class="italic">Oracle Database PL/SQL Packages and Types Reference</span></a> for more information about the <code>DBMS_STATS</code> package</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="ALL_IND_PENDING_STATS.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="ALL_IND_SUBPARTITIONS.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

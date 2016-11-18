@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>OPTIMIZER_FEATURES_ENABLE</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="OPTIMIZER_FEATURES_ENABLE initialization parameter, initialization parameters, OPTIMIZER_FEATURES_ENABLE" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="OPTIMIZER_DYNAMIC_SAMPLING.htm" title="Previous" type="text/html" />
+<link rel="Next" href="OPTIMIZER_INDEX_CACHING.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+                    <script type="text/javascript">
+                      var w=window;
+                      if(w.performance||w.mozPerformance||w.msPerformance||w.webkitPerformance){var d=document,AKSB=AKSB||{};AKSB.q=[];AKSB.mark=function(a,b){AKSB.q.push(["mark",a,b||(new Date).getTime()])};AKSB.measure=function(a,b,c){AKSB.q.push(["measure",a,b,c||(new Date).getTime()])};AKSB.done=function(a){AKSB.q.push(["done",a])};AKSB.mark("firstbyte",(new Date).getTime());AKSB.prof={custid:"322179",ustr:"UNKNOWN",originlat:0,clientrtt:36,ghostip:"184.84.239.166",
+                      ipv6:false,pct:10,clientip:"101.231.34.38",requestid:"185ffe6e",protocol:"",blver:10,akM:"dscx",akN:"ae",akTT:"O",akTX:"1",akTI:"185ffe6e",ai:"206465",ra:"",pmgn:"",pmgi:"",pmp:""};(function(a){var b=
+                      d.createElement("script");b.async="async";b.src=a;a=d.getElementsByTagName("script");a=a[a.length-1];a.parentNode.insertBefore(b,a)})(("https:"===d.location.protocol?"https:":"http:")+"//ds-aksb-a.akamaihd.net/aksb.min.js")};
+                    </script>
+                    </head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-E193EC9E-B642-4C01-99EC-24E04AEA1A2C"></a> <span id="PAGE" style="display:none;">222/2822</span> <!-- End Header -->
+<a id="REFRN10141"></a>
+<h1 id="REFRN-GUID-E193EC9E-B642-4C01-99EC-24E04AEA1A2C" class="sect1"><span class="enumeration_section">1.216</span> OPTIMIZER_FEATURES_ENABLE</h1>
+<div>
+<div class="section"></div>
+<!-- class="section" -->
+<div class="tblformal" id="GUID-E193EC9E-B642-4C01-99EC-24E04AEA1A2C__GUID-F54AC74B-C659-4A9B-833E-C7554836BCF7">
+<hr />
+<table class="cellalignment3900" summary="This table describes the properties for this initialization parameter">
+<thead align="left">
+<tr>
+<th class="cellalignment3901" id="d137089e167">Property</th>
+<th class="cellalignment3902" id="d137089e170">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3901" id="d137089e175" headers="d137089e167">
+<p><span class="bold">Parameter type</span></p>
+</td>
+<td class="cellalignment3902" headers="d137089e175 d137089e170">
+<p>String</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3901" id="d137089e183" headers="d137089e167">
+<p><span class="bold">Syntax</span></p>
+</td>
+<td class="cellalignment3902" headers="d137089e183 d137089e170">
+<p><code>OPTIMIZER_FEATURES_ENABLE = { 8.0.0 | 8.0.3 | 8.0.4 | 8.0.5 | 8.0.6 | 8.0.7 | 8.1.0 | 8.1.3 | 8.1.4 | 8.1.5 | 8.1.6 | 8.1.7 | 9.0.0 | 9.0.1 | 9.2.0 | 9.2.0.8 | 10.1.0 | 10.1.0.3 | 10.1.0.4 | 10.1.0.5 | 10.2.0.1 | 10.2.0.2 | 10.2.0.3 | 10.2.0.4 | 10.2.0.5 | 11.1.0.6 | 11.1.0.7 | 11.2.0.1 | 11.2.0.2 | 11.2.0.3 | 11.2.0.4 | 12.1.0.1 | 12.1.0.2 | 12.2.0.1 }</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3901" id="d137089e192" headers="d137089e167">
+<p><span class="bold">Default value</span></p>
+</td>
+<td class="cellalignment3902" headers="d137089e192 d137089e170">
+<p><code>12.2.0.1</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3901" id="d137089e201" headers="d137089e167">
+<p><span class="bold">Modifiable</span></p>
+</td>
+<td class="cellalignment3902" headers="d137089e201 d137089e170">
+<p><code>ALTER SESSION</code>, <code>ALTER SYSTEM</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3901" id="d137089e213" headers="d137089e167">
+<p><span class="bold">Modifiable in a PDB</span></p>
+</td>
+<td class="cellalignment3902" headers="d137089e213 d137089e170">
+<p>Yes</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3901" id="d137089e221" headers="d137089e167">
+<p><span class="bold">Basic</span></p>
+</td>
+<td class="cellalignment3902" headers="d137089e221 d137089e170">
+<p>No</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<div class="section">
+<p><code>OPTIMIZER_FEATURES_ENABLE</code> acts as an umbrella parameter for enabling a series of optimizer features based on an Oracle release number.</p>
+<p>For example, if you upgrade your database from release 11.1 to release 12.1, but you want to keep the release 11.1 optimizer behavior, you can do so by setting this parameter to <code>11.1.0.6</code>. At a later time, you can try the enhancements introduced in releases up to and including release 12.1 by setting the parameter to <code>12.1.0.2</code>.</p>
+<p><a href="OPTIMIZER_FEATURES_ENABLE.htm#GUID-E193EC9E-B642-4C01-99EC-24E04AEA1A2C__CHDCBJAF" title="This table describes some of the optimizer features that are enabled when you set OPTIMIZER_FEATURES_ENABLE to particular Oracle 11.x releases.">Table 1-6</a> describes some of the optimizer features that are enabled when you set the <code>OPTIMIZER_FEATURES_ENABLE</code> parameter to a 11.1 release.</p>
+<p><a href="OPTIMIZER_FEATURES_ENABLE.htm#GUID-E193EC9E-B642-4C01-99EC-24E04AEA1A2C__BABCAECI" title="This table describes some of the optimizer features that are enabled when you set OPTIMIZER_FEATURES_ENABLE to particular Oracle 12.x releases.">Table 1-7</a> describes some of the optimizer features that are enabled when you set the <code>OPTIMIZER_FEATURES_ENABLE</code> parameter to a 12.1 release.</p>
+<div class="infoboxnotealso" id="GUID-E193EC9E-B642-4C01-99EC-24E04AEA1A2C__GUID-1AE173E0-228B-4735-94EB-275873973378">
+<p class="notep1">See Also:</p>
+<p><a class="olink TGSQL112" target="_blank" href="../TGSQL/introduction-to-sql-tuning.htm#TGSQL112"><span class="italic">Oracle Database SQL Tuning Guide</span></a> for more information about the optimizer and for information about the features listed in the following tables</p>
+</div>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-E193EC9E-B642-4C01-99EC-24E04AEA1A2C__CHDCBJAF">
+<hr />
+<p class="titleintable">Table 1-6 Optimizer Features for Oracle Database 11g Releases</p>
+<table class="cellalignment3903" title="Optimizer Features for Oracle Database 11g Releases" summary="This table describes some of the optimizer features that are enabled when you set OPTIMIZER_FEATURES_ENABLE to particular Oracle 11.x releases.">
+<thead align="left">
+<tr>
+<th class="cellalignment3913" id="d137089e281">Features</th>
+<th class="cellalignment3912" id="d137089e284">11.1.0.6</th>
+<th class="cellalignment3912" id="d137089e287">11.1.0.7</th>
+<th class="cellalignment3927" id="d137089e290">11.2.0.1</th>
+<th class="cellalignment3912" id="d137089e293">11.2.0.2</th>
+<th class="cellalignment3912" id="d137089e296">11.2.0.3</th>
+<th class="cellalignment3927" id="d137089e299">11.2.0.4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3913" id="d137089e304" headers="d137089e281">
+<p>Adaptive cursor sharing</p>
+</td>
+<td class="cellalignment3912" headers="d137089e304 d137089e284">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e304 d137089e287">
+<p>X</p>
+</td>
+<td class="cellalignment3927" headers="d137089e304 d137089e290">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e304 d137089e293">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e304 d137089e296">
+<p>X</p>
+</td>
+<td class="cellalignment3927" headers="d137089e304 d137089e299">
+<p>X</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3913" id="d137089e326" headers="d137089e281">
+<p>Join predicate pushdown</p>
+</td>
+<td class="cellalignment3912" headers="d137089e326 d137089e284">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e326 d137089e287">
+<p>X</p>
+</td>
+<td class="cellalignment3927" headers="d137089e326 d137089e290">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e326 d137089e293">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e326 d137089e296">
+<p>X</p>
+</td>
+<td class="cellalignment3927" headers="d137089e326 d137089e299">
+<p>X</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3913" id="d137089e348" headers="d137089e281">
+<p>Use extended statistics to estimate selectivity</p>
+</td>
+<td class="cellalignment3912" headers="d137089e348 d137089e284">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e348 d137089e287">
+<p>X</p>
+</td>
+<td class="cellalignment3927" headers="d137089e348 d137089e290">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e348 d137089e293">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e348 d137089e296">
+<p>X</p>
+</td>
+<td class="cellalignment3927" headers="d137089e348 d137089e299">
+<p>X</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3913" id="d137089e370" headers="d137089e281">
+<p>Use native implementation for full outer joins</p>
+</td>
+<td class="cellalignment3912" headers="d137089e370 d137089e284">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e370 d137089e287">
+<p>X</p>
+</td>
+<td class="cellalignment3927" headers="d137089e370 d137089e290">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e370 d137089e293">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e370 d137089e296">
+<p>X</p>
+</td>
+<td class="cellalignment3927" headers="d137089e370 d137089e299">
+<p>X</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3913" id="d137089e392" headers="d137089e281">
+<p>Partition pruning using join filtering</p>
+</td>
+<td class="cellalignment3912" headers="d137089e392 d137089e284">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e392 d137089e287">
+<p>X</p>
+</td>
+<td class="cellalignment3927" headers="d137089e392 d137089e290">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e392 d137089e293">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e392 d137089e296">
+<p>X</p>
+</td>
+<td class="cellalignment3927" headers="d137089e392 d137089e299">
+<p>X</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3913" id="d137089e414" headers="d137089e281">
+<p>Group by placement optimization</p>
+</td>
+<td class="cellalignment3912" headers="d137089e414 d137089e284">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e414 d137089e287">
+<p>X</p>
+</td>
+<td class="cellalignment3927" headers="d137089e414 d137089e290">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e414 d137089e293">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e414 d137089e296">
+<p>X</p>
+</td>
+<td class="cellalignment3927" headers="d137089e414 d137089e299">
+<p>X</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3913" id="d137089e436" headers="d137089e281">
+<p>Null aware antijoins</p>
+</td>
+<td class="cellalignment3912" headers="d137089e436 d137089e284">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e436 d137089e287">
+<p>X</p>
+</td>
+<td class="cellalignment3927" headers="d137089e436 d137089e290">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e436 d137089e293">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e436 d137089e296">
+<p>X</p>
+</td>
+<td class="cellalignment3927" headers="d137089e436 d137089e299">
+<p>X</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3913" id="d137089e458" headers="d137089e281">
+<p>Join predicate pushdown</p>
+</td>
+<td class="cellalignment3912" headers="d137089e458 d137089e284">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e458 d137089e287">
+<p>X</p>
+</td>
+<td class="cellalignment3927" headers="d137089e458 d137089e290">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e458 d137089e293">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e458 d137089e296">
+<p>X</p>
+</td>
+<td class="cellalignment3927" headers="d137089e458 d137089e299">
+<p>X</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3913" id="d137089e480" headers="d137089e281">
+<p>Join Factorization</p>
+</td>
+<td class="cellalignment3912" headers="d137089e480 d137089e284">&nbsp;</td>
+<td class="cellalignment3912" headers="d137089e480 d137089e287">&nbsp;</td>
+<td class="cellalignment3927" headers="d137089e480 d137089e290">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e480 d137089e293">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e480 d137089e296">
+<p>X</p>
+</td>
+<td class="cellalignment3927" headers="d137089e480 d137089e299">
+<p>X</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3913" id="d137089e502" headers="d137089e281">
+<p>Cardinality Feedback</p>
+</td>
+<td class="cellalignment3912" headers="d137089e502 d137089e284">&nbsp;</td>
+<td class="cellalignment3912" headers="d137089e502 d137089e287">&nbsp;</td>
+<td class="cellalignment3927" headers="d137089e502 d137089e290">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e502 d137089e293">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e502 d137089e296">
+<p>X</p>
+</td>
+<td class="cellalignment3927" headers="d137089e502 d137089e299">
+<p>X</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3913" id="d137089e524" headers="d137089e281">
+<p>Subquery Unnesting</p>
+</td>
+<td class="cellalignment3912" headers="d137089e524 d137089e284">&nbsp;</td>
+<td class="cellalignment3912" headers="d137089e524 d137089e287">&nbsp;</td>
+<td class="cellalignment3927" headers="d137089e524 d137089e290">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e524 d137089e293">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e524 d137089e296">
+<p>X</p>
+</td>
+<td class="cellalignment3927" headers="d137089e524 d137089e299">
+<p>X</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3913" id="d137089e547" headers="d137089e281">
+<p>Subquery Coalescing</p>
+</td>
+<td class="cellalignment3912" headers="d137089e547 d137089e284">&nbsp;</td>
+<td class="cellalignment3912" headers="d137089e547 d137089e287">&nbsp;</td>
+<td class="cellalignment3927" headers="d137089e547 d137089e290">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e547 d137089e293">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e547 d137089e296">
+<p>X</p>
+</td>
+<td class="cellalignment3927" headers="d137089e547 d137089e299">
+<p>X</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3913" id="d137089e569" headers="d137089e281">
+<p>Table Expansion</p>
+</td>
+<td class="cellalignment3912" headers="d137089e569 d137089e284">&nbsp;</td>
+<td class="cellalignment3912" headers="d137089e569 d137089e287">&nbsp;</td>
+<td class="cellalignment3927" headers="d137089e569 d137089e290">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e569 d137089e293">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e569 d137089e296">
+<p>X</p>
+</td>
+<td class="cellalignment3927" headers="d137089e569 d137089e299">
+<p>X</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3913" id="d137089e591" headers="d137089e281">
+<p>Filtering Join Elimination</p>
+</td>
+<td class="cellalignment3912" headers="d137089e591 d137089e284">&nbsp;</td>
+<td class="cellalignment3912" headers="d137089e591 d137089e287">&nbsp;</td>
+<td class="cellalignment3927" headers="d137089e591 d137089e290">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e591 d137089e293">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e591 d137089e296">
+<p>X</p>
+</td>
+<td class="cellalignment3927" headers="d137089e591 d137089e299">
+<p>X</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3913" id="d137089e613" headers="d137089e281">
+<p>Dynamic statistics enhancements</p>
+</td>
+<td class="cellalignment3912" headers="d137089e613 d137089e284">&nbsp;</td>
+<td class="cellalignment3912" headers="d137089e613 d137089e287">&nbsp;</td>
+<td class="cellalignment3927" headers="d137089e613 d137089e290">&nbsp;</td>
+<td class="cellalignment3912" headers="d137089e613 d137089e293">&nbsp;</td>
+<td class="cellalignment3912" headers="d137089e613 d137089e296">&nbsp;</td>
+<td class="cellalignment3927" headers="d137089e613 d137089e299">
+<p>X</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<div class="tblformalwide" id="GUID-E193EC9E-B642-4C01-99EC-24E04AEA1A2C__BABCAECI">
+<hr />
+<p class="titleintable">Table 1-7 Optimizer Features for Oracle Database 12c Releases</p>
+<table class="cellalignment3903" title="Optimizer Features for Oracle Database 12c Releases" summary="This table describes some of the optimizer features that are enabled when you set OPTIMIZER_FEATURES_ENABLE to particular Oracle 12.x releases.">
+<thead align="left">
+<tr>
+<th class="cellalignment3902" id="d137089e646">Features</th>
+<th class="cellalignment3912" id="d137089e649">12.1.0.1</th>
+<th class="cellalignment3912" id="d137089e652">12.1.0.2</th>
+<th class="cellalignment3912" id="d137089e655">12.2.0.1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3902" id="d137089e660" headers="d137089e646">
+<p>Adaptive Query Optimization</p>
+</td>
+<td class="cellalignment3912" headers="d137089e660 d137089e649">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e660 d137089e652">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e660 d137089e655">
+<p>X</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3902" id="d137089e673" headers="d137089e646">
+<p>Online statistics gathering for bulk loads</p>
+</td>
+<td class="cellalignment3912" headers="d137089e673 d137089e649">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e673 d137089e652">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e673 d137089e655">
+<p>X</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3902" id="d137089e686" headers="d137089e646">
+<p>Session level statistics for Global Temporary Tables</p>
+</td>
+<td class="cellalignment3912" headers="d137089e686 d137089e649">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e686 d137089e652">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e686 d137089e655">
+<p>X</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3902" id="d137089e699" headers="d137089e646">
+<p>Multi-table left outer joins</p>
+</td>
+<td class="cellalignment3912" headers="d137089e699 d137089e649">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e699 d137089e652">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e699 d137089e655">
+<p>X</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3902" id="d137089e712" headers="d137089e646">
+<p>Lateral views</p>
+</td>
+<td class="cellalignment3912" headers="d137089e712 d137089e649">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e712 d137089e652">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e712 d137089e655">
+<p>X</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3902" id="d137089e725" headers="d137089e646">
+<p>Batch table access by rowid</p>
+</td>
+<td class="cellalignment3912" headers="d137089e725 d137089e649">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e725 d137089e652">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e725 d137089e655">
+<p>X</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3902" id="d137089e738" headers="d137089e646">
+<p>Null accepting semi joins</p>
+</td>
+<td class="cellalignment3912" headers="d137089e738 d137089e649">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e738 d137089e652">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e738 d137089e655">
+<p>X</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3902" id="d137089e751" headers="d137089e646">
+<p>Scalar subquery unnesting</p>
+</td>
+<td class="cellalignment3912" headers="d137089e751 d137089e649">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e751 d137089e652">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e751 d137089e655">
+<p>X</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3902" id="d137089e764" headers="d137089e646">
+<p>Conversion of joins that produce unnecessary duplicates to semi-joins</p>
+</td>
+<td class="cellalignment3912" headers="d137089e764 d137089e649">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e764 d137089e652">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e764 d137089e655">
+<p>X</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3902" id="d137089e777" headers="d137089e646">
+<p>Parallel Union and Parallel Union All operations</p>
+</td>
+<td class="cellalignment3912" headers="d137089e777 d137089e649">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e777 d137089e652">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e777 d137089e655">
+<p>X</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3902" id="d137089e790" headers="d137089e646">
+<p>Enhance Auto DOP</p>
+</td>
+<td class="cellalignment3912" headers="d137089e790 d137089e649">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e790 d137089e652">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e790 d137089e655">
+<p>X</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3902" id="d137089e804" headers="d137089e646">
+<p>Approximate count distinc
+t</p>
+</td>
+<td class="cellalignment3912" headers="d137089e804 d137089e649">&nbsp;</td>
+<td class="cellalignment3912" headers="d137089e804 d137089e652">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e804 d137089e655">
+<p>X</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3902" id="d137089e817" headers="d137089e646">
+<p>Support for Oracle Database In-Memory</p>
+</td>
+<td class="cellalignment3912" headers="d137089e817 d137089e649">&nbsp;</td>
+<td class="cellalignment3912" headers="d137089e817 d137089e652">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e817 d137089e655">
+<p>X</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3902" id="d137089e830" headers="d137089e646">
+<p>Group-by and aggregation elimination</p>
+</td>
+<td class="cellalignment3912" headers="d137089e830 d137089e649">&nbsp;</td>
+<td class="cellalignment3912" headers="d137089e830 d137089e652">
+<p>X</p>
+</td>
+<td class="cellalignment3912" headers="d137089e830 d137089e655">
+<p>X</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3902" id="d137089e843" headers="d137089e646">
+<p>Approximate percentile and median processing</p>
+</td>
+<td class="cellalignment3912" headers="d137089e843 d137089e649">&nbsp;</td>
+<td class="cellalignment3912" headers="d137089e843 d137089e652">&nbsp;</td>
+<td class="cellalignment3912" headers="d137089e843 d137089e655">
+<p>X</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3902" id="d137089e856" headers="d137089e646">
+<p>Query rewrite for approximate query processing</p>
+</td>
+<td class="cellalignment3912" headers="d137089e856 d137089e649">&nbsp;</td>
+<td class="cellalignment3912" headers="d137089e856 d137089e652">&nbsp;</td>
+<td class="cellalignment3912" headers="d137089e856 d137089e655">
+<p>X</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3902" id="d137089e869" headers="d137089e646">
+<p>Statistics advisor</p>
+</td>
+<td class="cellalignment3912" headers="d137089e869 d137089e649">&nbsp;</td>
+<td class="cellalignment3912" headers="d137089e869 d137089e652">&nbsp;</td>
+<td class="cellalignment3912" headers="d137089e869 d137089e655">
+<p>X</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3902" id="d137089e882" headers="d137089e646">
+<p>Support for sharded databases</p>
+</td>
+<td class="cellalignment3912" headers="d137089e882 d137089e649">&nbsp;</td>
+<td class="cellalignment3912" headers="d137089e882 d137089e652">&nbsp;</td>
+<td class="cellalignment3912" headers="d137089e882 d137089e655">
+<p>X</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3902" id="d137089e895" headers="d137089e646">
+<p>AWR source and auto capture filtering for SQL plan management</p>
+</td>
+<td class="cellalignment3912" headers="d137089e895 d137089e649">&nbsp;</td>
+<td class="cellalignment3912" headers="d137089e895 d137089e652">&nbsp;</td>
+<td class="cellalignment3912" headers="d137089e895 d137089e655">
+<p>X</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3902" id="d137089e908" headers="d137089e646">
+<p>Expression tracking</p>
+</td>
+<td class="cellalignment3912" headers="d137089e908 d137089e649">&nbsp;</td>
+<td class="cellalignment3912" headers="d137089e908 d137089e652">&nbsp;</td>
+<td class="cellalignment3912" headers="d137089e908 d137089e655">
+<p>X</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3902" id="d137089e921" headers="d137089e646">
+<p>Space-saving algorithm for partition synopses</p>
+</td>
+<td class="cellalignment3912" headers="d137089e921 d137089e649">&nbsp;</td>
+<td class="cellalignment3912" headers="d137089e921 d137089e652">&nbsp;</td>
+<td class="cellalignment3912" headers="d137089e921 d137089e655">
+<p>X</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3902" id="d137089e934" headers="d137089e646">
+<p>Oracle In-Memory Database statistics</p>
+</td>
+<td class="cellalignment3912" headers="d137089e934 d137089e649">&nbsp;</td>
+<td class="cellalignment3912" headers="d137089e934 d137089e652">&nbsp;</td>
+<td class="cellalignment3912" headers="d137089e934 d137089e655">
+<p>X</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3902" id="d137089e948" headers="d137089e646">
+<p>Continuous adaptive query plans</p>
+</td>
+<td class="cellalignment3912" headers="d137089e948 d137089e649">&nbsp;</td>
+<td class="cellalignment3912" headers="d137089e948 d137089e652">&nbsp;</td>
+<td class="cellalignment3912" headers="d137089e948 d137089e655">
+<p>X</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3902" id="d137089e961" headers="d137089e646">
+<p>Support for sharding</p>
+</td>
+<td class="cellalignment3912" headers="d137089e961 d137089e649">&nbsp;</td>
+<td class="cellalignment3912" headers="d137089e961 d137089e652">&nbsp;</td>
+<td class="cellalignment3912" headers="d137089e961 d137089e655">
+<p>X</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3902" id="d137089e974" headers="d137089e646">
+<p>Bushy join optimization</p>
+</td>
+<td class="cellalignment3912" headers="d137089e974 d137089e649">&nbsp;</td>
+<td class="cellalignment3912" headers="d137089e974 d137089e652">&nbsp;</td>
+<td class="cellalignment3912" headers="d137089e974 d137089e655">
+<p>X</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3902" id="d137089e987" headers="d137089e646">
+<p>Cost-based OR expansion</p>
+</td>
+<td class="cellalignment3912" headers="d137089e987 d137089e649">&nbsp;</td>
+<td class="cellalignment3912" headers="d137089e987 d137089e652">&nbsp;</td>
+<td class="cellalignment3912" headers="d137089e987 d137089e655">
+<p>X</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3902" id="d137089e1000" headers="d137089e646">
+<p>Sub-query elimination</p>
+</td>
+<td class="cellalignment3912" headers="d137089e1000 d137089e649">&nbsp;</td>
+<td class="cellalignment3912" headers="d137089e1000 d137089e652">&nbsp;</td>
+<td class="cellalignment3912" headers="d137089e1000 d137089e655">
+<p>X</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3902" id="d137089e1013" headers="d137089e646">
+<p>Multi-column key join elimination</p>
+</td>
+<td class="cellalignment3912" headers="d137089e1013 d137089e649">&nbsp;</td>
+<td class="cellalignment3912" headers="d137089e1013 d137089e652">&nbsp;</td>
+<td class="cellalignment3912" headers="d137089e1013 d137089e655">
+<p>X</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="OPTIMIZER_DYNAMIC_SAMPLING.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="OPTIMIZER_INDEX_CACHING.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

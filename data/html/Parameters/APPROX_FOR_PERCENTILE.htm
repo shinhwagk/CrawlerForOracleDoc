@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>APPROX_FOR_PERCENTILE</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="APPROX_FOR_PERCENTILE initialization parameter, initialization parameters, APPROX_FOR_PERCENTILE" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="APPROX_FOR_COUNT_DISTINCT.htm" title="Previous" type="text/html" />
+<link rel="Next" href="AQ_TM_PROCESSES.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-3872A78C-9B3F-457C-AD28-4E86F71AE74D"></a> <span id="PAGE" style="display:none;">18/2822</span> <!-- End Header -->
+<h1 id="REFRN-GUID-3872A78C-9B3F-457C-AD28-4E86F71AE74D" class="sect1"><span class="enumeration_section">1.12</span> APPROX_FOR_PERCENTILE</h1>
+<div>
+<div class="section">
+<div class="tblformal" id="GUID-3872A78C-9B3F-457C-AD28-4E86F71AE74D__GUID-F9C9C991-834C-4A9C-913D-AFF47BE73503">
+<hr />
+<table class="cellalignment3900" summary="This table describes the properties for this initialization parameter">
+<thead align="left">
+<tr>
+<th class="cellalignment3901" id="d41748e167">Property</th>
+<th class="cellalignment3902" id="d41748e171">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3901" id="d41748e177" headers="d41748e167">
+<p><span class="bold">Parameter type</span></p>
+</td>
+<td class="cellalignment3902" headers="d41748e177 d41748e171">
+<p>String</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3901" id="d41748e187" headers="d41748e167">
+<p><span class="bold">Syntax</span></p>
+</td>
+<td class="cellalignment3902" headers="d41748e187 d41748e171">
+<p><code>APPROX_FOR_PERCENTILE = { NONE | PERCENTILE_CONT | PERCENTILE_CONT DETERMINISTIC | PERCENTILE_DISC | PERCENTILE_DISC DETERMINISTIC | ALL | ALL DETERMINISTIC }</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3901" id="d41748e198" headers="d41748e167">
+<p><span class="bold">Default value</span></p>
+</td>
+<td class="cellalignment3902" headers="d41748e198 d41748e171">
+<p><code>none</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3901" id="d41748e209" headers="d41748e167">
+<p><span class="bold">Modifiable</span></p>
+</td>
+<td class="cellalignment3902" headers="d41748e209 d41748e171">
+<p><code>ALTER SESSION</code>, <code>ALTER SYSTEM</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3901" id="d41748e221" headers="d41748e167">
+<p><span class="bold">Modifiable in a PDB</span></p>
+</td>
+<td class="cellalignment3902" headers="d41748e221 d41748e171">
+<p>Yes</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3901" id="d41748e229" headers="d41748e167">
+<p><span class="bold">Basic</span></p>
+</td>
+<td class="cellalignment3902" headers="d41748e229 d41748e171">
+<p>No</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3901" id="d41748e237" headers="d41748e167">
+<p><span class="bold">Oracle RAC</span></p>
+</td>
+<td class="cellalignment3902" headers="d41748e237 d41748e171">
+<p>Different instances can use different values.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<p><code>APPROX_FOR_PERCENTILE</code> converts exact percentile functions to their approximate percentile function counterparts.</p>
+<p>Approximate percentile function queries are faster than their exact percentile function query counterparts, so they can be useful in situations where a tolerable amount of error is acceptable in order to obtain faster query results.</p>
+<p>The values that can be set are:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>NONE</code>:</p>
+<p>No queries are converted. This is the default value.</p>
+</li>
+<li>
+<p><code>PERCENTILE_CONT</code>:</p>
+<p>Converts <code>PERCENTILE_CONT</code> queries to <code>APPROX_PERCENTILE</code> queries.</p>
+</li>
+<li>
+<p><code>PERCENTILE_CONT DETERMINISTIC</code>:</p>
+<p>Converts <code>PERCENTILE_CONT</code> queries to <code>APPROX_PERCENTILE DETERMINSTIC</code> queries.</p>
+</li>
+<li>
+<p><code>PERCENTILE_DISC</code>:</p>
+<p>Converts <code>PERCENTILE_DISC</code> queries to <code>APPROX_PERCENTILE</code> queries.</p>
+</li>
+<li>
+<p><code>PERCENTILE DISC DETERMINISTIC</code>:</p>
+<p>Converts <code>PERCENTILE_DISC</code> queries to <code>APPROX_PERCENTILE DETERMINISTIC</code> queries.</p>
+</li>
+<li>
+<p><code>ALL</code>:</p>
+<p>Converts both <code>PERCENTILE_CONT</code> queries and <code>PERCENTILE_DISC</code> queries to <code>APPROX_PERCENTILE</code> queries.</p>
+</li>
+<li>
+<p><code>ALL DETERMINISTIC</code>:</p>
+<p>Converts both <code>PERCENTILE_CONT</code> and <code>PERCENTILE_DISC</code> queries to <code>APPROX_PERCENTILE DETERMINISTIC</code> queries.</p>
+</li>
+</ul>
+<div class="infobox-note" id="GUID-3872A78C-9B3F-457C-AD28-4E86F71AE74D__GUID-949C3538-0BB2-4FC0-B955-6FA6CEBD1823">
+<p class="notep1">Note:</p>
+<p>This initialization parameter is available starting with Oracle Database 12<span class="italic">c</span> Release 2 (12.2.0.1).</p>
+</div>
+<div class="infoboxnotealso" id="GUID-3872A78C-9B3F-457C-AD28-4E86F71AE74D__GUID-8D59C079-302A-4BC8-94E0-5A21C27C745F">
+<p class="notep1">See Also:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="q">"<a href="APPROX_FOR_AGGREGATION.htm#GUID-46853DF9-7688-46C7-A5BA-308B9B2DAF67">APPROX_FOR_AGGREGATION</a>"</span></p>
+</li>
+<li>
+<p><span class="q">"<a href="APPROX_FOR_COUNT_DISTINCT.htm#GUID-D2A8A53F-113A-4E6F-AC2E-37139460EF8D">APPROX_FOR_COUNT_DISTINCT</a>"</span></p>
+</li>
+<li>
+<p><a class="olink SQLRF57348" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=E66230-01&amp;id=SQLRF57348"><span><cite>Oracle Database SQL Language Reference</cite></span></a> for information about <code>APPROX_MEDIAN</code> aggregate functions</p>
+</li>
+<li>
+<p><a class="olink SQLRF57354" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=E66230-01&amp;id=SQLRF57354"><span><cite>Oracle Database SQL Language Reference</cite></span></a> for information about <code>APPROX_PERCENTILE</code> aggregate functions</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="APPROX_FOR_COUNT_DISTINCT.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="AQ_TM_PROCESSES.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

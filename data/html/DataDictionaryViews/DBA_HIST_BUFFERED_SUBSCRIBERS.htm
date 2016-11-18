@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>DBA_HIST_BUFFERED_SUBSCRIBERS</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="DBA_HIST_BUFFERED_SUBSCRIBERS view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="DBA_HIST_BUFFERED_QUEUES.htm" title="Previous" type="text/html" />
+<link rel="Next" href="DBA_HIST_CAPTURE.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+                    <script type="text/javascript">
+                      var w=window;
+                      if(w.performance||w.mozPerformance||w.msPerformance||w.webkitPerformance){var d=document,AKSB=AKSB||{};AKSB.q=[];AKSB.mark=function(a,b){AKSB.q.push(["mark",a,b||(new Date).getTime()])};AKSB.measure=function(a,b,c){AKSB.q.push(["measure",a,b,c||(new Date).getTime()])};AKSB.done=function(a){AKSB.q.push(["done",a])};AKSB.mark("firstbyte",(new Date).getTime());AKSB.prof={custid:"322179",ustr:"UNKNOWN",originlat:0,clientrtt:0,ghostip:"184.84.239.184",
+                      ipv6:false,pct:10,clientip:"101.231.34.38",requestid:"4fd3f4e",protocol:"",blver:10,akM:"dscx",akN:"ae",akTT:"O",akTX:"1",akTI:"4fd3f4e",ai:"206465",ra:"",pmgn:"",pmgi:"",pmp:""};(function(a){var b=
+                      d.createElement("script");b.async="async";b.src=a;a=d.getElementsByTagName("script");a=a[a.length-1];a.parentNode.insertBefore(b,a)})(("https:"===d.location.protocol?"https:":"http:")+"//ds-aksb-a.akamaihd.net/aksb.min.js")};
+                    </script>
+                    </head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-712DAE3A-CD37-468B-AA11-1F6B40ED9BD8"></a> <span id="PAGE" style="display:none;">1061/2822</span> <!-- End Header -->
+<a id="REFRN23521"></a>
+<h1 id="REFRN-GUID-712DAE3A-CD37-468B-AA11-1F6B40ED9BD8" class="sect1"><span class="enumeration_section">4.294</span> DBA_HIST_BUFFERED_SUBSCRIBERS</h1>
+<div>
+<div class="section">
+<p><code>DBA_HIST_BUFFERED_SUBSCRIBERS</code> displays historical information about the subscribers for all buffered queues in the instance.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-712DAE3A-CD37-468B-AA11-1F6B40ED9BD8__GUID-D440205D-0FD6-4388-A1FC-898218554EFC">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d902392e169">Column</th>
+<th class="cellalignment3905" id="d902392e172">Datatype</th>
+<th class="cellalignment3906" id="d902392e175">NULL</th>
+<th class="cellalignment3907" id="d902392e178">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d902392e183" headers="d902392e169">
+<p><code>SNAP_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d902392e183 d902392e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d902392e183 d902392e175">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d902392e183 d902392e178">
+<p>Unique snapshot ID</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d902392e199" headers="d902392e169">
+<p><code>DBID</code></p>
+</td>
+<td class="cellalignment3905" headers="d902392e199 d902392e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d902392e199 d902392e175">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d902392e199 d902392e178">
+<p>Database ID for the snapshot</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d902392e215" headers="d902392e169">
+<p><code>INSTANCE_NUMBER</code></p>
+</td>
+<td class="cellalignment3905" headers="d902392e215 d902392e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d902392e215 d902392e175">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d902392e215 d902392e178">
+<p>Instance number for the snapshot</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d902392e231" headers="d902392e169">
+<p><code>QUEUE_SCHEMA</code></p>
+</td>
+<td class="cellalignment3905" headers="d902392e231 d902392e172">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d902392e231 d902392e175">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d902392e231 d902392e178">
+<p>Owner of the queue</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d902392e247" headers="d902392e169">
+<p><code>QUEUE_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d902392e247 d902392e172">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d902392e247 d902392e175">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d902392e247 d902392e178">
+<p>Name of the queue</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d902392e263" headers="d902392e169">
+<p><code>SUBSCRIBER_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d902392e263 d902392e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d902392e263 d902392e175">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d902392e263 d902392e178">
+<p>Internal subscriber number (for identification)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d902392e279" headers="d902392e169">
+<p><code>SUBSCRIBER_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d902392e279 d902392e172">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d902392e279 d902392e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d902392e279 d902392e178">
+<p>Name of the subscriber</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d902392e295" headers="d902392e169">
+<p><code>SUBSCRIBER_ADDRESS</code></p>
+</td>
+<td class="cellalignment3905" headers="d902392e295 d902392e172">
+<p><code>VARCHAR2(1024)</code></p>
+</td>
+<td class="cellalignment3906" headers="d902392e295 d902392e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d902392e295 d902392e178">
+<p>Address of the subscribing agent</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d902392e311" headers="d902392e169">
+<p><code>SUBSCRIBER_TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d902392e311 d902392e172">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d902392e311 d902392e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d902392e311 d902392e178">
+<p>Type of subscriber:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>PROXY</code> - Proxy subscriber</p>
+</li>
+<li>
+<p><code>SUBSCRIBOR</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d902392e337" headers="d902392e169">
+<p><code>STARTUP_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d902392e337 d902392e172">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3906" headers="d902392e337 d902392e175">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d902392e337 d902392e178">
+<p>Startup time of the instance</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d902392e353" headers="d902392e169">
+<p><code>LAST_BROWSED_SEQ</code></p>
+</td>
+<td class="cellalignment3905" headers="d902392e353 d902392e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d902392e353 d902392e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d902392e353 d902392e178">
+<p>Sequence number of the most recently browsed message for the subscriber (comparable to the number of messages in the <code>V$STREAMS_APPLY_READER</code> view)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d902392e373" headers="d902392e169">
+<p><code>LAST_BROWSED_NUM</code></p>
+</td>
+<td class="cellalignment3905" headers="d902392e373 d902392e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d902392e373 d902392e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d902392e373 d902392e178">
+<p>Internal Message number for the most recently browsed message for the subscriber</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d902392e387" headers="d902392e169">
+<p><code>LAST_DEQUEUED_SEQ</code></p>
+</td>
+<td class="cellalignment3905" headers="d902392e387 d902392e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d902392e387 d902392e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d902392e387 d902392e178">
+<p>Sequence number of the most recently dequeued message for the subscriber (comparable to the number of messages in the <code>V$STREAMS_APPLY_COORDINATOR</code> view)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d902392e404" headers="d902392e169">
+<p><code>LAST_DEQUEUED_NUM</code></p>
+</td>
+<td class="cellalignment3905" headers="d902392e404 d902392e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d902392e404 d902392e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d902392e404 d902392e178">
+<p>Internal Message number for the most recently dequeued message for the subscriber</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d902392e418" headers="d902392e169">
+<p><code>CURRENT_ENQ_SEQ</code></p>
+</td>
+<td class="cellalignment3905" headers="d902392e418 d902392e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d902392e418 d902392e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d902392e418 d902392e178">
+<p>Current sequence number of the most recently enqueued message for the subscriber</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d902392e432" headers="d902392e169">
+<p><code>NUM_MSGS</code></p>
+</td>
+<td class="cellalignment3905" headers="d902392e432 d902392e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d902392e432 d902392e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d902392e432 d902392e178">
+<p>Total number of outstanding messages currently enqueued in the buffered queue for the subscriber (includes the count of the messages overflowed to disk)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d902392e448" headers="d902392e169">
+<p><code>CNUM_MSGS</code></p>
+</td>
+<td class="cellalignment3905" headers="d902392e448 d902392e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d902392e448 d902392e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d902392e448 d902392e178">
+<p>Cumulative total number of messages enqueued for the subscriber since the creation of the buffered queue</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d902392e464" headers="d902392e169">
+<p><code>TOTAL_DEQUEUED_MSG</code></p>
+</td>
+<td class="cellalignment3905" headers="d902392e464 d902392e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d902392e464 d902392e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d902392e464 d902392e178">
+<p>Total number of messages dequeued by the subscriber</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d902392e478" headers="d902392e169">
+<p><code>TOTAL_SPILLED_MSG</code></p>
+</td>
+<td class="cellalignment3905" headers="d902392e478 d902392e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d902392e478 d902392e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d902392e478 d902392e178">
+<p>Total number of spilled messages for the subscriber</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d902392e494" headers="d902392e169">
+<p><code>EXPIRED_MSGS</code></p>
+</td>
+<td class="cellalignment3905" headers="d902392e494 d902392e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d902392e494 d902392e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d902392e494 d902392e178">
+<p>Number of expired messages</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d902392e508" headers="d902392e169">
+<p><code>MESSAGE_LAG</code></p>
+</td>
+<td class="cellalignment3905" headers="d902392e508 d902392e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d902392e508 d902392e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d902392e508 d902392e178">
+<p>Message lag of the subscriber</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d902392e522" headers="d902392e169">
+<p><code>ELAPSED_DEQUEUE_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d902392e522 d902392e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d902392e522 d902392e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d902392e522 d902392e178">
+<p>Total time spent in dequeue (in hundredths of a second)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d902392e537" headers="d902392e169">
+<p><code>DEQUEUE_CPU_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d902392e537 d902392e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d902392e537 d902392e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d902392e537 d902392e178">
+<p>Total CPU time for dequeue (in hundredths of a second)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d902392e551" headers="d902392e169">
+<p><code>LAST_DEQUEUE_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d902392e551 d902392e172">
+<p><code>TIMESTAMP(3)</code></p>
+</td>
+<td class="cellalignment3906" headers="d902392e551 d902392e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d902392e551 d902392e178">
+<p>Last message dequeue time</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d902392e565" headers="d902392e169">
+<p><code>OLDEST_MSGID</code></p>
+</td>
+<td class="cellalignment3905" headers="d902392e565 d902392e172">
+<p><code>RAW(16)</code></p>
+</td>
+<td class="cellalignment3906" headers="d902392e565 d902392e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d902392e565 d902392e178">
+<p>Message ID of the oldest message</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d902392e579" headers="d902392e169">
+<p><code>OLDEST_MSG_ENQTM</code></p>
+</td>
+<td class="cellalignment3905" headers="d902392e579 d902392e172">
+<p><code>TIMESTAMP(3)</code></p>
+</td>
+<td class="cellalignment3906" headers="d902392e579 d902392e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d902392e579 d902392e178">
+<p>Enqueue time of the oldest message</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d902392e593" headers="d902392e169">
+<p><code>CON_DBID</code></p>
+</td>
+<td class="cellalignment3905" headers="d902392e593 d902392e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d902392e593 d902392e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d902392e593 d902392e178">
+<p>The database ID of the PDB for the sampled session</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d902392e607" headers="d902392e169">
+<p><code>CON_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d902392e607 d902392e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d902392e607 d902392e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d902392e607 d902392e178">
+<p>The ID of the container that <code>CON_DBID</code> identifies. Possible values include:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>0</code>: This value is used for rows containing data that pertain to the entire CDB. This value is also used for rows in non-CDBs.</p>
+</li>
+<li>
+<p><code>1</code>: This value is used for rows containing data that pertain to only the root</p>
+</li>
+<li>
+<p><span class="italic">n</span>: Where <span class="italic">n</span> is the applicable container ID for the rows containing data</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="DBA_HIST_BUFFERED_QUEUES.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="DBA_HIST_CAPTURE.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

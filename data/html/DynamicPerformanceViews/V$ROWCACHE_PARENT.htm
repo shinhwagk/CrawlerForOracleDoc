@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>V$ROWCACHE_PARENT</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="V$ROWCACHE_PARENT view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="V-ROWCACHE.htm" title="Previous" type="text/html" />
+<link rel="Next" href="V-ROWCACHE_SUBORDINATE.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-99E45D7C-3D1A-4970-8FF3-F62A922ED8EB"></a> <span id="PAGE" style="display:none;">2637/2822</span> <!-- End Header -->
+<a id="REFRN30212"></a>
+<h1 id="REFRN-GUID-99E45D7C-3D1A-4970-8FF3-F62A922ED8EB" class="sect1"><span class="enumeration_section">8.181</span> V$ROWCACHE_PARENT</h1>
+<div>
+<div class="section">
+<p><a id="d1947533e156" class="indexterm-anchor"></a><a id="d1947533e160" class="indexterm-anchor"></a><code>V$ROWCACHE_PARENT</code> displays information for parent objects in the data dictionary. There is one row per lock owner, and one waiter for each object. This row shows the mode held or requested. For objects with no owners or waiters, a single row is displayed.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-99E45D7C-3D1A-4970-8FF3-F62A922ED8EB__GUID-BCD22482-68BB-4FA2-80C2-1E197F940DF5">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d1947533e176">Column</th>
+<th class="cellalignment3905" id="d1947533e179">Datatype</th>
+<th class="cellalignment3908" id="d1947533e182">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d1947533e187" headers="d1947533e176">
+<p><code>INDX</code></p>
+</td>
+<td class="cellalignment3905" headers="d1947533e187 d1947533e179">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1947533e187 d1947533e182">
+<p>Index of the row</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1947533e199" headers="d1947533e176">
+<p><code>HASH</code></p>
+</td>
+<td class="cellalignment3905" headers="d1947533e199 d1947533e179">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1947533e199 d1947533e182">
+<p>Hash value</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1947533e211" headers="d1947533e176">
+<p><code>ADDRESS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1947533e211 d1947533e179">
+<p><code>RAW(4 | 8)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1947533e211 d1947533e182">
+<p>Address of the parent object</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1947533e223" headers="d1947533e176">
+<p><code>CACHE#</code></p>
+</td>
+<td class="cellalignment3905" headers="d1947533e223 d1947533e179">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1947533e223 d1947533e182">
+<p>Parent cache ID</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1947533e235" headers="d1947533e176">
+<p><code>CACHE_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1947533e235 d1947533e179">
+<p><code>VARCHAR2(64)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1947533e235 d1947533e182">
+<p>Parent cache name</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1947533e247" headers="d1947533e176">
+<p><code>EXISTENT</code></p>
+</td>
+<td class="cellalignment3905" headers="d1947533e247 d1947533e179">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1947533e247 d1947533e182">
+<p>Indicates whether the object is an existing object</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1947533e259" headers="d1947533e176">
+<p><code>LOCK_MODE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1947533e259 d1947533e179">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1947533e259 d1947533e182">
+<p>Mode the lock is held in</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1947533e271" headers="d1947533e176">
+<p><code>LOCK_REQUEST</code></p>
+</td>
+<td class="cellalignment3905" headers="d1947533e271 d1947533e179">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1947533e271 d1947533e182">
+<p>Mode the lock is requested in</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1947533e283" headers="d1947533e176">
+<p><code>TXN</code></p>
+</td>
+<td class="cellalignment3905" headers="d1947533e283 d1947533e179">
+<p><code>RAW(4 | 8)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1947533e283 d1947533e182">
+<p>Transaction currently locking the object</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1947533e295" headers="d1947533e176">
+<p><code>SADDR</code></p>
+</td>
+<td class="cellalignment3905" headers="d1947533e295 d1947533e179">
+<p><code>RAW(4 | 8)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1947533e295 d1947533e182">
+<p>Address of the session</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1947533e307" headers="d1947533e176">
+<p><code>INST_LOCK_REQUEST</code></p>
+</td>
+<td class="cellalignment3905" headers="d1947533e307 d1947533e179">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1947533e307 d1947533e182">
+<p>Mode in which instance lock is being requested. This column is only relevant for Real Application Clusters.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1947533e320" headers="d1947533e176">
+<p><code>INST_LOCK_RELEASE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1947533e320 d1947533e179">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1947533e320 d1947533e182">
+<p>Whether the instance lock needs to be released. This column is only relevant for Real Application Clusters.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1947533e332" headers="d1947533e176">
+<p><code>INST_LOCK_TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1947533e332 d1947533e179">
+<p><code>VARCHAR2(2)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1947533e332 d1947533e182">
+<p>Type of instance lock. This column is only relevant for Real Application Clusters.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1947533e344" headers="d1947533e176">
+<p><code>INST_LOCK_ID1</code></p>
+</td>
+<td class="cellalignment3905" headers="d1947533e344 d1947533e179">
+<p><code>RAW(4)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1947533e344 d1947533e182">
+<p>ID associated with the instance lock. This column is only relevant for Real Application Clusters.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1947533e356" headers="d1947533e176">
+<p><code>INST_LOCK_ID2</code></p>
+</td>
+<td class="cellalignment3905" headers="d1947533e356 d1947533e179">
+<p><code>RAW(4)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1947533e356 d1947533e182">
+<p>ID associated with the instance lock. This column is only relevant for Real Application Clusters.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1947533e368" headers="d1947533e176">
+<p><code>KEY</code></p>
+</td>
+<td class="cellalignment3905" headers="d1947533e368 d1947533e179">
+<p><code>RAW(100)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1947533e368 d1947533e182">
+<p>Contents of the key. This column is only relevant for Real Application Clusters.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1947533e380" headers="d1947533e176">
+<p><code>CON_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1947533e380 d1947533e179">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1947533e380 d1947533e182">
+<p>The ID of the container to which the data pertains. Possible values include:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>0</code>: This value is used for rows containing data that pertain to the entire CDB. This value is also used for rows in non-CDBs.</p>
+</li>
+<li>
+<p><code>1</code>: This value is used for rows containing data that pertain to only the root</p>
+</li>
+<li>
+<p><span class="italic">n</span>: Where <span class="italic">n</span> is the applicable container ID for the rows containing data</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="V-ROWCACHE.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="V-ROWCACHE_SUBORDINATE.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

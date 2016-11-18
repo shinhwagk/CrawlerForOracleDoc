@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>CPU_COUNT</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="CPU_COUNT initialization parameter, initialization parameters, CPU_COUNT" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="CORE_DUMP_DEST.htm" title="Previous" type="text/html" />
+<link rel="Next" href="CREATE_BITMAP_AREA_SIZE.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-78CDCDE7-5A1D-4AC1-B5BD-B185CB296416"></a> <span id="PAGE" style="display:none;">58/2822</span> <!-- End Header -->
+<a id="REFRN10023"></a>
+<h1 id="REFRN-GUID-78CDCDE7-5A1D-4AC1-B5BD-B185CB296416" class="sect1"><span class="enumeration_section">1.52</span> CPU_COUNT</h1>
+<div>
+<div class="tblformal" id="GUID-78CDCDE7-5A1D-4AC1-B5BD-B185CB296416__GUID-C77E9911-4991-4688-BC70-C1246DBEC750">
+<hr />
+<table class="cellalignment3900" summary="This table describes the properties for this initialization parameter">
+<thead align="left">
+<tr>
+<th class="cellalignment3901" id="d59450e166">Property</th>
+<th class="cellalignment3902" id="d59450e169">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3901" id="d59450e174" headers="d59450e166">
+<p><span class="bold">Parameter type</span></p>
+</td>
+<td class="cellalignment3902" headers="d59450e174 d59450e169">
+<p>Integer</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3901" id="d59450e182" headers="d59450e166">
+<p><span class="bold">Default value</span></p>
+</td>
+<td class="cellalignment3902" headers="d59450e182 d59450e169">
+<p><code>0</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3901" id="d59450e191" headers="d59450e166">
+<p><span class="bold">Modifiable</span></p>
+</td>
+<td class="cellalignment3902" headers="d59450e191 d59450e169">
+<p><code>ALTER SYSTEM</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3901" id="d59450e200" headers="d59450e166">
+<p><span class="bold">Modifiable in a PDB</span></p>
+</td>
+<td class="cellalignment3902" headers="d59450e200 d59450e169">
+<p>Yes</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3901" id="d59450e208" headers="d59450e166">
+<p><span class="bold">Range of values</span></p>
+</td>
+<td class="cellalignment3902" headers="d59450e208 d59450e169">
+<p><code>0</code> to unlimited</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3901" id="d59450e218" headers="d59450e166">
+<p><span class="bold">Basic</span></p>
+</td>
+<td class="cellalignment3902" headers="d59450e218 d59450e169">
+<p>No</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<div class="section">
+<p><code>CPU_COUNT</code> specifies the number of CPUs available for Oracle Database to use. On CPUs with multiple CPU threads, it specifies the total number of available CPU threads. Various components of Oracle Database are configured based on the number of CPUs, such as the Optimizer, Parallel Query, and Resource Manager.</p>
+<p>If <code>CPU_COUNT</code> is set to <code>0</code> (its default setting), then Oracle Database continuously monitors the number of CPUs reported by the operating system and uses the current count. If <code>CPU_COUNT</code> is set to a value other than <code>0</code>, then Oracle Database will use this count rather than the actual number of CPUs, thus disabling dynamic CPU reconfiguration.</p>
+<p>When Resource Manager is managing CPU (<code>RESOURCE_MANAGER_PLAN</code> is set), then the database's CPU utilization is limited to <code>CPU_COUNT</code> CPU threads. This feature is called Instance Caging. If Resource Manager is enabled at the CDB level, then the PDB's CPU utilization is limited to the PDB's <code>CPU_COUNT</code>.</p>
+<div class="infobox-note" id="GUID-78CDCDE7-5A1D-4AC1-B5BD-B185CB296416__GUID-61C3042A-1691-4751-8989-1D3A27ED03DC">
+<p class="notep1">Note:</p>
+<p>Setting <code>CPU_COUNT</code> to a value greater than the current number of CPUs results in an error. However, if <code>CPU_COUNT</code> is set to a value greater than the current number of CPUs in the initialization parameter file, then <code>CPU_COUNT</code> is capped to the current number of CPUs.</p>
+</div>
+<div class="infobox-note" id="GUID-78CDCDE7-5A1D-4AC1-B5BD-B185CB296416__GUID-3BAC4B6A-2C5E-40B8-B16E-920F9BD52A2D">
+<p class="notep1">Note:</p>
+<p>When a value is not explicitly set for <code>CPU_COUNT</code>, the maximum default value for <code>CPU_COUNT</code> is 2 for an Oracle ASM Proxy instance, 4 for an Oracle ASM instance, and 8 for an Oracle ASM IOServer instance.</p>
+</div>
+<div class="infoboxnotealso" id="GUID-78CDCDE7-5A1D-4AC1-B5BD-B185CB296416__GUID-CA4805BA-3453-41D3-AE7F-D4C855324A90">
+<p class="notep1">See Also:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a class="olink VLDBG1382" target="_blank" href="../VLDBG/parallel-exec-intro.htm#VLDBG1382"><span class="italic">Oracle Database VLDB and Partitioning Guide</span></a> for information about how <code>CPU_COUNT</code> is used to determine the default degree of parallelism for a single instance or Oracle RAC configuration when the <code>PARALLEL</code> clause is specified but no degree of parallelism is listed</p>
+</li>
+<li>
+<p><a class="olink ADMIN13473" target="_blank" href="../ADMIN/managing-resources-with-oracle-database-resource-manager.htm#ADMIN13473"><span class="italic">Oracle Database Administrator's Guide</span></a> for an example of how CPU resources are allocated if you enable instance caging and set a maximum utilization limit in a resource plan</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="CORE_DUMP_DEST.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="CREATE_BITMAP_AREA_SIZE.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

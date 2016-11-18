@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>V$INSTANCE</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="V$INSTANCE view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="V-INMEMORY_FASTSTART_AREA.htm" title="Previous" type="text/html" />
+<link rel="Next" href="V-INSTANCE_CACHE_TRANSFER.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-6A0C9B51-1714-4223-B166-9D54C4E65D67"></a> <span id="PAGE" style="display:none;">2464/2822</span> <!-- End Header -->
+<a id="REFRN30105"></a>
+<h1 id="REFRN-GUID-6A0C9B51-1714-4223-B166-9D54C4E65D67" class="sect1"><span class="enumeration_section">8.8</span> V$INSTANCE</h1>
+<div>
+<div class="section">
+<p><code>V$INSTANCE</code> displays the state of the current instance.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-6A0C9B51-1714-4223-B166-9D54C4E65D67__GUID-1972019A-14EF-4ABB-A817-E8D294A3FBCB">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d1773806e168">Column</th>
+<th class="cellalignment3905" id="d1773806e171">Datatype</th>
+<th class="cellalignment3908" id="d1773806e174">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d1773806e179" headers="d1773806e168">
+<p><code>INSTANCE_NUMBER</code></p>
+</td>
+<td class="cellalignment3905" headers="d1773806e179 d1773806e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1773806e179 d1773806e174">
+<p>Instance number used for instance registration (corresponds to the <code>INSTANCE_NUMBER</code> initialization parameter)</p>
+<p><span class="bold">See Also:</span> <span class="q">"<a href="INSTANCE_NUMBER.htm#GUID-6A58795A-E9A8-4249-B734-B864FADCD070">INSTANCE_NUMBER</a>"</span></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1773806e202" headers="d1773806e168">
+<p><code>INSTANCE_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1773806e202 d1773806e171">
+<p><code>VARCHAR2(16)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1773806e202 d1773806e174">
+<p>Name of the instance</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1773806e214" headers="d1773806e168">
+<p><code>HOST_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1773806e214 d1773806e171">
+<p><code>VARCHAR2(64)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1773806e214 d1773806e174">
+<p>Name of the host machine</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1773806e226" headers="d1773806e168">
+<p><code>VERSION</code></p>
+</td>
+<td class="cellalignment3905" headers="d1773806e226 d1773806e171">
+<p><code>VARCHAR2(17)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1773806e226 d1773806e174">
+<p>Database version</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1773806e238" headers="d1773806e168">
+<p><code>STARTUP_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1773806e238 d1773806e171">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3908" headers="d1773806e238 d1773806e174">
+<p>Time when the instance was started</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1773806e250" headers="d1773806e168">
+<p><code>STATUS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1773806e250 d1773806e171">
+<p><code>VARCHAR2(12)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1773806e250 d1773806e174">
+<p>Status of the instance:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>STARTED</code> - After <code>STARTUP NOMOUNT</code></p>
+</li>
+<li>
+<p><code>MOUNTED</code> - After <code>STARTUP MOUNT</code> or <code>ALTER DATABASE CLOSE</code></p>
+</li>
+<li>
+<p><code>OPEN</code> - After <code>STARTUP</code> or <code>ALTER DATABASE OPEN</code></p>
+</li>
+<li>
+<p><code>OPEN MIGRATE</code> - After <code>ALTER DATABASE OPEN { UPGRADE | DOWNGRADE }</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1773806e297" headers="d1773806e168">
+<p><code>PARALLEL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1773806e297 d1773806e171">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1773806e297 d1773806e174">
+<p>Indicates whether the instance is mounted in cluster database mode (<code>YES</code>) or not (<code>NO</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1773806e315" headers="d1773806e168">
+<p><code>THREAD#</code></p>
+</td>
+<td class="cellalignment3905" headers="d1773806e315 d1773806e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1773806e315 d1773806e174">
+<p>Redo thread opened by the instance</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1773806e327" headers="d1773806e168">
+<p><code>ARCHIVER</code></p>
+</td>
+<td class="cellalignment3905" headers="d1773806e327 d1773806e171">
+<p><code>VARCHAR2(7)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1773806e327 d1773806e174">
+<p>Automatic archiving status:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>STOPPED</code></p>
+</li>
+<li>
+<p><code>STARTED</code></p>
+</li>
+<li>
+<p><code>FAILED</code> - Archiver failed to archive a log last time but will try again within 5 minutes</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1773806e353" headers="d1773806e168">
+<p><code>LOG_SWITCH_WAIT</code></p>
+</td>
+<td class="cellalignment3905" headers="d1773806e353 d1773806e171">
+<p><code>VARCHAR2(15)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1773806e353 d1773806e174">
+<p>Event that log switching is waiting for:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>ARCHIVE LOG</code></p>
+</li>
+<li>
+<p><code>CLEAR LOG</code></p>
+</li>
+<li>
+<p><code>CHECKPOINT</code></p>
+</li>
+<li>
+<p>NULL - <code>ALTER SYSTEM SWITCH LOGFILE</code> is hung but there is room in the current online redo log</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1773806e384" headers="d1773806e168">
+<p><code>LOGINS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1773806e384 d1773806e171">
+<p><code>VARCHAR2(10)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1773806e384 d1773806e174">
+<p>Indicates whether the instance is in unrestricted mode, allowing logins by all users (<code>ALLOWED</code>, or in restricted mode, allowing logins by database administrators only (<code>RESTRICTED</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1773806e403" headers="d1773806e168">
+<p><code>SHUTDOWN_PENDING</code></p>
+</td>
+<td class="cellalignment3905" headers="d1773806e403 d1773806e171">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1773806e403 d1773806e174">
+<p>Indicates whether a shutdown is pending (<code>YES</code>) or not (<code>NO</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1773806e421" headers="d1773806e168">
+<p><code>DATABASE_STATUS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1773806e421 d1773806e171">
+<p><code>VARCHAR2(17)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1773806e421 d1773806e174">
+<p>Status of the database:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>ACTIVE</code></p>
+</li>
+<li>
+<p><code>SUSPENDED</code></p>
+</li>
+<li>
+<p><code>INSTANCE RECOVERY</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1773806e446" headers="d1773806e168">
+<p><code>INSTANCE_ROLE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1773806e446 d1773806e171">
+<p><code>VARCHAR2(18)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1773806e446 d1773806e174">
+<p>Indicates whether the instance is an active instance (<code>PRIMARY_INSTANCE</code>) or an inactive secondary instance (<code>SECONDARY_INSTANCE</code>), or <code>UNKNOWN</code> if the instance has been started but not mounted</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1773806e467" headers="d1773806e168">
+<p><code>ACTIVE_STATE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1773806e467 d1773806e171">
+<p><code>VARCHAR2(9)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1773806e467 d1773806e174">
+<p>Quiesce state of the instance:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>NORMAL</code> - Database is in a normal state.</p>
+</li>
+<li>
+<p><code>QUIESCING</code> - <code>ALTER SYSTEM QUIESCE RESTRICTED</code> has been issued: no new user transactions, queries, or PL/SQL statements are processed in this instance. User transactions, queries, or PL/SQL statements issued before the <code>ALTER SYSTEM QUIESCE RESTRICTED</code> statement are unaffected. DBA transactions, queries, or PL/SQL statements are also unaffected.</p>
+</li>
+<li>
+<p><code>QUIESCED</code> - <code>ALTER SYSTEM QUIESCE RESTRICTED</code> has been issued: no user transactions, queries, or PL/SQL statements are processed. DBA transactions, queries, or PL/SQL statements are unaffected. User transactions, queries, or PL/ SQL statements issued after the <code>ALTER SYSTEM QUIESCE RESTRICTED</code> statement are not processed.</p>
+</li>
+</ul>
+<p>A single <code>ALTER SYSTEM QUIESCE RESTRICTED</code> statement quiesces all instances in an Oracle RAC environment. After this statement has been issued, some instances may enter into a quiesced state before other instances; the system is quiesced when all instances enter the quiesced state.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1773806e512" headers="d1773806e168">
+<p><code>BLOCKED</code></p>
+</td>
+<td class="cellalignment3905" headers="d1773806e512 d1773806e171">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1773806e512 d1773806e174">
+<p>Indicates whether all services are blocked (<code>YES</code>) or not (<code>NO</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1773806e530" headers="d1773806e168">
+<p><code>CON_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1773806e530 d1773806e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1773806e530 d1773806e174">
+<p>The ID of the container to which the data pertains. Possible values include:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>0</code>: This value is used for rows containing data that pertain to the entire CDB. This value is also used for rows in non-CDBs.</p>
+</li>
+<li>
+<p><code>1</code>: This value is used for rows containing data that pertain to only the root</p>
+</li>
+<li>
+<p><span class="italic">n</span>: Where <span class="italic">n</span> is the applicable container ID for the rows containing data</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1773806e561" headers="d1773806e168">
+<p><code>INSTANCE_MODE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1773806e561 d1773806e171">
+<p><code>VARCHAR2(11)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1773806e561 d1773806e174">
+<p>Shows the instance mode of the current instance.</p>
+<p>Possible values:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>REGULAR</code>: A regular Oracle RAC instance. This value is also always used for any non-Oracle RAC instance.</p>
+</li>
+<li>
+<p><code>READ MOSTLY</code>: An Oracle RAC instance that performs very few database writes</p>
+</li>
+<li>
+<p><code>READ ONLY</code>: A read-only Oracle RAC instance</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1773806e591" headers="d1773806e168">
+<p><code>EDITION</code></p>
+</td>
+<td class="cellalignment3905" headers="d1773806e591 d1773806e171">
+<p><code>VARCHAR2(7)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1773806e591 d1773806e174">
+<p>The edition of the database.</p>
+<p>Possible values include:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>CORE EE</code>: CORE Enterprise Edition</p>
+</li>
+<li>
+<p><code>EE</code>: Enterprise Edition</p>
+</li>
+<li>
+<p><code>PO</code>: Personal Edition</p>
+</li>
+<li>
+<p><code>XE</code>: Express Edition</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1773806e626" headers="d1773806e168">
+<p><code>FAMILY</code></p>
+</td>
+<td class="cellalignment3905" headers="d1773806e626 d1773806e171">
+<p><code>VARCHAR2(80)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1773806e626 d1773806e174">
+<p>For internal use only.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1773806e638" headers="d1773806e168">
+<p><code>DATABASE_TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1773806e638 d1773806e171">
+<p><code>VARCHAR2(15)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1773806e638 d1773806e174">
+<p>Database type:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>RAC</code>: If the database is a regular Oracle RAC database which may have multiple instances.</p>
+</li>
+<li>
+<p><code>RACONENODE</code>: If the database is Oracle RAC, but allows only one instance to run at any time - the RAC One Node mode.</p>
+</li>
+<li>
+<p><code>SINGLE</code>: If the database is running as a single instance.</p>
+</li>
+<li>
+<p><code>UNKNOWN</code>: If the database's type can't be determined. This might happen when the database is registered as a DB resource with CRS but the CRS service has failed to return valid database type information. Typically, this indicates that either the CRS service is down or it is in a faulty state.</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="V-INMEMORY_FASTSTART_AREA.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="V-INSTANCE_CACHE_TRANSFER.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

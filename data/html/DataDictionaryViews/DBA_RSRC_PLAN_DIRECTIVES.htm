@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>DBA_RSRC_PLAN_DIRECTIVES</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="DBA_RSRC_PLAN_DIRECTIVES view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="DBA_RSRC_MAPPING_PRIORITY.htm" title="Previous" type="text/html" />
+<link rel="Next" href="DBA_RSRC_PLANS.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-5C09C51A-43A6-4B9D-981D-C26914AA9AF0"></a> <span id="PAGE" style="display:none;">1396/2822</span> <!-- End Header -->
+<script  >
+//<![CDATA[
+window.name='DBA_RSRC_PLAN_DIRECTIVES'
+//]]>
+</script> <script  >
+    function footdisplay(footnum,footnote) {
+    var msg = window.open('', 'NewWindow' + footnum,
+        'directories=no,height=120,location=no,menubar=no,resizable=yes,' +
+        'scrollbars=yes,status=no,toolbar=no,width=598');
+    msg.document.open('text/html');
+    msg.document.write('<!DOCTYPE html ');
+    msg.document.write('PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" ');
+
+    msg.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">');
+    msg.document.write('<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><title>');
+    msg.document.write('Footnote&amp;nbsp; ' + footnum);
+    msg.document.write('<\/title><meta http-equiv="Content-Type" ');
+    msg.document.write('content="text/html; charset=utf-8" />');
+    msg.document.write('');
+    msg.document.write('<style> <![CDATA[ ');
+    msg.document.write('h1 {text-align: center; font-size: 14pt;}');
+    msg.document.write('fieldset {border: none;}');
+    msg.document.write('form {text-align: center;}');
+    msg.document.write(' ]]\u003e <\/style>');
+    msg.document.write('<\/head><body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><h1>Footnote&nbsp; ' + footnum + '<\/h1><p>');
+    msg.document.write(footnote);
+    msg.document.write('<\/p><form action="" method="post"><fieldset>');
+    msg.document.write('<input type="button" value="OK" ');
+    msg.document.write('onclick="window.close();" />');
+    msg.document.write('<\/fieldset><\/form><\/body><\/html>');
+    msg.document.close();
+    msg.focus();
+}
+</script><noscript>
+<p>The script content on this page is for navigation purposes only and does not alter the content in any way.</p>
+</noscript><a id="REFRN23236"></a>
+<h1 id="REFRN-GUID-5C09C51A-43A6-4B9D-981D-C26914AA9AF0" class="sect1"><span class="enumeration_section">5.298</span> DBA_RSRC_PLAN_DIRECTIVES</h1>
+<div>
+<div class="section">
+<p><code>DBA_RSRC_PLAN_DIRECTIVES</code> displays information about all resource plan directives in the database.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-5C09C51A-43A6-4B9D-981D-C26914AA9AF0__GUID-9B3CFBC2-7ACA-4BCB-B1EE-9258E130ACF3">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d1199950e169">Column</th>
+<th class="cellalignment3905" id="d1199950e172">Datatype</th>
+<th class="cellalignment3906" id="d1199950e175">NULL</th>
+<th class="cellalignment3907" id="d1199950e178">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d1199950e183" headers="d1199950e169">
+<p><code>PLAN</code></p>
+</td>
+<td class="cellalignment3905" headers="d1199950e183 d1199950e172">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1199950e183 d1199950e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1199950e183 d1199950e178">
+<p>Name of the plan to which the directive belongs</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1199950e199" headers="d1199950e169">
+<p><code>GROUP_OR_SUBPLAN</code></p>
+</td>
+<td class="cellalignment3905" headers="d1199950e199 d1199950e172">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1199950e199 d1199950e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1199950e199 d1199950e178">
+<p>Name of the consumer group or subplan referred to</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1199950e215" headers="d1199950e169">
+<p><code>TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1199950e215 d1199950e172">
+<p><code>VARCHAR2(14)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1199950e215 d1199950e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1199950e215 d1199950e178">
+<p>Indicates whether <code>GROUP_OR_SUBPLAN</code> refers to a consumer group (<code>CONSUMER_GROUP</code>) or a plan (<code>PLAN</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1199950e240" headers="d1199950e169">
+<p><code>CPU_P1</code></p>
+</td>
+<td class="cellalignment3905" headers="d1199950e240 d1199950e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1199950e240 d1199950e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1199950e240 d1199950e178">
+<p>This column is deprecated. Use the <code>MGMT_P1</code> column instead.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1199950e259" headers="d1199950e169">
+<p><code>CPU_P2</code></p>
+</td>
+<td class="cellalignment3905" headers="d1199950e259 d1199950e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1199950e259 d1199950e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1199950e259 d1199950e178">
+<p>This column is deprecated. Use the <code>MGMT_P2</code> column instead.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1199950e278" headers="d1199950e169">
+<p><code>CPU_P3</code></p>
+</td>
+<td class="cellalignment3905" headers="d1199950e278 d1199950e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1199950e278 d1199950e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1199950e278 d1199950e178">
+<p>This column is deprecated. Use the <code>MGMT_P3</code> column instead.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1199950e297" headers="d1199950e169">
+<p><code>CPU_P4</code></p>
+</td>
+<td class="cellalignment3905" headers="d1199950e297 d1199950e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1199950e297 d1199950e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1199950e297 d1199950e178">
+<p>This column is deprecated. Use the <code>MGMT_P4</code> column instead.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1199950e316" headers="d1199950e169">
+<p><code>CPU_P5</code></p>
+</td>
+<td class="cellalignment3905" headers="d1199950e316 d1199950e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1199950e316 d1199950e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1199950e316 d1199950e178">
+<p>This column is deprecated. Use the <code>MGMT_P5</code> column instead..</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1199950e335" headers="d1199950e169">
+<p><code>CPU_P6</code></p>
+</td>
+<td class="cellalignment3905" headers="d1199950e335 d1199950e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1199950e335 d1199950e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1199950e335 d1199950e178">
+<p>This column is deprecated. Use the <code>MGMT_P6</code> column instead.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1199950e354" headers="d1199950e169">
+<p><code>CPU_P7</code></p>
+</td>
+<td class="cellalignment3905" headers="d1199950e354 d1199950e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1199950e354 d1199950e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1199950e354 d1199950e178">
+<p>This column is deprecated. Use the <code>MGMT_P7</code> column instead.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1199950e373" headers="d1199950e169">
+<p><code>CPU_P8</code></p>
+</td>
+<td class="cellalignment3905" headers="d1199950e373 d1199950e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1199950e373 d1199950e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1199950e373 d1199950e178">
+<p>This column is deprecated. Use the <code>MGMT_P8</code> column instead..</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1199950e393" headers="d1199950e169">
+<p><code>MGMT_P1</code></p>
+</td>
+<td class="cellalignment3905" headers="d1199950e393 d1199950e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1199950e393 d1199950e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1199950e393 d1199950e178">
+<p>Resource allocation at level 1.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1199950e409" headers="d1199950e169">
+<p><code>MGMT_P2</code></p>
+</td>
+<td class="cellalignment3905" headers="d1199950e409 d1199950e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1199950e409 d1199950e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1199950e409 d1199950e178">
+<p>Resource allocation at level 2.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1199950e425" headers="d1199950e169">
+<p><code>MGMT_P3</code></p>
+</td>
+<td class="cellalignment3905" headers="d1199950e425 d1199950e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1199950e425 d1199950e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1199950e425 d1199950e178">
+<p>Resource allocation at level 3.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1199950e441" headers="d1199950e169">
+<p><code>MGMT_P4</code></p>
+</td>
+<td class="cellalignment3905" headers="d1199950e441 d1199950e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1199950e441 d1199950e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1199950e441 d1199950e178">
+<p>Resource allocation at level 4.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1199950e457" headers="d1199950e169">
+<p><code>MGMT_P5</code></p>
+</td>
+<td class="cellalignment3905" headers="d1199950e457 d1199950e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1199950e457 d1199950e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1199950e457 d1199950e178">
+<p>Resource allocation at level 5.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1199950e473" headers="d1199950e169">
+<p><code>MGMT_P6</code></p>
+</td>
+<td class="cellalignment3905" headers="d1199950e473 d1199950e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1199950e473 d1199950e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1199950e473 d1199950e178">
+<p>Resource allocation at level 6.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1199950e489" headers="d1199950e169">
+<p><code>MGMT_P7</code></p>
+</td>
+<td class="cellalignment3905" headers="d1199950e489 d1199950e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1199950e489 d1199950e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1199950e489 d1199950e178">
+<p>Resource allocation at level 7.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1199950e505" headers="d1199950e169">
+<p><code>MGMT_P8</code></p>
+</td>
+<td class="cellalignment3905" headers="d1199950e505 d1199950e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1199950e505 d1199950e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1199950e505 d1199950e178">
+<p>Resource allocation at level 8.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1199950e521" headers="d1199950e169">
+<p><code>ACTIVE_SESS_POOL_P1</code></p>
+</td>
+<td class="cellalignment3905" headers="d1199950e521 d1199950e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1199950e521 d1199950e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1199950e521 d1199950e178">
+<p>Maximum number of calls this consumer group can run concurrently</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1199950e537" headers="d1199950e169">
+<p><code>QUEUEING_P1</code></p>
+</td>
+<td class="cellalignment3905" headers="d1199950e537 d1199950e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1199950e537 d1199950e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1199950e537 d1199950e178">
+<p>Timeout in seconds for waits in the Active Session Limit queue</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1199950e553" headers="d1199950e169">
+<p><code>PARALLEL_TARGET_PERCENTAGE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1199950e553 d1199950e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1199950e553 d1199950e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1199950e553 d1199950e178">
+<p>This column is deprecated. Use the <code>PARALLEL_SERVER_LIMIT</code> column instead.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1199950e571" headers="d1199950e169">
+<p><code>PARALLEL_DEGREE_LIMIT_P1</code></p>
+</td>
+<td class="cellalignment3905" headers="d1199950e571 d1199950e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1199950e571 d1199950e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1199950e571 d1199950e178">
+<p>Sessions in this consumer group are limited to this maximum degree of parallelism for all parallel operations</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1199950e587" headers="d1199950e169">
+<p><code>SWITCH_GROUP</code></p>
+</td>
+<td class="cellalignment3905" headers="d1199950e587 d1199950e172">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1199950e587 d1199950e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1199950e587 d1199950e178">
+<p>Group to switch to once the switch time is reached</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1199950e603" headers="d1199950e169">
+<p><code>SWITCH_FOR_CALL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1199950e603 d1199950e172">
+<p><code>VARCHAR2(5)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1199950e603 d1199950e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1199950e603 d1199950e178">
+<p>Indicates whether to switch back to the initial consumer group once the top call has completed (<code>TRUE</code>) or not (<code>FALSE</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1199950e625" headers="d1199950e169">
+<p><code>SWITCH_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1199950e625 d1199950e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1199950e625 d1199950e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1199950e625 d1199950e178">
+<p>Amount of run time (in seconds) within a group before the session is automatically switched. As with other switch directives, if <code>SWITCH_FOR_CALL</code> is <code>TRUE</code>, the run time is accumulated from the start of a call. Otherwise, the run time is accumulated for the length of the session.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1199950e647" headers="d1199950e169">
+<p><code>SWITCH_IO_MEGABYTES</code></p>
+</td>
+<td class="cellalignment3905" headers="d1199950e647 d1199950e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1199950e647 d1199950e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1199950e647 d1199950e178">
+<p>The maximum megabytes of I/O within a group that will trigger the action specified by <code>SWITCH_GROUP</code>. As with other switch directives, if <code>SWITCH_FOR_CALL</code> is <code>TRUE</code>, the maximum megabytes of I/O is accumulated from the start of a call. Otherwise, the maximum megabytes of I/O is accumulated for the length of the session.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1199950e672" headers="d1199950e169">
+<p><code>SWITCH_IO_REQS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1199950e672 d1199950e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1199950e672 d1199950e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1199950e672 d1199950e178">
+<p>The maximum I/O requests within a group that will trigger the action specified by <code>SWITCH_GROUP</code>. As with other switch directives, if <code>SWITCH_FOR_CALL</code> is <code>TRUE</code>, the maximum I/O requests is accumulated from the start of a call. Otherwise, the maximum I/O requests is accumulated for the length of the session.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1199950e697" headers="d1199950e169">
+<p><code>SWITCH_ESTIMATE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1199950e697 d1199950e172">
+<p><code>VARCHAR2(5)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1199950e697 d1199950e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1199950e697 d1199950e178">
+<p>Indicates whether estimated execution time should be used for switch criteria (<code>TRUE</code>) or not (<code>FALSE</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1199950e719" headers="d1199950e169">
+<p><code>MAX_EST_EXEC_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1199950e719 d1199950e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1199950e719 d1199950e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1199950e719 d1199950e178">
+<p>Maximum estimated execution time</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1199950e735" headers="d1199950e169">
+<p><code>UNDO_POOL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1199950e735 d1199950e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1199950e735 d1199950e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1199950e735 d1199950e178">
+<p>Undo pool size for the consumer group</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1199950e751" headers="d1199950e169">
+<p><code>MAX_IDLE_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1199950e751 d1199950e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1199950e751 d1199950e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1199950e751 d1199950e178">
+<p>Maximum idle time for the session</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1199950e767" headers="d1199950e169">
+<p><code>MAX_IDLE_BLOCKER_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1199950e767 d1199950e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1199950e767 d1199950e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1199950e767 d1199950e178">
+<p>Maximum idle time for the session when blocking other sessions</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1199950e784" headers="d1199950e169">
+<p><code>MAX_UTILIZATION_LIMIT</code></p>
+</td>
+<td class="cellalignment3905" headers="d1199950e784 d1199950e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1199950e784 d1199950e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1199950e784 d1199950e178">
+<p>This column is deprecated. Use <code>UTILIZATION_LIMIT</code> instead.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1199950e801" headers="d1199950e169">
+<p><code>PARALLEL_QUEUE_TIMEOUT</code></p>
+</td>
+<td class="cellalignment3905" headers="d1199950e801 d1199950e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1199950e801 d1199950e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1199950e801 d1199950e178">
+<p>Time (in seconds) that a query may remain in the parallel statement queue for the consumer group before it is removed and terminated with error <code>ORA-07454</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1199950e817" headers="d1199950e169">
+<p><code>SWITCH_TIME_IN_CALL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1199950e817 d1199950e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1199950e817 d1199950e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1199950e817 d1199950e178">
+<p>This column is deprecated. Specify the time in the <code>SWITCH_TIME</code> directive and set <code>SWITCH_FOR_CALL</code> to <code>TRUE</code>.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1199950e842" headers="d1199950e169">
+<p><code>SWITCH_IO_LOGICAL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1199950e842 d1199950e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1199950e842 d1199950e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1199950e842 d1199950e178">
+<p>The number of logical I/Os that will trigger the action specified by <code>SWITCH_GROUP</code>. As with other switch directives, if <code>SWITCH_FOR_CALL</code> is <code>TRUE</code>, the number of logical I/Os is accumulated from the start of a call. Otherwise, the number of logical IOs is accumulated for the length of the session.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1199950e865" headers="d1199950e169">
+<p><code>SWITCH_ELAPSED_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1199950e865 d1199950e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1199950e865 d1199950e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1199950e865 d1199950e178">
+<p>The elapsed time that will trigger the action specified by <code>SWITCH_GROUP</code>. As with other switch directives, if <code>SWITCH_FOR_CALL</code> is <code>TRUE</code>, the elapsed time is accumulated from the start of a call. Otherwise, the elapsed time is accumulated for the length of the session.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1199950e888" headers="d1199950e169">
+<p><code>PARALLEL_SERVER_LIMIT</code></p>
+</td>
+<td class="cellalignment3905" headers="d1199950e888 d1199950e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1199950e888 d1199950e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1199950e888 d1199950e178">
+<p>Maximum percentage of the parallel target used before queuing subsequent parallel queries</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1199950e902" headers="d1199950e169">
+<p><code>UTILIZATION_LIMIT</code></p>
+</td>
+<td class="cellalignment3905" headers="d1199950e902 d1199950e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1199950e902 d1199950e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1199950e902 d1199950e178">
+<p>Maximum resource utilization allowed, expressed in percentage</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1199950e916" headers="d1199950e169">
+<p><code>PARALLEL_STMT_CRITICAL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1199950e916 d1199950e172">
+<p><code>VARCHAR2(12)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1199950e916 d1199950e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1199950e916 d1199950e178">
+<p>Indicates whether parallel statements from this consumer group are critical and should not be queued:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>FALSE</code> - The consumer group is non-critical</p>
+</li>
+<li>
+<p><code>BYPASS QUEUE</code> - The consumer group is marked critical, and parallel statements from this conumser group will bypass the parallel statement queue</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1199950e941" headers="d1199950e169">
+<p><code>SESSION_PGA_LIMIT</code><a id="fn_1" href="#fn_1" onclick='footdisplay(1,"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Foot&nbsp;1</sup></a></p>
+</td>
+<td class="cellalignment3905" headers="d1199950e941 d1199950e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1199950e941 d1199950e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1199950e941 d1199950e178">
+<p>The maximum amount of PGA in MB that sessions in this consumer group can allocate before being terminated</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1199950e961" headers="d1199950e169">
+<p><code>COMMENTS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1199950e961 d1199950e172">
+<p><code>VARCHAR2(2000)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1199950e961 d1199950e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1199950e961 d1199950e178">
+<p>Text comment on the plan directive</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1199950e977" headers="d1199950e169">
+<p><code>STATUS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1199950e977 d1199950e172">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1199950e977 d1199950e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1199950e977 d1199950e178">
+<p>Indicates whether the plan directive is part of the pending area (<code>PENDING</code>) or not (NULL).</p>
+<p><span class="bold">Note:</span> PDB resource plans must be single-level, they cannot contain subplans, and they must have 8 or fewer consumer groups. If a resource plan is imported into a PDB and it violates any of these PDB requirements, then the import will automatically convert the resource plan to a compliant version. The original, unmodified resource plan will be stored with a <code>STATUS</code> of <code>LEGACY</code>.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1199950e1007" headers="d1199950e169">
+<p><code>MANDATORY</code></p>
+</td>
+<td class="cellalignment3905" headers="d1199950e1007 d1199950e172">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1199950e1007 d1199950e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1199950e1007 d1199950e178">
+<p>Indicates whether the plan directive is mandatory (<code>YES</code>) or not (<code>NO</code>). Mandatory plans cannot be deleted.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<p class="tablefootnote"><sup class="tablefootnote">Footnote&nbsp;1</sup></p>
+<p>This column is available starting with Oracle Database 12<span class="italic">c</span> Release 2 (12.2.0.1).</p>
+<div class="section">
+<div class="infoboxnotealso" id="GUID-5C09C51A-43A6-4B9D-981D-C26914AA9AF0__GUID-DAB655FF-A30C-48F6-B075-24BDBCAD186C">
+<p class="notep1">See Also:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><a class="olink ADMIN027" target="_blank" href="../ADMIN/managing-resources-with-oracle-database-resource-manager.htm#ADMIN027"><span class="italic">Oracle Database Administrator's Guide</span></a> for information on resource plans in general</p>
+</li>
+<li>
+<p><a class="olink ARPLS051" target="_blank" href="../ARPLS/DBMS_RESOURCE_MANAGER_PRIVS.htm#ARPLS051"><span class="italic">Oracle Database PL/SQL Packages and Types Reference</span></a> for more information about the <code>DBMS_RESOURCE_MANAGER_PRIVS</code> package</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="DBA_RSRC_MAPPING_PRIORITY.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="DBA_RSRC_PLANS.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+</body>
+</html>

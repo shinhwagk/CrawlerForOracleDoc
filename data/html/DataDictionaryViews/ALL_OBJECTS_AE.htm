@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>ALL_OBJECTS_AE</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="ALL_OBJECTS_AE view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="ALL_OBJECTS.htm" title="Previous" type="text/html" />
+<link rel="Next" href="ALL_OPANCILLARY.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-B7C1E515-2B54-43CC-ABDB-957E82336229"></a> <span id="PAGE" style="display:none;">571/2822</span> <!-- End Header -->
+<a id="REFRN20578"></a>
+<h1 id="REFRN-GUID-B7C1E515-2B54-43CC-ABDB-957E82336229" class="sect1"><span class="enumeration_section">2.228</span> ALL_OBJECTS_AE</h1>
+<div>
+<div class="section">
+<p><code>ALL_OBJECTS_AE</code> describes the objects (across all editions) accessible to the current user. Dropped objects appear in this view with <code>OBJECT_TYPE</code> <code>=</code> <code>NON-EXISTENT</code>.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Related Views</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<ul style="list-style-type: disc;">
+<li>
+<p><code>DBA_OBJECTS_AE</code> describes all objects (across all editions) in the database.</p>
+</li>
+<li>
+<p><code>USER_OBJECTS_AE</code> describes the objects (across all editions) owned by the current user. This view does not display the <code>OWNER</code> column.</p>
+</li>
+</ul>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-B7C1E515-2B54-43CC-ABDB-957E82336229__GUID-95B21535-1508-46DB-B774-8D95EA078056">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d446546e196">Column</th>
+<th class="cellalignment3905" id="d446546e199">Datatype</th>
+<th class="cellalignment3906" id="d446546e202">NULL</th>
+<th class="cellalignment3907" id="d446546e205">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d446546e210" headers="d446546e196">
+<p><code>OWNER</code></p>
+</td>
+<td class="cellalignment3905" headers="d446546e210 d446546e199">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d446546e210 d446546e202">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d446546e210 d446546e205">
+<p>Owner of the object</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d446546e226" headers="d446546e196">
+<p><code>OBJECT_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d446546e226 d446546e199">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d446546e226 d446546e202">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d446546e226 d446546e205">
+<p>Name of the object</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d446546e242" headers="d446546e196">
+<p><code>SUBOBJECT_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d446546e242 d446546e199">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d446546e242 d446546e202">&nbsp;</td>
+<td class="cellalignment3907" headers="d446546e242 d446546e205">
+<p>Name of the subobject (for example, partition)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d446546e258" headers="d446546e196">
+<p><code>OBJECT_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d446546e258 d446546e199">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d446546e258 d446546e202">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d446546e258 d446546e205">
+<p>Dictionary object number of the object</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d446546e274" headers="d446546e196">
+<p><code>DATA_OBJECT_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d446546e274 d446546e199">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d446546e274 d446546e202">&nbsp;</td>
+<td class="cellalignment3907" headers="d446546e274 d446546e205">
+<p>Dictionary object number of the segment which contains the object</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d446546e290" headers="d446546e196">
+<p><code>OBJECT_TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d446546e290 d446546e199">
+<p><code>VARCHAR2(23)</code></p>
+</td>
+<td class="cellalignment3906" headers="d446546e290 d446546e202">&nbsp;</td>
+<td class="cellalignment3907" headers="d446546e290 d446546e205">
+<p>Type of the object</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d446546e306" headers="d446546e196">
+<p><code>CREATED</code></p>
+</td>
+<td class="cellalignment3905" headers="d446546e306 d446546e199">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3906" headers="d446546e306 d446546e202">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d446546e306 d446546e205">
+<p>Timestamp for the creation of the object</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d446546e322" headers="d446546e196">
+<p><code>LAST_DDL_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d446546e322 d446546e199">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3906" headers="d446546e322 d446546e202">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d446546e322 d446546e205">
+<p>Timestamp for the last modification of the object and dependent objects resulting from a DDL statement (including grants and revokes)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d446546e338" headers="d446546e196">
+<p><code>TIMESTAMP</code></p>
+</td>
+<td class="cellalignment3905" headers="d446546e338 d446546e199">
+<p><code>VARCHAR2(19)</code></p>
+</td>
+<td class="cellalignment3906" headers="d446546e338 d446546e202">&nbsp;</td>
+<td class="cellalignment3907" headers="d446546e338 d446546e205">
+<p>Timestamp for the specification of the object (character data)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d446546e354" headers="d446546e196">
+<p><code>STATUS</code></p>
+</td>
+<td class="cellalignment3905" headers="d446546e354 d446546e199">
+<p><code>VARCHAR2(7)</code></p>
+</td>
+<td class="cellalignment3906" headers="d446546e354 d446546e202">&nbsp;</td>
+<td class="cellalignment3907" headers="d446546e354 d446546e205">
+<p>Status of the object:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>VALID</code></p>
+</li>
+<li>
+<p><code>INVALID</code></p>
+</li>
+<li>
+<p><code>N/A</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d446546e383" headers="d446546e196">
+<p><code>TEMPORARY</code></p>
+</td>
+<td class="cellalignment3905" headers="d446546e383 d446546e199">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d446546e383 d446546e202">&nbsp;</td>
+<td class="cellalignment3907" headers="d446546e383 d446546e205">
+<p>Indicates whether the object is temporary (the current session can see only data that it placed in this object itself) (<code>Y</code>) or not (<code>N</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d446546e406" headers="d446546e196">
+<p><code>GENERATED</code></p>
+</td>
+<td class="cellalignment3905" headers="d446546e406 d446546e199">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d446546e406 d446546e202">&nbsp;</td>
+<td class="cellalignment3907" headers="d446546e406 d446546e205">
+<p>Indicates whether the name of this object was system-generated (<code>Y</code>) or not (<code>N</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d446546e428" headers="d446546e196">
+<p><code>SECONDARY</code></p>
+</td>
+<td class="cellalignment3905" headers="d446546e428 d446546e199">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d446546e428 d446546e202">&nbsp;</td>
+<td class="cellalignment3907" headers="d446546e428 d446546e205">
+<p>Indicates whether this is a secondary object created by the <code>ODCIIndexCreate</code> method of the Oracle Data Cartridge (<code>Y</code>) or not (<code>N</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d446546e453" headers="d446546e196">
+<p><code>NAMESPACE</code></p>
+</td>
+<td class="cellalignment3905" headers="d446546e453 d446546e199">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d446546e453 d446546e202">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d446546e453 d446546e205">
+<p>Namespace for the object</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d446546e469" headers="d446546e196">
+<p><code>EDITION_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d446546e469 d446546e199">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d446546e469 d446546e202">&nbsp;</td>
+<td class="cellalignment3907" headers="d446546e469 d446546e205">
+<p>Name of the edition in which the object is actual</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d446546e485" headers="d446546e196">
+<p><code>SHARING</code></p>
+</td>
+<td class="cellalignment3905" headers="d446546e485 d446546e199">
+<p><code>VARCHAR2(13)</code></p>
+</td>
+<td class="cellalignment3906" headers="d446546e485 d446546e202">&nbsp;</td>
+<td class="cellalignment3907" headers="d446546e485 d446546e205">
+<p>Values:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>METADATA LINK</code> - If the object is metadata-linked or a metadata link to an object in the root</p>
+</li>
+<li>
+<p><code>DATA LINK</code> - If the object is data-linked or a data link to an object in the root</p>
+</li>
+<li>
+<p><code>NONE</code> - If none of the above applies</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d446546e516" headers="d446546e196">
+<p><code>EDITIONABLE</code></p>
+</td>
+<td class="cellalignment3905" headers="d446546e516 d446546e199">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d446546e516 d446546e202">&nbsp;</td>
+<td class="cellalignment3907" headers="d446546e516 d446546e205">
+<p>Values:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>Y</code> - For objects marked EDITIONABLE</p>
+</li>
+<li>
+<p><code>N</code> - For objects marked NONEDITIONABLE</p>
+</li>
+<li>
+<p><code>NULL</code> - For objects whose type is not editionable in the database</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d446546e547" headers="d446546e196">
+<p><code>ORACLE_MAINTAINED</code></p>
+</td>
+<td class="cellalignment3905" headers="d446546e547 d446546e199">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d446546e547 d446546e202">&nbsp;</td>
+<td class="cellalignment3907" headers="d446546e547 d446546e205">
+<p>Denotes whether the object was created, and is maintained, by Oracle-supplied scripts (such as catalog.sql or catproc.sql). An object for which this column has the value <code>Y</code> must not be changed in any way except by running an Oracle-supplied script.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d446546e565" headers="d446546e196">
+<p><code>APPLICATION</code></p>
+</td>
+<td class="cellalignment3905" headers="d446546e565 d446546e199">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d446546e565 d446546e202">&nbsp;</td>
+<td class="cellalignment3907" headers="d446546e565 d446546e205">
+<p>Indicates whether the object is an Application common object (<code>Y</code>) or not (<code>N</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d446546e586" headers="d446546e196">
+<p><code>DEFAULT_COLLATION</code></p>
+</td>
+<td class="cellalignment3905" headers="d446546e586 d446546e199">
+<p><code>VARCHAR2(100)</code></p>
+</td>
+<td class="cellalignment3906" headers="d446546e586 d446546e202">&nbsp;</td>
+<td class="cellalignment3907" headers="d446546e586 d446546e205">
+<p>Default collation for the object</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d446546e601" headers="d446546e196">
+<p><code>DUPLICATED</code></p>
+</td>
+<td class="cellalignment3905" headers="d446546e601 d446546e199">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d446546e601 d446546e202">&nbsp;</td>
+<td class="cellalignment3907" headers="d446546e601 d446546e205">
+<p>Indicates whether this object is duplicated on this shard (<code>Y</code>) or not (<code>N</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d446546e622" headers="d446546e196">
+<p><code>SHARDED</code></p>
+</td>
+<td class="cellalignment3905" headers="d446546e622 d446546e199">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d446546e622 d446546e202">&nbsp;</td>
+<td class="cellalignment3907" headers="d446546e622 d446546e205">
+<p>Indicates whether this object is sharded (<code>Y</code>) or not (<code>N</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d446546e644" headers="d446546e196">
+<p><code>CREATED_APPID</code></p>
+</td>
+<td class="cellalignment3905" headers="d446546e644 d446546e199">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d446546e644 d446546e202">&nbsp;</td>
+<td class="cellalignment3907" headers="d446546e644 d446546e205">
+<p>ID of the Application that created the object</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d446546e659" headers="d446546e196">
+<p><code>CREATED_VSNID</code></p>
+</td>
+<td class="cellalignment3905" headers="d446546e659 d446546e199">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d446546e659 d446546e202">&nbsp;</td>
+<td class="cellalignment3907" headers="d446546e659 d446546e205">
+<p>ID of the Application Version that created the object</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d446546e674" headers="d446546e196">
+<p><code>MODIFIED_APPID</code></p>
+</td>
+<td class="cellalignment3905" headers="d446546e674 d446546e199">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d446546e674 d446546e202">&nbsp;</td>
+<td class="cellalignment3907" headers="d446546e674 d446546e205">
+<p>ID of the Application that last modified the object</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d446546e689" headers="d446546e196">
+<p><code>MODIFIED_VSNID</code></p>
+</td>
+<td class="cellalignment3905" headers="d446546e689 d446546e199">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d446546e689 d446546e202">&nbsp;</td>
+<td class="cellalignment3907" headers="d446546e689 d446546e205">
+<p>ID of the Application Version that last modified the object</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<div class="section">
+<div class="infobox-note" id="GUID-B7C1E515-2B54-43CC-ABDB-957E82336229__GUID-0E65E184-E094-4ED0-8100-B531BD6532E8">
+<p class="notep1">Note:</p>
+<p>The following columns are available starting with Oracle Database 12<span class="italic">c</span> Release 2 (12.2.0.1):</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>SHARING</code></p>
+</li>
+<li>
+<p><code>APPLICATION</code></p>
+</li>
+<li>
+<p><code>DEFAULT_COLLATION</code></p>
+</li>
+<li>
+<p><code>DUPLICATED</code></p>
+</li>
+<li>
+<p><code>SHARDED</code></p>
+</li>
+<li>
+<p><code>CREATED_APPID</code></p>
+</li>
+<li>
+<p><code>CREATED_VSNID</code></p>
+</li>
+<li>
+<p><code>MODIFIED_APPID</code></p>
+</li>
+<li>
+<p><code>MODIFIED_VSNID</code></p>
+</li>
+</ul>
+</div>
+<div class="infoboxnotealso" id="GUID-B7C1E515-2B54-43CC-ABDB-957E82336229__GUID-2230D6BE-2AF6-4151-BAA4-DAAE81B62C96">
+<p class="notep1">See Also:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="q">"<a href="DBA_OBJECTS_AE.htm#GUID-E7BCE9DC-F697-425D-9CF6-93CAD38D1EDB">DBA_OBJECTS_AE</a>"</span></p>
+</li>
+<li>
+<p><span class="q">"<a href="USER_OBJECTS_AE.htm#GUID-535EC502-1B36-47C9-8807-4AB4C104467F">USER_OBJECTS_AE</a>"</span></p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="ALL_OBJECTS.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="ALL_OPANCILLARY.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

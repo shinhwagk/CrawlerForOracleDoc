@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>ALL_IND_SUBPARTITIONS</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="ALL_IND_SUBPARTITIONS view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="ALL_IND_STATISTICS.htm" title="Previous" type="text/html" />
+<link rel="Next" href="ALL_INDEXES.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-29DC1F28-E943-4A72-A0EE-E1E6C6A254CF"></a> <span id="PAGE" style="display:none;">513/2822</span> <!-- End Header -->
+<script  >
+//<![CDATA[
+window.name='ALL_IND_SUBPARTITIONS'
+//]]>
+</script> <script  >
+    function footdisplay(footnum,footnote) {
+    var msg = window.open('', 'NewWindow' + footnum,
+        'directories=no,height=120,location=no,menubar=no,resizable=yes,' +
+        'scrollbars=yes,status=no,toolbar=no,width=598');
+    msg.document.open('text/html');
+    msg.document.write('<!DOCTYPE html ');
+    msg.document.write('PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" ');
+
+    msg.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">');
+    msg.document.write('<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><title>');
+    msg.document.write('Footnote&amp;nbsp; ' + footnum);
+    msg.document.write('<\/title><meta http-equiv="Content-Type" ');
+    msg.document.write('content="text/html; charset=utf-8" />');
+    msg.document.write('');
+    msg.document.write('<style> <![CDATA[ ');
+    msg.document.write('h1 {text-align: center; font-size: 14pt;}');
+    msg.document.write('fieldset {border: none;}');
+    msg.document.write('form {text-align: center;}');
+    msg.document.write(' ]]\u003e <\/style>');
+    msg.document.write('<\/head><body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><h1>Footnote&nbsp; ' + footnum + '<\/h1><p>');
+    msg.document.write(footnote);
+    msg.document.write('<\/p><form action="" method="post"><fieldset>');
+    msg.document.write('<input type="button" value="OK" ');
+    msg.document.write('onclick="window.close();" />');
+    msg.document.write('<\/fieldset><\/form><\/body><\/html>');
+    msg.document.close();
+    msg.focus();
+}
+</script><noscript>
+<p>The script content on this page is for navigation purposes only and does not alter the content in any way.</p>
+</noscript><a id="REFRN20087"></a>
+<h1 id="REFRN-GUID-29DC1F28-E943-4A72-A0EE-E1E6C6A254CF" class="sect1"><span class="enumeration_section">2.170</span> ALL_IND_SUBPARTITIONS</h1>
+<div>
+<div class="section">
+<p><code>ALL_IND_SUBPARTITIONS</code> displays, for each index subpartition accessible to the current user, the subpartition-level partitioning information, the storage parameters for the subpartition, and various subpartition statistics generated by the <code>DBMS_STATS</code> package.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Related Views</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<ul style="list-style-type: disc;">
+<li>
+<p><code>DBA_IND_SUBPARTITIONS</code> describes all index subpartitions in the database.</p>
+</li>
+<li>
+<p><code>USER_IND_SUBPARTITIONS</code> describes the index subpartitions owned by the current user. This view does not display the <code>INDEX_OWNER</code> column.</p>
+</li>
+</ul>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-29DC1F28-E943-4A72-A0EE-E1E6C6A254CF__GUID-0CE50505-7C7A-4E02-A519-65C71D6E9AAD">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d364102e190">Column</th>
+<th class="cellalignment3905" id="d364102e193">Datatype</th>
+<th class="cellalignment3906" id="d364102e196">NULL</th>
+<th class="cellalignment3907" id="d364102e199">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d364102e204" headers="d364102e190">
+<p><code>INDEX_OWNER</code></p>
+</td>
+<td class="cellalignment3905" headers="d364102e204 d364102e193">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d364102e204 d364102e196">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d364102e204 d364102e199">
+<p>Owner of the index</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d364102e220" headers="d364102e190">
+<p><code>INDEX_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d364102e220 d364102e193">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d364102e220 d364102e196">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d364102e220 d364102e199">
+<p>Name of the index</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d364102e236" headers="d364102e190">
+<p><code>PARTITION_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d364102e236 d364102e193">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d364102e236 d364102e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d364102e236 d364102e199">
+<p>Name of the partition</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d364102e251" headers="d364102e190">
+<p><code>SUBPARTITION_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d364102e251 d364102e193">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d364102e251 d364102e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d364102e251 d364102e199">
+<p>Name of the subpartition</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d364102e266" headers="d364102e190">
+<p><code>HIGH_VALUE</code></p>
+</td>
+<td class="cellalignment3905" headers="d364102e266 d364102e193">
+<p><code>LONG</code></p>
+</td>
+<td class="cellalignment3906" headers="d364102e266 d364102e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d364102e266 d364102e199">
+<p>Subpartition bound value expression</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d364102e281" headers="d364102e190">
+<p><code>HIGH_VALUE_LENGTH</code></p>
+</td>
+<td class="cellalignment3905" headers="d364102e281 d364102e193">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d364102e281 d364102e196">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d364102e281 d364102e199">
+<p>Length of the subpartition bound value expression</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d364102e297" headers="d364102e190">
+<p><code>PARTITION_POSITION</code><a id="GUID-29DC1F28-E943-4A72-A0EE-E1E6C6A254CF__THISCOLUMNISAVAILABLESTARTINGWITHOR-749F59F2" href="#GUID-29DC1F28-E943-4A72-A0EE-E1E6C6A254CF__THISCOLUMNISAVAILABLESTARTINGWITHOR-749F59F2" onclick='footdisplay(1,"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Foot&nbsp;1</sup></a><a id="fnsrc_d364102e307" href="#fnsrc_d364102e307" onclick='footdisplay(, \"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+<td class="cellalignment3905" headers="d364102e297 d364102e193">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d364102e297 d364102e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d364102e297 d364102e199">
+<p>Position of the partition within the index</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d364102e321" headers="d364102e190">
+<p><code>SUBPARTITION_POSITION</code></p>
+</td>
+<td class="cellalignment3905" headers="d364102e321 d364102e193">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d364102e321 d364102e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d364102e321 d364102e199">
+<p>Position of a subpartition within a partition</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d364102e337" headers="d364102e190">
+<p><code>STATUS</code></p>
+</td>
+<td class="cellalignment3905" headers="d364102e337 d364102e193">
+<p><code>VARCHAR2(8)</code></p>
+</td>
+<td class="cellalignment3906" headers="d364102e337 d364102e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d364102e337 d364102e199">
+<p>Indicates whether the index partition is usable (<code>USABLE</code>) or not (<code>UNUSABLE</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d364102e358" headers="d364102e190">
+<p><code>TABLESPACE_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d364102e358 d364102e193">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3906" headers="d364102e358 d364102e196">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d364102e358 d364102e199">
+<p>Name of the tablespace containing the partition</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d364102e374" headers="d364102e190">
+<p><code>PCT_FREE</code></p>
+</td>
+<td class="cellalignment3905" headers="d364102e374 d364102e193">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d364102e374 d364102e196">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d364102e374 d364102e199">
+<p>Minimum percentage of free space in a block</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d364102e391" headers="d364102e190">
+<p><code>INI_TRANS</code></p>
+</td>
+<td class="cellalignment3905" headers="d364102e391 d364102e193">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d364102e391 d364102e196">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d364102e391 d364102e199">
+<p>Initial number of transactions</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d364102e407" headers="d364102e190">
+<p><code>MAX_TRANS</code></p>
+</td>
+<td class="cellalignment3905" headers="d364102e407 d364102e193">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d364102e407 d364102e196">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d364102e407 d364102e199">
+<p>Maximum number of transactions</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d364102e423" headers="d364102e190">
+<p><code>INITIAL_EXTENT</code></p>
+</td>
+<td class="cellalignment3905" headers="d364102e423 d364102e193">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d364102e423 d364102e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d364102e423 d364102e199">
+<p>Size of the initial extent in bytes</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d364102e438" headers="d364102e190">
+<p><code>NEXT_EXTENT</code></p>
+</td>
+<td class="cellalignment3905" headers="d364102e438 d364102e193">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d364102e438 d364102e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d364102e438 d364102e199">
+<p>Size of secondary extents in bytes</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d364102e453" headers="d364102e190">
+<p><code>MIN_EXTENT</code></p>
+</td>
+<td class="cellalignment3905" headers="d364102e453 d364102e193">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d364102e453 d364102e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d364102e453 d364102e199">
+<p>Minimum number of extents allowed in the segment</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d364102e469" headers="d364102e190">
+<p><code>MAX_EXTENT</code></p>
+</td>
+<td class="cellalignment3905" headers="d364102e469 d364102e193">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d364102e469 d364102e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d364102e469 d364102e199">
+<p>Maximum number of extents allowed in the segment</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d364102e485" headers="d364102e190">
+<p><code>MAX_SIZE</code></p>
+</td>
+<td class="cellalignment3905" headers="d364102e485 d364102e193">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d364102e485 d364102e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d364102e485 d364102e199">
+<p>Maximum number of blocks allowed in the segment</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d364102e501" headers="d364102e190">
+<p><code>PCT_INCREASE</code></p>
+</td>
+<td class="cellalignment3905" headers="d364102e501 d364102e193">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d364102e501 d364102e196">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d364102e501 d364102e199">
+<p>Percentage increase in extent size</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d364102e517" headers="d364102e190">
+<p><code>FREELISTS</code></p>
+</td>
+<td class="cellalignment3905" headers="d364102e517 d364102e193">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d364102e517 d364102e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d364102e517 d364102e199">
+<p>Number of process freelists allocated in this segment</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d364102e532" headers="d364102e190">
+<p><code>FREELIST_GROUPS</code></p>
+</td>
+<td class="cellalignment3905" headers="d364102e532 d364102e193">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d364102e532 d364102e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d364102e532 d364102e199">
+<p>Number of process freelist groups allocated in this segment</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d364102e547" headers="d364102e190">
+<p><code>LOGGING</code></p>
+</td>
+<td class="cellalignment3905" headers="d364102e547 d364102e193">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3906" headers="d364102e547 d364102e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d364102e547 d364102e199">
+<p>Indicates whether or not changes to the index are logged:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>YES</code></p>
+</li>
+<li>
+<p><code>NO</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d364102e572" headers="d364102e190">
+<p><code>COMPRESSION</code></p>
+</td>
+<td class="cellalignment3905" headers="d364102e572 d364102e193">
+<p><code>VARCHAR2(13)</code></p>
+</td>
+<td class="cellalignment3906" headers="d364102e572 d364102e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d364102e572 d364102e199">
+<p>Indicates whether this subpartition is compressed (<code>ENABLED</code>) or not (<code>DISABLED</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d364102e593" headers="d364102e190">
+<p><code>BLEVEL</code></p>
+</td>
+<td class="cellalignment3905" headers="d364102e593 d364102e193">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d364102e593 d364102e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d364102e593 d364102e199">
+<p>B-Tree level (depth of the index from its root block to its leaf blocks). A depth of <code>0</code> indicates that the root block and leaf block are the same.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d364102e611" headers="d364102e190">
+<p><code>LEAF_BLOCKS</code></p>
+</td>
+<td class="cellalignment3905" headers="d364102e611 d364102e193">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d364102e611 d364102e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d364102e611 d364102e199">
+<p>Number of leaf blocks in the index</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d364102e626" headers="d364102e190">
+<p><code>DISTINCT_KEYS</code></p>
+</td>
+<td class="cellalignment3905" headers="d364102e626 d364102e193">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d364102e626 d364102e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d364102e626 d364102e199">
+<p>Number of distinct keys in the index partition</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d364102e641" headers="d364102e190">
+<p><code>AVG_LEAF_BLOCKS_PER_KEY</code></p>
+</td>
+<td class="cellalignment3905" headers="d364102e641 d364102e193">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d364102e641 d364102e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d364102e641 d364102e199">
+<p>Average number of leaf blocks in which each distinct value in the index appears, rounded to the nearest integer. For indexes that enforce <code>UNIQUE</code> and <code>PRIMARY</code> <code>KEY</code> constraints, this value is always <code>1</code>.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d364102e668" headers="d364102e190">
+<p><code>AVG_DATA_BLOCKS_PER_KEY</code></p>
+</td>
+<td class="cellalignment3905" headers="d364102e668 d364102e193">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d364102e668 d364102e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d364102e668 d364102e199">
+<p>Average number of data blocks in the table that are pointed to by a distinct value in the index rounded to the nearest integer. This statistic is the average number of data blocks that contain rows that contain a given value for the indexed columns.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d364102e683" headers="d364102e190">
+<p><code>CLUSTERING_FACTOR</code></p>
+</td>
+<td class="cellalignment3905" headers="d364102e683 d364102e193">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d364102e683 d364102e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d364102e683 d364102e199">
+<p>Indicates the amount of order of the rows in the table based on the values of the index.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>If the value is near the number of blocks, then the table is very well ordered. In this case, the index entries in a single leaf block tend to point to rows in the same data blocks.</p>
+</li>
+<li>
+<p>If the value is near the number of rows, then the table is very randomly ordered. In this case, it is unlikely that index entries in the same leaf block point to rows in the same data blocks.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d364102e705" headers="d364102e190">
+<p><code>NUM_ROWS</code></p>
+</td>
+<td class="cellalignment3905" headers="d364102e705 d364102e193">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d364102e705 d364102e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d364102e705 d364102e199">
+<p>Number of rows in this index subpartition</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d364102e720" headers="d364102e190">
+<p><code>SAMPLE_SIZE</code></p>
+</td>
+<td class="cellalignment3905" headers="d364102e720 d364102e193">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d364102e720 d364102e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d364102e720 d364102e199">
+<p>Sample size used in analyzing this subpartition</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d364102e735" headers="d364102e190">
+<p><code>LAST_ANALYZED</code></p>
+</td>
+<td class="cellalignment3905" headers="d364102e735 d364102e193">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3906" headers="d364102e735 d364102e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d364102e735 d364102e199">
+<p>Date on which this partition was most recently analyzed</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d364102e750" headers="d364102e190">
+<p><code>BUFFER_POOL</code></p>
+</td>
+<td class="cellalignment3905" headers="d364102e750 d364102e193">
+<p><code>VARCHAR2(7)</code></p>
+</td>
+<td class="cellalignment3906" headers="d364102e750 d364102e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d364102e750 d364102e199">
+<p>Buffer pool for the subpartition:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>DEFAULT</code></p>
+</li>
+<li>
+<p><code>KEEP</code></p>
+</li>
+<li>
+<p><code>RECYCLE</code></p>
+</li>
+<li>
+<p><code>NULL</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d364102e783" headers="d364102e190">
+<p><code>FLASH_CACHE</code></p>
+</td>
+<td class="cellalignment3905" headers="d364102e783 d364102e193">
+<p><code>VARCHAR2(7)</code></p>
+</td>
+<td class="cellalignment3906" headers="d364102e783 d364102e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d364102e783 d364102e199">
+<p>Database Smart Flash Cache hint to be used for subpartition blocks:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>DEFAULT</code></p>
+</li>
+<li>
+<p><code>KEEP</code></p>
+</li>
+<li>
+<p><code>NONE</code></p>
+</li>
+</ul>
+<p>Solaris and Oracle Linux functionality only.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d364102e814" headers="d364102e190">
+<p><code>CELL_FLASH_CACHE</code></p>
+</td>
+<td class="cellalignment3905" headers="d364102e814 d364102e193">
+<p><code>VARCHAR2(7)</code></p>
+</td>
+<td class="cellalignment3906" headers="d364102e814 d364102e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d364102e814 d364102e199">
+<p>Cell flash cache hint to be used for subpartition blocks:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>DEFAULT</code></p>
+</li>
+<li>
+<p><code>KEEP</code></p>
+</li>
+<li>
+<p><code>NONE</code></p>
+</li>
+</ul>
+<p><span class="bold">See Also:</span> Oracle Exadata Storage Server Software documentation for more information</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d364102e847" headers="d364102e190">
+<p><code>USER_STATS</code></p>
+</td>
+<td class="cellalignment3905" headers="d364102e847 d364102e193">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3906" headers="d364102e847 d364102e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d364102e847 d364102e199">
+<p>Indicates whether statistics were entered directly by the user (<code>YES</code>) or not (<code>NO</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d364102e868" headers="d364102e190">
+<p><code>GLOBAL_STATS</code></p>
+</td>
+<td class="cellalignment3905" headers="d364102e868 d364102e193">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3906" headers="d364102e868 d364102e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d364102e868 d364102e199">
+<p><code>GLOBAL_STATS</code> will be <code>YES</code> if statistics have been gathered or <code>NO</code> if statistics have not been gathered</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d364102e891" headers="d364102e190">
+<p><code>INTERVAL</code></p>
+</td>
+<td class="cellalignment3905" headers="d364102e891 d364102e193">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3906" headers="d364102e891 d364102e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d364102e891 d364102e199">
+<p>Indicates whether the partition is in the interval section of an interval partitioned table (<code>YES</code>) or whether the partition is in the range section (<code>NO</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d364102e913" headers="d364102e190">
+<p><code>SEGMENT_CREATED</code></p>
+</td>
+<td class="cellalignment3905" headers="d364102e913 d364102e193">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3906" headers="d364102e913 d364102e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d364102e913 d364102e199">
+<p>Indicates whether the index subpartition segment has been created (<code>YES</code>) or not (<code>NO</code>); <code>N/A</code> indicates that this index is not subpartitioned</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d364102e938" headers="d364102e190">
+<p><code>PARAMETERS</code><a id="fnsrc_d364102e942" href="#fnsrc_d364102e942" onclick='footdisplay(, \"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+<td class="cellalignment3905" headers="d364102e938 d364102e193">
+<p><code>VARCHAR2(1000)</code></p>
+</td>
+<td class="cellalignment3906" headers="d364102e938 d364102e196">&nbsp;</td>
+<td class="cellalignment3907" headers="d364102e938 d364102e199">
+<p>For a domain index, the parameter string</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<p class="tablefootnote"><sup class="tablefootnote">Footnote&nbsp;1</sup></p>
+<p>This column is available starting with Oracle Database 12<span class="italic">c</span> Release 2 (12.2.0.1).</p>
+<div class="section">
+<div class="infoboxnotealso" id="GUID-29DC1F28-E943-4A72-A0EE-E1E6C6A254CF__GUID-36E11A22-B725-489D-B05A-52AD3768D393">
+<p class="notep1">See Also:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="q">"<a href="DBA_IND_SUBPARTITIONS.htm#GUID-24832B83-29E1-4C00-B607-B188E1C83C4B">DBA_IND_SUBPARTITIONS</a>"</span></p>
+</li>
+<li>
+<p><span class="q">"<a href="USER_IND_SUBPARTITIONS.htm#GUID-4EE54959-93AC-42D4-9F93-4F5189FD72ED">USER_IND_SUBPARTITIONS</a>"</span></p>
+</li>
+<li>
+<p><a class="olink ARPLS059" target="_blank" href="../ARPLS/DBMS_STATS.htm#ARPLS059"><span class="italic">Oracle Database PL/SQL Packages and Types Reference</span></a> for more information about the <code>DBMS_STATS</code> package</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="ALL_IND_STATISTICS.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="ALL_INDEXES.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+</body>
+</html>

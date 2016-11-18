@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>ALL_CLUSTERS</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="ALL_CLUSTERS view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="ALL_CLUSTERING_TABLES.htm" title="Previous" type="text/html" />
+<link rel="Next" href="ALL_CODE_ROLE_PRIVS.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-A006481A-A195-48A1-A276-8AEE570FFDD8"></a> <span id="PAGE" style="display:none;">420/2822</span> <!-- End Header -->
+<a id="REFRN20039"></a>
+<h1 id="REFRN-GUID-A006481A-A195-48A1-A276-8AEE570FFDD8" class="sect1"><span class="enumeration_section">2.77</span> ALL_CLUSTERS</h1>
+<div>
+<div class="section">
+<p><code>ALL_CLUSTERS</code> describes all clusters accessible to the current user.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Related Views</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<ul style="list-style-type: disc;">
+<li>
+<p><code>DBA_CLUSTERS</code> describes all clusters in the database.</p>
+</li>
+<li>
+<p><code>USER_CLUSTERS</code> describes all clusters owned by the current user. This view does not display the <code>OWNER</code> column.</p>
+</li>
+</ul>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-A006481A-A195-48A1-A276-8AEE570FFDD8__GUID-CF9AE82A-4182-43EA-BC3A-CB12C59AE80C">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d271466e187">Column</th>
+<th class="cellalignment3905" id="d271466e190">Datatype</th>
+<th class="cellalignment3906" id="d271466e193">NULL</th>
+<th class="cellalignment3907" id="d271466e196">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d271466e201" headers="d271466e187">
+<p><code>OWNER</code></p>
+</td>
+<td class="cellalignment3905" headers="d271466e201 d271466e190">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d271466e201 d271466e193">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d271466e201 d271466e196">
+<p>Owner of the cluster</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d271466e217" headers="d271466e187">
+<p><code>CLUSTER_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d271466e217 d271466e190">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d271466e217 d271466e193">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d271466e217 d271466e196">
+<p>Name of the cluster</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d271466e233" headers="d271466e187">
+<p><code>TABLESPACE_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d271466e233 d271466e190">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3906" headers="d271466e233 d271466e193">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d271466e233 d271466e196">
+<p>Name of the tablespace containing the cluster</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d271466e249" headers="d271466e187">
+<p><code>PCT_FREE</code></p>
+</td>
+<td class="cellalignment3905" headers="d271466e249 d271466e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d271466e249 d271466e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d271466e249 d271466e196">
+<p>Minimum percentage of free space in a block</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d271466e263" headers="d271466e187">
+<p><code>PCT_USED</code></p>
+</td>
+<td class="cellalignment3905" headers="d271466e263 d271466e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d271466e263 d271466e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d271466e263 d271466e196">
+<p>Minimum percentage of used space in a block</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d271466e279" headers="d271466e187">
+<p><code>KEY_SIZE</code></p>
+</td>
+<td class="cellalignment3905" headers="d271466e279 d271466e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d271466e279 d271466e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d271466e279 d271466e196">
+<p>Estimated size of cluster key plus associated rows</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d271466e293" headers="d271466e187">
+<p><code>INI_TRANS</code></p>
+</td>
+<td class="cellalignment3905" headers="d271466e293 d271466e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d271466e293 d271466e193">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d271466e293 d271466e196">
+<p>Initial number of transactions</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d271466e309" headers="d271466e187">
+<p><code>MAX_TRANS</code></p>
+</td>
+<td class="cellalignment3905" headers="d271466e309 d271466e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d271466e309 d271466e193">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d271466e309 d271466e196">
+<p>Maximum number of transactions</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d271466e325" headers="d271466e187">
+<p><code>INITIAL_EXTENT</code></p>
+</td>
+<td class="cellalignment3905" headers="d271466e325 d271466e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d271466e325 d271466e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d271466e325 d271466e196">
+<p>Size of the initial extent in bytes</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d271466e339" headers="d271466e187">
+<p><code>NEXT_EXTENT</code></p>
+</td>
+<td class="cellalignment3905" headers="d271466e339 d271466e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d271466e339 d271466e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d271466e339 d271466e196">
+<p>Size of secondary extents in bytes</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d271466e353" headers="d271466e187">
+<p><code>MIN_EXTENTS</code></p>
+</td>
+<td class="cellalignment3905" headers="d271466e353 d271466e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d271466e353 d271466e193">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d271466e353 d271466e196">
+<p>Minimum number of extents allowed in the segment</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d271466e370" headers="d271466e187">
+<p><code>MAX_EXTENTS</code></p>
+</td>
+<td class="cellalignment3905" headers="d271466e370 d271466e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d271466e370 d271466e193">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d271466e370 d271466e196">
+<p>Maximum number of extents allowed in the segment</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d271466e386" headers="d271466e187">
+<p><code>PCT_INCREASE</code></p>
+</td>
+<td class="cellalignment3905" headers="d271466e386 d271466e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d271466e386 d271466e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d271466e386 d271466e196">
+<p>Percentage increase in extent size</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d271466e402" headers="d271466e187">
+<p><code>FREELISTS</code></p>
+</td>
+<td class="cellalignment3905" headers="d271466e402 d271466e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d271466e402 d271466e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d271466e402 d271466e196">
+<p>Number of process freelists allocated to this segment</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d271466e416" headers="d271466e187">
+<p><code>FREELIST_GROUPS</code></p>
+</td>
+<td class="cellalignment3905" headers="d271466e416 d271466e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d271466e416 d271466e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d271466e416 d271466e196">
+<p>Number of freelist groups allocated to this segment</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d271466e430" headers="d271466e187">
+<p><code>AVG_BLOCKS_PER_KEY</code></p>
+</td>
+<td class="cellalignment3905" headers="d271466e430 d271466e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d271466e430 d271466e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d271466e430 d271466e196">
+<p>Number of blocks in the table divided by number of cluster keys</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d271466e444" headers="d271466e187">
+<p><code>CLUSTER_TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d271466e444 d271466e190">
+<p><code>VARCHAR2(5)</code></p>
+</td>
+<td class="cellalignment3906" headers="d271466e444 d271466e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d271466e444 d271466e196">
+<p>Type of the cluster:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>INDEX</code> - B*-Tree index</p>
+</li>
+<li>
+<p><code>HASH</code> - Hash</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d271466e469" headers="d271466e187">
+<p><code>FUNCTION</code></p>
+</td>
+<td class="cellalignment3905" headers="d271466e469 d271466e190">
+<p><code>VARCHAR2(15)</code></p>
+</td>
+<td class="cellalignment3906" headers="d271466e469 d271466e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d271466e469 d271466e196">
+<p>If the cluster is a hash cluster, the hash function</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d271466e483" headers="d271466e187">
+<p><code>HASHKEYS</code></p>
+</td>
+<td class="cellalignment3905" headers="d271466e483 d271466e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d271466e483 d271466e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d271466e483 d271466e196">
+<p>If the cluster is a hash cluster, the number of hash keys (hash buckets)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d271466e497" headers="d271466e187">
+<p><code>DEGREE</code></p>
+</td>
+<td class="cellalignment3905" headers="d271466e497 d271466e190">
+<p><code>VARCHAR2(10)</code></p>
+</td>
+<td class="cellalignment3906" headers="d271466e497 d271466e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d271466e497 d271466e196">
+<p>Number of threads per instance for scanning the cluster, or <code>DEFAULT</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d271466e513" headers="d271466e187">
+<p><code>INSTANCES</code></p>
+</td>
+<td class="cellalignment3905" headers="d271466e513 d271466e190">
+<p><code>VARCHAR2(10)</code></p>
+</td>
+<td class="cellalignment3906" headers="d271466e513 d271466e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d271466e513 d271466e196">
+<p>Number of instances across which the cluster is to be scanned , or <code>DEFAULT</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d271466e529" headers="d271466e187">
+<p><code>CACHE</code></p>
+</td>
+<td class="cellalignment3905" headers="d271466e529 d271466e190">
+<p><code>VARCHAR2(5)</code></p>
+</td>
+<td class="cellalignment3906" headers="d271466e529 d271466e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d271466e529 d271466e196">
+<p>Indicates whether the cluster is to be cached in the buffer cache (<code>Y</code>) or not (<code>N</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d271466e550" headers="d271466e187">
+<p><code>BUFFER_POOL</code></p>
+</td>
+<td class="cellalignment3905" headers="d271466e550 d271466e190">
+<p><code>VARCHAR2(7)</code></p>
+</td>
+<td class="cellalignment3906" headers="d271466e550 d271466e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d271466e550 d271466e196">
+<p>Buffer pool to be used for cluster blocks:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>DEFAULT</code></p>
+</li>
+<li>
+<p><code>KEEP</code></p>
+</li>
+<li>
+<p><code>RECYCLE</code></p>
+</li>
+<li>
+<p>NULL</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d271466e580" headers="d271466e187">
+<p><code>FLASH_CACHE</code></p>
+</td>
+<td class="cellalignment3905" headers="d271466e580 d271466e190">
+<p><code>VARCHAR2(7)</code></p>
+</td>
+<td class="cellalignment3906" headers="d271466e580 d271466e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d271466e580 d271466e196">
+<p>Database Smart Flash Cache hint to be used for cluster blocks:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>DEFAULT</code></p>
+</li>
+<li>
+<p><code>KEEP</code></p>
+</li>
+<li>
+<p><code>NONE</code></p>
+</li>
+</ul>
+<p>Solaris and Oracle Linux functionality only.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d271466e611" headers="d271466e187">
+<p><code>CELL_FLASH_CACHE</code></p>
+</td>
+<td class="cellalignment3905" headers="d271466e611 d271466e190">
+<p><code>VARCHAR2(7)</code></p>
+</td>
+<td class="cellalignment3906" headers="d271466e611 d271466e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d271466e611 d271466e196">
+<p>Cell flash cache hint to be used for cluster blocks:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>DEFAULT</code></p>
+</li>
+<li>
+<p><code>KEEP</code></p>
+</li>
+<li>
+<p><code>NONE</code></p>
+</li>
+</ul>
+<p><span class="bold">See Also:</span> Oracle Exadata Storage Server Software documentation for more information</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d271466e644" headers="d271466e187">
+<p><code>SINGLE_TABLE</code></p>
+</td>
+<td class="cellalignment3905" headers="d271466e644 d271466e190">
+<p><code>VARCHAR2(5)</code></p>
+</td>
+<td class="cellalignment3906" headers="d271466e644 d271466e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d271466e644 d271466e196">
+<p>Indicates whether this is a single-table cluster (<code>Y</code>) or not (<code>N</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d271466e664" headers="d271466e187">
+<p><code>DEPENDENCIES</code></p>
+</td>
+<td class="cellalignment3905" headers="d271466e664 d271466e190">
+<p><code>VARCHAR2(8)</code></p>
+</td>
+<td class="cellalignment3906" headers="d271466e664 d271466e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d271466e664 d271466e196">
+<p>Indicates whether row-level dependency tracking is enabled (<code>ENABLED</code>) or disabled (<code>DISABLED</code>)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<div class="section">
+<div class="infoboxnotealso" id="GUID-A006481A-A195-48A1-A276-8AEE570FFDD8__GUID-494D1D63-6F43-4DDB-AA4B-1FCCB7A0AD84">
+<p class="notep1">See Also:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="q">"<a href="DBA_CLUSTERS.htm#GUID-9AE950FE-1E67-4BEA-BD07-B142AB749DDA">DBA_CLUSTERS</a>"</span></p>
+</li>
+<li>
+<p><span class="q">"<a href="USER_CLUSTERS.htm#GUID-F1E8BF6E-99A4-4E0E-B425-C9C818CC8A72">USER_CLUSTERS</a>"</span></p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="ALL_CLUSTERING_TABLES.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="ALL_CODE_ROLE_PRIVS.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

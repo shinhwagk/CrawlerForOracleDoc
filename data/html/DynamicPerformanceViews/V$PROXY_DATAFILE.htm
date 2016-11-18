@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>V$PROXY_DATAFILE</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="V$PROXY_DATAFILE view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="V-PROXY_COPY_SUMMARY.htm" title="Previous" type="text/html" />
+<link rel="Next" href="V-PROXY_PDB_TARGETS.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-18ED700A-A654-436A-A8A4-890B2CA90006"></a> <span id="PAGE" style="display:none;">2592/2822</span> <!-- End Header -->
+<script  >
+//<![CDATA[
+window.name='V-PROXY_DATAFILE'
+//]]>
+</script> <script  >
+    function footdisplay(footnum,footnote) {
+    var msg = window.open('', 'NewWindow' + footnum,
+        'directories=no,height=120,location=no,menubar=no,resizable=yes,' +
+        'scrollbars=yes,status=no,toolbar=no,width=598');
+    msg.document.open('text/html');
+    msg.document.write('<!DOCTYPE html ');
+    msg.document.write('PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" ');
+
+    msg.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">');
+    msg.document.write('<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><title>');
+    msg.document.write('Footnote&amp;nbsp; ' + footnum);
+    msg.document.write('<\/title><meta http-equiv="Content-Type" ');
+    msg.document.write('content="text/html; charset=utf-8" />');
+    msg.document.write('');
+    msg.document.write('<style> <![CDATA[ ');
+    msg.document.write('h1 {text-align: center; font-size: 14pt;}');
+    msg.document.write('fieldset {border: none;}');
+    msg.document.write('form {text-align: center;}');
+    msg.document.write(' ]]\u003e <\/style>');
+    msg.document.write('<\/head><body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><h1>Footnote&nbsp; ' + footnum + '<\/h1><p>');
+    msg.document.write(footnote);
+    msg.document.write('<\/p><form action="" method="post"><fieldset>');
+    msg.document.write('<input type="button" value="OK" ');
+    msg.document.write('onclick="window.close();" />');
+    msg.document.write('<\/fieldset><\/form><\/body><\/html>');
+    msg.document.close();
+    msg.focus();
+}
+</script><noscript>
+<p>The script content on this page is for navigation purposes only and does not alter the content in any way.</p>
+</noscript><a id="REFRN30188"></a>
+<h1 id="REFRN-GUID-18ED700A-A654-436A-A8A4-890B2CA90006" class="sect1"><span class="enumeration_section">8.136</span> V$PROXY_DATAFILE</h1>
+<div>
+<div class="section">
+<p><code>V$PROXY_DATAFILE</code> contains descriptions of datafile and control file backups that are taken with Proxy Copy. Each row represents a backup of one database file.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-18ED700A-A654-436A-A8A4-890B2CA90006__GUID-9DFA030F-9502-445A-B6E8-375FEA18E331">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d1906649e168">Column</th>
+<th class="cellalignment3905" id="d1906649e171">Datatype</th>
+<th class="cellalignment3908" id="d1906649e174">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d1906649e179" headers="d1906649e168">
+<p><code>RECID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1906649e179 d1906649e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1906649e179 d1906649e174">
+<p>Proxy copy record ID</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1906649e191" headers="d1906649e168">
+<p><code>STAMP</code></p>
+</td>
+<td class="cellalignment3905" headers="d1906649e191 d1906649e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1906649e191 d1906649e174">
+<p>Proxy copy record stamp</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1906649e203" headers="d1906649e168">
+<p><code>DEVICE_TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1906649e203 d1906649e171">
+<p><code>VARCHAR2(17)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1906649e203 d1906649e174">
+<p>Type of the device on which the copy resides</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1906649e215" headers="d1906649e168">
+<p><code>HANDLE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1906649e215 d1906649e171">
+<p><code>VARCHAR2(513)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1906649e215 d1906649e174">
+<p>Proxy copy handle identifies the copy for restore</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1906649e227" headers="d1906649e168">
+<p><code>COMMENTS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1906649e227 d1906649e171">
+<p><code>VARCHAR2(81)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1906649e227 d1906649e174">
+<p>Comment returned by the operating system or storage subsystem. This value is informational only. It is not needed for restore.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1906649e239" headers="d1906649e168">
+<p><code>MEDIA</code></p>
+</td>
+<td class="cellalignment3905" headers="d1906649e239 d1906649e171">
+<p><code>VARCHAR2(65)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1906649e239 d1906649e174">
+<p>Name of the media on which the copy resides. This value is informational only. It is not needed for restore.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1906649e251" headers="d1906649e168">
+<p><code>MEDIA_POOL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1906649e251 d1906649e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1906649e251 d1906649e174">
+<p>Media pool in which the copy resides. This is the same value that was entered in the <code>POOL</code> operand of the Recovery Manager <code>BACKUP</code> command</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1906649e269" headers="d1906649e168">
+<p><code>TAG</code></p>
+</td>
+<td class="cellalignment3905" headers="d1906649e269 d1906649e171">
+<p><code>VARCHAR2(32)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1906649e269 d1906649e174">
+<p>Proxy copy tag</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1906649e281" headers="d1906649e168">
+<p><code>STATUS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1906649e281 d1906649e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1906649e281 d1906649e174">
+<p>Status of the backup set:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>A</code> - Available</p>
+</li>
+<li>
+<p><code>U</code> - Unavailable</p>
+</li>
+<li>
+<p><code>X</code> - Expired</p>
+</li>
+<li>
+<p><code>D</code> - Deleted</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1906649e314" headers="d1906649e168">
+<p><code>DELETED</code></p>
+</td>
+<td class="cellalignment3905" headers="d1906649e314 d1906649e171">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1906649e314 d1906649e174">
+<p>Indicates whether this record has been deleted (<code>YES</code>) or not (<code>NO</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1906649e332" headers="d1906649e168">
+<p><code>FILE#</code></p>
+</td>
+<td class="cellalignment3905" headers="d1906649e332 d1906649e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1906649e332 d1906649e174">
+<p>Absolute datafile number, or 0 if this is a control file backup</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1906649e345" headers="d1906649e168">
+<p><code>CREATION_CHANGE#</code></p>
+</td>
+<td class="cellalignment3905" headers="d1906649e345 d1906649e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1906649e345 d1906649e174">
+<p>Datafile creation change number</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1906649e357" headers="d1906649e168">
+<p><code>CREATION_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1906649e357 d1906649e171">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3908" headers="d1906649e357 d1906649e174">
+<p>Datafile creation Timestamp</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1906649e369" headers="d1906649e168">
+<p><code>RESETLOGS_CHANGE#</code></p>
+</td>
+<td class="cellalignment3905" headers="d1906649e369 d1906649e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1906649e369 d1906649e174">
+<p>Resetlogs change number of the datafile when the copy was made</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1906649e381" headers="d1906649e168">
+<p><code>RESETLOGS_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1906649e381 d1906649e171">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3908" headers="d1906649e381 d1906649e174">
+<p>Resetlogs timestamp of the datafile when the copy was made</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1906649e393" headers="d1906649e168">
+<p><code>CHECKPOINT_CHANGE#</code></p>
+</td>
+<td class="cellalignment3905" headers="d1906649e393 d1906649e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1906649e393 d1906649e174">
+<p>Checkpoint change number of the datafile when the copy was made</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1906649e405" headers="d1906649e168">
+<p><code>CHECKPOINT_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1906649e405 d1906649e171">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3908" headers="d1906649e405 d1906649e174">
+<p>Checkpoint timestamp of the datafile when the copy was made</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1906649e417" headers="d1906649e168">
+<p><code>ABSOLUTE_FUZZY_CHANGE#</code></p>
+</td>
+<td class="cellalignment3905" headers="d1906649e417 d1906649e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1906649e417 d1906649e174">
+<p>Highest change in any block of the file, if known</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1906649e429" headers="d1906649e168">
+<p><code>RECOVERY_FUZZY_CHANGE#</code></p>
+</td>
+<td class="cellalignment3905" headers="d1906649e429 d1906649e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1906649e429 d1906649e174">
+<p>Highest change written to the file by media recovery</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1906649e441" headers="d1906649e168">
+<p><code>RECOVERY_FUZZY_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1906649e441 d1906649e171">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3908" headers="d1906649e441 d1906649e174">
+<p>Timestamp of the highest change written to the file by media recovery</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1906649e453" headers="d1906649e168">
+<p><code>INCREMENTAL_LEVEL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1906649e453 d1906649e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1906649e453 d1906649e174">
+<p>If this backup is part of an incremental backup strategy, then 0. Otherwise null.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1906649e465" headers="d1906649e168">
+<p><code>ONLINE_FUZZY</code></p>
+</td>
+<td class="cellalignment3905" headers="d1906649e465 d1906649e171">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1906649e465 d1906649e174">
+<p>Indicates whether this copy was made after a crash or offline immediate (or is a copy of a copy which was taken improperly while the database was open) (<code>YES</code>) or not (<code>NO</code>). Recovery will need to apply all redo up to the next crash recovery marker to make the file consistent.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1906649e484" headers="d1906649e168">
+<p><code>BACKUP_FUZZY</code></p>
+</td>
+<td class="cellalignment3905" headers="d1906649e484 d1906649e171">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1906649e484 d1906649e174">
+<p>Indicates whether this is a copy taken using the <code>BEGIN BACKUP | END BACKUP</code> technique (<code>YES</code>) or not (<code>NO</code>). The <code>BEGIN BACKUP | END BACKUP</code> technique is used internally when proxy copies of open files are created. Recovery will need to apply all redo up to the end backup marker to make this copy consistent.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1906649e508" headers="d1906649e168">
+<p><code>BLOCKS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1906649e508 d1906649e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1906649e508 d1906649e174">
+<p>Size of the copy (in blocks). Also the size of the datafile when the copy was made.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1906649e520" headers="d1906649e168">
+<p><code>BLOCK_SIZE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1906649e520 d1906649e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1906649e520 d1906649e174">
+<p>Block size of the datafile</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1906649e532" headers="d1906649e168">
+<p><code>OLDEST_OFFLINE_RANGE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1906649e532 d1906649e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1906649e532 d1906649e174">
+<p>If the file number is <code>0</code> (that is, this is a control file backup), the RECID of the oldest offline range record in this control file copy. <code>0</code> for datafile copies.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1906649e550" headers="d1906649e168">
+<p><code>START_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1906649e550 d1906649e171">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3908" headers="d1906649e550 d1906649e174">
+<p>Starting time</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1906649e562" headers="d1906649e168">
+<p><code>COMPLETION_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1906649e562 d1906649e171">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3908" headers="d1906649e562 d1906649e174">
+<p>Completion time</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1906649e574" headers="d1906649e168">
+<p><code>ELAPSED_SECONDS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1906649e574 d1906649e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1906649e574 d1906649e174">
+<p>Number of elapsed seconds</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1906649e586" headers="d1906649e168">
+<p><code>CONTROLFILE_TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1906649e586 d1906649e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1906649e586 d1906649e174">
+<p>Type of control file:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>B</code> - Normal control file</p>
+</li>
+<li>
+<p><code>S</code> - Standby control file</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1906649e609" headers="d1906649e168">
+<p><code>KEEP</code></p>
+</td>
+<td class="cellalignment3905" headers="d1906649e609 d1906649e171">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1906649e609 d1906649e174">
+<p>Indicates whether this backup set has a retention policy that is different than the value for the configure retention policy (<code>YES</code>) or not (<code>NO</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1906649e627" headers="d1906649e168">
+<p><code>KEEP_UNTIL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1906649e627 d1906649e171">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3908" headers="d1906649e627 d1906649e174">
+<p>If specified, then this is the date after which the backup becomes obsolete. If this column is NULL, then the backup never expires.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1906649e639" headers="d1906649e168">
+<p><code>KEEP_OPTIONS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1906649e639 d1906649e171">
+<p><code>VARCHAR2(11)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1906649e639 d1906649e174">
+<p>Additional retention options for this backup set:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>LOGS</code> - Indicates a long-term backup made with the <code>LOGS</code> keyword, which is now deprecated</p>
+</li>
+<li>
+<p><code>BACKUP_LOGS</code> - Indicates that the backup was made in open mode, so archived log backups must be applied to make it consistent</p>
+</li>
+<li>
+<p><code>NOLOGS</code> - Indicates a consistent backup made when the database was mounted.</p>
+</li>
+<li>
+<p>NULL - Indicates that this backup has no <code>KEEP</code> options and becomes obsolete based on the retention policy</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1906649e677" headers="d1906649e168">
+<p><code>RMAN_STATUS_RECID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1906649e677 d1906649e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1906649e677 d1906649e174">
+<p>Owning <code>V$RMAN_STATUS</code> record ID</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1906649e692" headers="d1906649e168">
+<p><code>RMAN_STATUS_STAMP</code></p>
+</td>
+<td class="cellalignment3905" headers="d1906649e692 d1906649e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1906649e692 d1906649e174">
+<p>Owning <code>V$RMAN_STATUS</code> stamp</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1906649e707" headers="d1906649e168">
+<p><code>FOREIGN_DBID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1906649e707 d1906649e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1906649e707 d1906649e174">
+<p>Foreign DBID of the database from which this datafile was transported. The value is <code>0</code> if the file backed up is not a foreign database file.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1906649e722" headers="d1906649e168">
+<p><code>PLUGGED_READONLY</code></p>
+</td>
+<td class="cellalignment3905" headers="d1906649e722 d1906649e171">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1906649e722 d1906649e174">
+<p>Indicates whether this is a proxy copy of a transported read-only foreign file (<code>YES</code>) or not (<code>NO</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1906649e740" headers="d1906649e168">
+<p><code>PLUGIN_CHANGE#</code></p>
+</td>
+<td class="cellalignment3905" headers="d1906649e740 d1906649e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1906649e740 d1906649e174">
+<p>SCN at which the foreign datafile was transported into the database. The value is <code>0</code> if this file is not a foreign database file.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1906649e755" headers="d1906649e168">
+<p><code>PLUGIN_RESETLOGS_CHANGE#</code></p>
+</td>
+<td class="cellalignment3905" headers="d1906649e755 d1906649e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1906649e755 d1906649e174">
+<p>SCN of the <code>RESETLOGS</code> operation for the incarnation into which this foreign file was transported. The value is <code>0</code> if this file is not a foreign database file.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1906649e773" headers="d1906649e168">
+<p><code>PLUGIN_RESETLOGS_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1906649e773 d1906649e171">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3908" headers="d1906649e773 d1906649e174">
+<p>Time of the <code>RESETLOGS</code> operation for the incarnation into which this foreign file was transported. The value is <code>0</code> if this file is not a foreign database file.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1906649e791" headers="d1906649e168">
+<p><code>CON_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1906649e791 d1906649e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1906649e791 d1906649e174">
+<p>The ID of the container to which the data pertains. Possible values include:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>0</code>: This value is used for rows containing data that pertain to the entire CDB. This value is also used for rows in non-CDBs.</p>
+</li>
+<li>
+<p><code>1</code>: This value is used for rows containing data that pertain to only the root</p>
+</li>
+<li>
+<p><span class="italic">n</span>: Where <span class="italic">n</span> is the applicable container ID for the rows containing data</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1906649e822" headers="d1906649e168">
+<p><code>BACKED_BY_PDB</code></p>
+</td>
+<td class="cellalignment3905" headers="d1906649e822 d1906649e171">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1906649e822 d1906649e174">
+<p>Recovery Manager (RMAN) allows a PDB to be backed up in two ways. The value in this column indicates how the PDB backup was taken:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>YES</code>: The backup was taken when connected to the PDB</p>
+</li>
+<li>
+<p><code>NO</code>: The backup was taken when connected to the root container</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1906649e845" headers="d1906649e168">
+<p><code>GUID</code><a id="fn_1" href="#fn_1" onclick='footdisplay(1,"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Foot&nbsp;1</sup></a></p>
+</td>
+<td class="cellalignment3905" headers="d1906649e845 d1906649e171">
+<p><code>RAW(16)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1906649e845 d1906649e174">
+<p>The GUID of the PDB to which the backup belongs. This is useful after the PDB is dropped to identify which PDB the backup belongs to.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<p class="tablefootnote"><sup class="tablefootnote">Footnote&nbsp;1</sup></p>
+<p>This column is available starting with Oracle Database 12<span class="italic">c</span> Release 2 (12.2.0.1).</p>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="V-PROXY_COPY_SUMMARY.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="V-PROXY_PDB_TARGETS.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+</body>
+</html>

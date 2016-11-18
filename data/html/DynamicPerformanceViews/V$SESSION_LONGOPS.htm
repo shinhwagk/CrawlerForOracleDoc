@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>V$SESSION_LONGOPS</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="V$SESSION_LONGOPS view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="V-SESSION_FIX_CONTROL.htm" title="Previous" type="text/html" />
+<link rel="Next" href="V-SESSION_OBJECT_CACHE.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-F2802C36-066C-493E-8255-C08CC79B87FB"></a> <span id="PAGE" style="display:none;">2678/2822</span> <!-- End Header -->
+<a id="REFRN30227"></a>
+<h1 id="REFRN-GUID-F2802C36-066C-493E-8255-C08CC79B87FB" class="sect1"><span class="enumeration_section">9.23</span> V$SESSION_LONGOPS</h1>
+<div>
+<div class="section">
+<p><code>V$SESSION_LONGOPS</code> displays the status of various operations that run for longer than 6 seconds (in absolute time). These operations currently include many backup and recovery functions, statistics gathering, and query execution, and more operations are added for every Oracle release.</p>
+<p>To monitor query execution progress, you must be using the cost-based optimizer and you must:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Set the <code>TIMED_STATISTICS</code> or <code>SQL_TRACE</code> parameters to <code>true</code></p>
+</li>
+<li>
+<p>Gather statistics for your objects with the <code>DBMS_STATS</code> package</p>
+</li>
+</ul>
+<p>You can add information to this view about application-specific long-running operations by using the <code>DBMS_APPLICATION_INFO.SET_SESSION_LONGOPS</code> procedure.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-F2802C36-066C-493E-8255-C08CC79B87FB__GUID-4D612B09-046D-47AF-AE0A-E25F9EAB1B1F">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d2000923e193">Column</th>
+<th class="cellalignment3905" id="d2000923e196">Datatype</th>
+<th class="cellalignment3908" id="d2000923e199">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d2000923e204" headers="d2000923e193">
+<p><code>SID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2000923e204 d2000923e196">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2000923e204 d2000923e199">
+<p>Identifier of the session processing the long-running operation. If multiple sessions are cooperating in the long-running operation, then <code>SID</code> corresponds to the main or master session.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2000923e219" headers="d2000923e193">
+<p><code>SERIAL#</code></p>
+</td>
+<td class="cellalignment3905" headers="d2000923e219 d2000923e196">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2000923e219 d2000923e199">
+<p>Serial number of the session processing the long-running operation. If multiple sessions are cooperating in the long-running operation, then <code>SERIAL#</code> corresponds to the main or master session. <code>SERIAL#</code> is used to uniquely identify a session's objects. Guarantees that session-level commands are applied to the correct session objects if the session ends and another session begins with the same session ID.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2000923e237" headers="d2000923e193">
+<p><code>OPNAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d2000923e237 d2000923e196">
+<p><code>VARCHAR2(64)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2000923e237 d2000923e199">
+<p>Brief description of the operation</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2000923e249" headers="d2000923e193">
+<p><code>TARGET</code></p>
+</td>
+<td class="cellalignment3905" headers="d2000923e249 d2000923e196">
+<p><code>VARCHAR2(64)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2000923e249 d2000923e199">
+<p>Object on which the operation is carried out</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2000923e261" headers="d2000923e193">
+<p><code>TARGET_DESC</code></p>
+</td>
+<td class="cellalignment3905" headers="d2000923e261 d2000923e196">
+<p><code>VARCHAR2(32)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2000923e261 d2000923e199">
+<p>Description of the target</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2000923e273" headers="d2000923e193">
+<p><code>SOFAR</code></p>
+</td>
+<td class="cellalignment3905" headers="d2000923e273 d2000923e196">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2000923e273 d2000923e199">
+<p>Units of work done so far for the operation specified in the <code>OPNAME</code> column</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2000923e288" headers="d2000923e193">
+<p><code>TOTALWORK</code></p>
+</td>
+<td class="cellalignment3905" headers="d2000923e288 d2000923e196">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2000923e288 d2000923e199">
+<p>Total units of work for the operation specified in the <code>OPNAME</code> column</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2000923e303" headers="d2000923e193">
+<p><code>UNITS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2000923e303 d2000923e196">
+<p><code>VARCHAR2(32)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2000923e303 d2000923e199">
+<p>Units of measurement</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2000923e315" headers="d2000923e193">
+<p><code>START_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d2000923e315 d2000923e196">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3908" headers="d2000923e315 d2000923e199">
+<p>Starting time of the operation</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2000923e327" headers="d2000923e193">
+<p><code>LAST_UPDATE_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d2000923e327 d2000923e196">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3908" headers="d2000923e327 d2000923e199">
+<p>Time when statistics were last updated for the operation</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2000923e339" headers="d2000923e193">
+<p><code>TIMESTAMP</code></p>
+</td>
+<td class="cellalignment3905" headers="d2000923e339 d2000923e196">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3908" headers="d2000923e339 d2000923e199">
+<p>Timestamp specific to the operation</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2000923e352" headers="d2000923e193">
+<p><code>TIME_REMAINING</code></p>
+</td>
+<td class="cellalignment3905" headers="d2000923e352 d2000923e196">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2000923e352 d2000923e199">
+<p>Estimate (in seconds) of time remaining for the operation to complete</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2000923e364" headers="d2000923e193">
+<p><code>ELAPSED_SECONDS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2000923e364 d2000923e196">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2000923e364 d2000923e199">
+<p>Number of elapsed seconds from the start of the operations</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2000923e376" headers="d2000923e193">
+<p><code>CONTEXT</code></p>
+</td>
+<td class="cellalignment3905" headers="d2000923e376 d2000923e196">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2000923e376 d2000923e199">
+<p>Context</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2000923e388" headers="d2000923e193">
+<p><code>MESSAGE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2000923e388 d2000923e196">
+<p><code>VARCHAR2(512)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2000923e388 d2000923e199">
+<p>Statistics summary message</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2000923e400" headers="d2000923e193">
+<p><code>USERNAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d2000923e400 d2000923e196">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2000923e400 d2000923e199">
+<p>User ID of the user performing the operation</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2000923e412" headers="d2000923e193">
+<p><code>SQL_ADDRESS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2000923e412 d2000923e196">
+<p><code>RAW(4 | 8)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2000923e412 d2000923e199">
+<p>Used with the value of the <code>SQL_HASH_VALUE</code> column to identify the SQL statement associated with the operation</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2000923e427" headers="d2000923e193">
+<p><code>SQL_HASH_VALUE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2000923e427 d2000923e196">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2000923e427 d2000923e199">
+<p>Used with the value of the <code>SQL_ADDRESS</code> column to identify the SQL statement associated with the operation</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2000923e442" headers="d2000923e193">
+<p><code>SQL_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2000923e442 d2000923e196">
+<p><code>VARCHAR2(13)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2000923e442 d2000923e199">
+<p>SQL identifier of the SQL statement associated with the long operation, if any</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2000923e454" headers="d2000923e193">
+<p><code>SQL_PLAN_HASH_VALUE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2000923e454 d2000923e196">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2000923e454 d2000923e199">
+<p>SQL plan hash value; NULL if <code>SQL_ID</code> is NULL</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2000923e469" headers="d2000923e193">
+<p><code>SQL_EXEC_START</code></p>
+</td>
+<td class="cellalignment3905" headers="d2000923e469 d2000923e196">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3908" headers="d2000923e469 d2000923e199">
+<p>Time when the execution of the SQL started; NULL if <code>SQL_ID</code> is NULL</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2000923e484" headers="d2000923e193">
+<p><code>SQL_EXEC_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2000923e484 d2000923e196">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2000923e484 d2000923e199">
+<p>SQL execution identifier (see <code>V$SQL_MONITOR</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2000923e500" headers="d2000923e193">
+<p><code>SQL_PLAN_LINE_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2000923e500 d2000923e196">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2000923e500 d2000923e199">
+<p>SQL plan line ID corresponding to the long operation; NULL if the long operation is not associated with a line of the execution plan</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2000923e512" headers="d2000923e193">
+<p><code>SQL_PLAN_OPERATION</code></p>
+</td>
+<td class="cellalignment3905" headers="d2000923e512 d2000923e196">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2000923e512 d2000923e199">
+<p>Plan operation name; NULL if <code>SQL_PLAN_LINE_ID</code> is NULL</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2000923e527" headers="d2000923e193">
+<p><code>SQL_PLAN_OPTIONS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2000923e527 d2000923e196">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2000923e527 d2000923e199">
+<p>Plan operation options; NULL if <code>SQL_PLAN_LINE_ID</code> is NULL</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2000923e542" headers="d2000923e193">
+<p><code>QCSID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2000923e542 d2000923e196">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2000923e542 d2000923e199">
+<p>Session identifier of the parallel coordinator</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2000923e554" headers="d2000923e193">
+<p><code>CON_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2000923e554 d2000923e196">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2000923e554 d2000923e199">
+<p>The ID of the container to which the data pertains. Possible values include:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>0</code>: This value is used for rows containing data that pertain to the entire CDB. This value is also used for rows in non-CDBs.</p>
+</li>
+<li>
+<p><code>1</code>: This value is used for rows containing data that pertain to only the root</p>
+</li>
+<li>
+<p><span class="italic">n</span>: Where <span class="italic">n</span> is the applicable container ID for the rows containing data</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<div class="section">
+<div class="infoboxnotealso" id="GUID-F2802C36-066C-493E-8255-C08CC79B87FB__GUID-2D056270-942B-4AEE-85E4-C0ED09A8F9C0">
+<p class="notep1">See Also:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="q">"<a href="TIMED_STATISTICS.htm#GUID-1F65183A-5F77-42E1-8BC1-294910F3A731">TIMED_STATISTICS</a>"</span></p>
+</li>
+<li>
+<p><span class="q">"<a href="SQL_TRACE.htm#GUID-E9104455-11BF-4BB4-B215-4151DFD9F5CD">SQL_TRACE</a>"</span></p>
+</li>
+<li>
+<p><a class="olink ARPLS65241" target="_blank" href="../ARPLS/DBMS_APPLICATION_INFO.htm#ARPLS65241"><span class="italic">Oracle Database PL/SQL Packages and Types Reference</span></a> for more information about the <code>DBMS_APPLICATION_INFO.SET_SESSION_LONGOPS</code> procedure</p>
+</li>
+<li>
+<p><a class="olink ARPLS059" target="_blank" href="../ARPLS/DBMS_STATS.htm#ARPLS059"><span class="italic">Oracle Database PL/SQL Packages and Types Reference</span></a> for more information about the <code>DBMS_STATS</code> package</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="V-SESSION_FIX_CONTROL.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="V-SESSION_OBJECT_CACHE.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

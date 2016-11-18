@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>DBA_JOINGROUPS</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="DBA_JOINGROUPS describes join groups in the database. A join group is a user-created object that consists of two or more columns that can be meaningfully joined. The maximum number of columns that can be included in a join group is 255." />
+<meta name="keywords" content="DBA_JOINGROUPS view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="DBA_JOIN_IND_COLUMNS.htm" title="Previous" type="text/html" />
+<link rel="Next" href="DBA_JSON_COLUMNS.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-285814BC-3BE0-47DA-8832-779229D5A93A"></a> <span id="PAGE" style="display:none;">1232/2822</span> <!-- End Header -->
+<h1 id="REFRN-GUID-285814BC-3BE0-47DA-8832-779229D5A93A" class="sect1"><span class="enumeration_section">5.134</span> DBA_JOINGROUPS</h1>
+<div>
+<p><code>DBA_JOINGROUPS</code> describes join groups in the database. A join group is a user-created object that consists of two or more columns that can be meaningfully joined. The maximum number of columns that can be included in a join group is 255.</p>
+<div class="section">
+<p class="subhead1">Related View</p>
+<p>In certain queries, join groups enable the database to eliminate the performance overhead of decompressing and hashing column values. Join groups require an In-Memory column store (IM column store).</p>
+<p><code>USER_JOINGROUPS</code> describes join groups belonging to the user. This view does not display the <code>JOINGROUP_OWNER</code> column.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-285814BC-3BE0-47DA-8832-779229D5A93A__GUID-9B13C44A-C1A4-4A75-ADDE-8F646300E6EB">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d1106631e182">Column</th>
+<th class="cellalignment3905" id="d1106631e186">Datatype</th>
+<th class="cellalignment3906" id="d1106631e190">NULL</th>
+<th class="cellalignment3907" id="d1106631e194">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d1106631e200" headers="d1106631e182">
+<p><code>JOINGROUP_OWNER</code></p>
+</td>
+<td class="cellalignment3905" headers="d1106631e200 d1106631e186">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1106631e200 d1106631e190">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1106631e200 d1106631e194">
+<p>Join group owner. This is the user that created the join group.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1106631e220" headers="d1106631e182">
+<p><code>JOINGROUP_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1106631e220 d1106631e186">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1106631e220 d1106631e190">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1106631e220 d1106631e194">
+<p>This is the user specified name of the join group. The join group name is specified when the join group is created as part of the <code>CREATE INMEMORY JOIN GROUP</code> statement.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1106631e243" headers="d1106631e182">
+<p><code>TABLE_OWNER</code></p>
+</td>
+<td class="cellalignment3905" headers="d1106631e243 d1106631e186">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1106631e243 d1106631e190">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1106631e243 d1106631e194">
+<p>Table owner</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1106631e263" headers="d1106631e182">
+<p><code>TABLE_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1106631e263 d1106631e186">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1106631e263 d1106631e190">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1106631e263 d1106631e194">
+<p>Table name</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1106631e283" headers="d1106631e182">
+<p><code>COLUMN_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1106631e283 d1106631e186">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1106631e283 d1106631e190">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1106631e283 d1106631e194">
+<p>Column name</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1106631e303" headers="d1106631e182">
+<p><code>FLAGS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1106631e303 d1106631e186">
+<p><code>VARCHAR2(6)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1106631e303 d1106631e190">&nbsp;</td>
+<td class="cellalignment3907" headers="d1106631e303 d1106631e194">
+<p>Possible values:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>MASTER</code>: Indicates which column in the join group is mastering the global dictionary. A join group is a group of columns sharing a global dictionary; the global dictionary is associated with one column and the other columns share the same dictionary. The column with which the global dictionary is associated is called the mastering column.</p>
+</li>
+<li>
+<p>NULL: Indicates that the column is not mastering the global dictionary.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1106631e332" headers="d1106631e182">
+<p><code>GD_ADDRESS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1106631e332 d1106631e186">
+<p><code>RAW(8)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1106631e332 d1106631e190">&nbsp;</td>
+<td class="cellalignment3907" headers="d1106631e332 d1106631e194">
+<p>The memory address of the global dictionary. Ideally, all the columns in one join group should have the same global dictionary address (that is, they share the same global structure). This might not always be the case (for example, a column might be added to a join group after it was populated into memory - in which case its <code>GD_ADDRESS</code> field will be NULL). In such cases, you should force re-populate the tables that are part of the join group and check the views after the repopulates complete.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<div class="section">
+<div class="infobox-note" id="GUID-285814BC-3BE0-47DA-8832-779229D5A93A__GUID-EF316766-035F-4973-9603-575DBFA6481F">
+<p class="notep1">Note:</p>
+<p>This view is available starting with Oracle Database 12<span class="italic">c</span> Release 2 (12.2.0.1).</p>
+</div>
+<div class="infoboxnotealso" id="GUID-285814BC-3BE0-47DA-8832-779229D5A93A__GUID-D8A2228E-9931-4360-B822-BA45BEE20AB5">
+<p class="notep1">See Also:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="q">"<a href="USER_JOINGROUPS.htm#GUID-E934BFB1-4A75-419C-B46A-C904940FBD55" title="USER_JOINGROUPS describes join groups belonging to the user. A join group is a user-created object that consists of two or more columns that can be meaningfully joined. The maximum number of columns that can be included in a join group is 255. The USER_JOINGROUPS columns (except for JOINGROUP_OWNER) are the same as those in DBA_JOINGROUPS.">USER_JOINGROUPS</a>"</span></p>
+</li>
+<li>
+<p><a class="olink INMEM-GUID-3E5491C4-B345-4A8E-8B1B-8DC150C8A797" target="_blank" href="../INMEM/optimizing-queries-with-join-groups.htm#INMEM-GUID-3E5491C4-B345-4A8E-8B1B-8DC150C8A797"><span><cite>Oracle Database In-Memory Guide</cite></span></a> for an introduction to join groups</p>
+</li>
+<li>
+<p><a class="olink SQLRF-GUID-87CA7034-4F80-4D46-8EE1-5CC865C2D676" target="_blank" href="../SQLRF/CREATE-INMEMORY-JOIN-GROUP.htm#SQLRF-GUID-87CA7034-4F80-4D46-8EE1-5CC865C2D676"><span><cite>Oracle Database SQL Language Reference</cite></span></a> for information about creating a join group using the <code>CREATE INMEMORY JOIN GROUP</code> statement</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="DBA_JOIN_IND_COLUMNS.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="DBA_JSON_COLUMNS.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

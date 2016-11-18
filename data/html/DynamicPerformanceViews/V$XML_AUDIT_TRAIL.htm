@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>V$XML_AUDIT_TRAIL</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="V$XML_AUDIT_TRAIL view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="V-WORKLOAD_REPLAY_THREAD.htm" title="Previous" type="text/html" />
+<link rel="Next" href="V-XSTREAM_APPLY_COORDINATOR.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-5A3CB134-2163-4FE1-906A-55901994F33A"></a> <span id="PAGE" style="display:none;">2790/2822</span> <!-- End Header -->
+<script  >
+//<![CDATA[
+window.name='V-XML_AUDIT_TRAIL'
+//]]>
+</script> <script  >
+    function footdisplay(footnum,footnote) {
+    var msg = window.open('', 'NewWindow' + footnum,
+        'directories=no,height=120,location=no,menubar=no,resizable=yes,' +
+        'scrollbars=yes,status=no,toolbar=no,width=598');
+    msg.document.open('text/html');
+    msg.document.write('<!DOCTYPE html ');
+    msg.document.write('PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" ');
+
+    msg.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">');
+    msg.document.write('<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><title>');
+    msg.document.write('Footnote&amp;nbsp; ' + footnum);
+    msg.document.write('<\/title><meta http-equiv="Content-Type" ');
+    msg.document.write('content="text/html; charset=utf-8" />');
+    msg.document.write('');
+    msg.document.write('<style> <![CDATA[ ');
+    msg.document.write('h1 {text-align: center; font-size: 14pt;}');
+    msg.document.write('fieldset {border: none;}');
+    msg.document.write('form {text-align: center;}');
+    msg.document.write(' ]]\u003e <\/style>');
+    msg.document.write('<\/head><body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><h1>Footnote&nbsp; ' + footnum + '<\/h1><p>');
+    msg.document.write(footnote);
+    msg.document.write('<\/p><form action="" method="post"><fieldset>');
+    msg.document.write('<input type="button" value="OK" ');
+    msg.document.write('onclick="window.close();" />');
+    msg.document.write('<\/fieldset><\/form><\/body><\/html>');
+    msg.document.close();
+    msg.focus();
+}
+</script><noscript>
+<p>The script content on this page is for navigation purposes only and does not alter the content in any way.</p>
+</noscript><a id="REFRN30405"></a>
+<h1 id="REFRN-GUID-5A3CB134-2163-4FE1-906A-55901994F33A" class="sect1"><span class="enumeration_section">9.135</span> V$XML_AUDIT_TRAIL</h1>
+<div>
+<div class="section">
+<p><code>V$XML_AUDIT_TRAIL</code> shows standard, fine-grained, SYS, and mandatory audit records written in XML format files.</p>
+<div class="infobox-note" id="GUID-5A3CB134-2163-4FE1-906A-55901994F33A__GUID-B58E58C0-5AC2-444F-A4A1-97EA825DCB82">
+<p class="notep1">Note:</p>
+<p>This view is populated only in an Oracle Database where unified auditing is not enabled. When unified auditing is enabled in Oracle Database, the audit records are populated in the new audit trail and can be viewed from <code>UNIFIED_AUDIT_TRAIL</code>.</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>See <a class="olink DBSEG006" target="_blank" href="../DBSEG/part_6.htm#DBSEG006"><span class="italic">Oracle Database Security Guide</span></a> for more information about unified auditing.</p>
+</li>
+<li>
+<p>See <a class="olink UPGRD52810" target="_blank" href="../UPGRD/recommended-and-best-practices-complete-upgrading-oracle-database.htm#UPGRD52810"><span class="italic">Oracle Database Upgrade Guide</span></a> for more information about migrating to unified auditing.</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-5A3CB134-2163-4FE1-906A-55901994F33A__GUID-1C97C857-FADE-4F77-9FF4-2711E290D536">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d2150982e191">Column</th>
+<th class="cellalignment3905" id="d2150982e194">Datatype</th>
+<th class="cellalignment3908" id="d2150982e197">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d2150982e202" headers="d2150982e191">
+<p><code>AUDIT_TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2150982e202 d2150982e194">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2150982e202 d2150982e197">
+<p>Type of audit row:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>1 = Standard XML Audit</p>
+</li>
+<li>
+<p>2 = Fine Grained XML Audit</p>
+</li>
+<li>
+<p>4 = SYS XML Audit</p>
+</li>
+<li>
+<p>8 = Mandatory XML Audit</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2150982e227" headers="d2150982e191">
+<p><code>SESSION_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2150982e227 d2150982e194">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2150982e227 d2150982e197">
+<p>Numeric ID for the Oracle session</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2150982e239" headers="d2150982e191">
+<p><code>PROXY_SESSIONID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2150982e239 d2150982e194">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2150982e239 d2150982e197">
+<p>Proxy session serial number, if an enterprise user has logged in through a proxy mechanism</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2150982e251" headers="d2150982e191">
+<p><code>STATEMENTID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2150982e251 d2150982e194">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2150982e251 d2150982e197">
+<p>Numeric ID for the statement run (a statement may cause multiple audit records)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2150982e263" headers="d2150982e191">
+<p><code>ENTRYID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2150982e263 d2150982e194">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2150982e263 d2150982e197">
+<p>Numeric ID for the audit trail entry in the session</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2150982e275" headers="d2150982e191">
+<p><code>EXTENDED_TIMESTAMP</code></p>
+</td>
+<td class="cellalignment3905" headers="d2150982e275 d2150982e194">
+<p><code>TIMESTAMP(6) WITH TIME ZONE</code></p>
+</td>
+<td class="cellalignment3908" headers="d2150982e275 d2150982e197">
+<p>Timestamp of the audited operation (the timestamp of the user's logon for entries is created by AUDIT SESSION)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2150982e287" headers="d2150982e191">
+<p><code>GLOBAL_UID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2150982e287 d2150982e194">
+<p><code>VARCHAR2(32)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2150982e287 d2150982e197">
+<p>Global user identifier for the user, if the user has logged in as an enterprise user</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2150982e299" headers="d2150982e191">
+<p><code>DB_USER</code></p>
+</td>
+<td class="cellalignment3905" headers="d2150982e299 d2150982e194">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2150982e299 d2150982e197">
+<p>Database username of the user whose actions were audited</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2150982e311" headers="d2150982e191">
+<p><code>CLIENTIDENTIFIER</code></p>
+</td>
+<td class="cellalignment3905" headers="d2150982e311 d2150982e194">
+<p><code>VARCHAR2(64)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2150982e311 d2150982e197">
+<p>Client identifier in the Oracle session</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2150982e323" headers="d2150982e191">
+<p><code>EXT_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d2150982e323 d2150982e194">
+<p><code>VARCHAR2(1024)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2150982e323 d2150982e197">
+<p>User's external name</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2150982e335" headers="d2150982e191">
+<p><code>OS_USER</code></p>
+</td>
+<td class="cellalignment3905" headers="d2150982e335 d2150982e194">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2150982e335 d2150982e197">
+<p>Operating system logon user name of the user whose actions were audited</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2150982e348" headers="d2150982e191">
+<p><code>OS_HOST</code></p>
+</td>
+<td class="cellalignment3905" headers="d2150982e348 d2150982e194">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2150982e348 d2150982e197">
+<p>Client host system name</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2150982e360" headers="d2150982e191">
+<p><code>OS_PROCESS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2150982e360 d2150982e194">
+<p><code>VARCHAR2(16)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2150982e360 d2150982e197">
+<p>Operating system process identifier of the Oracle server process</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2150982e372" headers="d2150982e191">
+<p><code>TERMINAL</code></p>
+</td>
+<td class="cellalignment3905" headers="d2150982e372 d2150982e194">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2150982e372 d2150982e197">
+<p>Identifier for the user's terminal</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2150982e384" headers="d2150982e191">
+<p><code>INSTANCE_NUMBER</code></p>
+</td>
+<td class="cellalignment3905" headers="d2150982e384 d2150982e194">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2150982e384 d2150982e197">
+<p>Instance number as specified by the <code>INSTANCE_NUMBER</code> initialization parameter</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2150982e399" headers="d2150982e191">
+<p><code>OBJECT_SCHEMA</code></p>
+</td>
+<td class="cellalignment3905" headers="d2150982e399 d2150982e194">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2150982e399 d2150982e197">
+<p>Owner of the audited object</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2150982e411" headers="d2150982e191">
+<p><code>OBJECT_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d2150982e411 d2150982e194">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2150982e411 d2150982e197">
+<p>Name of the object affected by the action</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2150982e423" headers="d2150982e191">
+<p><code>POLICY_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d2150982e423 d2150982e194">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2150982e423 d2150982e197">
+<p>Name of the fine-grained auditing policy</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2150982e435" headers="d2150982e191">
+<p><code>NEW_OWNER</code></p>
+</td>
+<td class="cellalignment3905" headers="d2150982e435 d2150982e194">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2150982e435 d2150982e197">
+<p>Owner of the object named in the <code>NEW_NAME</code> column</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2150982e450" headers="d2150982e191">
+<p><code>NEW_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d2150982e450 d2150982e194">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2150982e450 d2150982e197">
+<p>New name of object after renaming, or the name of an underlying object (for example, <code>CREATE INDEX owner.obj_name ON new_owner.new_name</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2150982e465" headers="d2150982e191">
+<p><code>ACTION</code></p>
+</td>
+<td class="cellalignment3905" headers="d2150982e465 d2150982e194">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2150982e465 d2150982e197">
+<p>Numeric code for the action type</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2150982e477" headers="d2150982e191">
+<p><code>STATEMENT_TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2150982e477 d2150982e194">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2150982e477 d2150982e197">
+<p>Description of the action</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2150982e490" headers="d2150982e191">
+<p><code>TRANSACTIONID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2150982e490 d2150982e194">
+<p><code>RAW(8)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2150982e490 d2150982e197">
+<p>Identifier of the transaction in which the object is accessed or modified</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2150982e502" headers="d2150982e191">
+<p><code>RETURNCODE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2150982e502 d2150982e194">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2150982e502 d2150982e197">
+<p>Oracle error code generated by the action. Zero if the action succeeded.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2150982e514" headers="d2150982e191">
+<p><code>SCN</code></p>
+</td>
+<td class="cellalignment3905" headers="d2150982e514 d2150982e194">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2150982e514 d2150982e197">
+<p>System change number (SCN) of the query</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2150982e526" headers="d2150982e191">
+<p><code>COMMENT_TEXT</code></p>
+</td>
+<td class="cellalignment3905" headers="d2150982e526 d2150982e194">
+<p><code>VARCHAR2(4000)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2150982e526 d2150982e197">
+<p>Text comments on standard audit entries. Also indicates how the user was authenticated - the method can be one of the following:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>DATABASE</code> - authentication was done by password</p>
+</li>
+<li>
+<p><code>NETWORK</code> - authentication was done by Oracle Net Services or the Advanced Networking Option</p>
+</li>
+<li>
+<p><code>PROXY</code> - the client was authenticated by another user. The name of the proxy user follows the method type.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2150982e554" headers="d2150982e191">
+<p><code>AUTH_PRIVILEGES</code></p>
+</td>
+<td class="cellalignment3905" headers="d2150982e554 d2150982e194">
+<p><code>VARCHAR2(16)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2150982e554 d2150982e197">
+<p>Privileges granted and revoked in <code>GRANT</code> and <code>REVOKE</code> statements recorded for standard audit trail entry</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2150982e572" headers="d2150982e191">
+<p><code>GRANTEE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2150982e572 d2150982e194">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2150982e572 d2150982e197">
+<p>User who granted or revoked the privilege</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2150982e584" headers="d2150982e191">
+<p><code>PRIV_USED</code></p>
+</td>
+<td class="cellalignment3905" headers="d2150982e584 d2150982e194">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2150982e584 d2150982e197">
+<p>Numerical code of privileges, if any, used in the action</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2150982e596" headers="d2150982e191">
+<p><code>SES_ACTIONS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2150982e596 d2150982e194">
+<p><code>VARCHAR2(16)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2150982e596 d2150982e197">
+<p>Session summary for standard audit records. A string of 12 characters, one for each action type, in the following order: Alter, Audit, Comment, Delete, Grant, Index, Insert, Lock, Rename, Select, Update, Flashback.</p>
+<p>Values: - = None, S=Success, F=Failure, B=Both</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2150982e610" headers="d2150982e191">
+<p><code>OS_PRIVILEGE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2150982e610 d2150982e194">
+<p><code>VARCHAR2(7)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2150982e610 d2150982e197">
+<p>Operating system privilege (<code>SYSDBA</code> or <code>SYSOPER</code>), if any, used in the session. If no privilege is used, it will be <code>NONE</code>.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2150982e631" headers="d2150982e191">
+<p><code>ECONTEXT_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2150982e631 d2150982e194">
+<p><code>VARCHAR2(64)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2150982e631 d2150982e197">
+<p>Application execution context identifier</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2150982e643" headers="d2150982e191">
+<p><code>SQL_BIND</code></p>
+</td>
+<td class="cellalignment3905" headers="d2150982e643 d2150982e194">
+<p><code>VARCHAR2(4000)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2150982e643 d2150982e197">
+<p>List of bind variables used in the statement</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2150982e656" headers="d2150982e191">
+<p><code>SQL_TEXT</code></p>
+</td>
+<td class="cellalignment3905" headers="d2150982e656 d2150982e194">
+<p><code>VARCHAR2(4000)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2150982e656 d2150982e197">
+<p>The statement or command that triggered the audit event</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2150982e668" headers="d2150982e191">
+<p><code>OBJ_EDITION_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d2150982e668 d2150982e194">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2150982e668 d2150982e197">
+<p>Name of the edition containing the audited object</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2150982e680" headers="d2150982e191">
+<p><code>DBID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2150982e680 d2150982e194">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2150982e680 d2150982e197">
+<p>Database identifier of the audited database</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2150982e692" headers="d2150982e191">
+<p><code>RLS_INFO</code><a id="GUID-5A3CB134-2163-4FE1-906A-55901994F33A__THISCOLUMNISAVAILABLESTARTINGWITHOR-92798EAF" href="#GUID-5A3CB134-2163-4FE1-906A-55901994F33A__THISCOLUMNISAVAILABLESTARTINGWITHOR-92798EAF" onclick='footdisplay(1,"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Foot&nbsp;1</sup></a><a id="fnsrc_d2150982e702" href="#fnsrc_d2150982e702" onclick='footdisplay(, \"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+<td class="cellalignment3905" headers="d2150982e692 d2150982e194">
+<p><code>VARCHAR2(4000)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2150982e692 d2150982e197">
+<p>Stores virtual private database (VPD) policy names and predicates separated by delimiter.</p>
+<p>To format the output into individual rows, use the <code>DBMS_AUDIT_UTIL.DECODE_RLS_INFO_ATRAIL_XML</code> function.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2150982e717" headers="d2150982e191">
+<p><code>CURRENT_USER</code><a id="fnsrc_d2150982e721" href="#fnsrc_d2150982e721" onclick='footdisplay(, \"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+<td class="cellalignment3905" headers="d2150982e717 d2150982e194">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2150982e717 d2150982e197">
+<p>Effective user for the statement execution</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2150982e731" headers="d2150982e191">
+<p><code>CON_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2150982e731 d2150982e194">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2150982e731 d2150982e197">
+<p>The ID of the container to which the data pertains. Possible values include:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>0</code>: This value is used for rows containing data that pertain to the entire CDB. This value is also used for rows in non-CDBs.</p>
+</li>
+<li>
+<p><code>1</code>: This value is used for rows containing data that pertain to only the root</p>
+</li>
+<li>
+<p><span class="italic">n</span>: Where <span class="italic">n</span> is the applicable container ID for the rows containing data</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<p class="tablefootnote"><sup class="tablefootnote">Footnote&nbsp;1</sup></p>
+<p>This column is available starting with Oracle Database 12<span class="italic">c</span> Release 2 (12.2.0.1).</p>
+<div class="section">
+<div class="infobox-note" id="GUID-5A3CB134-2163-4FE1-906A-55901994F33A__GUID-7BF5D313-55CB-4FE9-9903-789CBA50B049">
+<p class="notep1">Note:</p>
+<p>The <code>SQL_BIND</code> and <code>SQL_TEXT</code> columns are only populated if the <code>AUDIT_TRAIL</code> initialization parameter is set to <code>xml, extended</code> or if the <code>AUDIT_SYS_OPERATIONS</code> initialization parameter is set to <code>TRUE</code>.</p>
+</div>
+<div class="infoboxnotealso" id="GUID-5A3CB134-2163-4FE1-906A-55901994F33A__GUID-CCF79B6F-9685-42A1-BCCE-139219ABE0AD">
+<p class="notep1">See Also:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="q">"<a href="UNIFIED_AUDIT_TRAIL.htm#GUID-B7CE1C02-2FD4-47D6-80AA-CF74A60CDD1D">UNIFIED_AUDIT_TRAIL</a>"</span></p>
+</li>
+<li>
+<p><span class="q">"<a href="AUDIT_SYS_OPERATIONS.htm#GUID-58176267-238C-40B5-B1F2-BB8BB9518950">AUDIT_SYS_OPERATIONS</a>"</span></p>
+</li>
+<li>
+<p><span class="q">"<a href="AUDIT_TRAIL.htm#GUID-BD86F593-B606-4367-9FB6-8DAB2E47E7FA">AUDIT_TRAIL</a>"</span></p>
+</li>
+<li>
+<p><a class="olink ARPLS-GUID-B71876E3-EE8D-484B-8668-331617F40FEB" target="_blank" href="../ARPLS/DBMS_AUDIT_UTIL.htm#ARPLS-GUID-B71876E3-EE8D-484B-8668-331617F40FEB"><span><cite>Oracle Database PL/SQL Packages and Types Reference</cite></span></a> for more information about the <code>DBMS_AUDIT_UTIL.DECODE_RLS_INFO_ATRAIL_XML</code> function.</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="V-WORKLOAD_REPLAY_THREAD.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="V-XSTREAM_APPLY_COORDINATOR.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>ALL_MVIEW_AGGREGATES</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="ALL_MVIEW_AGGREGATES view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="ALL_MINING_MODELS.htm" title="Previous" type="text/html" />
+<link rel="Next" href="ALL_MVIEW_ANALYSIS.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-E87195A8-D942-4EE5-A1A0-588DA1DA1DA2"></a> <span id="PAGE" style="display:none;">555/2822</span> <!-- End Header -->
+<a id="REFRN20131"></a>
+<h1 id="REFRN-GUID-E87195A8-D942-4EE5-A1A0-588DA1DA1DA2" class="sect1"><span class="enumeration_section">2.212</span> ALL_MVIEW_AGGREGATES</h1>
+<div>
+<div class="section">
+<p><code>ALL_MVIEW_AGGREGATES</code> describes the grouping functions (aggregate operations) that appear in the <code>SELECT</code> list of materialized aggregate views accessible to the current user.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Related Views</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<ul style="list-style-type: disc;">
+<li>
+<p><code>DBA_MVIEW_AGGREGATES</code> describes all such grouping functions defined for all materialized views in the database.</p>
+</li>
+<li>
+<p><code>USER_MVIEW_AGGREGATES</code> describes all such grouping functions defined for all materialized views owned by the current user.</p>
+</li>
+</ul>
+<div class="infobox-note" id="GUID-E87195A8-D942-4EE5-A1A0-588DA1DA1DA2__GUID-0FB99C18-55C7-4B72-A060-F94D7CCBEDEE">
+<p class="notep1">Note:</p>
+<p>All three views exclude materialized views that reference remote tables or that include references to a nonstatic value such as <code>SYSDATE</code> or <code>USER</code>. These views also exclude materialized views that were created as "snapshots" before Oracle8<span class="italic">i</span> and that were never altered to enable query rewrite.</p>
+</div>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-E87195A8-D942-4EE5-A1A0-588DA1DA1DA2__GUID-96198773-B5B5-4D9F-BBF3-DF03E63B58E6">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d416214e199">Column</th>
+<th class="cellalignment3905" id="d416214e202">Datatype</th>
+<th class="cellalignment3906" id="d416214e205">NULL</th>
+<th class="cellalignment3907" id="d416214e208">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d416214e213" headers="d416214e199">
+<p><code>OWNER</code></p>
+</td>
+<td class="cellalignment3905" headers="d416214e213 d416214e202">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d416214e213 d416214e205">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d416214e213 d416214e208">
+<p>Owner of the materialized view</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d416214e229" headers="d416214e199">
+<p><code>MVIEW_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d416214e229 d416214e202">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d416214e229 d416214e205">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d416214e229 d416214e208">
+<p>Name of the materialized view</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d416214e245" headers="d416214e199">
+<p><code>POSITION_IN_SELECT</code></p>
+</td>
+<td class="cellalignment3905" headers="d416214e245 d416214e202">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d416214e245 d416214e205">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d416214e245 d416214e208">
+<p>Ordinal position of this aggregation within the <code>SELECT</code> list. For the position of nonaggregate elements of the select list, see <span class="q">"<a href="ALL_MVIEW_KEYS.htm#GUID-53EA29F2-9818-49FA-A26F-FF8592608ACC">ALL_MVIEW_KEYS</a>"</span>.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d416214e269" headers="d416214e199">
+<p><code>CONTAINER_COLUMN</code></p>
+</td>
+<td class="cellalignment3905" headers="d416214e269 d416214e202">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d416214e269 d416214e205">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d416214e269 d416214e208">
+<p>Name of this column in the container table</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d416214e285" headers="d416214e199">
+<p><code>AGG_FUNCTION</code></p>
+</td>
+<td class="cellalignment3905" headers="d416214e285 d416214e202">
+<p><code>VARCHAR2(8)</code></p>
+</td>
+<td class="cellalignment3906" headers="d416214e285 d416214e205">&nbsp;</td>
+<td class="cellalignment3907" headers="d416214e285 d416214e208">
+<p>Aggregation function</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d416214e299" headers="d416214e199">
+<p><code>DISTINCTFLAG</code></p>
+</td>
+<td class="cellalignment3905" headers="d416214e299 d416214e202">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d416214e299 d416214e205">&nbsp;</td>
+<td class="cellalignment3907" headers="d416214e299 d416214e208">
+<p>Indicates whether this aggregation is distinct (<code>Y</code>) or not (<code>N</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d416214e319" headers="d416214e199">
+<p><code>MEASURE</code></p>
+</td>
+<td class="cellalignment3905" headers="d416214e319 d416214e202">
+<p><code>LONG</code></p>
+</td>
+<td class="cellalignment3906" headers="d416214e319 d416214e205">&nbsp;</td>
+<td class="cellalignment3907" headers="d416214e319 d416214e208">
+<p>SQL text of the measure, excluding the aggregation function. Equal to <code>*</code> for <code>COUNT(*)</code>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<div class="section">
+<div class="infoboxnotealso" id="GUID-E87195A8-D942-4EE5-A1A0-588DA1DA1DA2__GUID-C3959A47-5FD6-4DED-96F7-6B876C666250">
+<p class="notep1">See Also:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="q">"<a href="DBA_MVIEW_AGGREGATES.htm#GUID-DD417F98-1F09-47FE-B732-CB5F3652BEC8">DBA_MVIEW_AGGREGATES</a>"</span></p>
+</li>
+<li>
+<p><span class="q">"<a href="USER_MVIEW_AGGREGATES.htm#GUID-5575052F-0DB8-49A7-A13F-739B9B425419">USER_MVIEW_AGGREGATES</a>"</span></p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="ALL_MINING_MODELS.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="ALL_MVIEW_ANALYSIS.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

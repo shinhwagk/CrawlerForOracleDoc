@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>V$WAIT_CHAINS</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="V$WAIT_CHAINS view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="V-VPD_POLICY.htm" title="Previous" type="text/html" />
+<link rel="Next" href="V-WAITCLASSMETRIC.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-71A0CC4E-B51E-417B-997C-15587EF538F3"></a> <span id="PAGE" style="display:none;">2784/2822</span> <!-- End Header -->
+<a id="REFRN30472"></a>
+<h1 id="REFRN-GUID-71A0CC4E-B51E-417B-997C-15587EF538F3" class="sect1"><span class="enumeration_section">9.129</span> V$WAIT_CHAINS</h1>
+<div>
+<div class="section">
+<p><code>V$WAIT_CHAINS</code> displays information about blocked sessions. A wait chain is composed of sessions that are blocked by one another. Each row represents a blocked and blocker session pair. If a wait chain is not a cyclical wait chain, then the last row for the chain does not have a blocker.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-71A0CC4E-B51E-417B-997C-15587EF538F3__GUID-C16D835E-D157-4E02-98A4-87F521B8BF38">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d2142805e168">Column</th>
+<th class="cellalignment3905" id="d2142805e171">Datatype</th>
+<th class="cellalignment3908" id="d2142805e174">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d2142805e179" headers="d2142805e168">
+<p><code>CHAIN_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2142805e179 d2142805e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2142805e179 d2142805e174">
+<p>A number identifying the wait chain</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2142805e191" headers="d2142805e168">
+<p><code>CHAIN_IS_CYCLE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2142805e191 d2142805e171">
+<p><code>VARCHAR2(5)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2142805e191 d2142805e174">
+<p>Indicates whether the final blocked session in the wait chain is blocked by the initial blocked session (<code>TRUE</code>) or not (<code>FALSE</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2142805e209" headers="d2142805e168">
+<p><code>CHAIN_SIGNATURE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2142805e209 d2142805e171">
+<p><code>VARCHAR2(801)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2142805e209 d2142805e174">
+<p>An Oracle-specific text signature of the wait chain. This signature can be used to identify similar wait chains.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2142805e221" headers="d2142805e168">
+<p><code>CHAIN_SIGNATURE_HASH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2142805e221 d2142805e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2142805e221 d2142805e174">
+<p>A numeric representation of <code>CHAIN_SIGNATURE</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2142805e235" headers="d2142805e168">
+<p><code>INSTANCE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2142805e235 d2142805e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2142805e235 d2142805e174">
+<p>Blocked session's instance identifier</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2142805e247" headers="d2142805e168">
+<p><code>OSID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2142805e247 d2142805e171">
+<p><code>VARCHAR2(25)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2142805e247 d2142805e174">
+<p>Blocked session's operating system process identifier</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2142805e259" headers="d2142805e168">
+<p><code>PID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2142805e259 d2142805e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2142805e259 d2142805e174">
+<p>Blocked session's Oracle process identifier</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2142805e271" headers="d2142805e168">
+<p><code>SID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2142805e271 d2142805e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2142805e271 d2142805e174">
+<p>Blocked session's Oracle session identifier</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2142805e283" headers="d2142805e168">
+<p><code>SESS_SERIAL#</code></p>
+</td>
+<td class="cellalignment3905" headers="d2142805e283 d2142805e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2142805e283 d2142805e174">
+<p>Blocked session's Oracle session serial number</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2142805e295" headers="d2142805e168">
+<p><code>PDB_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2142805e295 d2142805e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2142805e295 d2142805e174">
+<p>Blocked session's PDB identifier</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2142805e307" headers="d2142805e168">
+<p><code>PDB_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d2142805e307 d2142805e171">
+<p><code>VARCHAR2(31)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2142805e307 d2142805e174">
+<p>Blocked session's PDB name</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2142805e320" headers="d2142805e168">
+<p><code>BLOCKER_IS_VALID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2142805e320 d2142805e171">
+<p><code>VARCHAR2(5)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2142805e320 d2142805e174">
+<p>Indicates whether the blocked session has a blocker (<code>TRUE</code>) or not (<code>FALSE</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2142805e338" headers="d2142805e168">
+<p><code>BLOCKER_INSTANCE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2142805e338 d2142805e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2142805e338 d2142805e174">
+<p>Blocker session's instance identifier; NULL if <code>BLOCKER_IS_VALID</code> is <code>FALSE</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2142805e355" headers="d2142805e168">
+<p><code>BLOCKER_OSID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2142805e355 d2142805e171">
+<p><code>VARCHAR2(25)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2142805e355 d2142805e174">
+<p>Blocker session's operating system process identifier; NULL if <code>BLOCKER_IS_VALID</code> is <code>FALSE</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2142805e372" headers="d2142805e168">
+<p><code>BLOCKER_PID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2142805e372 d2142805e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2142805e372 d2142805e174">
+<p>Blocker session's Oracle process identifier; NULL if <code>BLOCKER_IS_VALID</code> is <code>FALSE</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2142805e389" headers="d2142805e168">
+<p><code>BLOCKER_SID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2142805e389 d2142805e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2142805e389 d2142805e174">
+<p>Blocker session's Oracle session identifier; NULL if <code>BLOCKER_IS_VALID</code> is <code>FALSE</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2142805e406" headers="d2142805e168">
+<p><code>BLOCKER_SESS_SERIAL#</code></p>
+</td>
+<td class="cellalignment3905" headers="d2142805e406 d2142805e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2142805e406 d2142805e174">
+<p>Blocker session's Oracle session serial number; NULL if <code>BLOCKER_IS_VALID</code> is <code>FALSE</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2142805e423" headers="d2142805e168">
+<p><code>BLOCKER_PDB_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2142805e423 d2142805e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2142805e423 d2142805e174">
+<p>Blocker session's PDB identifier</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2142805e435" headers="d2142805e168">
+<p><code>BLOCKER_PDB_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d2142805e435 d2142805e171">
+<p><code>VARCHAR2(31)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2142805e435 d2142805e174">
+<p>Blocker session's PDB name</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2142805e447" headers="d2142805e168">
+<p><code>BLOCKER_CHAIN_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2142805e447 d2142805e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2142805e447 d2142805e174">
+<p>If not NULL, then the blocker session is a member of another chain specified by this chain identifier. For the remaining wait chain information, see the wait chain with the specified <code>CHAIN_ID</code>.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2142805e462" headers="d2142805e168">
+<p><code>IN_WAIT</code></p>
+</td>
+<td class="cellalignment3905" headers="d2142805e462 d2142805e171">
+<p><code>VARCHAR2(5)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2142805e462 d2142805e174">
+<p>Indicates whether the blocked session is in a wait (<code>TRUE</code>) or not (<code>FALSE</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2142805e480" headers="d2142805e168">
+<p><code>TIME_SINCE_LAST_WAIT_SECS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2142805e480 d2142805e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2142805e480 d2142805e174">
+<p>Number of seconds since the last time the blocked session waited; NULL if <code>IN_WAIT</code> is <code>TRUE</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2142805e498" headers="d2142805e168">
+<p><code>WAIT_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2142805e498 d2142805e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2142805e498 d2142805e174">
+<p>A number identifying the wait; NULL if <code>IN_WAIT</code> is <code>FALSE</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2142805e515" headers="d2142805e168">
+<p><code>WAIT_EVENT</code></p>
+</td>
+<td class="cellalignment3905" headers="d2142805e515 d2142805e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2142805e515 d2142805e174">
+<p>Resource or event number for which the blocked session is waiting; NULL if <code>IN_WAIT</code> is <code>FALSE</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2142805e532" headers="d2142805e168">
+<p><code>WAIT_EVENT_TEXT</code></p>
+</td>
+<td class="cellalignment3905" headers="d2142805e532 d2142805e171">
+<p><code>VARCHAR2(64)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2142805e532 d2142805e174">
+<p>Resource or event for which the blocked session is waiting; NULL if <code>IN_WAIT</code> is <code>FALSE</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2142805e549" headers="d2142805e168">
+<p><code>P1</code></p>
+</td>
+<td class="cellalignment3905" headers="d2142805e549 d2142805e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2142805e549 d2142805e174">
+<p>First additional wait parameter; NULL if <code>IN_WAIT</code> is <code>FALSE</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2142805e566" headers="d2142805e168">
+<p><code>P1_TEXT</code></p>
+</td>
+<td class="cellalignment3905" headers="d2142805e566 d2142805e171">
+<p><code>VARCHAR2(64)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2142805e566 d2142805e174">
+<p>Description of the first additional wait parameter; NULL if <code>IN_WAIT</code> is <code>FALSE</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2142805e583" headers="d2142805e168">
+<p><code>P2</code></p>
+</td>
+<td class="cellalignment3905" headers="d2142805e583 d2142805e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2142805e583 d2142805e174">
+<p>Second additional wait parameter; NULL if <code>IN_WAIT</code> is <code>FALSE</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2142805e600" headers="d2142805e168">
+<p><code>P2_TEXT</code></p>
+</td>
+<td class="cellalignment3905" headers="d2142805e600 d2142805e171">
+<p><code>VARCHAR2(64)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2142805e600 d2142805e174">
+<p>Description of the second additional wait parameter; NULL if <code>IN_WAIT</code> is <code>FALSE</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2142805e617" headers="d2142805e168">
+<p><code>P3</code></p>
+</td>
+<td class="cellalignment3905" headers="d2142805e617 d2142805e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2142805e617 d2142805e174">
+<p>Third additional wait parameter; NULL if <code>IN_WAIT</code> is <code>FALSE</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2142805e634" headers="d2142805e168">
+<p><code>P3_TEXT</code></p>
+</td>
+<td class="cellalignment3905" headers="d2142805e634 d2142805e171">
+<p><code>VARCHAR2(64)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2142805e634 d2142805e174">
+<p>Description of the third additional wait parameter; NULL if <code>IN_WAIT</code> is <code>FALSE</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2142805e651" headers="d2142805e168">
+<p><code>IN_WAIT_SECS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2142805e651 d2142805e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2142805e651 d2142805e174">
+<p>Seconds the blocked session has been in the current wait; NULL if <code>IN_WAIT</code> is <code>FALSE</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2142805e668" headers="d2142805e168">
+<p><code>TIME_REMAINING_SECS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2142805e668 d2142805e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2142805e668 d2142805e174">
+<p>Seconds remaining until the blocked session ends its wait (<code>-1</code> if the blocked session can indefinitely wait); NULL if <code>IN_WAIT</code> is <code>FALSE</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2142805e689" headers="d2142805e168">
+<p><code>NUM_WAITERS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2142805e689 d2142805e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2142805e689 d2142805e174">
+<p>Number of sessions waiting for the blocked session</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2142805e701" headers="d2142805e168">
+<p><code>ROW_WAIT_OBJ#</code></p>
+</td>
+<td class="cellalignment3905" headers="d2142805e701 d2142805e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2142805e701 d2142805e174">
+<p>Object ID for the table containing the row specified in <code>ROW_WAIT_ROW#</code>; NULL if <code>IN_WAIT</code> is <code>FALSE</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2142805e721" headers="d2142805e168">
+<p><code>ROW_WAIT_FILE#</code></p>
+</td>
+<td class="cellalignment3905" headers="d2142805e721 d2142805e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2142805e721 d2142805e174">
+<p>Identifier for the data file containing the row specified in <code>ROW_WAIT_ROW#</code>; NULL if <code>IN_WAIT</code> is <code>FALSE</code>. This column is valid only if the blocked session is currently waiting for another transaction to commit and the value of <code>ROW_WAIT_OBJ#</code> is not <code>-1</code>.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2142805e748" headers="d2142805e168">
+<p><code>ROW_WAIT_BLOCK#</code></p>
+</td>
+<td class="cellalignment3905" headers="d2142805e748 d2142805e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2142805e748 d2142805e174">
+<p>Identifier for the block containing the row specified in <code>ROW_WAIT_ROW#</code>; NULL if <code>IN_WAIT</code> is <code>FALSE</code>. This column is valid only if the blocked session is currently waiting for another transaction to commit and the value of <code>ROW_WAIT_OBJ#</code> is not <code>-1</code>.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2142805e775" headers="d2142805e168">
+<p><code>ROW_WAIT_ROW#</code></p>
+</td>
+<td class="cellalignment3905" headers="d2142805e775 d2142805e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2142805e775 d2142805e174">
+<p>Current row being locked; NULL if <code>IN_WAIT</code> is <code>FALSE</code>. This column is valid only if the blocked session is currently waiting for another transaction to commit and the value of <code>ROW_WAIT_OBJ#</code> is not <code>-1</code>.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2142805e799" headers="d2142805e168">
+<p><code>CON_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2142805e799 d2142805e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2142805e799 d2142805e174">
+<p>The ID of the container to which the data pertains. Possible values include:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>0</code>: This value is used for rows containing data that pertain to the entire CDB. This value is also used for rows in non-CDBs.</p>
+</li>
+<li>
+<p><code>1</code>: This value is used for rows containing data that pertain to only the root</p>
+</li>
+<li>
+<p><span class="italic">n</span>: Where <span class="italic">n</span> is the applicable container ID for the rows containing data</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="V-VPD_POLICY.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="V-WAITCLASSMETRIC.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>V$LOCK</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="V$LOCK view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="V-LOADPSTAT.htm" title="Previous" type="text/html" />
+<link rel="Next" href="V-LOCK_ACTIVITY.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-87D76889-832C-4BFC-B8B0-154A22721781"></a> <span id="PAGE" style="display:none;">2496/2822</span> <!-- End Header -->
+<a id="REFRN30121"></a>
+<h1 id="REFRN-GUID-87D76889-832C-4BFC-B8B0-154A22721781" class="sect1"><span class="enumeration_section">8.40</span> V$LOCK</h1>
+<div>
+<div class="section">
+<p><code>V$LOCK</code> lists the locks currently held by the Oracle Database and outstanding requests for a lock or latch.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-87D76889-832C-4BFC-B8B0-154A22721781__GUID-BA2F42D1-DF88-4046-A916-2146D1A79F31">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d1803355e168">Column</th>
+<th class="cellalignment3905" id="d1803355e171">Datatype</th>
+<th class="cellalignment3908" id="d1803355e174">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d1803355e179" headers="d1803355e168">
+<p><code>ADDR</code></p>
+</td>
+<td class="cellalignment3905" headers="d1803355e179 d1803355e171">
+<p><code>RAW(4 | 8)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1803355e179 d1803355e174">
+<p>Address of lock state object</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1803355e191" headers="d1803355e168">
+<p><code>KADDR</code></p>
+</td>
+<td class="cellalignment3905" headers="d1803355e191 d1803355e171">
+<p><code>RAW(4 | 8)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1803355e191 d1803355e174">
+<p>Address of lock</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1803355e203" headers="d1803355e168">
+<p><code>SID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1803355e203 d1803355e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1803355e203 d1803355e174">
+<p>Identifier for session holding or acquiring the lock</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1803355e215" headers="d1803355e168">
+<p><code>TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1803355e215 d1803355e171">
+<p><code>VARCHAR2(2)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1803355e215 d1803355e174">
+<p>Type of user or system lock</p>
+<p>The locks on the user types are obtained by user applications. Any process that is blocking others is likely to be holding one of these locks. The user type locks are:</p>
+<p><code>TM</code> - DML enqueue</p>
+<p><code>TX</code> - Transaction enqueue</p>
+<p><code>UL</code> - User supplied</p>
+<p>The system type locks are listed in <a href="V-LOCK.htm#GUID-87D76889-832C-4BFC-B8B0-154A22721781__G1427852" title="This table describes system lock types.">Table 8-1</a>. Be aware that not all types of locks are documented. To find a complete list of locks for the current release, query the <code>V$LOCK_TYPE</code> data dictionary view, described on <span class="q">"<a href="V-LOCK_TYPE.htm#GUID-2DCB0E6F-0BA7-4E15-A52B-F8AFB8DF5F90">V$LOCK_TYPE</a>"</span>.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1803355e255" headers="d1803355e168">
+<p><code>ID1</code></p>
+</td>
+<td class="cellalignment3905" headers="d1803355e255 d1803355e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1803355e255 d1803355e174">
+<p>Lock identifier #1 (depends on type)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1803355e267" headers="d1803355e168">
+<p><code>ID2</code></p>
+</td>
+<td class="cellalignment3905" headers="d1803355e267 d1803355e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1803355e267 d1803355e174">
+<p>Lock identifier #2 (depends on type)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1803355e279" headers="d1803355e168">
+<p><code>LMODE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1803355e279 d1803355e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1803355e279 d1803355e174">
+<p>Lock mode in which the session holds the lock:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>0</code> - none</p>
+</li>
+<li>
+<p><code>1</code> - null (NULL)</p>
+</li>
+<li>
+<p><code>2</code> - row-S (SS)</p>
+</li>
+<li>
+<p><code>3</code> - row-X (SX)</p>
+</li>
+<li>
+<p><code>4</code> - share (S)</p>
+</li>
+<li>
+<p><code>5</code> - S/Row-X (SSX)</p>
+</li>
+<li>
+<p><code>6</code> - exclusive (X)</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1803355e327" headers="d1803355e168">
+<p><code>REQUEST</code></p>
+</td>
+<td class="cellalignment3905" headers="d1803355e327 d1803355e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1803355e327 d1803355e174">
+<p>Lock mode in which the process requests the lock:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>0</code> - none</p>
+</li>
+<li>
+<p><code>1</code> - null (NULL)</p>
+</li>
+<li>
+<p><code>2</code> - row-S (SS)</p>
+</li>
+<li>
+<p><code>3</code> - row-X (SX)</p>
+</li>
+<li>
+<p><code>4</code> - share (S)</p>
+</li>
+<li>
+<p><code>5</code> - S/Row-X (SSX)</p>
+</li>
+<li>
+<p><code>6</code> - exclusive (X)</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1803355e375" headers="d1803355e168">
+<p><code>CTIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1803355e375 d1803355e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1803355e375 d1803355e174">
+<p>Time since current mode was granted</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1803355e387" headers="d1803355e168">
+<p><code>BLOCK</code></p>
+</td>
+<td class="cellalignment3905" headers="d1803355e387 d1803355e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1803355e387 d1803355e174">
+<p>Indicates whether the lock in question is blocking other processes. The possible values are:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>0</code> - The lock is not blocking any other processes</p>
+</li>
+<li>
+<p><code>1</code> - The lock is blocking other processes</p>
+</li>
+<li>
+<p><code>2</code> - The lock is not blocking any blocked processes on the local node, but it may or may not be blocking processes on remote nodes. This value is used only in Oracle Real Application Clusters (Oracle RAC) configurations (not in single instance configurations).</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1803355e415" headers="d1803355e168">
+<p><code>CON_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1803355e415 d1803355e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1803355e415 d1803355e174">
+<p>The ID of the container to which the data pertains. Possible values include:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>0</code>: This value is used for rows containing data that pertain to the entire CDB. This value is also used for rows in non-CDBs.</p>
+</li>
+<li>
+<p><code>1</code>: This value is used for rows containing data that pertain to only the root</p>
+</li>
+<li>
+<p><span class="italic">n</span>: Where <span class="italic">n</span> is the applicable container ID for the rows containing data</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<div class="section"></div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-87D76889-832C-4BFC-B8B0-154A22721781__G1427852">
+<hr />
+<p class="titleintable">Table 8-1 Values for the TYPE Column: System Types</p>
+<table class="cellalignment3903" title="Values for the TYPE Column: System Types" summary="This table describes system lock types.">
+<thead align="left">
+<tr>
+<th class="cellalignment3944" id="d1803355e458">System Type</th>
+<th class="cellalignment3945" id="d1803355e461">Description</th>
+<th class="cellalignment3944" id="d1803355e464">System Type</th>
+<th class="cellalignment3945" id="d1803355e467">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3944" id="d1803355e472" headers="d1803355e458">
+<p><code>AE</code></p>
+</td>
+<td class="cellalignment3945" headers="d1803355e472 d1803355e461">
+<p>Edition enqueue</p>
+</td>
+<td class="cellalignment3944" headers="d1803355e472 d1803355e464">
+<p>MR</p>
+</td>
+<td class="cellalignment3945" headers="d1803355e472 d1803355e467">
+<p>Media recovery</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3944" id="d1803355e486" headers="d1803355e458">
+<p><code>AT</code></p>
+</td>
+<td class="cellalignment3945" headers="d1803355e486 d1803355e461">
+<p>Lock held for the <code>ALTER TABLE</code> statement</p>
+</td>
+<td class="cellalignment3944" headers="d1803355e486 d1803355e464">
+<p>NA..NZ</p>
+</td>
+<td class="cellalignment3945" headers="d1803355e486 d1803355e467">
+<p>Library cache pin instance (<code>A..Z</code> = namespace)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3944" id="d1803355e506" headers="d1803355e458">
+<p><code>BL</code></p>
+</td>
+<td class="cellalignment3945" headers="d1803355e506 d1803355e461">
+<p>Buffer hash table instance</p>
+</td>
+<td class="cellalignment3944" headers="d1803355e506 d1803355e464">
+<p><code>PF</code></p>
+</td>
+<td class="cellalignment3945" headers="d1803355e506 d1803355e467">
+<p>Password File</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3944" id="d1803355e521" headers="d1803355e458">
+<p><code>CF</code></p>
+</td>
+<td class="cellalignment3945" headers="d1803355e521 d1803355e461">
+<p>Control file schema global enqueue</p>
+</td>
+<td class="cellalignment3944" headers="d1803355e521 d1803355e464">
+<p><code>PI, PS</code></p>
+</td>
+<td class="cellalignment3945" headers="d1803355e521 d1803355e467">
+<p>Parallel operation</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3944" id="d1803355e536" headers="d1803355e458">
+<p><code>CI</code></p>
+</td>
+<td class="cellalignment3945" headers="d1803355e536 d1803355e461">
+<p>Cross-instance function invocation instance</p>
+</td>
+<td class="cellalignment3944" headers="d1803355e536 d1803355e464">
+<p><code>PR</code></p>
+</td>
+<td class="cellalignment3945" headers="d1803355e536 d1803355e467">
+<p>Process startup</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3944" id="d1803355e551" headers="d1803355e458">
+<p><code>CU</code></p>
+</td>
+<td class="cellalignment3945" headers="d1803355e551 d1803355e461">
+<p>Cursor bind</p>
+</td>
+<td class="cellalignment3944" headers="d1803355e551 d1803355e464">
+<p><code>QA..QZ</code></p>
+</td>
+<td class="cellalignment3945" headers="d1803355e551 d1803355e467">
+<p>Row cache instance (<code>A..Z</code> = cache)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3944" id="d1803355e569" headers="d1803355e458">
+<p><code>DF</code></p>
+</td>
+<td class="cellalignment3945" headers="d1803355e569 d1803355e461">
+<p>datafile instance</p>
+</td>
+<td class="cellalignment3944" headers="d1803355e569 d1803355e464">
+<p><code>RT</code></p>
+</td>
+<td class="cellalignment3945" headers="d1803355e569 d1803355e467">
+<p>Redo thread global enqueue</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3944" id="d1803355e584" headers="d1803355e458">
+<p><code>DL</code></p>
+</td>
+<td class="cellalignment3945" headers="d1803355e584 d1803355e461">
+<p>Direct loader parallel index create</p>
+</td>
+<td class="cellalignment3944" headers="d1803355e584 d1803355e464">
+<p><code>SC</code></p>
+</td>
+<td class="cellalignment3945" headers="d1803355e584 d1803355e467">
+<p>System change number instance</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3944" id="d1803355e599" headers="d1803355e458">
+<p><code>DM</code></p>
+</td>
+<td class="cellalignment3945" headers="d1803355e599 d1803355e461">
+<p>Mount/startup db primary/secondary instance</p>
+</td>
+<td class="cellalignment3944" headers="d1803355e599 d1803355e464">
+<p><code>SM</code></p>
+</td>
+<td class="cellalignment3945" headers="d1803355e599 d1803355e467">
+<p>SMON</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3944" id="d1803355e614" headers="d1803355e458">
+<p><code>DR</code></p>
+</td>
+<td class="cellalignment3945" headers="d1803355e614 d1803355e461">
+<p>Distributed recovery process</p>
+</td>
+<td class="cellalignment3944" headers="d1803355e614 d1803355e464">
+<p><code>SN</code></p>
+</td>
+<td class="cellalignment3945" headers="d1803355e614 d1803355e467">
+<p>Sequence number instance</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3944" id="d1803355e629" headers="d1803355e458">
+<p><code>DX</code></p>
+</td>
+<td class="cellalignment3945" headers="d1803355e629 d1803355e461">
+<p>Distributed transaction entry</p>
+</td>
+<td class="cellalignment3944" headers="d1803355e629 d1803355e464">
+<p><code>SQ</code></p>
+</td>
+<td class="cellalignment3945" headers="d1803355e629 d1803355e467">
+<p>Sequence number enqueue</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3944" id="d1803355e645" headers="d1803355e458">
+<p><code>FS</code></p>
+</td>
+<td class="cellalignment3945" headers="d1803355e645 d1803355e461">
+<p>File set</p>
+</td>
+<td class="cellalignment3944" headers="d1803355e645 d1803355e464">
+<p><code>SS</code></p>
+</td>
+<td class="cellalignment3945" headers="d1803355e645 d1803355e467">
+<p>Sort segment</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3944" id="d1803355e660" headers="d1803355e458">
+<p><code>HW</code></p>
+</td>
+<td class="cellalignment3945" headers="d1803355e660 d1803355e461">
+<p>Space management operations on a specific segment</p>
+</td>
+<td class="cellalignment3944" headers="d1803355e660 d1803355e464">
+<p><code>ST</code></p>
+</td>
+<td class="cellalignment3945" headers="d1803355e660 d1803355e467">
+<p>Space transaction enqueue</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3944" id="d1803355e675" headers="d1803355e458">
+<p><code>IN</code></p>
+</td>
+<td class="cellalignment3945" headers="d1803355e675 d1803355e461">
+<p>Instance number</p>
+</td>
+<td class="cellalignment3944" headers="d1803355e675 d1803355e464">
+<p><code>SV</code></p>
+</td>
+<td class="cellalignment3945" headers="d1803355e675 d1803355e467">
+<p>Sequence number value</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3944" id="d1803355e690" headers="d1803355e458">
+<p><code>IR</code></p>
+</td>
+<td class="cellalignment3945" headers="d1803355e690 d1803355e461">
+<p>Instance recovery serialization global enqueue</p>
+</td>
+<td class="cellalignment3944" headers="d1803355e690 d1803355e464">
+<p><code>TA</code></p>
+</td>
+<td class="cellalignment3945" headers="d1803355e690 d1803355e467">
+<p>Generic enqueue</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3944" id="d1803355e705" headers="d1803355e458">
+<p><code>IS</code></p>
+</td>
+<td class="cellalignment3945" headers="d1803355e705 d1803355e461">
+<p>Instance state</p>
+</td>
+<td class="cellalignment3944" headers="d1803355e705 d1803355e464">
+<p><code>TS</code></p>
+</td>
+<td class="cellalignment3945" headers="d1803355e705 d1803355e467">
+<p>Temporary segment enqueue (ID2=0)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3944" id="d1803355e720" headers="d1803355e458">
+<p><code>IV</code></p>
+</td>
+<td class="cellalignment3945" headers="d1803355e720 d1803355e461">
+<p>Library cache invalidation instance</p>
+</td>
+<td class="cellalignment3944" headers="d1803355e720 d1803355e464">
+<p><code>TS</code></p>
+</td>
+<td class="cellalignment3945" headers="d1803355e720 d1803355e467">
+<p>New block allocation enqueue (ID2=1)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3944" id="d1803355e735" headers="d1803355e458">
+<p><code>JQ</code></p>
+</td>
+<td class="cellalignment3945" headers="d1803355e735 d1803355e461">
+<p>Job queue</p>
+</td>
+<td class="cellalignment3944" headers="d1803355e735 d1803355e464">
+<p><code>TT</code></p>
+</td>
+<td class="cellalignment3945" headers="d1803355e735 d1803355e467">
+<p>Temporary table enqueue</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3944" id="d1803355e750" headers="d1803355e458">
+<p><code>KK</code></p>
+</td>
+<td class="cellalignment3945" headers="d1803355e750 d1803355e461">
+<p>Thread kick</p>
+</td>
+<td class="cellalignment3944" headers="d1803355e750 d1803355e464">
+<p><code>UN</code></p>
+</td>
+<td class="cellalignment3945" headers="d1803355e750 d1803355e467">
+<p>User name</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3944" id="d1803355e765" headers="d1803355e458">
+<p><code>LA .. LP</code></p>
+</td>
+<td class="cellalignment3945" headers="d1803355e765 d1803355e461">
+<p>Library cache lock instance lock (A..P = namespace)</p>
+</td>
+<td class="cellalignment3944" headers="d1803355e765 d1803355e464">
+<p><code>US</code></p>
+</td>
+<td class="cellalignment3945" headers="d1803355e765 d1803355e467">
+<p>Undo segment DDL</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3944" id="d1803355e780" headers="d1803355e458">
+<p><code>MM</code></p>
+</td>
+<td class="cellalignment3945" headers="d1803355e780 d1803355e461">
+<p>Mount definition global enqueue</p>
+</td>
+<td class="cellalignment3944" headers="d1803355e780 d1803355e464">
+<p><code>WL</code></p>
+</td>
+<td class="cellalignment3945" headers="d1803355e780 d1803355e467">
+<p>Being-written redo log instance</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="V-LOADPSTAT.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="V-LOCK_ACTIVITY.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

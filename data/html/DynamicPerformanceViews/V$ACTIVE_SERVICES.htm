@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>V$ACTIVE_SERVICES</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="V$ACTIVE_SERVICES view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="V-ACTIVE_INSTANCES.htm" title="Previous" type="text/html" />
+<link rel="Next" href="V-ACTIVE_SESS_POOL_MTH.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-488BCD15-3125-4CD1-BE26-9E5CA6BC8AE9"></a> <span id="PAGE" style="display:none;">2194/2822</span> <!-- End Header -->
+<a id="REFRN30326"></a>
+<h1 id="REFRN-GUID-488BCD15-3125-4CD1-BE26-9E5CA6BC8AE9" class="sect1"><span class="enumeration_section">7.5</span> V$ACTIVE_SERVICES</h1>
+<div>
+<div class="section">
+<p><code>V$ACTIVE_SERVICES</code> displays information about the active services in the database.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-488BCD15-3125-4CD1-BE26-9E5CA6BC8AE9__GUID-01F89C27-734E-40AA-B1B7-03E1B6DCF726">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d1476458e168">Column</th>
+<th class="cellalignment3905" id="d1476458e171">Datatype</th>
+<th class="cellalignment3908" id="d1476458e174">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d1476458e179" headers="d1476458e168">
+<p><code>SERVICE_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1476458e179 d1476458e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1476458e179 d1476458e174">
+<p>Service ID</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1476458e191" headers="d1476458e168">
+<p><code>NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1476458e191 d1476458e171">
+<p><code>VARCHAR2(64)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1476458e191 d1476458e174">
+<p>Name of the service</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1476458e203" headers="d1476458e168">
+<p><code>NAME_HASH</code></p>
+</td>
+<td class="cellalignment3905" headers="d1476458e203 d1476458e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1476458e203 d1476458e174">
+<p>Service name hash</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1476458e215" headers="d1476458e168">
+<p><code>NETWORK_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1476458e215 d1476458e171">
+<p><code>VARCHAR2(512)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1476458e215 d1476458e174">
+<p>Network name</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1476458e227" headers="d1476458e168">
+<p><code>CREATION_DATE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1476458e227 d1476458e171">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3908" headers="d1476458e227 d1476458e174">
+<p>Creation date</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1476458e239" headers="d1476458e168">
+<p><code>CREATION_DATE_HASH</code></p>
+</td>
+<td class="cellalignment3905" headers="d1476458e239 d1476458e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1476458e239 d1476458e174">
+<p>Creation date hash</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1476458e251" headers="d1476458e168">
+<p><code>GOAL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1476458e251 d1476458e171">
+<p><code>VARCHAR2(12)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1476458e251 d1476458e174">
+<p>Runtime Load Balancing Goal being used to create run-time load balancing and connection load balancing advice:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>NONE</code></p>
+</li>
+<li>
+<p><code>SERVICE_TIME</code> - Connections are balanced by response time</p>
+</li>
+<li>
+<p><code>THROUGHPUT</code> - Connections are balanced by throughput</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1476458e278" headers="d1476458e168">
+<p><code>DTP</code></p>
+</td>
+<td class="cellalignment3905" headers="d1476458e278 d1476458e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1476458e278 d1476458e174">
+<p>Indicates whether or not Distributed Transaction Processing is enabled for this service. When Distributed Transaction Processing is set to <code>Y</code> (YES), it means that the service is offered at exactly one instance at a time for XA affinity. Possible values:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>Y</code> - YES</p>
+</li>
+<li>
+<p><code>N</code> - NO</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1476458e304" headers="d1476458e168">
+<p><code>BLOCKED</code></p>
+</td>
+<td class="cellalignment3905" headers="d1476458e304 d1476458e171">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1476458e304 d1476458e174">
+<p>Indicates whether a service on the specified instance is blocked from accepting new connections altogether (<code>YES</code>) or not (<code>NO</code>). If a service is blocked, then all connections will be directed to other instances (if any) that are hosting the desired service.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1476458e322" headers="d1476458e168">
+<p><code>AQ_HA_NOTIFICATION</code></p>
+</td>
+<td class="cellalignment3905" headers="d1476458e322 d1476458e171">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1476458e322 d1476458e174">
+<p>Indicates whether FAN - Fast Application Notification for OCI connections is set (<code>YES</code>) or not (<code>NO</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1476458e340" headers="d1476458e168">
+<p><code>CLB_GOAL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1476458e340 d1476458e171">
+<p><code>VARCHAR2(5)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1476458e340 d1476458e174">
+<p>Connection load balancing goal used with statistics that are sent to the listeners to determine how new connections are distributed:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>LONG</code></p>
+</li>
+<li>
+<p><code>SHORT</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1476458e362" headers="d1476458e168">
+<p><code>COMMIT_OUTCOME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1476458e362 d1476458e171">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1476458e362 d1476458e174">
+<p>For Transaction Guard, indicates whether the database service associated with the user session has the COMMIT_OUTCOME service attribute enabled (<code>YES</code>) or not (<code>NO</code>).</p>
+<p>When the attribute is enabled:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>The outcome of a COMMIT transaction is durable, which means the status of the last COMMIT executed can be looked up after an outage.</p>
+</li>
+<li>
+<p>A logical transaction ID (LTXID) is set for each user session at session creation and successful commit.</p>
+</li>
+</ul>
+<p><span class="bold">See Also:</span> For information about preserving the commit outcome, see <a class="olink ADFNS338" target="_blank" href="../ADFNS/transaction-guard.htm#ADFNS338"><span class="italic">Oracle Database Development Guide</span></a>. For information about logical transaction IDs, see <a class="olink ADFNS324" target="_blank" href="../ADFNS/transaction-guard.htm#ADFNS324"><span class="italic">Oracle Database Development Guide</span></a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1476458e402" headers="d1476458e168">
+<p><code>RETENTION_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1476458e402 d1476458e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1476458e402 d1476458e174">
+<p>For Transaction Guard (<code>COMMIT_OUTCOME</code> set to <code>TRUE</code>), this parameter determines the amount of time (in seconds) that the commit outcome is retained in the database</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1476458e420" headers="d1476458e168">
+<p><code>REPLAY_INITIATION_TIMEOUT</code></p>
+</td>
+<td class="cellalignment3905" headers="d1476458e420 d1476458e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1476458e420 d1476458e174">
+<p>For Application Continuity, this option specifies the difference between the time (in seconds) of original execution of the first operation of a request and the time that the replay is ready to start after a successful reconnect. Application Continuity will not replay after the specified amount of time has passed. This option is intended to avoid the unintentional execution of a transaction when a system is recovered after a long period of time. The default is 5 minutes (300 seconds).</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1476458e432" headers="d1476458e168">
+<p><code>SESSION_STATE_CONSISTENCY</code></p>
+</td>
+<td class="cellalignment3905" headers="d1476458e432 d1476458e171">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1476458e432 d1476458e174">
+<p>Describes how non-transactional is changed during a request. This parameter is considered only if <code>failover_type</code> is set to <code>TRANSACTION</code> for Application Continuity. Examples of session state are NLS settings, optimizer preferences, event settings, PL/SQL global variables, temporary tables, advanced queues, LOBs, and result cache. If non-transactional values change after the request starts, the default value of <code>DYNAMIC</code> should be set. Almost all applications should use <code>DYNAMIC</code> mode. If you are unsure, use <code>DYNAMIC</code> mode.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1476458e459" headers="d1476458e168">
+<p><code>GLOBAL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1476458e459 d1476458e171">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1476458e459 d1476458e174">
+<p>Indicates whether the service is global. A global service is managed by Global Service Manager (GSM) and can be provided by multiple databases that contain replicated data. Possible values:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>YES</code>: Indicates the service is global</p>
+</li>
+<li>
+<p><code>NO</code>: Indicates the service is not global</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1476458e482" headers="d1476458e168">
+<p><code>CON_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1476458e482 d1476458e171">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1476458e482 d1476458e174">
+<p>Container name of the object. The value of this column is <code>NULL</code> in non-CDBs.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1476458e497" headers="d1476458e168">
+<p><code>SQL_TRANSLATION_PROFILE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1476458e497 d1476458e171">
+<p><code>VARCHAR2(65)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1476458e497 d1476458e174">
+<p>A non-NULL value specifies the initial SQL translation profile for subsequent database connections that use the service and do not specify a SQL translation profile. A NULL value has no effect.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1476458e509" headers="d1476458e168">
+<p><code>MAX_LAG_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1476458e509 d1476458e171">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1476458e509 d1476458e174">
+<p>The maximum replication lag (in seconds) that is acceptable for a data replica to be used for providing the database service. Can only be specified for global services.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1476458e521" headers="d1476458e168">
+<p><code>STOP_OPTION</code></p>
+</td>
+<td class="cellalignment3905" headers="d1476458e521 d1476458e171">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1476458e521 d1476458e174">
+<p>Stop option for sessions of this service for planned maintenance</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1476458e533" headers="d1476458e168">
+<p><code>FAILOVER_RESTORE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1476458e533 d1476458e171">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1476458e533 d1476458e174">
+<p>Indicates whether sessions recover their commonly used session state (like NLS, schema) when they are failed over with TAF</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1476458e545" headers="d1476458e168">
+<p><code>DRAIN_TIMEOUT</code></p>
+</td>
+<td class="cellalignment3905" headers="d1476458e545 d1476458e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1476458e545 d1476458e174">
+<p>Number of seconds to wait for sessions to be drained</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1476458e558" headers="d1476458e168">
+<p><code>CON_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1476458e558 d1476458e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1476458e558 d1476458e174">
+<p>The ID of the container to which the data pertains. Possible values include:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>0</code>: This value is used for rows containing data that pertain to the entire CDB. This value is also used for rows in non-CDBs.</p>
+</li>
+<li>
+<p><code>1</code>: This value is used for rows containing data that pertain to only the root</p>
+</li>
+<li>
+<p><span class="italic">n</span>: Where <span class="italic">n</span> is the applicable container ID for the rows containing data</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="V-ACTIVE_INSTANCES.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="V-ACTIVE_SESS_POOL_MTH.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

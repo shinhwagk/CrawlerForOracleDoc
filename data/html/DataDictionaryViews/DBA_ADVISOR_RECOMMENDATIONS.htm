@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>DBA_ADVISOR_RECOMMENDATIONS</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="DBA_ADVISOR_RECOMMENDATIONS view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="DBA_ADVISOR_RATIONALE.htm" title="Previous" type="text/html" />
+<link rel="Next" href="DBA_ADVISOR_SQLA_REC_SUM.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+
+                    <script type="text/javascript">
+                      var w=window;
+                      if(w.performance||w.mozPerformance||w.msPerformance||w.webkitPerformance){var d=document,AKSB=AKSB||{};AKSB.q=[];AKSB.mark=function(a,b){AKSB.q.push(["mark",a,b||(new Date).getTime()])};AKSB.measure=function(a,b,c){AKSB.q.push(["measure",a,b,c||(new Date).getTime()])};AKSB.done=function(a){AKSB.q.push(["done",a])};AKSB.mark("firstbyte",(new Date).getTime());AKSB.prof={custid:"322179",ustr:"UNKNOWN",originlat:0,clientrtt:37,ghostip:"184.84.239.166",
+                      ipv6:false,pct:10,clientip:"101.231.34.38",requestid:"1862fcf7",protocol:"",blver:10,akM:"dscx",akN:"ae",akTT:"O",akTX:"1",akTI:"1862fcf7",ai:"206465",ra:"",pmgn:"",pmgi:"",pmp:""};(function(a){var b=
+                      d.createElement("script");b.async="async";b.src=a;a=d.getElementsByTagName("script");a=a[a.length-1];a.parentNode.insertBefore(b,a)})(("https:"===d.location.protocol?"https:":"http:")+"//ds-aksb-a.akamaihd.net/aksb.min.js")};
+                    </script>
+                    </head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-A6E04D5A-5F3E-4DB7-AD7C-AB109439A80A"></a> <span id="PAGE" style="display:none;">796/2822</span> <!-- End Header -->
+<script  >
+//<![CDATA[
+window.name='DBA_ADVISOR_RECOMMENDATIONS'
+//]]>
+</script> <script  >
+    function footdisplay(footnum,footnote) {
+    var msg = window.open('', 'NewWindow' + footnum,
+        'directories=no,height=120,location=no,menubar=no,resizable=yes,' +
+        'scrollbars=yes,status=no,toolbar=no,width=598');
+    msg.document.open('text/html');
+    msg.document.write('<!DOCTYPE html ');
+    msg.document.write('PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" ');
+
+    msg.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">');
+    msg.document.write('<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><title>');
+    msg.document.write('Footnote&amp;nbsp; ' + footnum);
+    msg.document.write('<\/title><meta http-equiv="Content-Type" ');
+    msg.document.write('content="text/html; charset=utf-8" />');
+    msg.document.write('');
+    msg.document.write('<style> <![CDATA[ ');
+    msg.document.write('h1 {text-align: center; font-size: 14pt;}');
+    msg.document.write('fieldset {border: none;}');
+    msg.document.write('form {text-align: center;}');
+    msg.document.write(' ]]\u003e <\/style>');
+    msg.document.write('<\/head><body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><h1>Footnote&nbsp; ' + footnum + '<\/h1><p>');
+    msg.document.write(footnote);
+    msg.document.write('<\/p><form action="" method="post"><fieldset>');
+    msg.document.write('<input type="button" value="OK" ');
+    msg.document.write('onclick="window.close();" />');
+    msg.document.write('<\/fieldset><\/form><\/body><\/html>');
+    msg.document.close();
+    msg.focus();
+}
+</script><noscript>
+<p>The script content on this page is for navigation purposes only and does not alter the content in any way.</p>
+</noscript><a id="REFRN23323"></a>
+<h1 id="REFRN-GUID-A6E04D5A-5F3E-4DB7-AD7C-AB109439A80A" class="sect1"><span class="enumeration_section">4.29</span> DBA_ADVISOR_RECOMMENDATIONS</h1>
+<div>
+<div class="section">
+<p><code>DBA_ADVISOR_RECOMMENDATIONS</code> displays the results of an analysis of all recommendations in the database. A recommendation can have multiple actions associated with it. Actions are described in the <code>DBA_ADVISOR_ACTIONS</code> view. A recommendation also points to a set of rationales that present a justification/reasoning for that recommendation. These rationales are in the <code>DBA_ADVISOR_RATIONALE</code> view.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Related View</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p><code>USER_ADVISOR_RECOMMENDATIONS</code> displays the results of an analysis of the recommendations owned by the current user. This view does not display the <code>OWNER</code> column.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-A6E04D5A-5F3E-4DB7-AD7C-AB109439A80A__GUID-5FC46908-3C0A-4B56-B9AC-6BC4C967F232">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d733862e186">Column</th>
+<th class="cellalignment3905" id="d733862e189">Datatype</th>
+<th class="cellalignment3906" id="d733862e192">NULL</th>
+<th class="cellalignment3907" id="d733862e195">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d733862e200" headers="d733862e186">
+<p><code>OWNER</code></p>
+</td>
+<td class="cellalignment3905" headers="d733862e200 d733862e189">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d733862e200 d733862e192">&nbsp;</td>
+<td class="cellalignment3907" headers="d733862e200 d733862e195">
+<p>Owner of the task</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d733862e216" headers="d733862e186">
+<p><code>REC_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d733862e216 d733862e189">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d733862e216 d733862e192">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d733862e216 d733862e195">
+<p>Unique identifier of the recommendation</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d733862e232" headers="d733862e186">
+<p><code>TASK_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d733862e232 d733862e189">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d733862e232 d733862e192">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d733862e232 d733862e195">
+<p>Task that owns the recommendation</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d733862e248" headers="d733862e186">
+<p><code>TASK_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d733862e248 d733862e189">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d733862e248 d733862e192">&nbsp;</td>
+<td class="cellalignment3907" headers="d733862e248 d733862e195">
+<p>Name of the task</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d733862e263" headers="d733862e186">
+<p><code>EXECUTION_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d733862e263 d733862e189">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d733862e263 d733862e192">&nbsp;</td>
+<td class="cellalignment3907" headers="d733862e263 d733862e195">
+<p>The name of the task execution with which this entry (row) is associated</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d733862e277" headers="d733862e186">
+<p><code>FINDING_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d733862e277 d733862e189">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d733862e277 d733862e192">&nbsp;</td>
+<td class="cellalignment3907" headers="d733862e277 d733862e195">
+<p>Unique identifier of the finding</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d733862e292" headers="d733862e186">
+<p><code>TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d733862e292 d733862e189">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3906" headers="d733862e292 d733862e192">&nbsp;</td>
+<td class="cellalignment3907" headers="d733862e292 d733862e195">
+<p>Type of the recommendation</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d733862e307" headers="d733862e186">
+<p><code>RANK</code></p>
+</td>
+<td class="cellalignment3905" headers="d733862e307 d733862e189">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d733862e307 d733862e192">&nbsp;</td>
+<td class="cellalignment3907" headers="d733862e307 d733862e195">
+<p>Ranking, in terms of importance, within the set of recommendations generated for the task</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d733862e322" headers="d733862e186">
+<p><code>PARENT_REC_IDS</code></p>
+</td>
+<td class="cellalignment3905" headers="d733862e322 d733862e189">
+<p><code>VARCHAR2(4000)</code></p>
+</td>
+<td class="cellalignment3906" headers="d733862e322 d733862e192">&nbsp;</td>
+<td class="cellalignment3907" headers="d733862e322 d733862e195">
+<p>Comma-separated list of the recommendation IDs of the parent recommendations. If this column is nonzero, then the recommendation depends on the parents, and cannot be accepted if the parents are not accepted.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d733862e337" headers="d733862e186">
+<p><code>BENEFIT_TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d733862e337 d733862e189">
+<p><code>VARCHAR2(4000)</code></p>
+</td>
+<td class="cellalignment3906" headers="d733862e337 d733862e192">&nbsp;</td>
+<td class="cellalignment3907" headers="d733862e337 d733862e195">
+<p>Describes the benefit obtained by carrying out the recommendation</p>
+<p>If there is a set of parents for the recommendation, then the benefit is the cumulative benefit (the improvement in system performance when this and all prior parent recommendations are accepted).</p>
+<p>If there are no parents, then this is the improvement when the recommendation is accepted, independent of other recommendations.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d733862e356" headers="d733862e186">
+<p><code>BENEFIT</code></p>
+</td>
+<td class="cellalignment3905" headers="d733862e356 d733862e189">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d733862e356 d733862e192">&nbsp;</td>
+<td class="cellalignment3907" headers="d733862e356 d733862e195">
+<p>Calculated benefit value</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d733862e372" headers="d733862e186">
+<p><code>ANNOTATION_STATUS</code></p>
+</td>
+<td class="cellalignment3905" headers="d733862e372 d733862e189">
+<p><code>VARCHAR2(11)</code></p>
+</td>
+<td class="cellalignment3906" headers="d733862e372 d733862e192">&nbsp;</td>
+<td class="cellalignment3907" headers="d733862e372 d733862e195">
+<p>When a task is complete, the recommendations are marked <code>ACCEPT</code>. The status can be changed later using the <code>MARK_RECOMMENDATION</code> procedure:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>ACCEPT</code> - Current recommendation is ready to implement. This recommendation can also be used as advice for future analysis operations.</p>
+</li>
+<li>
+<p><code>REJECT</code> - Current recommendation is not acceptable to the user, and therefore will be excluded from any implementation scripts. This recommendation can also be used as advice for future analysis operations.</p>
+</li>
+<li>
+<p><code>IGNORE</code> - Though not rejected, the current recommendation will be ignored when generating scripts and will never be used as advice to future analysis operations.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d733862e409" headers="d733862e186">
+<p><code>FLAGS</code></p>
+</td>
+<td class="cellalignment3905" headers="d733862e409 d733862e189">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d733862e409 d733862e192">&nbsp;</td>
+<td class="cellalignment3907" headers="d733862e409 d733862e195">
+<p>Advisor-specific flags</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d733862e423" headers="d733862e186">
+<p><code>FILTERED</code></p>
+</td>
+<td class="cellalignment3905" headers="d733862e423 d733862e189">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d733862e423 d733862e192">&nbsp;</td>
+<td class="cellalignment3907" headers="d733862e423 d733862e195">
+<p>A value of <code>Y</code> means that the row in the view was filtered out by a directive (or a combination of directives). A value of <code>N</code> means that the row was not filtered.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d733862e443" headers="d733862e186">
+<p><code>REC_TYPE_ID</code><a id="fn_1" href="#fn_1" onclick='footdisplay(1,"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Foot&nbsp;1</sup></a></p>
+</td>
+<td class="cellalignment3905" headers="d733862e443 d733862e189">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d733862e443 d733862e192">&nbsp;</td>
+<td class="cellalignment3907" headers="d733862e443 d733862e195">
+<p>Recommendation type ID</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<p class="tablefootnote"><sup class="tablefootnote">Footnote&nbsp;1</sup></p>
+<p>This column is available starting with Oracle Database 12<span class="italic">c</span> Release 2 (12.2.0.1).</p>
+<div class="section">
+<div class="infoboxnotealso" id="GUID-A6E04D5A-5F3E-4DB7-AD7C-AB109439A80A__GUID-EB2CF0F1-AA80-43E4-B0CB-8C2969AC4F96">
+<p class="notep1">See Also:</p>
+<p><span class="q">"<a href="USER_ADVISOR_RECOMMENDATIONS.htm#GUID-3629BA65-60A4-4C5D-9337-5B3CA8D25F91">USER_ADVISOR_RECOMMENDATIONS</a>"</span></p>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="DBA_ADVISOR_RATIONALE.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="DBA_ADVISOR_SQLA_REC_SUM.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+</body>
+</html>

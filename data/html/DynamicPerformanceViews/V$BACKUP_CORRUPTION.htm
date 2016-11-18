@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>V$BACKUP_CORRUPTION</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="V$BACKUP_CORRUPTION view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="V-BACKUP_COPY_SUMMARY.htm" title="Previous" type="text/html" />
+<link rel="Next" href="V-BACKUP_DATAFILE.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-EF4337C3-90D1-4E84-8E3E-7DAC60E929FD"></a> <span id="PAGE" style="display:none;">2277/2822</span> <!-- End Header -->
+<a id="REFRN30019"></a>
+<h1 id="REFRN-GUID-EF4337C3-90D1-4E84-8E3E-7DAC60E929FD" class="sect1"><span class="enumeration_section">7.88</span> V$BACKUP_CORRUPTION</h1>
+<div>
+<div class="section">
+<p><code>V$BACKUP_CORRUPTION</code> displays information about corrupt block ranges in data file backups from the control file. Note that corruptions are not tolerated in the control file and archived redo log backups.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-EF4337C3-90D1-4E84-8E3E-7DAC60E929FD__GUID-257EDF73-173A-4290-BEBC-382C435E0FDF">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d1564861e168">Column</th>
+<th class="cellalignment3905" id="d1564861e171">Datatype</th>
+<th class="cellalignment3908" id="d1564861e174">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d1564861e179" headers="d1564861e168">
+<p><code>RECID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1564861e179 d1564861e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1564861e179 d1564861e174">
+<p>Backup corruption record ID</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1564861e191" headers="d1564861e168">
+<p><code>STAMP</code></p>
+</td>
+<td class="cellalignment3905" headers="d1564861e191 d1564861e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1564861e191 d1564861e174">
+<p>Backup corruption record stamp</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1564861e203" headers="d1564861e168">
+<p><code>SET_STAMP</code></p>
+</td>
+<td class="cellalignment3905" headers="d1564861e203 d1564861e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1564861e203 d1564861e174">
+<p>Backup set stamp</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1564861e215" headers="d1564861e168">
+<p><code>SET_COUNT</code></p>
+</td>
+<td class="cellalignment3905" headers="d1564861e215 d1564861e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1564861e215 d1564861e174">
+<p>Backup set count</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1564861e227" headers="d1564861e168">
+<p><code>PIECE#</code></p>
+</td>
+<td class="cellalignment3905" headers="d1564861e227 d1564861e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1564861e227 d1564861e174">
+<p>backup piece that contains this corrupt block</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1564861e239" headers="d1564861e168">
+<p><code>FILE#</code></p>
+</td>
+<td class="cellalignment3905" headers="d1564861e239 d1564861e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1564861e239 d1564861e174">
+<p>Absolute file number of the data file that contains the corrupt blocks</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1564861e251" headers="d1564861e168">
+<p><code>BLOCK#</code></p>
+</td>
+<td class="cellalignment3905" headers="d1564861e251 d1564861e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1564861e251 d1564861e174">
+<p>Block number of the first corrupt block in the range of corrupted blocks</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1564861e263" headers="d1564861e168">
+<p><code>BLOCKS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1564861e263 d1564861e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1564861e263 d1564861e174">
+<p>Number of corrupted blocks found starting with <code>BLOCK#</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1564861e277" headers="d1564861e168">
+<p><code>CORRUPTION_CHANGE#</code></p>
+</td>
+<td class="cellalignment3905" headers="d1564861e277 d1564861e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1564861e277 d1564861e174">
+<p>Change number at which the logical corruption was detected. Set to 0 to indicate media corruption.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1564861e289" headers="d1564861e168">
+<p><code>MARKED_CORRUPT</code></p>
+</td>
+<td class="cellalignment3905" headers="d1564861e289 d1564861e171">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1564861e289 d1564861e174">
+<p>Indicates whether this corruption was not previously detected by the Oracle Database (<code>YES</code>) or the Oracle Database had already discovered this corrupt block and marked it as corrupt (<code>NO</code>). Note that when a corrupt block is encountered in a backup, and was not already marked corrupt by the Oracle Database, then the backup process does not mark the block as corrupt in the production data file. Thus, this field may be <code>YES</code> for the same block in more than one backup set.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1564861e310" headers="d1564861e168">
+<p><code>CORRUPTION_TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1564861e310 d1564861e171">
+<p><code>VARCHAR2(9)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1564861e310 d1564861e174">
+<p>Type of block corruption in the data file:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>ALL ZERO</code> - Block header on disk contained only zeros. The block may be valid if it was never filled and if it is in an Oracle7 file. The buffer will be reformatted to the Oracle8 standard for an empty block.</p>
+</li>
+<li>
+<p><code>FRACTURED</code> - Block header looks reasonable, but the front and back of the block are different versions.</p>
+</li>
+<li>
+<p><code>CHECKSUM</code> - optional check value shows that the block is not self-consistent. It is impossible to determine exactly why the check value fails, but it probably fails because sectors in the middle of the block are from different versions.</p>
+</li>
+<li>
+<p><code>CORRUPT</code> - Block is wrongly identified or is not a data block (for example, the data block address is missing)</p>
+</li>
+<li>
+<p><code>LOGICAL</code> - Block is logically corrupt</p>
+</li>
+<li>
+<p><code>NOLOGGING</code> - Block does not have redo log entries (for example, <code>NOLOGGING</code> operations on primary database can introduce this type of corruption on a physical standby)</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1564861e357" headers="d1564861e168">
+<p><code>CON_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1564861e357 d1564861e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1564861e357 d1564861e174">
+<p>The ID of the container to which the data pertains. Possible values include:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>0</code>: This value is used for rows containing data that pertain to the entire CDB. This value is also used for rows in non-CDBs.</p>
+</li>
+<li>
+<p><code>1</code>: This value is used for rows containing data that pertain to only the root</p>
+</li>
+<li>
+<p><span class="italic">n</span>: Where <span class="italic">n</span> is the applicable container ID for the rows containing data</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="V-BACKUP_COPY_SUMMARY.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="V-BACKUP_DATAFILE.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

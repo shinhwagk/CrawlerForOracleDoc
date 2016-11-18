@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>DB_BLOCK_CHECKSUM</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="DB_BLOCK_CHECKSUM initialization parameter, initialization parameters, DB_BLOCK_CHECKSUM" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="DB_BLOCK_CHECKING.htm" title="Previous" type="text/html" />
+<link rel="Next" href="DB_BLOCK_SIZE.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-A0F72B65-BC1C-441B-824E-03ADCE66063A"></a> <span id="PAGE" style="display:none;">71/2822</span> <!-- End Header -->
+<a id="REFRN10030"></a>
+<h1 id="REFRN-GUID-A0F72B65-BC1C-441B-824E-03ADCE66063A" class="sect1"><span class="enumeration_section">1.65</span> DB_BLOCK_CHECKSUM</h1>
+<div>
+<div class="section"></div>
+<!-- class="section" -->
+<div class="tblformal" id="GUID-A0F72B65-BC1C-441B-824E-03ADCE66063A__GUID-7017918B-582F-4007-8A03-60C011F89749">
+<hr />
+<table class="cellalignment3900" summary="This table describes the properties for this initialization parameter">
+<thead align="left">
+<tr>
+<th class="cellalignment3901" id="d65206e167">Property</th>
+<th class="cellalignment3902" id="d65206e170">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3901" id="d65206e175" headers="d65206e167">
+<p><span class="bold">Parameter type</span></p>
+</td>
+<td class="cellalignment3902" headers="d65206e175 d65206e170">
+<p>String</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3901" id="d65206e183" headers="d65206e167">
+<p><span class="bold">Syntax</span></p>
+</td>
+<td class="cellalignment3902" headers="d65206e183 d65206e170">
+<p><code>DB_BLOCK_CHECKSUM = { OFF | FALSE | TYPICAL | TRUE | FULL }</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3901" id="d65206e192" headers="d65206e167">
+<p><span class="bold">Default value</span></p>
+</td>
+<td class="cellalignment3902" headers="d65206e192 d65206e170">
+<p><code>TYPICAL</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3901" id="d65206e201" headers="d65206e167">
+<p><span class="bold">Modifiable</span></p>
+</td>
+<td class="cellalignment3902" headers="d65206e201 d65206e170">
+<p><code>ALTER SESSION</code>, <code>ALTER SYSTEM</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3901" id="d65206e213" headers="d65206e167">
+<p><span class="bold">Modifiable in a PDB</span></p>
+</td>
+<td class="cellalignment3902" headers="d65206e213 d65206e170">
+<p>No</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3901" id="d65206e221" headers="d65206e167">
+<p><span class="bold">Basic</span></p>
+</td>
+<td class="cellalignment3902" headers="d65206e221 d65206e170">
+<p>No</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<div class="section">
+<p><code>DB_BLOCK_CHECKSUM</code> determines whether <code>DBW</code><span class="italic"><code>n</code></span> and the direct loader will calculate a checksum (a number calculated from all the bytes stored in the block) and store it in the cache header of every data block when writing it to disk. Checksums are verified when a block is read - only if this parameter is <code>TYPICAL</code> or <code>FULL</code> and the last write of the block stored a checksum. In <code>FULL</code> mode, Oracle also verifies the checksum before a change application from update/delete statements and recomputes it after the change is applied. In addition, Oracle gives every log block a checksum before writing it to the current log.</p>
+<p>Most of the log block checksum is done by the generating foreground processes, while the LGWR or the LGWR slave processes (LG<span class="italic">nn</span> processes) perform the rest of the work, for better CPU and cache efficiency.</p>
+<p>If this parameter is set to <code>OFF</code>, <code>DBW</code><span class="italic"><code>n</code></span> calculates checksums only for the <code>SYSTEM</code> tablespace, but not for user tablespaces. In addition, no log checksum is performed when this parameter is set to <code>OFF</code>.</p>
+<p>Checksums allow Oracle to detect corruption caused by underlying disks, storage systems, or I/O systems. If set to <code>FULL</code>, <code>DB_BLOCK_CHECKSUM</code> also catches in-memory corruptions and stops them from making it to the disk. Turning on this feature in <code>TYPICAL</code> mode causes only an additional 1% to 2% overhead. In the <code>FULL</code> mode it causes 4% to 5% overhead. Oracle recommends that you set <code>DB_BLOCK_CHECKSUM</code> to <code>TYPICAL</code>.</p>
+<p>For backward compatibility the use of <code>TRUE</code> (implying <code>TYPICAL</code>) and <code>FALSE</code> (implying <code>OFF</code>) values is preserved.</p>
+<div class="infoboxnotealso" id="GUID-A0F72B65-BC1C-441B-824E-03ADCE66063A__GUID-3AF8A421-49CF-4B82-9D1E-2308EC963A00">
+<p class="notep1">See Also:</p>
+<p><a class="olink RCMRF90307" target="_blank" href="../RCMRF/RESTORE.htm#RCMRF90307"><span class="italic">Oracle Database Backup and Recovery Reference</span></a> for more information about this parameter</p>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="DB_BLOCK_CHECKING.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="DB_BLOCK_SIZE.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>V$SQL</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="V$SQL view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="V-SPPARAMETER.htm" title="Previous" type="text/html" />
+<link rel="Next" href="V-SQL_BIND_CAPTURE.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-2B9340D7-4AA8-4894-94C0-D5990F67BE75"></a> <span id="PAGE" style="display:none;">2700/2822</span> <!-- End Header -->
+<script  >
+//<![CDATA[
+window.name='V-SQL'
+//]]>
+</script> <script  >
+    function footdisplay(footnum,footnote) {
+    var msg = window.open('', 'NewWindow' + footnum,
+        'directories=no,height=120,location=no,menubar=no,resizable=yes,' +
+        'scrollbars=yes,status=no,toolbar=no,width=598');
+    msg.document.open('text/html');
+    msg.document.write('<!DOCTYPE html ');
+    msg.document.write('PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" ');
+
+    msg.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">');
+    msg.document.write('<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><title>');
+    msg.document.write('Footnote&amp;nbsp; ' + footnum);
+    msg.document.write('<\/title><meta http-equiv="Content-Type" ');
+    msg.document.write('content="text/html; charset=utf-8" />');
+    msg.document.write('');
+    msg.document.write('<style> <![CDATA[ ');
+    msg.document.write('h1 {text-align: center; font-size: 14pt;}');
+    msg.document.write('fieldset {border: none;}');
+    msg.document.write('form {text-align: center;}');
+    msg.document.write(' ]]\u003e <\/style>');
+    msg.document.write('<\/head><body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><h1>Footnote&nbsp; ' + footnum + '<\/h1><p>');
+    msg.document.write(footnote);
+    msg.document.write('<\/p><form action="" method="post"><fieldset>');
+    msg.document.write('<input type="button" value="OK" ');
+    msg.document.write('onclick="window.close();" />');
+    msg.document.write('<\/fieldset><\/form><\/body><\/html>');
+    msg.document.close();
+    msg.focus();
+}
+</script><noscript>
+<p>The script content on this page is for navigation purposes only and does not alter the content in any way.</p>
+</noscript><a id="REFRN30246"></a>
+<h1 id="REFRN-GUID-2B9340D7-4AA8-4894-94C0-D5990F67BE75" class="sect1"><span class="enumeration_section">9.45</span> V$SQL</h1>
+<div>
+<div class="section">
+<p><code>V$SQL</code> lists statistics on shared SQL areas without the <code>GROUP BY</code> clause and contains one row for each child of the original SQL text entered. Statistics displayed in <code>V$SQL</code> are normally updated at the end of query execution. However, for long running queries, they are updated every 5 seconds. This makes it easy to see the impact of long running SQL statements while they are still in progress.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-2B9340D7-4AA8-4894-94C0-D5990F67BE75__GUID-09BCD57D-8168-4BA4-813C-C1BF92248D3C">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d2020965e174">Column</th>
+<th class="cellalignment3905" id="d2020965e177">Datatype</th>
+<th class="cellalignment3908" id="d2020965e180">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d2020965e185" headers="d2020965e174">
+<p><code>SQL_TEXT</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e185 d2020965e177">
+<p><code>VARCHAR2(1000)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e185 d2020965e180">
+<p>First thousand characters of the SQL text for the current cursor</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e197" headers="d2020965e174">
+<p><code>SQL_FULLTEXT</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e197 d2020965e177">
+<p><code>CLOB</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e197 d2020965e180">
+<p>Full text for the SQL statement exposed as a <code>CLOB</code> column. The full text of a SQL statement can be retrieved using this column instead of joining with the <code>V$SQLTEXT</code> dynamic performance view.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e215" headers="d2020965e174">
+<p><code>SQL_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e215 d2020965e177">
+<p><code>VARCHAR2(13)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e215 d2020965e180">
+<p>SQL identifier of the parent cursor in the library cache</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e227" headers="d2020965e174">
+<p><code>SHARABLE_MEM</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e227 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e227 d2020965e180">
+<p>Amount of shared memory used by the child cursor (in bytes)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e239" headers="d2020965e174">
+<p><code>PERSISTENT_MEM</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e239 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e239 d2020965e180">
+<p>Fixed amount of memory used for the lifetime of the child cursor (in bytes)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e251" headers="d2020965e174">
+<p><code>RUNTIME_MEM</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e251 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e251 d2020965e180">
+<p>Fixed amount of memory required during the execution of the child cursor</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e263" headers="d2020965e174">
+<p><code>SORTS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e263 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e263 d2020965e180">
+<p>Number of sorts that were done for the child cursor</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e275" headers="d2020965e174">
+<p><code>LOADED_VERSIONS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e275 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e275 d2020965e180">
+<p>Indicates whether the context heap is loaded (<code>1</code>) or not (<code>0</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e293" headers="d2020965e174">
+<p><code>OPEN_VERSIONS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e293 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e293 d2020965e180">
+<p>Indicates whether the child cursor is locked (<code>1</code>) or not (<code>0</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e311" headers="d2020965e174">
+<p><code>USERS_OPENING</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e311 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e311 d2020965e180">
+<p>Number of users that have any of the child cursors open</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e323" headers="d2020965e174">
+<p><code>FETCHES</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e323 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e323 d2020965e180">
+<p>Number of fetches associated with the SQL statement</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e336" headers="d2020965e174">
+<p><code>EXECUTIONS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e336 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e336 d2020965e180">
+<p>Number of executions that took place on this object since it was brought into the library cache</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e348" headers="d2020965e174">
+<p><code>PX_SERVERS_EXECUTIONS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e348 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e348 d2020965e180">
+<p>Total number of executions performed by parallel execution servers (<code>0</code> when the statement has never been executed in parallel)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e363" headers="d2020965e174">
+<p><code>END_OF_FETCH_COUNT</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e363 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e363 d2020965e180">
+<p>Number of times this cursor was fully executed since the cursor was brought into the library cache. The value of this statistic is not incremented when the cursor is partially executed, either because it failed during the execution or because only the first few rows produced by this cursor are fetched before the cursor is closed or re-executed. By definition, the value of the <code>END_OF_FETCH_COUNT</code> column should be less or equal to the value of the <code>EXECUTIONS</code> column.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e381" headers="d2020965e174">
+<p><code>USERS_EXECUTING</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e381 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e381 d2020965e180">
+<p>Number of users executing the statement</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e393" headers="d2020965e174">
+<p><code>LOADS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e393 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e393 d2020965e180">
+<p>Number of times the object was either loaded or reloaded</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e405" headers="d2020965e174">
+<p><code>FIRST_LOAD_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e405 d2020965e177">
+<p><code>VARCHAR2(19)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e405 d2020965e180">
+<p>Timestamp of the parent creation time</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e417" headers="d2020965e174">
+<p><code>INVALIDATIONS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e417 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e417 d2020965e180">
+<p>Number of times this child cursor has been invalidated</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e429" headers="d2020965e174">
+<p><code>PARSE_CALLS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e429 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e429 d2020965e180">
+<p>Number of parse calls for this child cursor</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e441" headers="d2020965e174">
+<p><code>DISK_READS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e441 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e441 d2020965e180">
+<p>Number of disk reads for this child cursor</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e453" headers="d2020965e174">
+<p><code>DIRECT_WRITES</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e453 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e453 d2020965e180">
+<p>Number of direct writes for this child cursor</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e465" headers="d2020965e174">
+<p><code>DIRECT_READS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e465 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e465 d2020965e180">
+<p>Number of direct reads for this child cursor</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e478" headers="d2020965e174">
+<p><code>BUFFER_GETS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e478 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e478 d2020965e180">
+<p>Number of buffer gets for this child cursor</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e490" headers="d2020965e174">
+<p><code>APPLICATION_WAIT_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e490 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e490 d2020965e180">
+<p>Application wait time (in microseconds)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e502" headers="d2020965e174">
+<p><code>CONCURRENCY_WAIT_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e502 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e502 d2020965e180">
+<p>Concurrency wait time (in microseconds)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e514" headers="d2020965e174">
+<p><code>CLUSTER_WAIT_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e514 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e514 d2020965e180">
+<p>Cluster wait time (in microseconds)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e526" headers="d2020965e174">
+<p><code>USER_IO_WAIT_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e526 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e526 d2020965e180">
+<p>User I/O Wait Time (in microseconds)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e538" headers="d2020965e174">
+<p><code>PLSQL_EXEC_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e538 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e538 d2020965e180">
+<p>PL/SQL execution time (in microseconds)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e550" headers="d2020965e174">
+<p><code>JAVA_EXEC_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e550 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e550 d2020965e180">
+<p>Java execution time (in microseconds)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e562" headers="d2020965e174">
+<p><code>ROWS_PROCESSED</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e562 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e562 d2020965e180">
+<p>Total number of rows the parsed SQL statement returns</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e574" headers="d2020965e174">
+<p><code>COMMAND_TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e574 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e574 d2020965e180">
+<p>Oracle command type definition</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e586" headers="d2020965e174">
+<p><code>OPTIMIZER_MODE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e586 d2020965e177">
+<p><code>VARCHAR2(10)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e586 d2020965e180">
+<p>Mode under which the SQL statement was executed</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e598" headers="d2020965e174">
+<p><code>OPTIMIZER_COST</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e598 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e598 d2020965e180">
+<p>Cost of this query given by the optimizer</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e611" headers="d2020965e174">
+<p><code>OPTIMIZER_ENV</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e611 d2020965e177">
+<p><code>RAW(2000)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e611 d2020965e180">
+<p>Optimizer environment</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e623" headers="d2020965e174">
+<p><code>OPTIMIZER_ENV_HASH_VALUE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e623 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e623 d2020965e180">
+<p>Hash value for the optimizer environment</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e635" headers="d2020965e174">
+<p><code>PARSING_USER_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e635 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e635 d2020965e180">
+<p>User ID of the user who originally built this child cursor</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e647" headers="d2020965e174">
+<p><code>PARSING_SCHEMA_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e647 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e647 d2020965e180">
+<p>Schema ID that was used to originally build this child cursor</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e659" headers="d2020965e174">
+<p><code>PARSING_SCHEMA_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e659 d2020965e177">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e659 d2020965e180">
+<p>Schema name that was used to originally build this child cursor</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e671" headers="d2020965e174">
+<p><code>KEPT_VERSIONS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e671 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e671 d2020965e180">
+<p>Indicates whether this child cursor has been marked to be kept pinned in the cache using the <code>DBMS_SHARED_POOL</code> package</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e686" headers="d2020965e174">
+<p><code>ADDRESS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e686 d2020965e177">
+<p><code>RAW(4 | 8)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e686 d2020965e180">
+<p>Address of the handle to the parent for this cursor</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e698" headers="d2020965e174">
+<p><code>TYPE_CHK_HEAP</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e698 d2020965e177">
+<p><code>RAW(4 | 8)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e698 d2020965e180">
+<p>Descriptor of the type check heap for this child cursor</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e710" headers="d2020965e174">
+<p><code>HASH_VALUE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e710 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e710 d2020965e180">
+<p>Hash value of the parent statement in the library cache</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e722" headers="d2020965e174">
+<p><code>OLD_HASH_VALUE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e722 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e722 d2020965e180">
+<p>Old SQL hash value</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e734" headers="d2020965e174">
+<p><code>PLAN_HASH_VALUE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e734 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e734 d2020965e180">
+<p>Numeric representation of the current SQL plan for this cursor. Comparing one <code>PLAN_HASH_VALUE</code> to another easily identifies whether or not two plans are the same (rather than comparing the two plans line by line).</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e750" headers="d2020965e174">
+<p><code>FULL_PLAN_HASH_VALUE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e750 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e750 d2020965e180">
+<p>Numeric representation of the complete SQL plan for this cursor. Comparing one <code>FULL_PLAN_HASH_VALUE</code> to another easily identifies whether or not two plans are the same (rather than comparing the two plans line by line). Note that the <code>FULL_PLAN_HASH_VALUE</code> cannot be compared across databases releases. It is not backward compatible.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e768" headers="d2020965e174">
+<p><code>CHILD_NUMBER</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e768 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e768 d2020965e180">
+<p>Number of this child cursor</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e780" headers="d2020965e174">
+<p><code>SERVICE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e780 d2020965e177">
+<p><code>VARCHAR2(64)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e780 d2020965e180">
+<p>Service name</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e792" headers="d2020965e174">
+<p><code>SERVICE_HASH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e792 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e792 d2020965e180">
+<p>Hash value for the name listed in the <code>SERVICE</code>column</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e807" headers="d2020965e174">
+<p><code>MODULE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e807 d2020965e177">
+<p><code>VARCHAR2(64)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e807 d2020965e180">
+<p>Contains the name of the module that was executing when the SQL statement was first parsed, which is set by calling <code>DBMS_APPLICATION_INFO.SET_MODULE</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e821" headers="d2020965e174">
+<p><code>MODULE_HASH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e821 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e821 d2020965e180">
+<p>Hash value of the module listed in the <code>MODULE</code> column</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e836" headers="d2020965e174">
+<p><code>ACTION</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e836 d2020965e177">
+<p><code>VARCHAR2(64)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e836 d2020965e180">
+<p>Contains the name of the action that was executing when the SQL statement was first parsed, which is set by calling <code>DBMS_APPLICATION_INFO.SET_ACTION</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e850" headers="d2020965e174">
+<p><code>ACTION_HASH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e850 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e850 d2020965e180">
+<p>Hash value of the action listed in the <code>ACTION</code> column</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e865" headers="d2020965e174">
+<p><code>SERIALIZABLE_ABORTS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e865 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e865 d2020965e180">
+<p>Number of times the transaction failed to serialize, producing <code>ORA-08177</code> errors, per cursor</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e880" headers="d2020965e174">
+<p><code>OUTLINE_CATEGORY</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e880 d2020965e177">
+<p><code>VARCHAR2(64)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e880 d2020965e180">
+<p>If an outline was applied during construction of the cursor, then this column displays the category of that outline. Otherwise the column is left blank.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e892" headers="d2020965e174">
+<p><code>CPU_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e892 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e892 d2020965e180">
+<p>CPU time (in microseconds) used by this cursor for parsing, executing, and fetching</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e905" headers="d2020965e174">
+<p><code>ELAPSED_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e905 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e905 d2020965e180">
+<p>Elapsed time (in microseconds) used by this cursor for parsing, executing, and fetching. If the cursor uses parallel execution, then <code>ELAPSED_TIME</code> is the cumulative time for the query coordinator, plus all parallel query slave processes.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e920" headers="d2020965e174">
+<p><code>OUTLINE_SID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e920 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e920 d2020965e180">
+<p>Outline session identifier</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e932" headers="d2020965e174">
+<p><code>CHILD_ADDRESS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e932 d2020965e177">
+<p><code>RAW(4 | 8)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e932 d2020965e180">
+<p>Address of the child cursor</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e944" headers="d2020965e174">
+<p><code>SQLTYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e944 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e944 d2020965e180">
+<p>Denotes the version of the SQL language used for this statement</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e956" headers="d2020965e174">
+<p><code>REMOTE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e956 d2020965e177">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e956 d2020965e180">
+<p>Indicates whether the cursor is remote mapped (<code>Y</code>) or not (<code>N</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e974" headers="d2020965e174">
+<p><code>OBJECT_STATUS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e974 d2020965e177">
+<p><code>VARCHAR2(19)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e974 d2020965e180">
+<p>Status of the cursor:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>VALID</code> - Valid, authorized without errors</p>
+</li>
+<li>
+<p><code>VALID_AUTH_ERROR</code> - Valid, authorized with authorization errors</p>
+</li>
+<li>
+<p><code>VALID_COMPILE_ERROR</code> - Valid, authorized with compilation errors</p>
+</li>
+<li>
+<p><code>VALID_UNAUTH</code> - Valid, unauthorized</p>
+</li>
+<li>
+<p><code>INVALID_UNAUTH</code> - Invalid, unauthorized</p>
+</li>
+<li>
+<p><code>INVALID</code> - Invalid, unauthorized but keep the timestamp</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e1017" headers="d2020965e174">
+<p><code>LITERAL_HASH_VALUE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e1017 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e1017 d2020965e180">
+<p>Hash value of the literals which are replaced with system-generated bind variables and are to be matched, when <code>CURSOR_SHARING</code> is used. This is not the hash value for the SQL statement. If <code>CURSOR_SHARING</code> is not used, then the value is <code>0</code>.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e1038" headers="d2020965e174">
+<p><code>LAST_LOAD_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e1038 d2020965e177">
+<p><code>VARCHAR2(19)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e1038 d2020965e180">
+<p>Time at which the query plan was loaded into the library cache</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e1050" headers="d2020965e174">
+<p><code>IS_OBSOLETE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e1050 d2020965e177">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e1050 d2020965e180">
+<p>Indicates whether the cursor has become obsolete (<code>Y</code>) or not (<code>N</code>). This can happen if the number of child cursors is too large.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e1068" headers="d2020965e174">
+<p><code>IS_BIND_SENSITIVE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e1068 d2020965e177">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e1068 d2020965e180">
+<p>Indicates whether the cursor is bind sensitive (<code>Y</code>) or not (<code>N</code>). A query is considered bind-sensitive if the optimizer peeked at one of its bind variable values when computing predicate selectivities and where a change in a bind variable value may cause the optimizer to generate a different plan.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e1086" headers="d2020965e174">
+<p><code>IS_BIND_AWARE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e1086 d2020965e177">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e1086 d2020965e180">
+<p>Indicates whether the cursor is bind aware (<code>Y</code>) or not (<code>N</code>). A query is considered bind-aware if it has been marked to use extended cursor sharing. The query would already have been marked as bind-sensitive.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e1105" headers="d2020965e174">
+<p><code>IS_SHAREABLE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e1105 d2020965e177">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e1105 d2020965e180">
+<p>Indicates whether the cursor can be shared (<code>Y</code>) or not (<code>N</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e1123" headers="d2020965e174">
+<p><code>CHILD_LATCH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e1123 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e1123 d2020965e180">
+<p>Child latch number that is protecting the cursor. This column is obsolete and maintained for backward compatibility.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e1135" headers="d2020965e174">
+<p><code>SQL_PROFILE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e1135 d2020965e177">
+<p><code>VARCHAR2(64)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e1135 d2020965e180">
+<p>SQL profile used for this statement, if any</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e1147" headers="d2020965e174">
+<p><code>SQL_PATCH</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e1147 d2020965e177">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e1147 d2020965e180">
+<p>SQL patch used for this statement, if any</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e1159" headers="d2020965e174">
+<p><code>SQL_PLAN_BASELINE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e1159 d2020965e177">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e1159 d2020965e180">
+<p>SQL plan baseline used for this statement, if any</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e1171" headers="d2020965e174">
+<p><code>PROGRAM_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e1171 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e1171 d2020965e180">
+<p>Program identifier</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e1183" headers="d2020965e174">
+<p><code>PROGRAM_LINE#</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e1183 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e1183 d2020965e180">
+<p>Program line number</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e1195" headers="d2020965e174">
+<p><code>EXACT_MATCHING_SIGNATURE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e1195 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e1195 d2020965e180">
+<p>Signature calculated on the normalized SQL text. The normalization includes the removal of white space and the uppercasing of all non-literal strings.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e1207" headers="d2020965e174">
+<p><code>FORCE_MATCHING_SIGNATURE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e1207 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e1207 d2020965e180">
+<p>Signature used when the <code>CURSOR_SHARING</code> parameter is set to <code>FORCE</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e1224" headers="d2020965e174">
+<p><code>LAST_ACTIVE_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e1224 d2020965e177">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e1224 d2020965e180">
+<p>TIme at which the query plan was last active</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e1236" headers="d2020965e174">
+<p><code>BIND_DATA</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e1236 d2020965e177">
+<p><code>RAW(2000)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e1236 d2020965e180">
+<p>Bind data</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e1249" headers="d2020965e174">
+<p><code>TYPECHECK_MEM</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e1249 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e1249 d2020965e180">
+<p>Typecheck memory</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e1261" headers="d2020965e174">
+<p><code>IO_CELL_OFFLOAD_ELIGIBLE_BYTES</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e1261 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e1261 d2020965e180">
+<p>Number of I/O bytes which can be filtered by the Exadata storage system</p>
+<p><span class="bold">See Also:</span> Oracle Exadata Storage Server Software documentation for more information</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e1277" headers="d2020965e174">
+<p><code>IO_INTERCONNECT_BYTES</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e1277 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e1277 d2020965e180">
+<p>Number of I/O bytes exchanged between Oracle Database and the storage system</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e1289" headers="d2020965e174">
+<p><code>PHYSICAL_READ_REQUESTS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e1289 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e1289 d2020965e180">
+<p>Number of physical read I/O requests issued by the monitored SQL</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e1301" headers="d2020965e174">
+<p><code>PHYSICAL_READ_BYTES</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e1301 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e1301 d2020965e180">
+<p>Number of bytes read from disks by the monitored SQL</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e1313" headers="d2020965e174">
+<p><code>PHYSICAL_WRITE_REQUESTS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e1313 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e1313 d2020965e180">
+<p>Number of physical write I/O requests issued by the monitored SQL</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e1325" headers="d2020965e174">
+<p><code>PHYSICAL_WRITE_BYTES</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e1325 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e1325 d2020965e180">
+<p>Number of bytes written to disks by the monitored SQL</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e1337" headers="d2020965e174">
+<p><code>OPTIMIZED_PHY_READ_REQUESTS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e1337 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e1337 d2020965e180">
+<p>Number of physical read I/O requests from Database Smart Flash Cache issued by the monitored SQL</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e1349" headers="d2020965e174">
+<p><code>LOCKED_TOTAL</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e1349 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e1349 d2020965e180">
+<p>Total number of times the child cursor has been locked</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e1361" headers="d2020965e174">
+<p><code>PINNED_TOTAL</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e1361 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e1361 d2020965e180">
+<p>Total number of times the child cursor has been pinned</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e1373" headers="d2020965e174">
+<p><code>IO_CELL_UNCOMPRESSED_BYTES</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e1373 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e1373 d2020965e180">
+<p>Number of uncompressed bytes (that is, size after decompression) that are offloaded to the Exadata cells</p>
+<p><span class="bold">See Also:</span> Oracle Exadata Storage Server Software documentation for more information</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e1390" headers="d2020965e174">
+<p><code>IO_CELL_OFFLOAD_RETURNED_BYTES</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e1390 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e1390 d2020965e180">
+<p>Number of filtered bytes returned by Exadata cells (that is, the number of bytes returned after&nbsp; processing has been offloaded on the Exadata cells)</p>
+<p><span class="bold">See Also:</span> Oracle Exadata Storage Server Software documentation for more information</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e1406" headers="d2020965e174">
+<p><code>CON_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e1406 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e1406 d2020965e180">
+<p>The ID of the container to which the data pertains. Possible values include:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>0</code>: This value is used for rows containing data that pertain to the entire CDB. This value is also used for rows in non-CDBs.</p>
+</li>
+<li>
+<p><code>1</code>: This value is used for rows containing data that pertain to only the root</p>
+</li>
+<li>
+<p><span class="italic">n</span>: Where <span class="italic">n</span> is the applicable container ID for the rows containing data</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e1437" headers="d2020965e174">
+<p><code>IS_REOPTIMIZABLE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e1437 d2020965e177">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e1437 d2020965e180">
+<p>This columns shows whether the next execution matching this child cursor will trigger a reoptimization. The values are:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>Y</code>: If the next execution will trigger a reoptimization</p>
+</li>
+<li>
+<p><code>R</code>: If the child cursor contains reoptimization information, but will not trigger reoptimization because the cursor was compiled in reporting mode</p>
+</li>
+<li>
+<p><code>N</code>: If the child cursor has no reoptimization information</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e1465" headers="d2020965e174">
+<p><code>IS_RESOLVED_ADAPTIVE_PLAN</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e1465 d2020965e177">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e1465 d2020965e180">
+<p>This column shows whether all of the adaptive parts of a plan have been resolved to the final plan. Once the plan is resolved, the plan hash value and the plan displayed by <code>DBMS_XPLAN</code> will not change through the end of execution. The values for this column are:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>NULL</code>: If the plan is not adaptive</p>
+</li>
+<li>
+<p><code>Y</code>: If the plan is fully resolved</p>
+</li>
+<li>
+<p><code>N</code>: If the plan is not yet fully resolved</p>
+</li>
+</ul>
+<p><span class="bold">See Also:</span> <a class="olink ARPLS378" target="_blank" href="../ARPLS/DBMS_XPLAN.htm#ARPLS378"><span class="italic">Oracle Database PL/SQL Packages and Types Reference</span></a> for more information about the <code>DBMS_XPLAN</code> package</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e1508" headers="d2020965e174">
+<p><code>IM_SCANS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e1508 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e1508 d2020965e180">
+<p>Number of In-Memory Column Store (IM column store) segment scans</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e1520" headers="d2020965e174">
+<p><code>IM_SCAN_BYTES_UNCOMPRESSED</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e1520 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e1520 d2020965e180">
+<p>Uncompressed size of data scanned from the IM column store</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e1532" headers="d2020965e174">
+<p><code>IM_SCAN_BYTES_INMEMORY</code></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e1532 d2020965e177">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e1532 d2020965e180">
+<p>In-memory size of data scanned from the IM column store</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e1544" headers="d2020965e174">
+<p><code>DDL_NO_INVALIDATE</code><a id="GUID-2B9340D7-4AA8-4894-94C0-D5990F67BE75__THISCOLUMNISAVAILABLESTARTINGWITHOR-6CDD11F5" href="#GUID-2B9340D7-4AA8-4894-94C0-D5990F67BE75__THISCOLUMNISAVAILABLESTARTINGWITHOR-6CDD11F5" onclick='footdisplay(1,"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Foot&nbsp;1</sup></a><a id="fnsrc_d2020965e1554" href="#fnsrc_d2020965e1554" onclick='footdisplay(, \"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e1544 d2020965e177">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e1544 d2020965e180">
+<p>Indicates if a DDL statement updated a dependent object and did not invalidate this cursor. The values are:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>N</code>: There has not been a DDL statement that updated a dependent object without invalidating this cursor.</p>
+</li>
+<li>
+<p><code>Y</code>: A DDL statement updated a dependent object and did not invalidate this cursor, but the cursor has not executed since this happened.</p>
+</li>
+<li>
+<p><code>X</code>: A DDL statement updated a dependent object and did not invalidate this cursor, and the cursor has executed since this happened.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e1580" headers="d2020965e174">
+<p><code>IS_ROLLING_INVALID</code><a id="fnsrc_d2020965e1584" href="#fnsrc_d2020965e1584" onclick='footdisplay(, \"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e1580 d2020965e177">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e1580 d2020965e180">
+<p>Indicates if this cursor is rolling validated. The values are:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>N</code>: This cursor is not rolling invalidated.</p>
+</li>
+<li>
+<p><code>Y</code>: This cursor is rolling invalidated, but the cursor has not executed in this state.</p>
+</li>
+<li>
+<p><code>X</code>: This cursor is rolling invalidated, and the cursor has executed in this state.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2020965e1610" headers="d2020965e174">
+<p><code>IS_ROLLING_REFRESH_INVALID</code><a id="fnsrc_d2020965e1614" href="#fnsrc_d2020965e1614" onclick='footdisplay(, \"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+<td class="cellalignment3905" headers="d2020965e1610 d2020965e177">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2020965e1610 d2020965e180">
+<p>Indicates if this cursor is rolling validated and requires execution time refresh. The values are:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>N</code>: This cursor is not a cursor that is rolling invalidated and requires execution time refresh.</p>
+</li>
+<li>
+<p><code>Y</code>: This cursor is rolling invalidated and requires execution time refresh, but the cursor has not executed in this state.</p>
+</li>
+<li>
+<p><code>X</code>: This cursor is rolling invalidated and requires execution time refresh, and the cursor has executed in this state.</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<p class="tablefootnote"><sup class="tablefootnote">Footnote&nbsp;1</sup></p>
+<p>This column is available starting with Oracle Database 12<span class="italic">c</span> Release 2 (12.2.0.1).</p>
+<div class="section">
+<div class="infoboxnotealso" id="GUID-2B9340D7-4AA8-4894-94C0-D5990F67BE75__GUID-2095D5C1-5A30-4C41-B58A-D4DFA2AD1000">
+<p class="notep1">See Also:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="q">"<a href="V-SQLTEXT.htm#GUID-72BB2F9E-A521-425C-89F0-5B4088B73C14">V$SQLTEXT</a>"</span></p>
+</li>
+<li>
+<p><a class="olink ARPLS055" target="_blank" href="../ARPLS/DBMS_SHARED_POOL.htm#ARPLS055"><span class="italic">Oracle Database PL/SQL Packages and Types Reference</span></a> for more information about the <code>DBMS_SHARED_POOL</code> package</p>
+</li>
+<li>
+<p><a class="olink ARPLS65239" target="_blank" href="../ARPLS/DBMS_APPLICATION_INFO.htm#ARPLS65239"><span class="italic">Oracle Database PL/SQL Packages and Types Reference</span></a> for more information about the <code>DBMS_APPLICATION_INFO.SET_MODULE</code> procedure</p>
+</li>
+<li>
+<p><a class="olink ARPLS65235" target="_blank" href="../ARPLS/DBMS_APPLICATION_INFO.htm#ARPLS65235"><span class="italic">Oracle Database PL/SQL Packages and Types Reference</span></a> for more information about the <code>DBMS_APPLICATION_INFO.SET_ACTION</code> procedure</p>
+</li>
+<li>
+<p><a class="olink ARPLS378" target="_blank" href="../ARPLS/DBMS_XPLAN.htm#ARPLS378"><span class="italic">Oracle Database PL/SQL Packages and Types Reference</span></a> for more information about the <code>DBMS_XPLAN</code> package</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="V-SPPARAMETER.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="V-SQL_BIND_CAPTURE.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+</body>
+</html>

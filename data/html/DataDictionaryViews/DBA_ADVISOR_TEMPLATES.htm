@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>DBA_ADVISOR_TEMPLATES</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="DBA_ADVISOR_TEMPLATES view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="DBA_ADVISOR_TASKS.htm" title="Previous" type="text/html" />
+<link rel="Next" href="DBA_ADVISOR_USAGE.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-B2B056AE-3B8E-45E0-9A23-C4FFF0A0BA95"></a> <span id="PAGE" style="display:none;">810/2822</span> <!-- End Header -->
+<a id="REFRN23356"></a>
+<h1 id="REFRN-GUID-B2B056AE-3B8E-45E0-9A23-C4FFF0A0BA95" class="sect1"><span class="enumeration_section">4.43</span> DBA_ADVISOR_TEMPLATES</h1>
+<div>
+<div class="section">
+<p><code>DBA_ADVISOR_TEMPLATES</code> displays information about all templates in the database.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Related View</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p><code>USER_ADVISOR_TEMPLATES</code> displays information about the templates owned by the current user. This view does not display the <code>OWNER</code> column.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-B2B056AE-3B8E-45E0-9A23-C4FFF0A0BA95__GUID-6EF528E1-B5D4-436C-BCA5-41626D54B3B4">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d757795e180">Column</th>
+<th class="cellalignment3905" id="d757795e183">Datatype</th>
+<th class="cellalignment3906" id="d757795e186">NULL</th>
+<th class="cellalignment3907" id="d757795e189">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d757795e194" headers="d757795e180">
+<p><code>OWNER</code></p>
+</td>
+<td class="cellalignment3905" headers="d757795e194 d757795e183">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d757795e194 d757795e186">&nbsp;</td>
+<td class="cellalignment3907" headers="d757795e194 d757795e189">
+<p>Owner of the task</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d757795e210" headers="d757795e180">
+<p><code>TASK_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d757795e210 d757795e183">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d757795e210 d757795e186">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d757795e210 d757795e189">
+<p>Unique identifier of the task</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d757795e226" headers="d757795e180">
+<p><code>TASK_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d757795e226 d757795e183">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d757795e226 d757795e186">&nbsp;</td>
+<td class="cellalignment3907" headers="d757795e226 d757795e189">
+<p>Name of the task</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d757795e241" headers="d757795e180">
+<p><code>DESCRIPTION</code></p>
+</td>
+<td class="cellalignment3905" headers="d757795e241 d757795e183">
+<p><code>VARCHAR2(256)</code></p>
+</td>
+<td class="cellalignment3906" headers="d757795e241 d757795e186">&nbsp;</td>
+<td class="cellalignment3907" headers="d757795e241 d757795e189">
+<p>User-supplied description of the task</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d757795e256" headers="d757795e180">
+<p><code>ADVISOR_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d757795e256 d757795e183">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d757795e256 d757795e186">&nbsp;</td>
+<td class="cellalignment3907" headers="d757795e256 d757795e189">
+<p>Advisor associated with the task</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d757795e272" headers="d757795e180">
+<p><code>CREATED</code></p>
+</td>
+<td class="cellalignment3905" headers="d757795e272 d757795e183">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3906" headers="d757795e272 d757795e186">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d757795e272 d757795e189">
+<p>Creation date of the task</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d757795e288" headers="d757795e180">
+<p><code>LAST_MODIFIED</code></p>
+</td>
+<td class="cellalignment3905" headers="d757795e288 d757795e183">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3906" headers="d757795e288 d757795e186">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d757795e288 d757795e189">
+<p>Date on which the task was last modified</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d757795e304" headers="d757795e180">
+<p><code>SOURCE</code></p>
+</td>
+<td class="cellalignment3905" headers="d757795e304 d757795e183">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d757795e304 d757795e186">&nbsp;</td>
+<td class="cellalignment3907" headers="d757795e304 d757795e189">
+<p>Optional task or template on which the template was based</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d757795e319" headers="d757795e180">
+<p><code>READ_ONLY</code></p>
+</td>
+<td class="cellalignment3905" headers="d757795e319 d757795e183">
+<p><code>VARCHAR2(5)</code></p>
+</td>
+<td class="cellalignment3906" headers="d757795e319 d757795e186">&nbsp;</td>
+<td class="cellalignment3907" headers="d757795e319 d757795e189">
+<p>Indicates whether the task can be modified or deleted (<code>TRUE</code>) or not (<code>FALSE</code>)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<div class="section">
+<div class="infoboxnotealso" id="GUID-B2B056AE-3B8E-45E0-9A23-C4FFF0A0BA95__GUID-981B9FC3-A024-4250-828E-6F957DC048A2">
+<p class="notep1">See Also:</p>
+<p><span class="q">"<a href="USER_ADVISOR_TEMPLATES.htm#GUID-A28F9226-5DA6-40DF-9410-08D98414922E">USER_ADVISOR_TEMPLATES</a>"</span></p>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="DBA_ADVISOR_TASKS.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="DBA_ADVISOR_USAGE.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>V$SHARED_POOL_RESERVED</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="V$SHARED_POOL_RESERVED view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="V-SHARED_POOL_ADVICE.htm" title="Previous" type="text/html" />
+<link rel="Next" href="V-SHARED_SERVER.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-0D80C0CF-76AC-4FD2-B906-4BA242905FBB"></a> <span id="PAGE" style="display:none;">2695/2822</span> <!-- End Header -->
+<script  >
+//<![CDATA[
+window.name='V-SHARED_POOL_RESERVED'
+//]]>
+</script> <script  >
+    function footdisplay(footnum,footnote) {
+    var msg = window.open('', 'NewWindow' + footnum,
+        'directories=no,height=120,location=no,menubar=no,resizable=yes,' +
+        'scrollbars=yes,status=no,toolbar=no,width=598');
+    msg.document.open('text/html');
+    msg.document.write('<!DOCTYPE html ');
+    msg.document.write('PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" ');
+
+    msg.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">');
+    msg.document.write('<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><title>');
+    msg.document.write('Footnote&amp;nbsp; ' + footnum);
+    msg.document.write('<\/title><meta http-equiv="Content-Type" ');
+    msg.document.write('content="text/html; charset=utf-8" />');
+    msg.document.write('');
+    msg.document.write('<style> <![CDATA[ ');
+    msg.document.write('h1 {text-align: center; font-size: 14pt;}');
+    msg.document.write('fieldset {border: none;}');
+    msg.document.write('form {text-align: center;}');
+    msg.document.write(' ]]\u003e <\/style>');
+    msg.document.write('<\/head><body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><h1>Footnote&nbsp; ' + footnum + '<\/h1><p>');
+    msg.document.write(footnote);
+    msg.document.write('<\/p><form action="" method="post"><fieldset>');
+    msg.document.write('<input type="button" value="OK" ');
+    msg.document.write('onclick="window.close();" />');
+    msg.document.write('<\/fieldset><\/form><\/body><\/html>');
+    msg.document.close();
+    msg.focus();
+}
+</script><noscript>
+<p>The script content on this page is for navigation purposes only and does not alter the content in any way.</p>
+</noscript><a id="REFRN30240"></a>
+<h1 id="REFRN-GUID-0D80C0CF-76AC-4FD2-B906-4BA242905FBB" class="sect1"><span class="enumeration_section">9.40</span> V$SHARED_POOL_RESERVED</h1>
+<div>
+<div class="section">
+<p><code>V$SHARED_POOL_RESERVED</code> displays statistics that help you tune the reserved pool and space within the shared pool.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-0D80C0CF-76AC-4FD2-B906-4BA242905FBB__GUID-012BAF07-A9A0-4DA7-8D2B-7924DE3477C0">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d2015171e168">Column</th>
+<th class="cellalignment3905" id="d2015171e171">Datatype</th>
+<th class="cellalignment3908" id="d2015171e174">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d2015171e179" headers="d2015171e168">
+<p><code>FREE_SPACE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2015171e179 d2015171e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2015171e179 d2015171e174">
+<p>Total amount of free space on the reserved list in bytes<a id="GUID-0D80C0CF-76AC-4FD2-B906-4BA242905FBB__BHCBGGBD" href="#GUID-0D80C0CF-76AC-4FD2-B906-4BA242905FBB__BHCBGGBD" onclick='footdisplay(1,"These columns are valid only if the initialization parameter SHARED_POOL_RESERVED_SIZE is set to a valid value. ")'><sup>Foot&nbsp;1</sup></a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2015171e197" headers="d2015171e168">
+<p><code>AVG_FREE_SIZE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2015171e197 d2015171e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2015171e197 d2015171e174">
+<p>Average size of the free memory on the reserved list in bytes<a id="fnsrc_d2015171e208" href="#fnsrc_d2015171e208" onclick='footdisplay(, \"These columns are valid only if the initialization parameter SHARED_POOL_RESERVED_SIZE is set to a valid value. ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2015171e211" headers="d2015171e168">
+<p><code>FREE_COUNT</code></p>
+</td>
+<td class="cellalignment3905" headers="d2015171e211 d2015171e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2015171e211 d2015171e174">
+<p>Number of free pieces of memory on the reserved list<a id="fnsrc_d2015171e222" href="#fnsrc_d2015171e222" onclick='footdisplay(, \"These columns are valid only if the initialization parameter SHARED_POOL_RESERVED_SIZE is set to a valid value. ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2015171e225" headers="d2015171e168">
+<p><code>MAX_FREE_SIZE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2015171e225 d2015171e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2015171e225 d2015171e174">
+<p>Size of the largest free piece of memory on the reserved list in bytes<a id="fnsrc_d2015171e236" href="#fnsrc_d2015171e236" onclick='footdisplay(, \"These columns are valid only if the initialization parameter SHARED_POOL_RESERVED_SIZE is set to a valid value. ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2015171e239" headers="d2015171e168">
+<p><code>USED_SPACE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2015171e239 d2015171e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2015171e239 d2015171e174">
+<p>Total amount of used memory on the reserved list in bytes<a id="fnsrc_d2015171e250" href="#fnsrc_d2015171e250" onclick='footdisplay(, \"These columns are valid only if the initialization parameter SHARED_POOL_RESERVED_SIZE is set to a valid value. ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2015171e253" headers="d2015171e168">
+<p><code>AVG_USED_SIZE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2015171e253 d2015171e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2015171e253 d2015171e174">
+<p>Average size of the used memory on the reserved list in bytes<a id="fnsrc_d2015171e264" href="#fnsrc_d2015171e264" onclick='footdisplay(, \"These columns are valid only if the initialization parameter SHARED_POOL_RESERVED_SIZE is set to a valid value. ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2015171e267" headers="d2015171e168">
+<p><code>USED_COUNT</code></p>
+</td>
+<td class="cellalignment3905" headers="d2015171e267 d2015171e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2015171e267 d2015171e174">
+<p>Number of used pieces of memory on the reserved list<a id="fnsrc_d2015171e278" href="#fnsrc_d2015171e278" onclick='footdisplay(, \"These columns are valid only if the initialization parameter SHARED_POOL_RESERVED_SIZE is set to a valid value. ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2015171e281" headers="d2015171e168">
+<p><code>MAX_USED_SIZE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2015171e281 d2015171e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2015171e281 d2015171e174">
+<p>Size of the largest used piece of memory on the reserved list in bytes<a id="fnsrc_d2015171e292" href="#fnsrc_d2015171e292" onclick='footdisplay(, \"These columns are valid only if the initialization parameter SHARED_POOL_RESERVED_SIZE is set to a valid value. ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2015171e295" headers="d2015171e168">
+<p><code>REQUESTS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2015171e295 d2015171e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2015171e295 d2015171e174">
+<p>Number of times that the reserved list was searched for a free piece of memory<a id="fnsrc_d2015171e306" href="#fnsrc_d2015171e306" onclick='footdisplay(, \"These columns are valid only if the initialization parameter SHARED_POOL_RESERVED_SIZE is set to a valid value. ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2015171e309" headers="d2015171e168">
+<p><code>REQUEST_MISSES</code></p>
+</td>
+<td class="cellalignment3905" headers="d2015171e309 d2015171e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2015171e309 d2015171e174">
+<p>Number of times the reserved list did not have a free piece of memory to satisfy the request, and started flushing objects from the LRU list<a id="fnsrc_d2015171e320" href="#fnsrc_d2015171e320" onclick='footdisplay(, \"These columns are valid only if the initialization parameter SHARED_POOL_RESERVED_SIZE is set to a valid value. ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2015171e323" headers="d2015171e168">
+<p><code>LAST_MISS_SIZE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2015171e323 d2015171e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2015171e323 d2015171e174">
+<p>Request size of the last request miss in bytes, when the reserved list did not have a free piece of memory to satisfy the request and started flushing objects from the LRU list<a id="fnsrc_d2015171e334" href="#fnsrc_d2015171e334" onclick='footdisplay(, \"These columns are valid only if the initialization parameter SHARED_POOL_RESERVED_SIZE is set to a valid value. ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2015171e338" headers="d2015171e168">
+<p><code>MAX_MISS_SIZE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2015171e338 d2015171e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2015171e338 d2015171e174">
+<p>Request size of the largest request miss in bytes, when the reserved list did not have a free piece of memory to satisfy the request and started flushing objects from the LRU list<a id="fnsrc_d2015171e349" href="#fnsrc_d2015171e349" onclick='footdisplay(, \"These columns are valid only if the initialization parameter SHARED_POOL_RESERVED_SIZE is set to a valid value. ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2015171e352" headers="d2015171e168">
+<p><code>REQUEST_FAILURES</code></p>
+</td>
+<td class="cellalignment3905" headers="d2015171e352 d2015171e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2015171e352 d2015171e174">
+<p>Number of times that no memory was found to satisfy a request. If an internal flush (used to free up memory) does not meet a memory need, then the error <code>ORA-04031</code> occurs.<a id="GUID-0D80C0CF-76AC-4FD2-B906-4BA242905FBB__BHCBGGBE" href="#GUID-0D80C0CF-76AC-4FD2-B906-4BA242905FBB__BHCBGGBE" onclick='footdisplay(2,"These columns contain values which are valid even if SHARED_POOL_RESERVED_SIZE is not set. ")'><sup>Foot&nbsp;2</sup></a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2015171e373" headers="d2015171e168">
+<p><code>LAST_FAILURE_SIZE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2015171e373 d2015171e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2015171e373 d2015171e174">
+<p>Request size of the last failed request in bytes. If an internal flush (used to free up memory) does not meet a memory need, then the error <code>ORA-04031</code> occurs.<a id="fnsrc_d2015171e387" href="#fnsrc_d2015171e387" onclick='footdisplay(, \"These columns contain values which are valid even if SHARED_POOL_RESERVED_SIZE is not set. ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2015171e390" headers="d2015171e168">
+<p><code>ABORTED_REQUEST_THRESHOLD</code></p>
+</td>
+<td class="cellalignment3905" headers="d2015171e390 d2015171e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2015171e390 d2015171e174">
+<p>Minimum size of a request in bytes which signals an <code>ORA-04031</code> error without flushing objects<a id="fnsrc_d2015171e404" href="#fnsrc_d2015171e404" onclick='footdisplay(, \"These columns contain values which are valid even if SHARED_POOL_RESERVED_SIZE is not set. ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2015171e407" headers="d2015171e168">
+<p><code>ABORTED_REQUESTS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2015171e407 d2015171e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2015171e407 d2015171e174">
+<p>Number of requests that signalled an <code>ORA-04031</code> error without flushing objects<a id="fnsrc_d2015171e421" href="#fnsrc_d2015171e421" onclick='footdisplay(, \"These columns contain values which are valid even if SHARED_POOL_RESERVED_SIZE is not set. ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2015171e424" headers="d2015171e168">
+<p><code>LAST_ABORTED_SIZE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2015171e424 d2015171e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2015171e424 d2015171e174">
+<p>Last size of the request in bytes that returned an <code>ORA-04031</code> error without flushing objects from the LRU list<a id="fnsrc_d2015171e438" href="#fnsrc_d2015171e438" onclick='footdisplay(, \"These columns contain values which are valid even if SHARED_POOL_RESERVED_SIZE is not set. ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2015171e441" headers="d2015171e168">
+<p><code>CON_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2015171e441 d2015171e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2015171e441 d2015171e174">
+<p>The ID of the container to which the data pertains. Possible values include:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>0</code>: This value is used for rows containing data that pertain to the entire CDB. This value is also used for rows in non-CDBs.</p>
+</li>
+<li>
+<p><code>1</code>: This value is used for rows containing data that pertain to only the root</p>
+</li>
+<li>
+<p><span class="italic">n</span>: Where <span class="italic">n</span> is the applicable container ID for the rows containing data</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<p class="tablefootnote"><sup class="tablefootnote">Footnote&nbsp;1</sup></p>
+<p>These columns are valid only if the initialization parameter <code>SHARED_POOL_RESERVED_SIZE</code> is set to a valid value.</p>
+<p class="tablefootnote"><sup class="tablefootnote">Footnote&nbsp;2</sup></p>
+<p>These columns contain values which are valid even if <code>SHARED_POOL_RESERVED_SIZE</code> is not set.</p>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="V-SHARED_POOL_ADVICE.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="V-SHARED_SERVER.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+</body>
+</html>

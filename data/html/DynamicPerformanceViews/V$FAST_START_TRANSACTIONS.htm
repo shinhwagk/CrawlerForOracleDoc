@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>V$FAST_START_TRANSACTIONS</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="V$FAST_START_TRANSACTIONS view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="V-FAST_START_SERVERS.htm" title="Previous" type="text/html" />
+<link rel="Next" href="V-FILE_CACHE_TRANSFER.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-2B891169-13AA-4468-B191-E5D83C97FD8C"></a> <span id="PAGE" style="display:none;">2397/2822</span> <!-- End Header -->
+<a id="REFRN30083"></a>
+<h1 id="REFRN-GUID-2B891169-13AA-4468-B191-E5D83C97FD8C" class="sect1"><span class="enumeration_section">7.208</span> V$FAST_START_TRANSACTIONS</h1>
+<div>
+<div class="section">
+<p><code>V$FAST_START_TRANSACTIONS</code> displays information about the progress of the transactions that Oracle is recovering.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-2B891169-13AA-4468-B191-E5D83C97FD8C__GUID-D544164B-5F50-49EB-87B3-FBDEE8637B85">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d1707726e168">Column</th>
+<th class="cellalignment3905" id="d1707726e171">Datatype</th>
+<th class="cellalignment3908" id="d1707726e174">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d1707726e179" headers="d1707726e168">
+<p><code>USN</code></p>
+</td>
+<td class="cellalignment3905" headers="d1707726e179 d1707726e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1707726e179 d1707726e174">
+<p>Undo segment number of the transaction</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1707726e191" headers="d1707726e168">
+<p><code>SLT</code></p>
+</td>
+<td class="cellalignment3905" headers="d1707726e191 d1707726e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1707726e191 d1707726e174">
+<p>Slot within the rollback segment</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1707726e203" headers="d1707726e168">
+<p><code>SEQ</code></p>
+</td>
+<td class="cellalignment3905" headers="d1707726e203 d1707726e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1707726e203 d1707726e174">
+<p>Incarnation number of the slot</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1707726e215" headers="d1707726e168">
+<p><code>STATE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1707726e215 d1707726e171">
+<p><code>VARCHAR2(16)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1707726e215 d1707726e174">
+<p>State of the transaction (may be <code>TO BE RECOVERED</code>, <code>RECOVERED</code>, or <code>RECOVERING</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1707726e236" headers="d1707726e168">
+<p><code>UNDOBLOCKSDONE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1707726e236 d1707726e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1707726e236 d1707726e174">
+<p>Number of undo blocks completed on the transaction</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1707726e248" headers="d1707726e168">
+<p><code>UNDOBLOCKSTOTAL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1707726e248 d1707726e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1707726e248 d1707726e174">
+<p>Total number of undo blocks that need recovery</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1707726e260" headers="d1707726e168">
+<p><code>PID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1707726e260 d1707726e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1707726e260 d1707726e174">
+<p>ID of the current server it has been assigned to</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1707726e272" headers="d1707726e168">
+<p><code>CPUTIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1707726e272 d1707726e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1707726e272 d1707726e174">
+<p>Time for which recovery has progressed (in seconds)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1707726e284" headers="d1707726e168">
+<p><code>PARENTUSN</code></p>
+</td>
+<td class="cellalignment3905" headers="d1707726e284 d1707726e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1707726e284 d1707726e174">
+<p>Undo segment number of the parent transaction in PDML</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1707726e296" headers="d1707726e168">
+<p><code>PARENTSLT</code></p>
+</td>
+<td class="cellalignment3905" headers="d1707726e296 d1707726e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1707726e296 d1707726e174">
+<p>Slot of the parent transaction in PDML</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1707726e308" headers="d1707726e168">
+<p><code>PARENTSEQ</code></p>
+</td>
+<td class="cellalignment3905" headers="d1707726e308 d1707726e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1707726e308 d1707726e174">
+<p>Sequence number of the parent transaction in PDML</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1707726e321" headers="d1707726e168">
+<p><code>XID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1707726e321 d1707726e171">
+<p><code>RAW(8)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1707726e321 d1707726e174">
+<p>Transaction ID</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1707726e333" headers="d1707726e168">
+<p><code>PXID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1707726e333 d1707726e171">
+<p><code>RAW(8)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1707726e333 d1707726e174">
+<p>Parent transaction ID</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1707726e345" headers="d1707726e168">
+<p><code>RCVSERVERS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1707726e345 d1707726e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1707726e345 d1707726e174">
+<p>Number of servers used in the last recovery</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1707726e357" headers="d1707726e168">
+<p><code>CON_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1707726e357 d1707726e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1707726e357 d1707726e174">
+<p>The ID of the container to which the data pertains. Possible values include:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>0</code>: This value is used for rows containing data that pertain to the entire CDB. This value is also used for rows in non-CDBs.</p>
+</li>
+<li>
+<p><code>1</code>: This value is used for rows containing data that pertain to only the root</p>
+</li>
+<li>
+<p><span class="italic">n</span>: Where <span class="italic">n</span> is the applicable container ID for the rows containing data</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<div class="section"></div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="V-FAST_START_SERVERS.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="V-FILE_CACHE_TRANSFER.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

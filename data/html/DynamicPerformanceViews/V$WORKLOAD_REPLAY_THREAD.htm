@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>V$WORKLOAD_REPLAY_THREAD</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="V$WORKLOAD_REPLAY_THREAD view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="V-WALLET.htm" title="Previous" type="text/html" />
+<link rel="Next" href="V-XML_AUDIT_TRAIL.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-538612F6-C0E0-41BA-BF11-9C70C677BEFC"></a> <span id="PAGE" style="display:none;">2789/2822</span> <!-- End Header -->
+<script  >
+//<![CDATA[
+window.name='V-WORKLOAD_REPLAY_THREAD'
+//]]>
+</script> <script  >
+    function footdisplay(footnum,footnote) {
+    var msg = window.open('', 'NewWindow' + footnum,
+        'directories=no,height=120,location=no,menubar=no,resizable=yes,' +
+        'scrollbars=yes,status=no,toolbar=no,width=598');
+    msg.document.open('text/html');
+    msg.document.write('<!DOCTYPE html ');
+    msg.document.write('PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" ');
+
+    msg.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">');
+    msg.document.write('<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><title>');
+    msg.document.write('Footnote&amp;nbsp; ' + footnum);
+    msg.document.write('<\/title><meta http-equiv="Content-Type" ');
+    msg.document.write('content="text/html; charset=utf-8" />');
+    msg.document.write('');
+    msg.document.write('<style> <![CDATA[ ');
+    msg.document.write('h1 {text-align: center; font-size: 14pt;}');
+    msg.document.write('fieldset {border: none;}');
+    msg.document.write('form {text-align: center;}');
+    msg.document.write(' ]]\u003e <\/style>');
+    msg.document.write('<\/head><body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><h1>Footnote&nbsp; ' + footnum + '<\/h1><p>');
+    msg.document.write(footnote);
+    msg.document.write('<\/p><form action="" method="post"><fieldset>');
+    msg.document.write('<input type="button" value="OK" ');
+    msg.document.write('onclick="window.close();" />');
+    msg.document.write('<\/fieldset><\/form><\/body><\/html>');
+    msg.document.close();
+    msg.focus();
+}
+</script><noscript>
+<p>The script content on this page is for navigation purposes only and does not alter the content in any way.</p>
+</noscript><a id="REFRN30481"></a>
+<h1 id="REFRN-GUID-538612F6-C0E0-41BA-BF11-9C70C677BEFC" class="sect1"><span class="enumeration_section">9.134</span> V$WORKLOAD_REPLAY_THREAD</h1>
+<div>
+<div class="section">
+<p><code>V$WORKLOAD_REPLAY_THREAD</code> displays information for all the different types of replay sessions.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-538612F6-C0E0-41BA-BF11-9C70C677BEFC__GUID-879C4184-2293-494F-9C62-7C9BAA2397A6">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d2147704e168">Column</th>
+<th class="cellalignment3905" id="d2147704e171">Datatype</th>
+<th class="cellalignment3908" id="d2147704e174">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d2147704e179" headers="d2147704e168">
+<p><code>CLOCK</code></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e179 d2147704e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e179 d2147704e174">
+<p>Current simulated SCN based on the SCN recorded at capture time</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2147704e191" headers="d2147704e168">
+<p><code>NEXT_TICKER</code></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e191 d2147704e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e191 d2147704e174">
+<p>Next stream ID that will increment the <code>CLOCK</code> after a commit action</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2147704e206" headers="d2147704e168">
+<p><code>SID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e206 d2147704e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e206 d2147704e174">
+<p>Session ID of the replay session</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2147704e218" headers="d2147704e168">
+<p><code>SERIAL#</code></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e218 d2147704e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e218 d2147704e174">
+<p>Session serial number of the replay session</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2147704e230" headers="d2147704e168">
+<p><code>SPID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e230 d2147704e171">
+<p><code>VARCHAR2(24)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e230 d2147704e174">
+<p>The server process ID of the replay session</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2147704e242" headers="d2147704e168">
+<p><code>LOGON_USER</code></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e242 d2147704e171">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e242 d2147704e174">
+<p>Logon username of the replay session</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2147704e254" headers="d2147704e168">
+<p><code>LOGON_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e254 d2147704e171">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e254 d2147704e174">
+<p>Logon time of the replay session</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2147704e266" headers="d2147704e168">
+<p><code>EVENT</code></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e266 d2147704e171">
+<p><code>VARCHAR2(64)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e266 d2147704e174">
+<p>Event name</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2147704e278" headers="d2147704e168">
+<p><code>EVENT_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e278 d2147704e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e278 d2147704e174">
+<p>Event identifier</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2147704e290" headers="d2147704e168">
+<p><code>EVENT#</code></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e290 d2147704e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e290 d2147704e174">
+<p>Event operation code</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2147704e302" headers="d2147704e168">
+<p><code>P1TEXT</code></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e302 d2147704e171">
+<p><code>VARCHAR2(64)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e302 d2147704e174">
+<p>Text for event parameter 1</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2147704e315" headers="d2147704e168">
+<p><code>P1</code></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e315 d2147704e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e315 d2147704e174">
+<p>Value of event parameter 1</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2147704e327" headers="d2147704e168">
+<p><code>P2TEXT</code></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e327 d2147704e171">
+<p><code>VARCHAR2(64)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e327 d2147704e174">
+<p>Text for event parameter 2</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2147704e339" headers="d2147704e168">
+<p><code>P2</code></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e339 d2147704e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e339 d2147704e174">
+<p>Value of event parameter 2</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2147704e351" headers="d2147704e168">
+<p><code>P3TEXT</code></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e351 d2147704e171">
+<p><code>VARCHAR2(64)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e351 d2147704e174">
+<p>Text for event parameter 3</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2147704e363" headers="d2147704e168">
+<p><code>P3</code></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e363 d2147704e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e363 d2147704e174">
+<p>Value of event parameter 3</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2147704e375" headers="d2147704e168">
+<p><code>WAIT_FOR_SCN</code></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e375 d2147704e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e375 d2147704e174">
+<p>The captured SCN for which the current user call should wait</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2147704e387" headers="d2147704e168">
+<p><code>FILE_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e387 d2147704e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e387 d2147704e174">
+<p>The stream ID that is being replayed</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2147704e399" headers="d2147704e168">
+<p><code>CALL_COUNTER</code></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e399 d2147704e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e399 d2147704e174">
+<p>The call counter of the user call that is being replayed</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2147704e411" headers="d2147704e168">
+<p><code>DEPENDENT_SCN</code></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e411 d2147704e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e411 d2147704e174">
+<p>The dependent SCN, captured to order the commit actions using block-level dependencies</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2147704e423" headers="d2147704e168">
+<p><code>STATEMENT_SCN</code></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e423 d2147704e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e423 d2147704e174">
+<p>Statement SCN</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2147704e435" headers="d2147704e168">
+<p><code>COMMIT_WAIT_SCN</code></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e435 d2147704e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e435 d2147704e174">
+<p>The (maximum) SCN that the current commit should wait for</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2147704e448" headers="d2147704e168">
+<p><code>POST_COMMIT_SCN</code></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e448 d2147704e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e448 d2147704e174">
+<p>The next SCN after the current commit</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2147704e460" headers="d2147704e168">
+<p><code>ACTION_TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e460 d2147704e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e460 d2147704e174">
+<p>The type of commits. The possible values are: <code>COMMIT</code>, <code>ROLLBACK</code>, <code>FAKED_</code><code>COMMIT</code>, and <code>NULL</code>. A value of <code>NULL</code> means it is not a commit operation.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2147704e489" headers="d2147704e168">
+<p><code>SESSION_TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e489 d2147704e171">
+<p><code>VARCHAR2(13)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e489 d2147704e174">
+<p>The type of replay session:</p>
+<p><code>LOGON</code></p>
+<p><code>ADMIN</code></p>
+<p><code>DISPATCHER</code></p>
+<p><code>REPLAY</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2147704e513" headers="d2147704e168">
+<p><code>WRC_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e513 d2147704e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e513 d2147704e174">
+<p>Unique replay client ID assigned by the server to all participating replay clients when replay starts</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2147704e525" headers="d2147704e168">
+<p><code>SCHEDULE_CAP_ID</code><a id="GUID-538612F6-C0E0-41BA-BF11-9C70C677BEFC__THISCOLUMNISAVAILABLESTARTINGWITHOR-C032426B" href="#GUID-538612F6-C0E0-41BA-BF11-9C70C677BEFC__THISCOLUMNISAVAILABLESTARTINGWITHOR-C032426B" onclick='footdisplay(1,"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Foot&nbsp;1</sup></a><a id="fnsrc_d2147704e535" href="#fnsrc_d2147704e535" onclick='footdisplay(, \"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e525 d2147704e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e525 d2147704e174">
+<p>An unique identifier for a workload capture added to a replay schedule. A value of <code>0</code> is used for a non-consolidated replay.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2147704e548" headers="d2147704e168">
+<p><code>FILE_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e548 d2147704e171">
+<p><code>VARCHAR2(31)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e548 d2147704e174">
+<p>File name of the captured stream</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2147704e560" headers="d2147704e168">
+<p><code>SKIP_IT</code></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e560 d2147704e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e560 d2147704e174">
+<p>Whether or not the current replayed user call is skipped or not</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2147704e572" headers="d2147704e168">
+<p><code>DIRTY_BUFFERS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e572 d2147704e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e572 d2147704e174">
+<p>Reserved for internal use</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2147704e584" headers="d2147704e168">
+<p><code>DBTIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e584 d2147704e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e584 d2147704e174">
+<p>Accumulated database time for the replay session</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2147704e596" headers="d2147704e168">
+<p><code>NETWORK_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e596 d2147704e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e596 d2147704e174">
+<p>Accumulated network time for the replay session</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2147704e608" headers="d2147704e168">
+<p><code>THINK_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e608 d2147704e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e608 d2147704e174">
+<p>Accumulated think time for the replay session</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2147704e621" headers="d2147704e168">
+<p><code>TIME_GAIN</code></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e621 d2147704e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e621 d2147704e174">
+<p>If nonzero, the accumulated time in macro seconds indicating how fast the replay is</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2147704e633" headers="d2147704e168">
+<p><code>TIME_LOSS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e633 d2147704e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e633 d2147704e174">
+<p>If nonzero, the accumulated time in macro seconds indicating how slow the replay is</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2147704e645" headers="d2147704e168">
+<p><code>USER_CALLS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e645 d2147704e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e645 d2147704e174">
+<p>Total number of user calls</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2147704e657" headers="d2147704e168">
+<p><code>PLSQL_CALLS</code><a id="fnsrc_d2147704e661" href="#fnsrc_d2147704e661" onclick='footdisplay(, \"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e657 d2147704e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e657 d2147704e174">
+<p>Total number of PL/SQL calls recorded in the workload capture</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2147704e671" headers="d2147704e168">
+<p><code>PLSQL_SUBCALLS</code><a id="fnsrc_d2147704e675" href="#fnsrc_d2147704e675" onclick='footdisplay(, \"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e671 d2147704e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e671 d2147704e174">
+<p>Total number of calls recorded in the workload capture for SQL executed from PL/SQL</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2147704e685" headers="d2147704e168">
+<p><code>PLSQL_DBTIME</code><a id="fnsrc_d2147704e689" href="#fnsrc_d2147704e689" onclick='footdisplay(, \"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e685 d2147704e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e685 d2147704e174">
+<p>Total amount of database time in microseconds from PL/SQL calls that have been recorded in the workload capture</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2147704e699" headers="d2147704e168">
+<p><code>CLIENT_OS_USER</code></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e699 d2147704e171">
+<p><code>VARCHAR2(15)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e699 d2147704e174">
+<p>Operating system username of the replay client</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2147704e711" headers="d2147704e168">
+<p><code>CLIENT_HOST</code></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e711 d2147704e171">
+<p><code>VARCHAR2(64)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e711 d2147704e174">
+<p>Host name of the replay client</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2147704e723" headers="d2147704e168">
+<p><code>CLIENT_PID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e723 d2147704e171">
+<p><code>VARCHAR2(24)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e723 d2147704e174">
+<p>Process ID of the replay client</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2147704e735" headers="d2147704e168">
+<p><code>PROGRAM</code></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e735 d2147704e171">
+<p><code>VARCHAR2(48)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e735 d2147704e174">
+<p>Program name of the replay client</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2147704e747" headers="d2147704e168">
+<p><code>CAPTURE_ELAPSED_TIME</code><a id="fnsrc_d2147704e751" href="#fnsrc_d2147704e751" onclick='footdisplay(, \"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e747 d2147704e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e747 d2147704e174">
+<p>Total amount of elapsed time of a session since capture starts (in seconds)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2147704e762" headers="d2147704e168">
+<p><code>REPLAY_ELAPSED_TIME</code><a id="fnsrc_d2147704e766" href="#fnsrc_d2147704e766" onclick='footdisplay(, \"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e762 d2147704e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e762 d2147704e174">
+<p>Total amount of elapsed time of a session since replay starts (in seconds)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2147704e776" headers="d2147704e168">
+<p><code>CON_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2147704e776 d2147704e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2147704e776 d2147704e174">
+<p>The ID of the container to which the data pertains. Possible values include:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>0</code>: This value is used for rows containing data that pertain to the entire CDB. This value is also used for rows in non-CDBs.</p>
+</li>
+<li>
+<p><code>1</code>: This value is used for rows containing data that pertain to only the root</p>
+</li>
+<li>
+<p><span class="italic">n</span>: Where <span class="italic">n</span> is the applicable container ID for the rows containing data</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<p class="tablefootnote"><sup class="tablefootnote">Footnote&nbsp;1</sup></p>
+<p>This column is available starting with Oracle Database 12<span class="italic">c</span> Release 2 (12.2.0.1).</p>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="V-WALLET.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="V-XML_AUDIT_TRAIL.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+</body>
+</html>

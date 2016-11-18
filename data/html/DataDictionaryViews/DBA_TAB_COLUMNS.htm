@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>DBA_TAB_COLUMNS</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="DBA_TAB_COLUMNS view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="DBA_TAB_COLS.htm" title="Previous" type="text/html" />
+<link rel="Next" href="DBA_TAB_COMMENTS.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-91F945AE-5778-45A6-A07E-775A006A9AA1"></a> <span id="PAGE" style="display:none;">1524/2822</span> <!-- End Header -->
+<script  >
+//<![CDATA[
+window.name='DBA_TAB_COLUMNS'
+//]]>
+</script> <script  >
+    function footdisplay(footnum,footnote) {
+    var msg = window.open('', 'NewWindow' + footnum,
+        'directories=no,height=120,location=no,menubar=no,resizable=yes,' +
+        'scrollbars=yes,status=no,toolbar=no,width=598');
+    msg.document.open('text/html');
+    msg.document.write('<!DOCTYPE html ');
+    msg.document.write('PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" ');
+
+    msg.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">');
+    msg.document.write('<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><title>');
+    msg.document.write('Footnote&amp;nbsp; ' + footnum);
+    msg.document.write('<\/title><meta http-equiv="Content-Type" ');
+    msg.document.write('content="text/html; charset=utf-8" />');
+    msg.document.write('');
+    msg.document.write('<style> <![CDATA[ ');
+    msg.document.write('h1 {text-align: center; font-size: 14pt;}');
+    msg.document.write('fieldset {border: none;}');
+    msg.document.write('form {text-align: center;}');
+    msg.document.write(' ]]\u003e <\/style>');
+    msg.document.write('<\/head><body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><h1>Footnote&nbsp; ' + footnum + '<\/h1><p>');
+    msg.document.write(footnote);
+    msg.document.write('<\/p><form action="" method="post"><fieldset>');
+    msg.document.write('<input type="button" value="OK" ');
+    msg.document.write('onclick="window.close();" />');
+    msg.document.write('<\/fieldset><\/form><\/body><\/html>');
+    msg.document.close();
+    msg.focus();
+}
+</script><noscript>
+<p>The script content on this page is for navigation purposes only and does not alter the content in any way.</p>
+</noscript><a id="REFRN23277"></a>
+<h1 id="REFRN-GUID-91F945AE-5778-45A6-A07E-775A006A9AA1" class="sect1"><span class="enumeration_section">6.42</span> DBA_TAB_COLUMNS</h1>
+<div>
+<div class="section">
+<p><a id="d1281630e156" class="indexterm-anchor"></a><code>DBA_TAB_COLUMNS</code> describes the columns of all tables, views, and clusters in the database. Its columns are the same as those in <span class="q">"<a href="ALL_TAB_COLUMNS.htm#GUID-F218205C-7D76-4A83-8691-BFD2AD372B63">ALL_TAB_COLUMNS</a>"</span>, except for <code>SENSITIVE_COLUMN</code>. To gather statistics for this view, use the <code>DBMS_STATS</code> package.</p>
+<p>This view filters out system-generated hidden columns and invisible columns, which are user-generated hidden columns. The <code>DBA_TAB_COLS</code> view does not filter out hidden columns and invisible columns.</p>
+<div class="infoboxnotealso" id="GUID-91F945AE-5778-45A6-A07E-775A006A9AA1__GUID-F93D1DE9-680D-4BF9-A834-BB1F4FC31E69">
+<p class="notep1">See Also:</p>
+<p>For more information about invisible columns:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="q">"<a href="DBA_TAB_COLS.htm#GUID-857C32FD-AE30-4AB9-811B-AC3A7B91A04D">DBA_TAB_COLS</a>"</span></p>
+</li>
+<li>
+<p><a class="olink ADMIN13866" target="_blank" href="../ADMIN/managing-tables.htm#ADMIN13866"><span class="italic">Oracle Database Administrator's Guide</span></a></p>
+</li>
+</ul>
+</div>
+<p>Columns marked with an asterisk (*) in the table below remain for backward compatibility with Oracle7. This information is now in the <code>[TAB|PART]_COL_STATISTICS</code> views.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-91F945AE-5778-45A6-A07E-775A006A9AA1__GUID-531402FC-9BC6-4435-B0A4-AB724F3324A9">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d1281630e206">Column</th>
+<th class="cellalignment3905" id="d1281630e209">Datatype</th>
+<th class="cellalignment3906" id="d1281630e212">NULL</th>
+<th class="cellalignment3907" id="d1281630e215">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d1281630e220" headers="d1281630e206">
+<p><code>OWNER</code></p>
+</td>
+<td class="cellalignment3905" headers="d1281630e220 d1281630e209">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1281630e220 d1281630e212">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1281630e220 d1281630e215">
+<p>Owner of the table, view, or cluster</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1281630e236" headers="d1281630e206">
+<p><code>TABLE_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1281630e236 d1281630e209">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1281630e236 d1281630e212">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1281630e236 d1281630e215">
+<p>Name of the table, view, or cluster</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1281630e252" headers="d1281630e206">
+<p><code>COLUMN_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1281630e252 d1281630e209">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1281630e252 d1281630e212">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1281630e252 d1281630e215">
+<p>Column name</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1281630e268" headers="d1281630e206">
+<p><code>DATA_TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1281630e268 d1281630e209">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1281630e268 d1281630e212">&nbsp;</td>
+<td class="cellalignment3907" headers="d1281630e268 d1281630e215">
+<p>Data type of the column</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1281630e283" headers="d1281630e206">
+<p><code>DATA_TYPE_MOD</code></p>
+</td>
+<td class="cellalignment3905" headers="d1281630e283 d1281630e209">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1281630e283 d1281630e212">&nbsp;</td>
+<td class="cellalignment3907" headers="d1281630e283 d1281630e215">
+<p>Data type modifier of the column</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1281630e298" headers="d1281630e206">
+<p><code>DATA_TYPE_OWNER</code></p>
+</td>
+<td class="cellalignment3905" headers="d1281630e298 d1281630e209">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1281630e298 d1281630e212">&nbsp;</td>
+<td class="cellalignment3907" headers="d1281630e298 d1281630e215">
+<p>Owner of the data type of the column</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1281630e313" headers="d1281630e206">
+<p><code>DATA_LENGTH</code></p>
+</td>
+<td class="cellalignment3905" headers="d1281630e313 d1281630e209">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1281630e313 d1281630e212">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1281630e313 d1281630e215">
+<p>Length of the column (in bytes)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1281630e329" headers="d1281630e206">
+<p><code>DATA_PRECISION</code></p>
+</td>
+<td class="cellalignment3905" headers="d1281630e329 d1281630e209">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1281630e329 d1281630e212">&nbsp;</td>
+<td class="cellalignment3907" headers="d1281630e329 d1281630e215">
+<p>Decimal precision for <code>NUMBER</code> data type; binary precision for <code>FLOAT</code> data type; NULL for all other data types</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1281630e350" headers="d1281630e206">
+<p><code>DATA_SCALE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1281630e350 d1281630e209">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1281630e350 d1281630e212">&nbsp;</td>
+<td class="cellalignment3907" headers="d1281630e350 d1281630e215">
+<p>Digits to the right of the decimal point in a number</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1281630e365" headers="d1281630e206">
+<p><code>NULLABLE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1281630e365 d1281630e209">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1281630e365 d1281630e212">&nbsp;</td>
+<td class="cellalignment3907" headers="d1281630e365 d1281630e215">
+<p>Indicates whether a column allows NULLs. The value is <code>N</code> if there is a <code>NOT NULL</code> constraint on the column or if the column is part of a <code>PRIMARY KEY.</code> The constraint should be in an <code>ENABLE VALIDATE</code> state.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1281630e392" headers="d1281630e206">
+<p><code>COLUMN_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1281630e392 d1281630e209">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1281630e392 d1281630e212">&nbsp;</td>
+<td class="cellalignment3907" headers="d1281630e392 d1281630e215">
+<p>Sequence number of the column as created</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1281630e409" headers="d1281630e206">
+<p><code>DEFAULT_LENGTH</code></p>
+</td>
+<td class="cellalignment3905" headers="d1281630e409 d1281630e209">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1281630e409 d1281630e212">&nbsp;</td>
+<td class="cellalignment3907" headers="d1281630e409 d1281630e215">
+<p>Length of the default value for the column</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1281630e424" headers="d1281630e206">
+<p><code>DATA_DEFAULT</code></p>
+</td>
+<td class="cellalignment3905" headers="d1281630e424 d1281630e209">
+<p><code>LONG</code></p>
+</td>
+<td class="cellalignment3906" headers="d1281630e424 d1281630e212">&nbsp;</td>
+<td class="cellalignment3907" headers="d1281630e424 d1281630e215">
+<p>Default value for the column</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1281630e439" headers="d1281630e206">
+<p><code>NUM_DISTINCT*</code></p>
+</td>
+<td class="cellalignment3905" headers="d1281630e439 d1281630e209">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1281630e439 d1281630e212">&nbsp;</td>
+<td class="cellalignment3907" headers="d1281630e439 d1281630e215">
+<p>Number of distinct values in the column</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1281630e454" headers="d1281630e206">
+<p><code>LOW_VALUE*</code></p>
+</td>
+<td class="cellalignment3905" headers="d1281630e454 d1281630e209">
+<p><code>RAW(1000)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1281630e454 d1281630e212">&nbsp;</td>
+<td class="cellalignment3907" headers="d1281630e454 d1281630e215">
+<p>Low value in the column</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1281630e469" headers="d1281630e206">
+<p><code>HIGH_VALUE*</code></p>
+</td>
+<td class="cellalignment3905" headers="d1281630e469 d1281630e209">
+<p><code>RAW(1000)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1281630e469 d1281630e212">&nbsp;</td>
+<td class="cellalignment3907" headers="d1281630e469 d1281630e215">
+<p>High value in the column</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1281630e484" headers="d1281630e206">
+<p><code>DENSITY*</code></p>
+</td>
+<td class="cellalignment3905" headers="d1281630e484 d1281630e209">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1281630e484 d1281630e212">&nbsp;</td>
+<td class="cellalignment3907" headers="d1281630e484 d1281630e215">
+<p>If a histogram is available on <code>COLUMN_NAME</code>, then this column displays the selectivity of a value that spans fewer than 2 endpoints in the histogram. It does not represent the selectivity of values that span 2 or more endpoints.</p>
+<p>If a histogram is not available on <code>COLUMN_NAME</code>, then the value of this column is <code>1</code>/<code>NUM_DISTINCT</code>.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1281630e513" headers="d1281630e206">
+<p><code>NUM_NULLS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1281630e513 d1281630e209">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1281630e513 d1281630e212">&nbsp;</td>
+<td class="cellalignment3907" headers="d1281630e513 d1281630e215">
+<p>Number of NULLs in the column</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1281630e528" headers="d1281630e206">
+<p><code>NUM_BUCKETS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1281630e528 d1281630e209">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1281630e528 d1281630e212">&nbsp;</td>
+<td class="cellalignment3907" headers="d1281630e528 d1281630e215">
+<p>Number of buckets in the histogram for the column</p>
+<p><span class="bold">Note:</span> The number of buckets in a histogram is specified in the <code>SIZE</code> parameter of the <code>ANALYZE</code> SQL statement. However, Oracle Database does not create a histogram with more buckets than the number of rows in the sample. Also, if the sample contains any values that are very repetitious, Oracle Database creates the specified number of buckets, but the value indicated by this column may be smaller because of an internal compression algorithm.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1281630e553" headers="d1281630e206">
+<p><code>LAST_ANALYZED</code></p>
+</td>
+<td class="cellalignment3905" headers="d1281630e553 d1281630e209">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3906" headers="d1281630e553 d1281630e212">&nbsp;</td>
+<td class="cellalignment3907" headers="d1281630e553 d1281630e215">
+<p>Date on which this column was most recently analyzed</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1281630e568" headers="d1281630e206">
+<p><code>SAMPLE_SIZE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1281630e568 d1281630e209">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1281630e568 d1281630e212">&nbsp;</td>
+<td class="cellalignment3907" headers="d1281630e568 d1281630e215">
+<p>Sample size used in analyzing this column</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1281630e583" headers="d1281630e206">
+<p><code>CHARACTER_SET_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1281630e583 d1281630e209">
+<p><code>VARCHAR2(44)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1281630e583 d1281630e212">&nbsp;</td>
+<td class="cellalignment3907" headers="d1281630e583 d1281630e215">
+<p>Name of the character set:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>CHAR_CS</code></p>
+</li>
+<li>
+<p><code>NCHAR_CS</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1281630e608" headers="d1281630e206">
+<p><code>CHAR_COL_DECL_LENGTH</code></p>
+</td>
+<td class="cellalignment3905" headers="d1281630e608 d1281630e209">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1281630e608 d1281630e212">&nbsp;</td>
+<td class="cellalignment3907" headers="d1281630e608 d1281630e215">
+<p>Declaration length of the character type column</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1281630e623" headers="d1281630e206">
+<p><code>GLOBAL_STATS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1281630e623 d1281630e209">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1281630e623 d1281630e212">&nbsp;</td>
+<td class="cellalignment3907" headers="d1281630e623 d1281630e215">
+<p><code>GLOBAL_STATS</code> will be <code>YES</code> if statistics are gathered or incrementally maintained, otherwise it will be <code>NO</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1281630e645" headers="d1281630e206">
+<p><code>USER_STATS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1281630e645 d1281630e209">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1281630e645 d1281630e212">&nbsp;</td>
+<td class="cellalignment3907" headers="d1281630e645 d1281630e215">
+<p>Indicates whether statistics were entered directly by the user (<code>YES</code>) or not (<code>NO</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1281630e666" headers="d1281630e206">
+<p><code>AVG_COL_LEN</code></p>
+</td>
+<td class="cellalignment3905" headers="d1281630e666 d1281630e209">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1281630e666 d1281630e212">&nbsp;</td>
+<td class="cellalignment3907" headers="d1281630e666 d1281630e215">
+<p>Average length of the column (in bytes)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1281630e681" headers="d1281630e206">
+<p><code>CHAR_LENGTH</code></p>
+</td>
+<td class="cellalignment3905" headers="d1281630e681 d1281630e209">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1281630e681 d1281630e212">&nbsp;</td>
+<td class="cellalignment3907" headers="d1281630e681 d1281630e215">
+<p>Displays the length of the column in characters. This value only applies to the following data types:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>CHAR</code></p>
+</li>
+<li>
+<p><code>VARCHAR2</code></p>
+</li>
+<li>
+<p><code>NCHAR</code></p>
+</li>
+<li>
+<p><code>NVARCHAR2</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1281630e713" headers="d1281630e206">
+<p><code>CHAR_USED</code></p>
+</td>
+<td class="cellalignment3905" headers="d1281630e713 d1281630e209">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1281630e713 d1281630e212">&nbsp;</td>
+<td class="cellalignment3907" headers="d1281630e713 d1281630e215">
+<p>Indicates that the column uses <code>BYTE</code> length semantics (<code>B</code>) or <code>CHAR</code> length semantics (<code>C</code>), or whether the data type is not any of the following (NULL):</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>CHAR</code></p>
+</li>
+<li>
+<p><code>VARCHAR2</code></p>
+</li>
+<li>
+<p><code>NCHAR</code></p>
+</li>
+<li>
+<p><code>NVARCHAR2</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1281630e757" headers="d1281630e206">
+<p><code>V80_FMT_IMAGE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1281630e757 d1281630e209">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1281630e757 d1281630e212">&nbsp;</td>
+<td class="cellalignment3907" headers="d1281630e757 d1281630e215">
+<p>Indicates whether the column data is in release 8.0 image format (<code>YES</code>) or not (<code>NO</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1281630e778" headers="d1281630e206">
+<p><code>DATA_UPGRADED</code></p>
+</td>
+<td class="cellalignment3905" headers="d1281630e778 d1281630e209">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1281630e778 d1281630e212">&nbsp;</td>
+<td class="cellalignment3907" headers="d1281630e778 d1281630e215">
+<p>Indicates whether the column data has been upgraded to the latest type version format (<code>YES</code>) or not (<code>NO</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1281630e799" headers="d1281630e206">
+<p><code>HISTOGRAM</code></p>
+</td>
+<td class="cellalignment3905" headers="d1281630e799 d1281630e209">
+<p><code>VARCHAR2(15)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1281630e799 d1281630e212">&nbsp;</td>
+<td class="cellalignment3907" headers="d1281630e799 d1281630e215">
+<p>Indicates existence/type of histogram:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>NONE</code></p>
+</li>
+<li>
+<p><code>FREQUENCY</code></p>
+</li>
+<li>
+<p><code>HEIGHT BALANCED</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1281630e828" headers="d1281630e206">
+<p><code>DEFAULT_ON_NULL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1281630e828 d1281630e209">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1281630e828 d1281630e212">&nbsp;</td>
+<td class="cellalignment3907" headers="d1281630e828 d1281630e215">
+<p>Indicates whether the column has DEFAULT ON NULL semantics (<code>YES</code>) or not (<code>NO</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1281630e849" headers="d1281630e206">
+<p><code>IDENTITY_COLUMN</code></p>
+</td>
+<td class="cellalignment3905" headers="d1281630e849 d1281630e209">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1281630e849 d1281630e212">&nbsp;</td>
+<td class="cellalignment3907" headers="d1281630e849 d1281630e215">
+<p>Indicates whether this is an identity column (<code>YES</code>) or not (<code>NO</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1281630e871" headers="d1281630e206">
+<p><code>SENSITIVE_COLUMN</code></p>
+</td>
+<td class="cellalignment3905" headers="d1281630e871 d1281630e209">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1281630e871 d1281630e212">&nbsp;</td>
+<td class="cellalignment3907" headers="d1281630e871 d1281630e215">
+<p>Indicates whether this is a sensitive column (<code>YES</code>) or not (<code>NO</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1281630e892" headers="d1281630e206">
+<p><code>EVALUATION_EDITION</code></p>
+</td>
+<td class="cellalignment3905" headers="d1281630e892 d1281630e209">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1281630e892 d1281630e212">&nbsp;</td>
+<td class="cellalignment3907" headers="d1281630e892 d1281630e215">
+<p>Name of the edition in which editioned objects referenced in an expression column are resolved</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1281630e907" headers="d1281630e206">
+<p><code>UNUSABLE_BEFORE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1281630e907 d1281630e209">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1281630e907 d1281630e212">&nbsp;</td>
+<td class="cellalignment3907" headers="d1281630e907 d1281630e215">
+<p>Name of the oldest edition in which the index may be used as part of a query plan</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1281630e922" headers="d1281630e206">
+<p><code>UNUSABLE_BEGINNING</code></p>
+</td>
+<td class="cellalignment3905" headers="d1281630e922 d1281630e209">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1281630e922 d1281630e212">&nbsp;</td>
+<td class="cellalignment3907" headers="d1281630e922 d1281630e215">
+<p>Name of the edition for which the index may not be used as part of a query plan in this edition or any of its descendants</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1281630e937" headers="d1281630e206">
+<p><code>COLLATION</code><a id="GUID-91F945AE-5778-45A6-A07E-775A006A9AA1__THISCOLUMNISAVAILABLESTARTINGWITHOR-65B29152" href="#GUID-91F945AE-5778-45A6-A07E-775A006A9AA1__THISCOLUMNISAVAILABLESTARTINGWITHOR-65B29152" onclick='footdisplay(1,"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Foot&nbsp;1</sup></a><a id="fnsrc_d1281630e947" href="#fnsrc_d1281630e947" onclick='footdisplay(, \"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+<td class="cellalignment3905" headers="d1281630e937 d1281630e209">
+<p><code>VARCHAR2(100)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1281630e937 d1281630e212">&nbsp;</td>
+<td class="cellalignment3907" headers="d1281630e937 d1281630e215">
+<p>Collation for the column. Only applies to columns with character data types.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<p class="tablefootnote"><sup class="tablefootnote">Footnote&nbsp;1</sup></p>
+<p>This column is available starting with Oracle Database 12<span class="italic">c</span> Release 2 (12.2.0.1).</p>
+<div class="section">
+<div class="infoboxnotealso" id="GUID-91F945AE-5778-45A6-A07E-775A006A9AA1__GUID-81D74C7E-9A14-4254-AE47-75E19E26FE75">
+<p class="notep1">See Also:</p>
+<p><a class="olink ARPLS059" target="_blank" href="../ARPLS/DBMS_STATS.htm#ARPLS059"><span><cite>Oracle Database PL/SQL Packages and Types Reference</cite></span></a> for more information about the <code>DBMS_STATS</code> package</p>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="DBA_TAB_COLS.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="DBA_TAB_COMMENTS.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+</body>
+</html>

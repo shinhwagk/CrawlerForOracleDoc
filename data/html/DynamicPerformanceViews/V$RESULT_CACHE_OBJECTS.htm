@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>V$RESULT_CACHE_OBJECTS</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="V$RESULT_CACHE_OBJECTS view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="V-RESULT_CACHE_MEMORY.htm" title="Previous" type="text/html" />
+<link rel="Next" href="V-RESULT_CACHE_STATISTICS.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-2DA2EDEA-8B1D-42E6-A293-663B3124AAFD"></a> <span id="PAGE" style="display:none;">2623/2822</span> <!-- End Header -->
+<script  >
+//<![CDATA[
+window.name='V-RESULT_CACHE_OBJECTS'
+//]]>
+</script> <script  >
+    function footdisplay(footnum,footnote) {
+    var msg = window.open('', 'NewWindow' + footnum,
+        'directories=no,height=120,location=no,menubar=no,resizable=yes,' +
+        'scrollbars=yes,status=no,toolbar=no,width=598');
+    msg.document.open('text/html');
+    msg.document.write('<!DOCTYPE html ');
+    msg.document.write('PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" ');
+
+    msg.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">');
+    msg.document.write('<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><title>');
+    msg.document.write('Footnote&amp;nbsp; ' + footnum);
+    msg.document.write('<\/title><meta http-equiv="Content-Type" ');
+    msg.document.write('content="text/html; charset=utf-8" />');
+    msg.document.write('');
+    msg.document.write('<style> <![CDATA[ ');
+    msg.document.write('h1 {text-align: center; font-size: 14pt;}');
+    msg.document.write('fieldset {border: none;}');
+    msg.document.write('form {text-align: center;}');
+    msg.document.write(' ]]\u003e <\/style>');
+    msg.document.write('<\/head><body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><h1>Footnote&nbsp; ' + footnum + '<\/h1><p>');
+    msg.document.write(footnote);
+    msg.document.write('<\/p><form action="" method="post"><fieldset>');
+    msg.document.write('<input type="button" value="OK" ');
+    msg.document.write('onclick="window.close();" />');
+    msg.document.write('<\/fieldset><\/form><\/body><\/html>');
+    msg.document.close();
+    msg.focus();
+}
+</script><noscript>
+<p>The script content on this page is for navigation purposes only and does not alter the content in any way.</p>
+</noscript><a id="REFRN30438"></a>
+<h1 id="REFRN-GUID-2DA2EDEA-8B1D-42E6-A293-663B3124AAFD" class="sect1"><span class="enumeration_section">8.167</span> V$RESULT_CACHE_OBJECTS</h1>
+<div>
+<div class="section">
+<p><code>V$RESULT_CACHE_OBJECTS</code> displays all the objects (both cached results and dependencies) and their attributes.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-2DA2EDEA-8B1D-42E6-A293-663B3124AAFD__GUID-951F3432-8CA7-426E-A6B8-D1F3EA42EDED">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d1931598e168">Column</th>
+<th class="cellalignment3905" id="d1931598e171">Datatype</th>
+<th class="cellalignment3908" id="d1931598e174">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d1931598e179" headers="d1931598e168">
+<p><code>ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1931598e179 d1931598e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1931598e179 d1931598e174">
+<p>Identifier for the cache object (also the ID of the first block)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1931598e191" headers="d1931598e168">
+<p><code>TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1931598e191 d1931598e171">
+<p><code>VARCHAR2(10)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1931598e191 d1931598e174">
+<p>Type of the cache object:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>Result</code></p>
+</li>
+<li>
+<p><code>Dependency</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1931598e212" headers="d1931598e168">
+<p><code>STATUS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1931598e212 d1931598e171">
+<p><code>VARCHAR2(9)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1931598e212 d1931598e174">
+<p>Status of the object:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>New</code> - Result is still under construction</p>
+</li>
+<li>
+<p><code>Published</code> - Result is available for use</p>
+</li>
+<li>
+<p><code>Bypass</code> - Result will be bypassed from use</p>
+</li>
+<li>
+<p><code>Expired</code> - Result has exceeded expiration time</p>
+</li>
+<li>
+<p><code>Invalid</code> - Result is no longer available for use</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1931598e250" headers="d1931598e168">
+<p><code>BUCKET_NO</code></p>
+</td>
+<td class="cellalignment3905" headers="d1931598e250 d1931598e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1931598e250 d1931598e174">
+<p>Internal hash bucket for the object</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1931598e262" headers="d1931598e168">
+<p><code>HASH</code></p>
+</td>
+<td class="cellalignment3905" headers="d1931598e262 d1931598e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1931598e262 d1931598e174">
+<p>Hash value for the object</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1931598e274" headers="d1931598e168">
+<p><code>NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1931598e274 d1931598e171">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1931598e274 d1931598e174">
+<p>Name (for example, SQL prefix or PL/SQL function name)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1931598e286" headers="d1931598e168">
+<p><code>NAMESPACE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1931598e286 d1931598e171">
+<p><code>VARCHAR2(5)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1931598e286 d1931598e174">
+<p>Namespace:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>SQL</code></p>
+</li>
+<li>
+<p><code>PLSQL</code></p>
+</li>
+<li>
+<p><code>KEY VECTOR</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1931598e311" headers="d1931598e168">
+<p><code>CREATION_TIMESTAMP</code></p>
+</td>
+<td class="cellalignment3905" headers="d1931598e311 d1931598e171">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3908" headers="d1931598e311 d1931598e174">
+<p>Time when the object was created</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1931598e323" headers="d1931598e168">
+<p><code>CREATOR_UID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1931598e323 d1931598e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1931598e323 d1931598e174">
+<p>UID that created the object</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1931598e335" headers="d1931598e168">
+<p><code>DEPEND_COUNT</code></p>
+</td>
+<td class="cellalignment3905" headers="d1931598e335 d1931598e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1931598e335 d1931598e174">
+<p>Number of dependencies (<code>TYPE</code> = <code>Result</code>) or dependents (<code>TYPE</code> = <code>Dependency</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1931598e359" headers="d1931598e168">
+<p><code>BLOCK_COUNT</code></p>
+</td>
+<td class="cellalignment3905" headers="d1931598e359 d1931598e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1931598e359 d1931598e174">
+<p>Total number of blocks in the cached object</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1931598e372" headers="d1931598e168">
+<p><code>SCN</code></p>
+</td>
+<td class="cellalignment3905" headers="d1931598e372 d1931598e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1931598e372 d1931598e174">
+<p>Build SCN (<code>TYPE</code> = <code>Result</code>) or invalidation SCN (<code>TYPE</code> = <code>Dependency</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1931598e396" headers="d1931598e168">
+<p><code>COLUMN_COUNT</code></p>
+</td>
+<td class="cellalignment3905" headers="d1931598e396 d1931598e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1931598e396 d1931598e174">
+<p>Number of columns in the cached result<a id="GUID-2DA2EDEA-8B1D-42E6-A293-663B3124AAFD__BHCBGGBC" href="#GUID-2DA2EDEA-8B1D-42E6-A293-663B3124AAFD__BHCBGGBC" onclick='footdisplay(1,"These columns are only valid for TYPE = Result; otherwise, they are NULL. ")'><sup>Foot&nbsp;1</sup></a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1931598e417" headers="d1931598e168">
+<p><code>PIN_COUNT</code></p>
+</td>
+<td class="cellalignment3905" headers="d1931598e417 d1931598e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1931598e417 d1931598e174">
+<p>Number of active scans on this result<a id="fnsrc_d1931598e428" href="#fnsrc_d1931598e428" onclick='footdisplay(, \"These columns are only valid for TYPE = Result; otherwise, they are NULL. ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1931598e431" headers="d1931598e168">
+<p><code>SCAN_COUNT</code></p>
+</td>
+<td class="cellalignment3905" headers="d1931598e431 d1931598e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1931598e431 d1931598e174">
+<p>Total number of scans initiated on the cached result<a id="fnsrc_d1931598e442" href="#fnsrc_d1931598e442" onclick='footdisplay(, \"These columns are only valid for TYPE = Result; otherwise, they are NULL. ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1931598e445" headers="d1931598e168">
+<p><code>ROW_COUNT</code></p>
+</td>
+<td class="cellalignment3905" headers="d1931598e445 d1931598e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1931598e445 d1931598e174">
+<p>Total number of rows in the cached result<a id="fnsrc_d1931598e456" href="#fnsrc_d1931598e456" onclick='footdisplay(, \"These columns are only valid for TYPE = Result; otherwise, they are NULL. ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1931598e459" headers="d1931598e168">
+<p><code>ROW_SIZE_MAX</code></p>
+</td>
+<td class="cellalignment3905" headers="d1931598e459 d1931598e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1931598e459 d1931598e174">
+<p>Size of the largest row (in bytes)<a id="fnsrc_d1931598e470" href="#fnsrc_d1931598e470" onclick='footdisplay(, \"These columns are only valid for TYPE = Result; otherwise, they are NULL. ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1931598e473" headers="d1931598e168">
+<p><code>ROW_SIZE_MIN</code></p>
+</td>
+<td class="cellalignment3905" headers="d1931598e473 d1931598e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1931598e473 d1931598e174">
+<p>Size of the smallest row (in bytes)<a id="fnsrc_d1931598e484" href="#fnsrc_d1931598e484" onclick='footdisplay(, \"These columns are only valid for TYPE = Result; otherwise, they are NULL. ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1931598e487" headers="d1931598e168">
+<p><code>ROW_SIZE_AVG</code></p>
+</td>
+<td class="cellalignment3905" headers="d1931598e487 d1931598e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1931598e487 d1931598e174">
+<p>Average size of a row (in bytes)<a id="fnsrc_d1931598e498" href="#fnsrc_d1931598e498" onclick='footdisplay(, \"These columns are only valid for TYPE = Result; otherwise, they are NULL. ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1931598e501" headers="d1931598e168">
+<p><code>BUILD_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1931598e501 d1931598e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1931598e501 d1931598e174">
+<p>Amount of time (in hundredths of a second) it took to build the cached result<a id="fnsrc_d1931598e512" href="#fnsrc_d1931598e512" onclick='footdisplay(, \"These columns are only valid for TYPE = Result; otherwise, they are NULL. ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1931598e515" headers="d1931598e168">
+<p><code>LRU_NUMBER</code></p>
+</td>
+<td class="cellalignment3905" headers="d1931598e515 d1931598e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1931598e515 d1931598e174">
+<p>LRU list position (the smaller the value, the more recent the usage)<a id="fnsrc_d1931598e526" href="#fnsrc_d1931598e526" onclick='footdisplay(, \"These columns are only valid for TYPE = Result; otherwise, they are NULL. ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1931598e529" headers="d1931598e168">
+<p><code>OBJECT_NO</code></p>
+</td>
+<td class="cellalignment3905" headers="d1931598e529 d1931598e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1931598e529 d1931598e174">
+<p>Dictionary object number of the dependency object<a id="GUID-2DA2EDEA-8B1D-42E6-A293-663B3124AAFD__BHCDIJGI" href="#GUID-2DA2EDEA-8B1D-42E6-A293-663B3124AAFD__BHCDIJGI" onclick='footdisplay(2,"These columns are only valid for TYPE = Dependency; otherwise, they are NULL. ")'><sup>Foot&nbsp;2</sup></a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1931598e551" headers="d1931598e168">
+<p><code>INVALIDATIONS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1931598e551 d1931598e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1931598e551 d1931598e174">
+<p>Number of times the object has invalidated its dependents<a id="fnsrc_d1931598e562" href="#fnsrc_d1931598e562" onclick='footdisplay(, \"These columns are only valid for TYPE = Dependency; otherwise, they are NULL. ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1931598e565" headers="d1931598e168">
+<p><code>SPACE_OVERHEAD</code></p>
+</td>
+<td class="cellalignment3905" headers="d1931598e565 d1931598e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1931598e565 d1931598e174">
+<p>Overhead (in bytes) for the result<a id="fnsrc_d1931598e576" href="#fnsrc_d1931598e576" onclick='footdisplay(, \"These columns are only valid for TYPE = Result; otherwise, they are NULL. ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1931598e579" headers="d1931598e168">
+<p><code>SPACE_UNUSED</code></p>
+</td>
+<td class="cellalignment3905" headers="d1931598e579 d1931598e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1931598e579 d1931598e174">
+<p>Unused space (in bytes) for the result<a id="fnsrc_d1931598e590" href="#fnsrc_d1931598e590" onclick='footdisplay(, \"These columns are only valid for TYPE = Result; otherwise, they are NULL. ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1931598e593" headers="d1931598e168">
+<p><code>CACHE_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1931598e593 d1931598e171">
+<p><code>VARCHAR2(93)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1931598e593 d1931598e174">
+<p><code>CacheId</code> for the result (object name if it's a dependency)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1931598e607" headers="d1931598e168">
+<p><code>CACHE_KEY</code></p>
+</td>
+<td class="cellalignment3905" headers="d1931598e607 d1931598e171">
+<p><code>VARCHAR2(93)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1931598e607 d1931598e174">
+<p><code>CacheKey</code> for the result (object name if it's a dependency)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1931598e621" headers="d1931598e168">
+<p><code>CHECKSUM</code></p>
+</td>
+<td class="cellalignment3905" headers="d1931598e621 d1931598e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1931598e621 d1931598e174">
+<p>Checksum for the result object. The checksum is computed over all the blocks in the result cache object minus the object header.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1931598e633" headers="d1931598e168">
+<p><code>EDITION_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1931598e633 d1931598e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1931598e633 d1931598e174">
+<p>Shows the edition's object ID that was in use when the result was calculated</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1931598e645" headers="d1931598e168">
+<p><code>DB_LINK</code><a id="fn_3" href="#fn_3" onclick='footdisplay(3,"This column is available starting in Oracle Database 12c Release 1 (12.1.0.2). ")'><sup>Foot&nbsp;3</sup></a></p>
+</td>
+<td class="cellalignment3905" headers="d1931598e645 d1931598e171">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1931598e645 d1931598e174">
+<p>Possible values:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>YES</code>: If the result cache object references a remote database object</p>
+</li>
+<li>
+<p><code>NO</code>: If the result cache object does not reference a remote database object</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1931598e674" headers="d1931598e168">
+<p><code>CON_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1931598e674 d1931598e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1931598e674 d1931598e174">
+<p>The ID of the container to which the data pertains. Possible values include:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>0</code>: This value is used for rows containing data that pertain to the entire CDB. This value is also used for rows in non-CDBs.</p>
+</li>
+<li>
+<p><code>1</code>: This value is used for rows containing data that pertain to only the root</p>
+</li>
+<li>
+<p><span class="italic">n</span>: Where <span class="italic">n</span> is the applicable container ID for the rows containing data</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<p class="tablefootnote"><sup class="tablefootnote">Footnote&nbsp;1</sup></p>
+<p>These columns are only valid for <code>TYPE</code> = <code>Result</code>; otherwise, they are NULL.</p>
+<p class="tablefootnote"><sup class="tablefootnote">Footnote&nbsp;2</sup></p>
+<p>These columns are only valid for <code>TYPE</code> = <code>Dependency</code>; otherwise, they are NULL.</p>
+<p class="tablefootnote"><sup class="tablefootnote">Footnote&nbsp;3</sup></p>
+<p>This column is available starting in Oracle Database 12<span class="italic">c</span> Release 1 (12.1.0.2).</p>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="V-RESULT_CACHE_MEMORY.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="V-RESULT_CACHE_STATISTICS.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+</body>
+</html>

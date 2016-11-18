@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>V$XSTREAM_APPLY_SERVER</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="V$XSTREAM_APPLY_SERVER view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="V-XSTREAM_APPLY_RECEIVER.htm" title="Previous" type="text/html" />
+<link rel="Next" href="V-XSTREAM_CAPTURE.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-EFFD6C07-9C0B-4B66-9F8D-D35F4912BBE4"></a> <span id="PAGE" style="display:none;">2794/2822</span> <!-- End Header -->
+<a id="REFRN30687"></a>
+<h1 id="REFRN-GUID-EFFD6C07-9C0B-4B66-9F8D-D35F4912BBE4" class="sect1"><span class="enumeration_section">9.139</span> V$XSTREAM_APPLY_SERVER</h1>
+<div>
+<div class="section">
+<p><code>V$XSTREAM_APPLY_SERVER</code> displays information about each XStream apply server and its activities. An apply server receives messages from the apply coordinator for an apply process. For each message received, an apply server either applies the message or sends the message to the appropriate apply handler. An apply server is a subcomponent of an apply process, outbound server, or inbound server.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-EFFD6C07-9C0B-4B66-9F8D-D35F4912BBE4__GUID-84507072-C0E6-4F8E-9485-13794524AF6B">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d2159462e168">Column</th>
+<th class="cellalignment3905" id="d2159462e171">Datatype</th>
+<th class="cellalignment3908" id="d2159462e174">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d2159462e179" headers="d2159462e168">
+<p><code>SID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2159462e179 d2159462e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2159462e179 d2159462e174">
+<p>Session ID of the apply server's session</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2159462e191" headers="d2159462e168">
+<p><code>SERIAL#</code></p>
+</td>
+<td class="cellalignment3905" headers="d2159462e191 d2159462e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2159462e191 d2159462e174">
+<p>Serial number of the apply server's session</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2159462e203" headers="d2159462e168">
+<p><code>APPLY#</code></p>
+</td>
+<td class="cellalignment3905" headers="d2159462e203 d2159462e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2159462e203 d2159462e174">
+<p>Apply process number. An apply process is an Oracle background process, prefixed by <code>ap</code>.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2159462e218" headers="d2159462e168">
+<p><code>APPLY_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d2159462e218 d2159462e171">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2159462e218 d2159462e174">
+<p>Name of the apply process</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2159462e230" headers="d2159462e168">
+<p><code>SERVER_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2159462e230 d2159462e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2159462e230 d2159462e174">
+<p>Parallel execution server number of the apply server</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2159462e242" headers="d2159462e168">
+<p><code>STATE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2159462e242 d2159462e171">
+<p><code>VARCHAR2(20)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2159462e242 d2159462e174">
+<p>State of the apply server:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>INITIALIZING</code> - Starting up</p>
+</li>
+<li>
+<p><code>IDLE</code> - Performing no work</p>
+</li>
+<li>
+<p><code>RECORD LOW-WATERMARK</code> - Performing an administrative job that maintains information about the apply progress, which is used in the <code>ALL_APPLY_PROGRESS</code> and <code>DBA_APPLY_PROGRESS</code> data dictionary views</p>
+</li>
+<li>
+<p><code>ADD PARTITION</code> - Performing an administrative job that adds a partition that is used for recording information about in-progress transactions</p>
+</li>
+<li>
+<p><code>DROP PARTITION</code> - Performing an administrative job that purges rows that were used to record information about in-progress transactions</p>
+</li>
+<li>
+<p><code>EXECUTE TRANSACTION</code> - Applying a transaction</p>
+</li>
+<li>
+<p><code>WAIT COMMIT</code> - Waiting to commit a transaction until all other transactions with a lower commit SCN are applied. This state is possible only if the <code>COMMIT_SERIALIZATION</code> apply process parameter is set to a value other than <code>DEPENDENT_TRANSACTIONS</code> and the <code>PARALLELISM</code> apply process parameter is set to a value greater than <code>1</code>.</p>
+</li>
+<li>
+<p><code>WAIT DEPENDENCY</code> - Waiting to apply a logical change record (LCR) in a transaction until another transaction, on which it has a dependency, is applied. This state is possible only if the <code>PARALLELISM</code> apply process parameter is set to a value greater than <code>1</code>.</p>
+</li>
+<li>
+<p><code>ROLLBACK TRANSACTION</code> - Rolling back a transaction</p>
+</li>
+<li>
+<p><code>TRANSACTION CLEANUP</code> - Cleaning up an applied transaction, which includes removing LCRs from the apply process's queue</p>
+</li>
+<li>
+<p><code>WAIT</code> <code>FOR</code> <code>CLIENT</code> - Waiting for an XStream client application to request more LCRs</p>
+</li>
+<li>
+<p><code>WAIT</code> <code>FOR</code> <code>NEXT</code> <code>CHUNK</code> - Waiting for the next set of LCRs for a large transaction</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2159462e355" headers="d2159462e168">
+<p><code>XIDUSN</code></p>
+</td>
+<td class="cellalignment3905" headers="d2159462e355 d2159462e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2159462e355 d2159462e174">
+<p>Transaction ID undo segment number of the transaction currently being applied</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2159462e367" headers="d2159462e168">
+<p><code>XIDSLT</code></p>
+</td>
+<td class="cellalignment3905" headers="d2159462e367 d2159462e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2159462e367 d2159462e174">
+<p>Transaction ID slot number of the transaction currently being applied</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2159462e379" headers="d2159462e168">
+<p><code>XIDSQN</code></p>
+</td>
+<td class="cellalignment3905" headers="d2159462e379 d2159462e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2159462e379 d2159462e174">
+<p>Transaction ID sequence number of the transaction currently being applied</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2159462e391" headers="d2159462e168">
+<p><code>COMMITSCN</code></p>
+</td>
+<td class="cellalignment3905" headers="d2159462e391 d2159462e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2159462e391 d2159462e174">
+<p>Commit system change number (SCN) of the transaction currently being applied</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2159462e403" headers="d2159462e168">
+<p><code>DEP_XIDUSN</code></p>
+</td>
+<td class="cellalignment3905" headers="d2159462e403 d2159462e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2159462e403 d2159462e174">
+<p>Transaction ID undo segment number of a transaction on which the transaction being applied by this apply server depends</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2159462e416" headers="d2159462e168">
+<p><code>DEP_XIDSLT</code></p>
+</td>
+<td class="cellalignment3905" headers="d2159462e416 d2159462e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2159462e416 d2159462e174">
+<p>Transaction ID slot number of a transaction on which the transaction being applied by this apply server depends</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2159462e428" headers="d2159462e168">
+<p><code>DEP_XIDSQN</code></p>
+</td>
+<td class="cellalignment3905" headers="d2159462e428 d2159462e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2159462e428 d2159462e174">
+<p>Transaction ID sequence number of a transaction on which the transaction being applied by this apply server depends</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2159462e440" headers="d2159462e168">
+<p><code>DEP_COMMITSCN</code></p>
+</td>
+<td class="cellalignment3905" headers="d2159462e440 d2159462e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2159462e440 d2159462e174">
+<p>Commit system change number (SCN) of the transaction on which this apply server depends</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2159462e452" headers="d2159462e168">
+<p><code>MESSAGE_SEQUENCE</code></p>
+</td>
+<td class="cellalignment3905" headers="d2159462e452 d2159462e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2159462e452 d2159462e174">
+<p>Number of the current message being applied by the apply server. This value is reset to <code>1</code> at the beginning of each transaction.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2159462e467" headers="d2159462e168">
+<p><code>TOTAL_ASSIGNED</code></p>
+</td>
+<td class="cellalignment3905" headers="d2159462e467 d2159462e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2159462e467 d2159462e174">
+<p>Total number of transactions assigned to the apply server since the apply process was last started</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2159462e479" headers="d2159462e168">
+<p><code>TOTAL_ADMIN</code></p>
+</td>
+<td class="cellalignment3905" headers="d2159462e479 d2159462e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2159462e479 d2159462e174">
+<p>Total number of administrative jobs done by the apply server since the apply process was last started. See the <code>STATE</code> information in this view for the types of administrative jobs.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2159462e494" headers="d2159462e168">
+<p><code>TOTAL_ROLLBACKS</code></p>
+</td>
+<td class="cellalignment3905" headers="d2159462e494 d2159462e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2159462e494 d2159462e174">
+<p>Number of transactions assigned to this server which were rolled back</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2159462e506" headers="d2159462e168">
+<p><code>TOTAL_MESSAGES_APPLIED</code></p>
+</td>
+<td class="cellalignment3905" headers="d2159462e506 d2159462e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2159462e506 d2159462e174">
+<p>Total number of messages applied by this apply server since the apply process was last started</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2159462e518" headers="d2159462e168">
+<p><code>APPLY_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d2159462e518 d2159462e171">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3908" headers="d2159462e518 d2159462e174">
+<p>Time the last message was applied</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2159462e530" headers="d2159462e168">
+<p><code>APPLIED_MESSAGE_NUMBER</code></p>
+</td>
+<td class="cellalignment3905" headers="d2159462e530 d2159462e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2159462e530 d2159462e174">
+<p>Number of the last message applied</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2159462e542" headers="d2159462e168">
+<p><code>APPLIED_MESSAGE_CREATE_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d2159462e542 d2159462e171">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3908" headers="d2159462e542 d2159462e174">
+<p>Creation time at the source database of the last captured message applied. No information about user-enqueued messages is recorded in this column.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2159462e555" headers="d2159462e168">
+<p><code>ELAPSED_DEQUEUE_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d2159462e555 d2159462e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2159462e555 d2159462e174">
+<p>Time elapsed (in hundredths of a second) dequeuing messages since the apply process was last started</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2159462e567" headers="d2159462e168">
+<p><code>ELAPSED_APPLY_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d2159462e567 d2159462e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2159462e567 d2159462e174">
+<p>Time elapsed (in hundredths of a second) applying messages since the apply process was last started</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2159462e579" headers="d2159462e168">
+<p><code>COMMIT_POSITION</code></p>
+</td>
+<td class="cellalignment3905" headers="d2159462e579 d2159462e171">
+<p><code>RAW(64)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2159462e579 d2159462e174">
+<p>Commit position of the transaction. This column is populated only for an apply process that is functioning as an XStream inbound server.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2159462e591" headers="d2159462e168">
+<p><code>DEP_COMMIT_POSITION</code></p>
+</td>
+<td class="cellalignment3905" headers="d2159462e591 d2159462e171">
+<p><code>RAW(64)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2159462e591 d2159462e174">
+<p>Commit position of the transaction the slave depends on. This column is populated only for an apply process that is functioning as an XStream inbound server.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2159462e603" headers="d2159462e168">
+<p><code>LAST_APPLY_POSITION</code></p>
+</td>
+<td class="cellalignment3905" headers="d2159462e603 d2159462e171">
+<p><code>RAW(64)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2159462e603 d2159462e174">
+<p>For inbound servers, the position of the last message applied; for outbound servers, the position of the last message sent to the XStream client application. This column is populated only for an apply process that is functioning as an XStream outbound server or inbound server.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2159462e615" headers="d2159462e168">
+<p><code>TRANSACTION_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2159462e615 d2159462e171">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2159462e615 d2159462e174">
+<p>Transaction ID that the slave is applying. This column is populated only for an apply process that is functioning as an XStream inbound server.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2159462e627" headers="d2159462e168">
+<p><code>DEP_TRANSACTION_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2159462e627 d2159462e171">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3908" headers="d2159462e627 d2159462e174">
+<p>Transaction ID of the transaction the slave depends on. This column is populated only for an apply process that is functioning as an XStream inbound server.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2159462e639" headers="d2159462e168">
+<p><code>CON_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d2159462e639 d2159462e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2159462e639 d2159462e174">
+<p>The ID of the container to which the data pertains. Possible values include:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>0</code>: This value is used for rows containing data that pertain to the entire CDB. This value is also used for rows in non-CDBs.</p>
+</li>
+<li>
+<p><code>1</code>: This value is used for rows containing data that pertain to only the root</p>
+</li>
+<li>
+<p><span class="italic">n</span>: Where <span class="italic">n</span> is the applicable container ID for the rows containing data</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2159462e670" headers="d2159462e168">
+<p><code>TOTAL_LCRS_RETRIED</code></p>
+</td>
+<td class="cellalignment3905" headers="d2159462e670 d2159462e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2159462e670 d2159462e174">
+<p>Total number of LCRs retried by this server</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2159462e682" headers="d2159462e168">
+<p><code>LCR_RETRY_ITERATION</code></p>
+</td>
+<td class="cellalignment3905" headers="d2159462e682 d2159462e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2159462e682 d2159462e174">
+<p>Retry iteration for this transaction by this server</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2159462e694" headers="d2159462e168">
+<p><code>TOTAL_TXNS_RETRIED</code></p>
+</td>
+<td class="cellalignment3905" headers="d2159462e694 d2159462e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2159462e694 d2159462e174">
+<p>Total transactions retried by this server</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2159462e707" headers="d2159462e168">
+<p><code>TXN_RETRY_ITERATION</code></p>
+</td>
+<td class="cellalignment3905" headers="d2159462e707 d2159462e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2159462e707 d2159462e174">
+<p>Retry iteration for this transaction by this server</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d2159462e719" headers="d2159462e168">
+<p><code>TOTAL_TXNS_RECORDED</code></p>
+</td>
+<td class="cellalignment3905" headers="d2159462e719 d2159462e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d2159462e719 d2159462e174">
+<p>Total transactions recorded in error queue by this server</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<div class="section">
+<div class="infobox-note" id="GUID-EFFD6C07-9C0B-4B66-9F8D-D35F4912BBE4__GUID-0A4C7E1E-9F8B-4135-99AA-3AA46BB135BE">
+<p class="notep1">Note:</p>
+<p>The <code>ELAPSED_SCHEDULE_TIME</code> column is only populated if the <code>TIMED_STATISTICS</code> initialization parameter is set to <code>true</code>, or if the <code>STATISTICS_LEVEL</code> initialization parameter is set to <code>TYPICAL</code> or <code>ALL</code>.</p>
+</div>
+<div class="infoboxnotealso" id="GUID-EFFD6C07-9C0B-4B66-9F8D-D35F4912BBE4__GUID-BEFDB1A9-2A4A-48B2-AF35-4982AF784D47">
+<p class="notep1">See Also:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="q">"<a href="TIMED_STATISTICS.htm#GUID-1F65183A-5F77-42E1-8BC1-294910F3A731">TIMED_STATISTICS</a>"</span></p>
+</li>
+<li>
+<p><span class="q">"<a href="STATISTICS_LEVEL.htm#GUID-16B23F95-8644-407A-A6C8-E85CADFA61FF">STATISTICS_LEVEL</a>"</span></p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="V-XSTREAM_APPLY_RECEIVER.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="V-XSTREAM_CAPTURE.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>V$BACKUP_COPY_DETAILS</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="V$BACKUP_COPY_DETAILS view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="V-BACKUP_CONTROLFILE_SUMMARY.htm" title="Previous" type="text/html" />
+<link rel="Next" href="V-BACKUP_COPY_SUMMARY.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-98BF3189-E3ED-44E2-8597-885E6E73A6F3"></a> <span id="PAGE" style="display:none;">2275/2822</span> <!-- End Header -->
+<script  >
+//<![CDATA[
+window.name='V-BACKUP_COPY_DETAILS'
+//]]>
+</script> <script  >
+    function footdisplay(footnum,footnote) {
+    var msg = window.open('', 'NewWindow' + footnum,
+        'directories=no,height=120,location=no,menubar=no,resizable=yes,' +
+        'scrollbars=yes,status=no,toolbar=no,width=598');
+    msg.document.open('text/html');
+    msg.document.write('<!DOCTYPE html ');
+    msg.document.write('PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" ');
+
+    msg.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">');
+    msg.document.write('<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><title>');
+    msg.document.write('Footnote&amp;nbsp; ' + footnum);
+    msg.document.write('<\/title><meta http-equiv="Content-Type" ');
+    msg.document.write('content="text/html; charset=utf-8" />');
+    msg.document.write('');
+    msg.document.write('<style> <![CDATA[ ');
+    msg.document.write('h1 {text-align: center; font-size: 14pt;}');
+    msg.document.write('fieldset {border: none;}');
+    msg.document.write('form {text-align: center;}');
+    msg.document.write(' ]]\u003e <\/style>');
+    msg.document.write('<\/head><body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><h1>Footnote&nbsp; ' + footnum + '<\/h1><p>');
+    msg.document.write(footnote);
+    msg.document.write('<\/p><form action="" method="post"><fieldset>');
+    msg.document.write('<input type="button" value="OK" ');
+    msg.document.write('onclick="window.close();" />');
+    msg.document.write('<\/fieldset><\/form><\/body><\/html>');
+    msg.document.close();
+    msg.focus();
+}
+</script><noscript>
+<p>The script content on this page is for navigation purposes only and does not alter the content in any way.</p>
+</noscript><a id="REFRN30366"></a>
+<h1 id="REFRN-GUID-98BF3189-E3ED-44E2-8597-885E6E73A6F3" class="sect1"><span class="enumeration_section">7.86</span> V$BACKUP_COPY_DETAILS</h1>
+<div>
+<div class="section">
+<p><code>V$BACKUP_COPY_DETAILS</code> contains information about all available control file and data file copies.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-98BF3189-E3ED-44E2-8597-885E6E73A6F3__GUID-030F3139-A4FA-4500-9D19-D88DB4A6C218">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d1562514e168">Column</th>
+<th class="cellalignment3905" id="d1562514e171">Datatype</th>
+<th class="cellalignment3908" id="d1562514e174">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d1562514e179" headers="d1562514e168">
+<p><code>SESSION_KEY</code></p>
+</td>
+<td class="cellalignment3905" headers="d1562514e179 d1562514e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1562514e179 d1562514e174">
+<p>Session identifier</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1562514e191" headers="d1562514e168">
+<p><code>SESSION_RECID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1562514e191 d1562514e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1562514e191 d1562514e174">
+<p>Session recid</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1562514e203" headers="d1562514e168">
+<p><code>SESSION_STAMP</code></p>
+</td>
+<td class="cellalignment3905" headers="d1562514e203 d1562514e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1562514e203 d1562514e174">
+<p>Session stamp</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1562514e215" headers="d1562514e168">
+<p><code>COPY_KEY</code></p>
+</td>
+<td class="cellalignment3905" headers="d1562514e215 d1562514e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1562514e215 d1562514e174">
+<p>Unique identifier for this data file or control file copy</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1562514e227" headers="d1562514e168">
+<p><code>FILE#</code></p>
+</td>
+<td class="cellalignment3905" headers="d1562514e227 d1562514e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1562514e227 d1562514e174">
+<p>Absolute data file number</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1562514e239" headers="d1562514e168">
+<p><code>NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1562514e239 d1562514e171">
+<p><code>VARCHAR2(513)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1562514e239 d1562514e174">
+<p>File name of the data file copy. The maximum length of the name is dependent on your operating system.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1562514e251" headers="d1562514e168">
+<p><code>TAG</code></p>
+</td>
+<td class="cellalignment3905" headers="d1562514e251 d1562514e171">
+<p><code>VARCHAR2(32)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1562514e251 d1562514e174">
+<p>Data file copy tag</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1562514e263" headers="d1562514e168">
+<p><code>CREATION_CHANGE#</code></p>
+</td>
+<td class="cellalignment3905" headers="d1562514e263 d1562514e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1562514e263 d1562514e174">
+<p>Data file creation change number</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1562514e275" headers="d1562514e168">
+<p><code>CREATION_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1562514e275 d1562514e171">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3908" headers="d1562514e275 d1562514e174">
+<p>Data file creation timestamp</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1562514e287" headers="d1562514e168">
+<p><code>CHECKPOINT_CHANGE#</code></p>
+</td>
+<td class="cellalignment3905" headers="d1562514e287 d1562514e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1562514e287 d1562514e174">
+<p>Checkpoint change number of the data file when the copy was made</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1562514e299" headers="d1562514e168">
+<p><code>CHECKPOINT_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1562514e299 d1562514e171">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3908" headers="d1562514e299 d1562514e174">
+<p>Checkpoint timestamp of the data file when the copy was made</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1562514e312" headers="d1562514e168">
+<p><code>MARKED_CORRUPT</code></p>
+</td>
+<td class="cellalignment3905" headers="d1562514e312 d1562514e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1562514e312 d1562514e174">
+<p>Number of blocks marked corrupt by this copy operation. That is, blocks that were not marked corrupted in the source data file, but were detected and marked as corrupted during the copy operation.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1562514e324" headers="d1562514e168">
+<p><code>OUTPUT_BYTES</code></p>
+</td>
+<td class="cellalignment3905" headers="d1562514e324 d1562514e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1562514e324 d1562514e174">
+<p>Total output bytes written</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1562514e336" headers="d1562514e168">
+<p><code>COMPLETION_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1562514e336 d1562514e171">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3908" headers="d1562514e336 d1562514e174">
+<p>Time when the copy was completed</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1562514e348" headers="d1562514e168">
+<p><code>CONTROLFILE_TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1562514e348 d1562514e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1562514e348 d1562514e174">
+<p>Type of control file. B indicates normal copies. S indicates standby copies.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1562514e360" headers="d1562514e168">
+<p><code>KEEP</code></p>
+</td>
+<td class="cellalignment3905" headers="d1562514e360 d1562514e171">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1562514e360 d1562514e174">
+<p>(<code>YES</code>|<code>NO</code>) Indicates whether or not this backup set has a retention policy that is different than the value for the configure retention policy</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1562514e378" headers="d1562514e168">
+<p><code>KEEP_UNTIL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1562514e378 d1562514e171">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3908" headers="d1562514e378 d1562514e174">
+<p>If specified, this is the date after which the backup becomes obsolete. If this column is null, then the backup never expires.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1562514e390" headers="d1562514e168">
+<p><code>KEEP_OPTIONS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1562514e390 d1562514e171">
+<p><code>VARCHAR2(11)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1562514e390 d1562514e174">
+<p>Lists additional retention options for this backup set. Possible values are:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>LOGS</code> - The logs needed to recover this backup set are kept</p>
+</li>
+<li>
+<p><code>NOLOGS</code> - The logs needed to recover this backup set are not kept</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1562514e413" headers="d1562514e168">
+<p><code>IS_RECOVERY_DEST_FILE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1562514e413 d1562514e171">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1562514e413 d1562514e174">
+<p>Indicates whether the file was created in the fast recovery area (<code>YES</code>) or not (<code>NO</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1562514e431" headers="d1562514e168">
+<p><code>SPARSE_BACKUP</code><a id="fn_1" href="#fn_1" onclick='footdisplay(1,"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Foot&nbsp;1</sup></a></p>
+</td>
+<td class="cellalignment3905" headers="d1562514e431 d1562514e171">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1562514e431 d1562514e174">
+<p>Indicates whether the file is sparse (<code>YES</code>) or not (<code>NO</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1562514e455" headers="d1562514e168">
+<p><code>OUTPUT_BYTES_DISPLAY</code></p>
+</td>
+<td class="cellalignment3905" headers="d1562514e455 d1562514e171">
+<p><code>VARCHAR2(4000)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1562514e455 d1562514e174">
+<p>Size of backup set to display</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1562514e467" headers="d1562514e168">
+<p><code>CON_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1562514e467 d1562514e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1562514e467 d1562514e174">
+<p>The ID of the container to which the data pertains. Possible values include:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>0</code>: This value is used for rows containing data that pertain to the entire CDB. This value is also used for rows in non-CDBs.</p>
+</li>
+<li>
+<p><code>1</code>: This value is used for rows containing data that pertain to only the root</p>
+</li>
+<li>
+<p><span class="italic">n</span>: Where <span class="italic">n</span> is the applicable container ID for the rows containing data</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<p class="tablefootnote"><sup class="tablefootnote">Footnote&nbsp;1</sup></p>
+<p>This column is available starting with Oracle Database 12<span class="italic">c</span> Release 2 (12.2.0.1).</p>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="V-BACKUP_CONTROLFILE_SUMMARY.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="V-BACKUP_COPY_SUMMARY.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+</body>
+</html>

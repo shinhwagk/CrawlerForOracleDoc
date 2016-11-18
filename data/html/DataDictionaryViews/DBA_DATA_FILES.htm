@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>DBA_DATA_FILES</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="DBA_DATA_FILES view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="DBA_CUBES.htm" title="Previous" type="text/html" />
+<link rel="Next" href="DBA_DATAPUMP_JOBS.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-0FA17297-73ED-4B5D-B511-103993C003D3"></a> <span id="PAGE" style="display:none;">962/2822</span> <!-- End Header -->
+<a id="REFRN23049"></a>
+<h1 id="REFRN-GUID-0FA17297-73ED-4B5D-B511-103993C003D3" class="sect1"><span class="enumeration_section">4.195</span> DBA_DATA_FILES</h1>
+<div>
+<div class="section">
+<p><code>DBA_DATA_FILES</code> describes database files.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-0FA17297-73ED-4B5D-B511-103993C003D3__GUID-4AB0D7AB-6AC5-4372-B228-751671486EE9">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d836726e169">Column</th>
+<th class="cellalignment3905" id="d836726e172">Datatype</th>
+<th class="cellalignment3906" id="d836726e175">NULL</th>
+<th class="cellalignment3907" id="d836726e178">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d836726e183" headers="d836726e169">
+<p><code>FILE_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d836726e183 d836726e172">
+<p><code>VARCHAR2(513)</code></p>
+</td>
+<td class="cellalignment3906" headers="d836726e183 d836726e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d836726e183 d836726e178">
+<p>Name of the database file</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d836726e198" headers="d836726e169">
+<p><code>FILE_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d836726e198 d836726e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d836726e198 d836726e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d836726e198 d836726e178">
+<p>File identifier number of the database file</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d836726e213" headers="d836726e169">
+<p><code>TABLESPACE_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d836726e213 d836726e172">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3906" headers="d836726e213 d836726e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d836726e213 d836726e178">
+<p>Name of the tablespace to which the file belongs</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d836726e228" headers="d836726e169">
+<p><code>BYTES</code></p>
+</td>
+<td class="cellalignment3905" headers="d836726e228 d836726e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d836726e228 d836726e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d836726e228 d836726e178">
+<p>Size of the file in bytes</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d836726e243" headers="d836726e169">
+<p><code>BLOCKS</code></p>
+</td>
+<td class="cellalignment3905" headers="d836726e243 d836726e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d836726e243 d836726e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d836726e243 d836726e178">
+<p>Size of the file in Oracle blocks</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d836726e258" headers="d836726e169">
+<p><code>STATUS</code></p>
+</td>
+<td class="cellalignment3905" headers="d836726e258 d836726e172">
+<p><code>VARCHAR2(9)</code></p>
+</td>
+<td class="cellalignment3906" headers="d836726e258 d836726e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d836726e258 d836726e178">
+<p>File status: <code>AVAILABLE</code> or <code>INVALID</code> (<code>INVALID</code> means that the file number is not in use, for example, a file in a tablespace that was dropped)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d836726e282" headers="d836726e169">
+<p><code>RELATIVE_FNO</code></p>
+</td>
+<td class="cellalignment3905" headers="d836726e282 d836726e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d836726e282 d836726e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d836726e282 d836726e178">
+<p>Relative file number</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d836726e297" headers="d836726e169">
+<p><code>AUTOEXTENSIBLE</code></p>
+</td>
+<td class="cellalignment3905" headers="d836726e297 d836726e172">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3906" headers="d836726e297 d836726e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d836726e297 d836726e178">
+<p>Autoextensible indicator</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d836726e312" headers="d836726e169">
+<p><code>MAXBYTES</code></p>
+</td>
+<td class="cellalignment3905" headers="d836726e312 d836726e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d836726e312 d836726e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d836726e312 d836726e178">
+<p>Maximum file size in bytes</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d836726e327" headers="d836726e169">
+<p><code>MAXBLOCKS</code></p>
+</td>
+<td class="cellalignment3905" headers="d836726e327 d836726e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d836726e327 d836726e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d836726e327 d836726e178">
+<p>Maximum file size in blocks</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d836726e342" headers="d836726e169">
+<p><code>INCREMENT_BY</code></p>
+</td>
+<td class="cellalignment3905" headers="d836726e342 d836726e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d836726e342 d836726e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d836726e342 d836726e178">
+<p>Number of Oracle blocks used as autoextension increment</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d836726e358" headers="d836726e169">
+<p><code>USER_BYTES</code></p>
+</td>
+<td class="cellalignment3905" headers="d836726e358 d836726e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d836726e358 d836726e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d836726e358 d836726e178">
+<p>The size of the file available for user data. The actual size of the file minus the <code>USER_BYTES</code> value is used to store file related metadata.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d836726e376" headers="d836726e169">
+<p><code>USER_BLOCKS</code></p>
+</td>
+<td class="cellalignment3905" headers="d836726e376 d836726e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d836726e376 d836726e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d836726e376 d836726e178">
+<p>Number of blocks which can be used by the data</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d836726e391" headers="d836726e169">
+<p><code>ONLINE_STATUS</code></p>
+</td>
+<td class="cellalignment3905" headers="d836726e391 d836726e172">
+<p><code>VARCHAR2(7)</code></p>
+</td>
+<td class="cellalignment3906" headers="d836726e391 d836726e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d836726e391 d836726e178">
+<p>Online status of the file:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>SYSOFF</code></p>
+</li>
+<li>
+<p><code>SYSTEM</code></p>
+</li>
+<li>
+<p><code>OFFLINE</code></p>
+</li>
+<li>
+<p><code>ONLINE</code></p>
+</li>
+<li>
+<p><code>RECOVER</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d836726e428" headers="d836726e169">
+<p><code>LOST_WRITE_PROTECT</code></p>
+</td>
+<td class="cellalignment3905" headers="d836726e428 d836726e172">
+<p><code>VARCHAR2(7)</code></p>
+</td>
+<td class="cellalignment3906" headers="d836726e428 d836726e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d836726e428 d836726e178">
+<p>For internal use only.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<div class="section">
+<div class="infoboxnotealso" id="GUID-0FA17297-73ED-4B5D-B511-103993C003D3__GUID-B1D89523-2F09-452B-BADA-88803CE482DF">
+<p class="notep1">See Also:</p>
+<p><span class="q">"<a href="DBA_TABLESPACES.htm#GUID-B28A7D79-24E3-49B5-B948-7C2277CB1FB8">DBA_TABLESPACES</a>"</span></p>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="DBA_CUBES.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="DBA_DATAPUMP_JOBS.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

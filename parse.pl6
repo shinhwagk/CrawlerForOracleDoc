@@ -10,7 +10,7 @@ my @DynamicPerformanceViews;
 sub getHtml(){
   my $response = $client.get('http://docs.oracle.com/database/122/REFRN/toc.htm');
   if ($response.success) {
-    spurt "toc.htm", $$response.content;
+    spurt "toc.htm", $response.content;
   }
 }
 
@@ -25,7 +25,7 @@ sub getREFRN(){
     '<li><a href="' <urlname> '.htm#' .*? '"><span class="secnum">' <number1> '.' \d+ '</span>'\s+ <pname> '</a></li>'
   }
   # if ($response.success) {
-    # spurt "toc.htm", $$response.content;
+    # spurt "toc.htm", $response.content;
     my $data = slurp "data/toc.htm";
     if $data ~~ m:g/ <reg> / {
       for $/.list -> $l {

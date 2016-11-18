@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>V$BACKUP_SET</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="V$BACKUP_SET view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="V-BACKUP_REDOLOG.htm" title="Previous" type="text/html" />
+<link rel="Next" href="V-BACKUP_SET_DETAILS.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-1502768C-118E-4101-98D7-F9B82F7F262F"></a> <span id="PAGE" style="display:none;">2287/2822</span> <!-- End Header -->
+<script  >
+//<![CDATA[
+window.name='V-BACKUP_SET'
+//]]>
+</script> <script  >
+    function footdisplay(footnum,footnote) {
+    var msg = window.open('', 'NewWindow' + footnum,
+        'directories=no,height=120,location=no,menubar=no,resizable=yes,' +
+        'scrollbars=yes,status=no,toolbar=no,width=598');
+    msg.document.open('text/html');
+    msg.document.write('<!DOCTYPE html ');
+    msg.document.write('PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" ');
+
+    msg.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">');
+    msg.document.write('<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><title>');
+    msg.document.write('Footnote&amp;nbsp; ' + footnum);
+    msg.document.write('<\/title><meta http-equiv="Content-Type" ');
+    msg.document.write('content="text/html; charset=utf-8" />');
+    msg.document.write('');
+    msg.document.write('<style> <![CDATA[ ');
+    msg.document.write('h1 {text-align: center; font-size: 14pt;}');
+    msg.document.write('fieldset {border: none;}');
+    msg.document.write('form {text-align: center;}');
+    msg.document.write(' ]]\u003e <\/style>');
+    msg.document.write('<\/head><body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><h1>Footnote&nbsp; ' + footnum + '<\/h1><p>');
+    msg.document.write(footnote);
+    msg.document.write('<\/p><form action="" method="post"><fieldset>');
+    msg.document.write('<input type="button" value="OK" ');
+    msg.document.write('onclick="window.close();" />');
+    msg.document.write('<\/fieldset><\/form><\/body><\/html>');
+    msg.document.close();
+    msg.focus();
+}
+</script><noscript>
+<p>The script content on this page is for navigation purposes only and does not alter the content in any way.</p>
+</noscript><a id="REFRN30025"></a>
+<h1 id="REFRN-GUID-1502768C-118E-4101-98D7-F9B82F7F262F" class="sect1"><span class="enumeration_section">7.98</span> V$BACKUP_SET</h1>
+<div>
+<div class="section">
+<p><code>V$BACKUP_SET</code> displays information about backup sets from the control file. A backup set record is inserted after the backup set is successfully completed.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-1502768C-118E-4101-98D7-F9B82F7F262F__GUID-A6991DF3-F02D-4BE1-936D-8C6C829EF7B6">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d1582579e168">Column</th>
+<th class="cellalignment3905" id="d1582579e171">Datatype</th>
+<th class="cellalignment3908" id="d1582579e174">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d1582579e179" headers="d1582579e168">
+<p><code>RECID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1582579e179 d1582579e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1582579e179 d1582579e174">
+<p>Backup set record ID</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1582579e191" headers="d1582579e168">
+<p><code>STAMP</code></p>
+</td>
+<td class="cellalignment3905" headers="d1582579e191 d1582579e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1582579e191 d1582579e174">
+<p>Backup set record stamp</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1582579e203" headers="d1582579e168">
+<p><code>SET_STAMP</code></p>
+</td>
+<td class="cellalignment3905" headers="d1582579e203 d1582579e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1582579e203 d1582579e174">
+<p>Backup set stamp. The backup set stamp and count uniquely identify the backup set.</p>
+<p>Primary key for the <code>V$BACKUP_SET</code> table, and the foreign key for the following tables: <code>V$BACKUP_PIECE</code>, <code>V$BACKUP_DATAFILE</code>, <code>V$BACKUP_REDOLOG</code>, <code>V$BACKUP_CORRUPTION</code>.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1582579e232" headers="d1582579e168">
+<p><code>SET_COUNT</code></p>
+</td>
+<td class="cellalignment3905" headers="d1582579e232 d1582579e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1582579e232 d1582579e174">
+<p>Backup set count. The backup set count is incremented by one every time a new backup set is started (if the backup set is never completed the number is "lost"). If the control file is re-created then the count is reset to <code>1</code>. Therefore the count must be used with the stamp to uniquely identify a backup set.</p>
+<p>Primary key for the <code>V$BACKUP_SET</code> table, and the foreign key for the following tables: <code>V$BACKUP_PIECE</code>, <code>V$BACKUP_DATAFILE</code>, <code>V$BACKUP_REDOLOG</code>, <code>V$BACKUP_CORRUPTION</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1582579e263" headers="d1582579e168">
+<p><code>BACKUP_TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1582579e263 d1582579e171">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1582579e263 d1582579e174">
+<p>Type of files that are in this backup. If the backup contains archived redo logs, the value is <code>L</code>. If this is a data file full backup, the value is <code>D</code>. If this is an incremental backup, the value is <code>I</code>.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1582579e284" headers="d1582579e168">
+<p><code>CONTROLFILE_INCLUDED</code></p>
+</td>
+<td class="cellalignment3905" headers="d1582579e284 d1582579e171">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1582579e284 d1582579e174">
+<p>Set to <code>YES</code> if there is a control file included in this backup set, otherwise set to <code>NO</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1582579e301" headers="d1582579e168">
+<p><code>INCREMENTAL_LEVEL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1582579e301 d1582579e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1582579e301 d1582579e174">
+<p>Location where this backup set fits into the database's backup strategy. Set to NULL for full datafile, archivelog, controlfile, and spfile backups, set to 0 for incremental level 0 datafile backups, and set to 1 for incremental level 1 datafile backups.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1582579e313" headers="d1582579e168">
+<p><code>PIECES</code></p>
+</td>
+<td class="cellalignment3905" headers="d1582579e313 d1582579e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1582579e313 d1582579e174">
+<p>Number of distinct backup pieces in the backup set</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1582579e325" headers="d1582579e168">
+<p><code>START_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1582579e325 d1582579e171">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3908" headers="d1582579e325 d1582579e174">
+<p>Starting time</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1582579e337" headers="d1582579e168">
+<p><code>COMPLETION_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1582579e337 d1582579e171">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3908" headers="d1582579e337 d1582579e174">
+<p>Time that this backup set completed</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1582579e349" headers="d1582579e168">
+<p><code>ELAPSED_SECONDS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1582579e349 d1582579e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1582579e349 d1582579e174">
+<p>The number of elapsed seconds</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1582579e362" headers="d1582579e168">
+<p><code>BLOCK_SIZE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1582579e362 d1582579e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1582579e362 d1582579e174">
+<p>Block size of the backup set</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1582579e374" headers="d1582579e168">
+<p><code>INPUT_FILE_SCAN_ONLY</code></p>
+</td>
+<td class="cellalignment3905" headers="d1582579e374 d1582579e171">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1582579e374 d1582579e174">
+<p><code>YES</code> indicates no actual backup is performed, but the data files are read. <code>NO</code> indicates a normal backup is performed.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1582579e391" headers="d1582579e168">
+<p><code>KEEP</code></p>
+</td>
+<td class="cellalignment3905" headers="d1582579e391 d1582579e171">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1582579e391 d1582579e174">
+<p>(<code>YES</code>/<code>NO</code>) Indicates whether or not this backup set has a retention policy that is different than the value for the configure retention policy</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1582579e409" headers="d1582579e168">
+<p><code>KEEP_UNTIL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1582579e409 d1582579e171">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3908" headers="d1582579e409 d1582579e174">
+<p>If <code>KEEP_UNTIL</code>_TIME is specified, this is the date after which the backup becomes obsolete. If this column is null, then the backup never expires.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1582579e424" headers="d1582579e168">
+<p><code>KEEP_OPTIONS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1582579e424 d1582579e171">
+<p><code>VARCHAR2(11)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1582579e424 d1582579e174">
+<p>Lists additional retention options for this backup set. Possible values are:</p>
+<p><code>LOGS</code> - The logs need to recover this backup are kept</p>
+<p><code>NOLOGS</code> - The logs needed to recover this backup will not be kept</p>
+<p><code>BACKUP_LOGS</code> - An archive log backup exists to support this backup set</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1582579e448" headers="d1582579e168">
+<p><code>MULTI_SECTION</code></p>
+</td>
+<td class="cellalignment3905" headers="d1582579e448 d1582579e171">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1582579e448 d1582579e174">
+<p>Indicates whether or not this backup set is a multi-section backup. Valid values are <code>YES</code> and <code>NO</code>. A multi-section backup is a backup in which multiple backup pieces are produced independently in parallel by multiple channels.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1582579e466" headers="d1582579e168">
+<p><code>FOR_XTTS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1582579e466 d1582579e171">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1582579e466 d1582579e174">
+<p>Indicates whether this is a cross platform backup set:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>YES</code>: This is a cross platform backup set.</p>
+</li>
+<li>
+<p><code>NO</code>: This is not a cross platform backup set.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1582579e489" headers="d1582579e168">
+<p><code>SAME_ENDIAN</code></p>
+</td>
+<td class="cellalignment3905" headers="d1582579e489 d1582579e171">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1582579e489 d1582579e174">
+<p>If the value of <code>FOR_XTTS</code> is <code>YES</code>, then this column indicates whether the backup set has the same endianess as the current database (<code>YES</code>) or not (<code>NO</code>); otherwise <code>NULL</code>.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1582579e516" headers="d1582579e168">
+<p><code>INC_DMPFILE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1582579e516 d1582579e171">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1582579e516 d1582579e174">
+<p>If the value of <code>FOR_XTTS</code> is <code>YES</code>, then this column indicates whether the backup set includes a Data Pump export file of the backed up data files (<code>YES</code>) or not (<code>NO</code>), otherwise <code>NULL</code>.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1582579e543" headers="d1582579e168">
+<p><code>CON_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1582579e543 d1582579e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1582579e543 d1582579e174">
+<p>The ID of the container to which the data pertains. Possible values include:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>0</code>: This value is used for rows containing data that pertain to the entire CDB. This value is also used for rows in non-CDBs.</p>
+</li>
+<li>
+<p><code>1</code>: This value is used for rows containing data that pertain to only the root</p>
+</li>
+<li>
+<p><span class="italic">n</span>: Where <span class="italic">n</span> is the applicable container ID for the rows containing data</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1582579e574" headers="d1582579e168">
+<p><code>GUID</code><a id="fn_1" href="#fn_1" onclick='footdisplay(1,"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Foot&nbsp;1</sup></a></p>
+</td>
+<td class="cellalignment3905" headers="d1582579e574 d1582579e171">
+<p><code>RAW(16)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1582579e574 d1582579e174">
+<p>The GUID of the PDB to which the backup belongs. This is useful after the PDB is dropped to identify which PDB the backup belongs to.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<p class="tablefootnote"><sup class="tablefootnote">Footnote&nbsp;1</sup></p>
+<p>This column is available starting with Oracle Database 12<span class="italic">c</span> Release 2 (12.2.0.1).</p>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="V-BACKUP_REDOLOG.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="V-BACKUP_SET_DETAILS.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+</body>
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>DBA_HIST_TABLESPACE_STAT</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="DBA_HIST_TABLESPACE_STAT view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="DBA_HIST_TABLESPACE.htm" title="Previous" type="text/html" />
+<link rel="Next" href="DBA_HIST_TBSPC_SPACE_USAGE.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-E6EE27F3-1ED0-458C-A1D9-99C24DD39542"></a> <span id="PAGE" style="display:none;">1174/2822</span> <!-- End Header -->
+<a id="REFRN23455"></a>
+<h1 id="REFRN-GUID-E6EE27F3-1ED0-458C-A1D9-99C24DD39542" class="sect1"><span class="enumeration_section">5.76</span> DBA_HIST_TABLESPACE_STAT</h1>
+<div>
+<div class="section">
+<p><code>DBA_HIST_TABLESPACE_STAT</code> displays tablespace information from the control file. This view contains snapshots of <code>V$TABLESPACE</code> and <code>DBA_TABLESPACES</code>.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-E6EE27F3-1ED0-458C-A1D9-99C24DD39542__GUID-AE72033F-2E98-4526-B1EA-47066DEB3003">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d1074282e175">Column</th>
+<th class="cellalignment3905" id="d1074282e178">Datatype</th>
+<th class="cellalignment3906" id="d1074282e181">NULL</th>
+<th class="cellalignment3907" id="d1074282e184">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d1074282e189" headers="d1074282e175">
+<p><code>SNAP_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1074282e189 d1074282e178">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1074282e189 d1074282e181">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1074282e189 d1074282e184">
+<p>Unique snapshot ID</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1074282e205" headers="d1074282e175">
+<p><code>DBID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1074282e205 d1074282e178">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1074282e205 d1074282e181">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1074282e205 d1074282e184">
+<p>Database ID for the snapshot</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1074282e221" headers="d1074282e175">
+<p><code>INSTANCE_NUMBER</code></p>
+</td>
+<td class="cellalignment3905" headers="d1074282e221 d1074282e178">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1074282e221 d1074282e181">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1074282e221 d1074282e184">
+<p>Instance number for the snapshot</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1074282e237" headers="d1074282e175">
+<p><code>TS#</code></p>
+</td>
+<td class="cellalignment3905" headers="d1074282e237 d1074282e178">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1074282e237 d1074282e181">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1074282e237 d1074282e184">
+<p>Tablespace number</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1074282e253" headers="d1074282e175">
+<p><code>TSNAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1074282e253 d1074282e178">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1074282e253 d1074282e181">&nbsp;</td>
+<td class="cellalignment3907" headers="d1074282e253 d1074282e184">
+<p>Tablespace name</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1074282e269" headers="d1074282e175">
+<p><code>CONTENTS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1074282e269 d1074282e178">
+<p><code>VARCHAR2(9)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1074282e269 d1074282e181">&nbsp;</td>
+<td class="cellalignment3907" headers="d1074282e269 d1074282e184">
+<p>Tablespace contents:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>PERMANENT</code></p>
+</li>
+<li>
+<p><code>TEMPORARY</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1074282e294" headers="d1074282e175">
+<p><code>STATUS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1074282e294 d1074282e178">
+<p><code>VARCHAR2(9)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1074282e294 d1074282e181">&nbsp;</td>
+<td class="cellalignment3907" headers="d1074282e294 d1074282e184">
+<p>Tablespace status:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>ONLINE</code></p>
+</li>
+<li>
+<p><code>OFFLINE</code></p>
+</li>
+<li>
+<p><code>READ ONLY</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1074282e323" headers="d1074282e175">
+<p><code>SEGMENT_SPACE_MANAGEMENT</code></p>
+</td>
+<td class="cellalignment3905" headers="d1074282e323 d1074282e178">
+<p><code>VARCHAR2(6)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1074282e323 d1074282e181">&nbsp;</td>
+<td class="cellalignment3907" headers="d1074282e323 d1074282e184">
+<p>Indicates whether the free and used segment space in the tablespace is managed using free lists (<code>MANUAL</code>) or bitmaps (<code>AUTO</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1074282e345" headers="d1074282e175">
+<p><code>EXTENT_MANAGEMENT</code></p>
+</td>
+<td class="cellalignment3905" headers="d1074282e345 d1074282e178">
+<p><code>VARCHAR2(10)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1074282e345 d1074282e181">&nbsp;</td>
+<td class="cellalignment3907" headers="d1074282e345 d1074282e184">
+<p>Indicates whether the extents in the tablespace are dictionary managed (<code>DICTIONARY</code>) or locally managed (<code>LOCAL</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1074282e367" headers="d1074282e175">
+<p><code>IS_BACKUP</code></p>
+</td>
+<td class="cellalignment3905" headers="d1074282e367 d1074282e178">
+<p><code>VARCHAR2(5)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1074282e367 d1074282e181">&nbsp;</td>
+<td class="cellalignment3907" headers="d1074282e367 d1074282e184">
+<p>Indicates whether the tablespace is part of a backup</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1074282e383" headers="d1074282e175">
+<p><code>CON_DBID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1074282e383 d1074282e178">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1074282e383 d1074282e181">&nbsp;</td>
+<td class="cellalignment3907" headers="d1074282e383 d1074282e184">
+<p>The database ID of the PDB for the sampled session</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1074282e398" headers="d1074282e175">
+<p><code>CON_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1074282e398 d1074282e178">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1074282e398 d1074282e181">&nbsp;</td>
+<td class="cellalignment3907" headers="d1074282e398 d1074282e184">
+<p>The ID of the container that <code>CON_DBID</code> identifies. Possible values include:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>0</code>: This value is used for rows containing data that pertain to the entire CDB. This value is also used for rows in non-CDBs.</p>
+</li>
+<li>
+<p><code>1</code>: This value is used for rows containing data that pertain to only the root</p>
+</li>
+<li>
+<p><span class="italic">n</span>: Where <span class="italic">n</span> is the applicable container ID for the rows containing data</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<div class="section">
+<div class="infoboxnotealso" id="GUID-E6EE27F3-1ED0-458C-A1D9-99C24DD39542__GUID-29399E5B-27AE-45A8-8845-14720B3E797B">
+<p class="notep1">See Also:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="q">"<a href="V-TABLESPACE.htm#GUID-E6BF227D-CFAA-43EB-A7C9-F0AF293FDEC0">V$TABLESPACE</a>"</span></p>
+</li>
+<li>
+<p><span class="q">"<a href="DBA_TABLESPACES.htm#GUID-B28A7D79-24E3-49B5-B948-7C2277CB1FB8">DBA_TABLESPACES</a>"</span></p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="DBA_HIST_TABLESPACE.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="DBA_HIST_TBSPC_SPACE_USAGE.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

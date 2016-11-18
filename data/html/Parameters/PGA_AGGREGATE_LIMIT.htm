@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>PGA_AGGREGATE_LIMIT</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="PGA_AGGREGATE_LIMIT initialization parameter, initialization parameters, PGA_AGGREGATE_LIMIT" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="PERMIT_92_WRAP_FORMAT.htm" title="Previous" type="text/html" />
+<link rel="Next" href="PGA_AGGREGATE_TARGET.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-E364D0E5-19F2-4081-B55E-131DF09CFDB3"></a> <span id="PAGE" style="display:none;">250/2822</span> <!-- End Header -->
+<a id="REFRN10328"></a>
+<h1 id="REFRN-GUID-E364D0E5-19F2-4081-B55E-131DF09CFDB3" class="sect1"><span class="enumeration_section">1.244</span> PGA_AGGREGATE_LIMIT</h1>
+<div>
+<div class="section"></div>
+<!-- class="section" -->
+<div class="tblformal" id="GUID-E364D0E5-19F2-4081-B55E-131DF09CFDB3__GUID-E4C7E934-2A48-4D37-9223-373FED793D2C">
+<hr />
+<table class="cellalignment3900" summary="This table describes the properties for this initialization parameter">
+<thead align="left">
+<tr>
+<th class="cellalignment3901" id="d154194e167">Property</th>
+<th class="cellalignment3902" id="d154194e170">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3901" id="d154194e175" headers="d154194e167">
+<p><span class="bold">Parameter type</span></p>
+</td>
+<td class="cellalignment3902" headers="d154194e175 d154194e170">
+<p>Big integer</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3901" id="d154194e183" headers="d154194e167">
+<p><span class="bold">Syntax</span></p>
+</td>
+<td class="cellalignment3902" headers="d154194e183 d154194e170">
+<p><code>PGA_AGGREGATE_LIMIT =</code> <span class="italic"><code>integer</code></span> <code>[K | M | G]</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3901" id="d154194e197" headers="d154194e167">
+<p><span class="bold">Default value</span></p>
+</td>
+<td class="cellalignment3902" headers="d154194e197 d154194e170">
+<p>By default, <code>PGA_AGGREGATE_LIMIT</code> is set to the greater of 2 GB, 200% of <code>PGA_AGGREGATE_TARGET</code>, and 3 MB times the <code>PROCESSES</code> parameter. It will be set below 200% of <code>PGA_AGGREGATE_TARGET</code> if it is larger than 90% of the physical memory size minus the total SGA size, but not below 100% of <code>PGA_AGGREGATE_TARGET</code>.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3901" id="d154194e220" headers="d154194e167">
+<p><span class="bold">Modifiable</span></p>
+</td>
+<td class="cellalignment3902" headers="d154194e220 d154194e170">
+<p><code>ALTER SYSTEM</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3901" id="d154194e229" headers="d154194e167">
+<p><span class="bold">Modifiable in a PDB</span></p>
+</td>
+<td class="cellalignment3902" headers="d154194e229 d154194e170">
+<p>Yes</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3901" id="d154194e237" headers="d154194e167">
+<p><span class="bold">Range of values</span></p>
+</td>
+<td class="cellalignment3902" headers="d154194e237 d154194e170">
+<p>Oracle recommends that you do not set <code>PGA_AGGREGATE_LIMIT</code> below its default value. <code>PGA_AGGREGATE_LIMIT</code> cannot be set below its default value except in a text initialization parameter file (pfile) or binary server parameter file (spfile). If a value of 0 is specified, it means there is no limit to the aggregate PGA memory consumed by the instance.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3901" id="d154194e251" headers="d154194e167">
+<p><span class="bold">Basic</span></p>
+</td>
+<td class="cellalignment3902" headers="d154194e251 d154194e170">
+<p>No</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<div class="section">
+<p><code>PGA_AGGREGATE_LIMIT</code> specifies a limit on the aggregate PGA memory consumed by the instance.</p>
+<p>There is no difference in behavior between <code>PGA_AGGREGATE_LIMIT</code> being explicitly set or being set to the default.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Actions Taken When PGA_AGGREGATE_LIMIT is Exceeded</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p>Parallel queries will be treated as a unit. First, the sessions that are using the most untunable memory will have their calls aborted. Then, if the total PGA memory usage is still over the limit, the sessions that are using the most untunable memory will be terminated.</p>
+<p>SYS processes and background processes other than job queue processes will not be subjected to any of the actions described in this section. Instead, if they are using the most untunable memory, they will periodically write a brief summary of their PGA usage to a trace file.</p>
+<div class="infobox-note" id="GUID-E364D0E5-19F2-4081-B55E-131DF09CFDB3__GUID-AA71ACC5-63BC-4400-8551-30F982CE2C0D">
+<p class="notep1">Note:</p>
+<p>This parameter is optional for pluggable databases (PDBs). When this parameter is set for a PDB, it specifies the maximum PGA size for the PDB.</p>
+<p>To be able to use Resource Manager in a CDB to control the amount of memory each PDB can use:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>The <code>NONCDB_COMPATIBLE</code> initialization parameter must be set to <code>FALSE</code> at the CDB level (in the root of the CDB).</p>
+</li>
+<li>
+<p>The <code>MEMORY_TARGET</code> initialization parameter must not be set at the CDB level.</p>
+</li>
+<li>
+<p>You must set the <code>PGA_AGGREGATE_LIMIT</code> initialization parameter in a PDB to a value that meets these requirements:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p>Less than or equal to the <code>PGA_AGGREGATE_LIMIT</code> value set at the CDB level</p>
+</li>
+<li>
+<p>Greater than or equal to twice the value of <code>PGA_AGGREGATE_TARGET</code> set in the PDB</p>
+</li>
+</ul>
+<p>When you set <code>PGA_AGGREGATE_LIMIT</code> in a PDB to a value that does not meet these requirements, you receive an error. If these requirements are violated after the PDB&rsquo;s parameter is set (for example, if the <code>PGA_AGGREGATE_LIMIT</code> value is changed at the CDB level, Oracle will adjust the PDB&rsquo;s value to meet these requirements.</p>
+</li>
+</ul>
+</div>
+<div class="infoboxnotealso" id="GUID-E364D0E5-19F2-4081-B55E-131DF09CFDB3__GUID-FFFABD0D-3B11-4A9D-93CB-E190DA47723C">
+<p class="notep1">See Also:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="q">"<a href="MEMORY_TARGET.htm#GUID-186DE5CB-8104-4C8B-B673-6B831DFB42DB">MEMORY_TARGET</a>"</span></p>
+</li>
+<li>
+<p><span class="q">"<a href="PGA_AGGREGATE_TARGET.htm#GUID-DEBBD3F7-9F6D-4AC8-952C-0E0B2E62312D">PGA_AGGREGATE_TARGET</a>"</span></p>
+</li>
+<li>
+<p><a class="olink ADMIN-GUID-A3459A8B-A36A-44D4-9FCD-75CA0E3D3252#GUID-A3459A8B-A36A-44D4-9FCD-75CA0E3D3252/GUID-73A434E4-F48C-4440-BA3C-56844D263C76" target="_blank" href="http://www.oracle.com/pls/topic/lookup?ctx=E66230-01&amp;id=ADMIN-GUID-A3459A8B-A36A-44D4-9FCD-75CA0E3D3252#GUID-A3459A8B-A36A-44D4-9FCD-75CA0E3D3252/GUID-73A434E4-F48C-4440-BA3C-56844D263C76"><span><cite>Oracle Database Administrator&rsquo;s Guide</cite></span></a> for more information about the initialization parameters that control the memory usage of PDBs</p>
+</li>
+<li>
+<p><a class="olink TGDBA95346" target="_blank" href="../TGDBA/tuning-program-global-area.htm#TGDBA95346"><span class="italic">Oracle Database Performance Tuning Guide</span></a> for more information about this parameter</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="PERMIT_92_WRAP_FORMAT.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="PGA_AGGREGATE_TARGET.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

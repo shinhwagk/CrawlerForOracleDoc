@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>DBA_SR_GRP_STATUS_ALL</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="DBA_SR_GRP_STATUS_ALL view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="DBA_SR_GRP_STATUS.htm" title="Previous" type="text/html" />
+<link rel="Next" href="DBA_SR_OBJ.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-2A678882-17AB-4E86-BE3A-5B31081EF151"></a> <span id="PAGE" style="display:none;">1468/2822</span> <!-- End Header -->
+<a id="REFRN23870"></a>
+<h1 id="REFRN-GUID-2A678882-17AB-4E86-BE3A-5B31081EF151" class="sect1"><span class="enumeration_section">5.370</span> DBA_SR_GRP_STATUS_ALL</h1>
+<div>
+<div class="section">
+<p><code>DBA_SR_GRP_STATUS_ALL</code> provides information on the refresh operations on the synchronous refresh groups in the database. A refresh operation is also called a run, and it has two phases: <code>PREPARE_REFRESH</code> and <code>EXECUTE_REFRESH</code>. These phases are controlled using the <code>DBMS_SYNC_REFRESH</code> package.</p>
+<p>Each row in this view provides information on a run of a group, identified by its <code>GROUP_ID</code>. The view contains information on the status of the objects of both current and past runs of both current and defunct synchronous refresh groups. Therefore, this view can be used to examine the history of synchronous refresh operations.</p>
+<p>The current run of a group is the most recent run of a group; a current group is a currently valid group, which is capable of being refreshed. A group becomes defunct when it is unregistered for any reason, either explicitly by the user or implicitly as a side-effect when the user registers materialized views related to the materialized views in the group.</p>
+<p>To view the status of refresh operations for the most recent runs of only the current groups, use the <code>DBA_SR_GRP_STATUS</code> view.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Related View</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p><code>USER_SR_GRP_STATUS_ALL</code> provides information on the refresh operations on the synchronous refresh groups in the database which are owned by the current user. Its columns are the same as those in <code>DBA_SR_GRP_STATUS_ALL</code>.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-2A678882-17AB-4E86-BE3A-5B31081EF151__GUID-DD4B0A87-8F3B-433B-8458-992295BFDBB1">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d1240664e201">Column</th>
+<th class="cellalignment3905" id="d1240664e204">Datatype</th>
+<th class="cellalignment3906" id="d1240664e207">NULL</th>
+<th class="cellalignment3907" id="d1240664e210">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d1240664e215" headers="d1240664e201">
+<p><code>OWNER</code></p>
+</td>
+<td class="cellalignment3905" headers="d1240664e215 d1240664e204">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1240664e215 d1240664e207">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1240664e215 d1240664e210">
+<p>Owner of the refresh operation, which is the user who launched the operation</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1240664e231" headers="d1240664e201">
+<p><code>GROUP_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1240664e231 d1240664e204">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1240664e231 d1240664e207">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1240664e231 d1240664e210">
+<p>Group ID of the synchronous refresh group</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1240664e247" headers="d1240664e201">
+<p><code>OPERATION</code></p>
+</td>
+<td class="cellalignment3905" headers="d1240664e247 d1240664e204">
+<p><code>VARCHAR2(7)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1240664e247 d1240664e207">&nbsp;</td>
+<td class="cellalignment3907" headers="d1240664e247 d1240664e210">
+<p>The phase of the refresh operation performed:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>PREPARE</code></p>
+</li>
+<li>
+<p><code>EXECUTE</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1240664e272" headers="d1240664e201">
+<p><code>STATUS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1240664e272 d1240664e204">
+<p><code>VARCHAR2(10)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1240664e272 d1240664e207">&nbsp;</td>
+<td class="cellalignment3907" headers="d1240664e272 d1240664e210">
+<p>The status of the refresh operation:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>RUNNING</code></p>
+</li>
+<li>
+<p><code>NOT PROCESSED</code></p>
+</li>
+<li>
+<p><code>COMPLETE</code></p>
+</li>
+<li>
+<p><code>ERROR-SOFT</code></p>
+</li>
+<li>
+<p><code>ERROR-HARD</code></p>
+</li>
+<li>
+<p><code>ABORT</code></p>
+</li>
+<li>
+<p><code>PARTIAL</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1240664e317" headers="d1240664e201">
+<p><code>CURRENT_RUN</code></p>
+</td>
+<td class="cellalignment3905" headers="d1240664e317 d1240664e204">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1240664e317 d1240664e207">&nbsp;</td>
+<td class="cellalignment3907" headers="d1240664e317 d1240664e210">
+<p>Indicates whether the record is for the most recent refresh-operation on the group:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>Y</code> - Yes</p>
+</li>
+<li>
+<p><code>N</code> - No</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1240664e344" headers="d1240664e201">
+<p><code>CURRENT_GROUP</code></p>
+</td>
+<td class="cellalignment3905" headers="d1240664e344 d1240664e204">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1240664e344 d1240664e207">&nbsp;</td>
+<td class="cellalignment3907" headers="d1240664e344 d1240664e210">
+<p>Indicates whether the record is for a current group:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>Y</code> - Yes</p>
+</li>
+<li>
+<p><code>N</code> - No</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1240664e369" headers="d1240664e201">
+<p><code>NUM_TBLS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1240664e369 d1240664e204">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1240664e369 d1240664e207">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1240664e369 d1240664e210">
+<p>The number of tables in the synchronous refresh group</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1240664e385" headers="d1240664e201">
+<p><code>NUM_MVS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1240664e385 d1240664e204">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1240664e385 d1240664e207">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1240664e385 d1240664e210">
+<p>The number of materialized views in the synchronous refresh group</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1240664e401" headers="d1240664e201">
+<p><code>BASE_TBLS_REFR_STATUS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1240664e401 d1240664e204">
+<p><code>VARCHAR2(13)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1240664e401 d1240664e207">&nbsp;</td>
+<td class="cellalignment3907" headers="d1240664e401 d1240664e210">
+<p>Indicates the refresh status of base tables in the synchronous refresh group. The possible values are:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>NOT PROCESSED</code></p>
+</li>
+<li>
+<p><code>COMPLETE</code></p>
+</li>
+<li>
+<p><code>ABORT</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1240664e430" headers="d1240664e201">
+<p><code>NUM_MVS_COMPLETED</code></p>
+</td>
+<td class="cellalignment3905" headers="d1240664e430 d1240664e204">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1240664e430 d1240664e207">&nbsp;</td>
+<td class="cellalignment3907" headers="d1240664e430 d1240664e210">
+<p>The number of materialized views which have completed refresh in the synchronous refresh group</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1240664e446" headers="d1240664e201">
+<p><code>NUM_MVS_ABORTED</code></p>
+</td>
+<td class="cellalignment3905" headers="d1240664e446 d1240664e204">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1240664e446 d1240664e207">&nbsp;</td>
+<td class="cellalignment3907" headers="d1240664e446 d1240664e210">
+<p>The number of materialized views which have aborted refresh in the synchronous refresh group</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1240664e463" headers="d1240664e201">
+<p><code>ERROR_NUMBER</code></p>
+</td>
+<td class="cellalignment3905" headers="d1240664e463 d1240664e204">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1240664e463 d1240664e207">&nbsp;</td>
+<td class="cellalignment3907" headers="d1240664e463 d1240664e210">
+<p>Error number of the run (if any)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1240664e479" headers="d1240664e201">
+<p><code>ERROR_MESSAGE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1240664e479 d1240664e204">
+<p><code>VARCHAR2(4000)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1240664e479 d1240664e207">&nbsp;</td>
+<td class="cellalignment3907" headers="d1240664e479 d1240664e210">
+<p>Error message of the run (if any)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1240664e495" headers="d1240664e201">
+<p><code>PREPARE_START_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1240664e495 d1240664e204">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3906" headers="d1240664e495 d1240664e207">&nbsp;</td>
+<td class="cellalignment3907" headers="d1240664e495 d1240664e210">
+<p>Time that the <code>PREPARE_REFRESH</code> phase of the run started</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1240664e514" headers="d1240664e201">
+<p><code>PREPARE_END_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1240664e514 d1240664e204">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3906" headers="d1240664e514 d1240664e207">&nbsp;</td>
+<td class="cellalignment3907" headers="d1240664e514 d1240664e210">
+<p>Time that the <code>PREPARE_REFRESH</code> phase of the run ended</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1240664e533" headers="d1240664e201">
+<p><code>EXECUTE_START_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1240664e533 d1240664e204">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3906" headers="d1240664e533 d1240664e207">&nbsp;</td>
+<td class="cellalignment3907" headers="d1240664e533 d1240664e210">
+<p>Time that the <code>EXECUTE_REFRESH</code> phase of the run started</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1240664e552" headers="d1240664e201">
+<p><code>EXECUTE_END_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1240664e552 d1240664e204">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3906" headers="d1240664e552 d1240664e207">&nbsp;</td>
+<td class="cellalignment3907" headers="d1240664e552 d1240664e210">
+<p>Time that the <code>EXECUTE_REFRESH</code> phase of the run ended</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<div class="section">
+<div class="infoboxnotealso" id="GUID-2A678882-17AB-4E86-BE3A-5B31081EF151__GUID-CD208D2D-02C6-4ED8-AE9A-EA5E126B12D0">
+<p class="notep1">See Also:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="q">"<a href="USER_SR_GRP_STATUS_ALL.htm#GUID-0F143886-50B5-4B1B-8EEA-09CC112A61D0">USER_SR_GRP_STATUS_ALL</a>"</span></p>
+</li>
+<li>
+<p><a class="olink ARPLS73623" target="_blank" href="../ARPLS/DBMS_SYNC_REFRESH.htm#ARPLS73623"><span class="italic">Oracle Database PL/SQL Packages and Types Reference</span></a> for more information about the <code>DBMS_SYNC_REFRESH</code> package</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="DBA_SR_GRP_STATUS.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="DBA_SR_OBJ.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

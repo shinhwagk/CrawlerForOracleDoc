@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>ALL_QUEUE_SCHEDULES</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="ALL_QUEUE_SCHEDULES view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="ALL_PROPAGATION.htm" title="Previous" type="text/html" />
+<link rel="Next" href="ALL_QUEUE_SUBSCRIBERS.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-65C3B9EB-BFD5-4BAB-A810-D0B705E92DCA"></a> <span id="PAGE" style="display:none;">598/2822</span> <!-- End Header -->
+<a id="REFRN20174"></a>
+<h1 id="REFRN-GUID-65C3B9EB-BFD5-4BAB-A810-D0B705E92DCA" class="sect1"><span class="enumeration_section">3.19</span> ALL_QUEUE_SCHEDULES</h1>
+<div>
+<div class="section">
+<p><code>ALL_QUEUE_SCHEDULES</code> describes the propagation schedules whose source queues are accessible to the current user.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Related Views</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<ul style="list-style-type: disc;">
+<li>
+<p><code>DBA_QUEUE_SCHEDULES</code> describes all propagation schedules in the database.</p>
+</li>
+<li>
+<p><code>USER_QUEUE_SCHEDULES</code> describes the propagation schedules whose source queues are owned by the current user. This view does not display the <code>SCHEMA</code> column.</p>
+</li>
+</ul>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-65C3B9EB-BFD5-4BAB-A810-D0B705E92DCA__GUID-328E8F56-524D-49E1-A80F-8EF37090D8BF">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d483363e187">Column</th>
+<th class="cellalignment3905" id="d483363e190">Datatype</th>
+<th class="cellalignment3906" id="d483363e193">NULL</th>
+<th class="cellalignment3907" id="d483363e196">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d483363e201" headers="d483363e187">
+<p><code>SCHEMA</code></p>
+</td>
+<td class="cellalignment3905" headers="d483363e201 d483363e190">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d483363e201 d483363e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d483363e201 d483363e196">
+<p>Source queue owner</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d483363e217" headers="d483363e187">
+<p><code>QNAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d483363e217 d483363e190">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d483363e217 d483363e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d483363e217 d483363e196">
+<p>Source queue name</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d483363e233" headers="d483363e187">
+<p><code>DESTINATION</code></p>
+</td>
+<td class="cellalignment3905" headers="d483363e233 d483363e190">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d483363e233 d483363e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d483363e233 d483363e196">
+<p>Destination name, currently limited to be a <code>DBLINK</code> name</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d483363e252" headers="d483363e187">
+<p><code>START_DATE</code></p>
+</td>
+<td class="cellalignment3905" headers="d483363e252 d483363e190">
+<p><code>TIMESTAMP(6) WITH TIME ZONE</code></p>
+</td>
+<td class="cellalignment3906" headers="d483363e252 d483363e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d483363e252 d483363e196">
+<p>Date at which to start propagation</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d483363e268" headers="d483363e187">
+<p><code>START_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d483363e268 d483363e190">
+<p><code>VARCHAR2(8)</code></p>
+</td>
+<td class="cellalignment3906" headers="d483363e268 d483363e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d483363e268 d483363e196">
+<p>Time of day at which to start propagation (in <code>HH:MI:SS</code> format)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d483363e287" headers="d483363e187">
+<p><code>PROPAGATION_WINDOW</code></p>
+</td>
+<td class="cellalignment3905" headers="d483363e287 d483363e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d483363e287 d483363e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d483363e287 d483363e196">
+<p>Duration for the propagation window (in seconds)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d483363e303" headers="d483363e187">
+<p><code>NEXT_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d483363e303 d483363e190">
+<p><code>VARCHAR2(4000)</code></p>
+</td>
+<td class="cellalignment3906" headers="d483363e303 d483363e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d483363e303 d483363e196">
+<p>Function to compute the start of the next propagation window</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d483363e319" headers="d483363e187">
+<p><code>LATENCY</code></p>
+</td>
+<td class="cellalignment3905" headers="d483363e319 d483363e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d483363e319 d483363e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d483363e319 d483363e196">
+<p>Maximum wait time to propagate a message during the propagation window</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d483363e335" headers="d483363e187">
+<p><code>SCHEDULE_DISABLED</code></p>
+</td>
+<td class="cellalignment3905" headers="d483363e335 d483363e190">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d483363e335 d483363e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d483363e335 d483363e196">
+<p>Indicates whether the schedule is disabled (<code>Y</code>) or enabled (<code>N</code>). If disabled, then the schedule will not be executed.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d483363e357" headers="d483363e187">
+<p><code>PROCESS_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d483363e357 d483363e190">
+<p><code>VARCHAR2(4)</code></p>
+</td>
+<td class="cellalignment3906" headers="d483363e357 d483363e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d483363e357 d483363e196">
+<p>Name of the process executing the schedule; <code>NULL</code> if not currently executing</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d483363e376" headers="d483363e187">
+<p><code>SESSION_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d483363e376 d483363e190">
+<p><code>VARCHAR2(82)</code></p>
+</td>
+<td class="cellalignment3906" headers="d483363e376 d483363e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d483363e376 d483363e196">
+<p>Session ID and session serial number of the job executing this schedule (SID, SERIAL#); <code>NULL</code> if not currently executing</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d483363e396" headers="d483363e187">
+<p><code>INSTANCE</code></p>
+</td>
+<td class="cellalignment3905" headers="d483363e396 d483363e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d483363e396 d483363e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d483363e396 d483363e196">
+<p>Cluster database instance number executing the schedule</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d483363e412" headers="d483363e187">
+<p><code>LAST_RUN_DATE</code></p>
+</td>
+<td class="cellalignment3905" headers="d483363e412 d483363e190">
+<p><code>TIMESTAMP(6) WITH TIME ZONE</code></p>
+</td>
+<td class="cellalignment3906" headers="d483363e412 d483363e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d483363e412 d483363e196">
+<p>Date of the last successful execution</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d483363e428" headers="d483363e187">
+<p><code>LAST_RUN_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d483363e428 d483363e190">
+<p><code>VARCHAR2(8)</code></p>
+</td>
+<td class="cellalignment3906" headers="d483363e428 d483363e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d483363e428 d483363e196">
+<p>Time of day of the last successful execution (in <code>HH:MI:SS</code> format)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d483363e447" headers="d483363e187">
+<p><code>CURRENT_START_DATE</code></p>
+</td>
+<td class="cellalignment3905" headers="d483363e447 d483363e190">
+<p><code>TIMESTAMP(6) WITH TIME ZONE</code></p>
+</td>
+<td class="cellalignment3906" headers="d483363e447 d483363e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d483363e447 d483363e196">
+<p>Date at which the current window of this schedule was started</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d483363e463" headers="d483363e187">
+<p><code>CURRENT_START_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d483363e463 d483363e190">
+<p><code>VARCHAR2(8)</code></p>
+</td>
+<td class="cellalignment3906" headers="d483363e463 d483363e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d483363e463 d483363e196">
+<p>Time of day at which the current window of this schedule was started (in <code>HH:MI:SS</code> format)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d483363e482" headers="d483363e187">
+<p><code>NEXT_RUN_DATE</code></p>
+</td>
+<td class="cellalignment3905" headers="d483363e482 d483363e190">
+<p><code>TIMESTAMP(6) WITH TIME ZONE</code></p>
+</td>
+<td class="cellalignment3906" headers="d483363e482 d483363e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d483363e482 d483363e196">
+<p>Date at which the next window of this schedule will be started</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d483363e498" headers="d483363e187">
+<p><code>NEXT_RUN_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d483363e498 d483363e190">
+<p><code>VARCHAR2(8)</code></p>
+</td>
+<td class="cellalignment3906" headers="d483363e498 d483363e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d483363e498 d483363e196">
+<p>Time of day at which the next window of this schedule will be started (in <code>HH:MI:SS</code> format)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d483363e517" headers="d483363e187">
+<p><code>TOTAL_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d483363e517 d483363e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d483363e517 d483363e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d483363e517 d483363e196">
+<p>Total time spent by the system in executing this schedule (in seconds)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d483363e533" headers="d483363e187">
+<p><code>TOTAL_NUMBER</code></p>
+</td>
+<td class="cellalignment3905" headers="d483363e533 d483363e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d483363e533 d483363e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d483363e533 d483363e196">
+<p>Total number of messages propagated in this schedule</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d483363e549" headers="d483363e187">
+<p><code>TOTAL_BYTES</code></p>
+</td>
+<td class="cellalignment3905" headers="d483363e549 d483363e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d483363e549 d483363e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d483363e549 d483363e196">
+<p>Total number of bytes propagated in this schedule</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d483363e565" headers="d483363e187">
+<p><code>MAX_NUMBER</code></p>
+</td>
+<td class="cellalignment3905" headers="d483363e565 d483363e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d483363e565 d483363e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d483363e565 d483363e196">
+<p>Maximum number of messages propagated in a propagation window</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d483363e582" headers="d483363e187">
+<p><code>MAX_BYTES</code></p>
+</td>
+<td class="cellalignment3905" headers="d483363e582 d483363e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d483363e582 d483363e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d483363e582 d483363e196">
+<p>Maximum number of bytes propagated in a propagation window</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d483363e598" headers="d483363e187">
+<p><code>AVG_NUMBER</code></p>
+</td>
+<td class="cellalignment3905" headers="d483363e598 d483363e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d483363e598 d483363e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d483363e598 d483363e196">
+<p>Average number of messages propagated in a propagation window</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d483363e614" headers="d483363e187">
+<p><code>AVG_SIZE</code></p>
+</td>
+<td class="cellalignment3905" headers="d483363e614 d483363e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d483363e614 d483363e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d483363e614 d483363e196">
+<p>Average size of a propagated message (in bytes)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d483363e630" headers="d483363e187">
+<p><code>AVG_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d483363e630 d483363e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d483363e630 d483363e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d483363e630 d483363e196">
+<p>Average time to propagate a message (in seconds)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d483363e646" headers="d483363e187">
+<p><code>FAILURES</code></p>
+</td>
+<td class="cellalignment3905" headers="d483363e646 d483363e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d483363e646 d483363e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d483363e646 d483363e196">
+<p>Number of consecutive times schedule execution has failed, if any. After 16 consecutive failures, a propagation job becomes disabled automatically.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d483363e662" headers="d483363e187">
+<p><code>LAST_ERROR_DATE</code></p>
+</td>
+<td class="cellalignment3905" headers="d483363e662 d483363e190">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3906" headers="d483363e662 d483363e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d483363e662 d483363e196">
+<p>Date of the last unsuccessful execution</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d483363e678" headers="d483363e187">
+<p><code>LAST_ERROR_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d483363e678 d483363e190">
+<p><code>VARCHAR2(8)</code></p>
+</td>
+<td class="cellalignment3906" headers="d483363e678 d483363e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d483363e678 d483363e196">
+<p>Time of day of the last unsuccessful execution (in <code>HH:MI:SS</code> format)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d483363e697" headers="d483363e187">
+<p><code>LAST_ERROR_MSG</code></p>
+</td>
+<td class="cellalignment3905" headers="d483363e697 d483363e190">
+<p><code>VARCHAR2(4000)</code></p>
+</td>
+<td class="cellalignment3906" headers="d483363e697 d483363e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d483363e697 d483363e196">
+<p>Error number and error message text of the last unsuccessful execution</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d483363e713" headers="d483363e187">
+<p><code>MESSAGE_DELIVERY_MODE</code></p>
+</td>
+<td class="cellalignment3905" headers="d483363e713 d483363e190">
+<p><code>VARCHAR2(10)</code></p>
+</td>
+<td class="cellalignment3906" headers="d483363e713 d483363e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d483363e713 d483363e196">
+<p>Message delivery mode:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>PERSISTENT</code></p>
+</li>
+<li>
+<p><code>BUFFERED</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d483363e738" headers="d483363e187">
+<p><code>ELAPSED_DEQUEUE_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d483363e738 d483363e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d483363e738 d483363e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d483363e738 d483363e196">
+<p>Elapsed dequeue time (in hundredths of a second)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d483363e754" headers="d483363e187">
+<p><code>ELAPSED_PICKLE_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d483363e754 d483363e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d483363e754 d483363e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d483363e754 d483363e196">
+<p>Elapsed pickle time (time taken to linearize a logical change record (LCR) into a stream of bytes that can be sent over the network) (in hundredths of a second)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d483363e771" headers="d483363e187">
+<p><code>JOB_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d483363e771 d483363e190">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d483363e771 d483363e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d483363e771 d483363e196">
+<p>Name of the Scheduler job</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<div class="section">
+<div class="infoboxnotealso" id="GUID-65C3B9EB-BFD5-4BAB-A810-D0B705E92DCA__GUID-5E236C99-FA86-4167-A831-EFFC6A9021D1">
+<p class="notep1">See Also:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="q">"<a href="DBA_QUEUE_SCHEDULES.htm#GUID-63790F71-99A6-48F4-8D24-3FECF685FFBC">DBA_QUEUE_SCHEDULES</a>"</span></p>
+</li>
+<li>
+<p><span class="q">"<a href="USER_QUEUE_SCHEDULES.htm#GUID-CE21F8E8-8BBD-4113-A3DA-31B4596EDABE">USER_QUEUE_SCHEDULES</a>"</span></p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="ALL_PROPAGATION.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="ALL_QUEUE_SUBSCRIBERS.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

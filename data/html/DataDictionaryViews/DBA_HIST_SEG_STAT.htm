@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>DBA_HIST_SEG_STAT</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="DBA_HIST_SEG_STAT view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="DBA_HIST_RULE_SET.htm" title="Previous" type="text/html" />
+<link rel="Next" href="DBA_HIST_SEG_STAT_OBJ.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-B0B7903A-727A-4F2A-A5DC-88937670DCFD"></a> <span id="PAGE" style="display:none;">1141/2822</span> <!-- End Header -->
+<a id="REFRN23436"></a>
+<h1 id="REFRN-GUID-B0B7903A-727A-4F2A-A5DC-88937670DCFD" class="sect1"><span class="enumeration_section">5.43</span> DBA_HIST_SEG_STAT</h1>
+<div>
+<div class="section">
+<p><code>DBA_HIST_SEG_STAT</code> displays historical information about segment-level statistics. This view captures the top segments based on a set of criteria and captures information from <code>V$SEGSTAT</code>. The total value is the value of the statistics since instance startup. The delta value is the value of the statistics from the <code>BEGIN_INTERVAL_TIME</code> to the <code>END_INTERVAL_TIME</code> in the <code>DBA_HIST_SNAPSHOT</code> view.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-B0B7903A-727A-4F2A-A5DC-88937670DCFD__GUID-6620D0BD-21B6-401B-826B-CD97FC3FA80E">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d1021447e181">Column</th>
+<th class="cellalignment3905" id="d1021447e184">Datatype</th>
+<th class="cellalignment3906" id="d1021447e187">NULL</th>
+<th class="cellalignment3907" id="d1021447e190">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d1021447e195" headers="d1021447e181">
+<p><code>SNAP_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e195 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e195 d1021447e187">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1021447e195 d1021447e190">
+<p>Unique snapshot ID</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e211" headers="d1021447e181">
+<p><code>DBID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e211 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e211 d1021447e187">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1021447e211 d1021447e190">
+<p>Database ID for the snapshot</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e227" headers="d1021447e181">
+<p><code>INSTANCE_NUMBER</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e227 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e227 d1021447e187">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1021447e227 d1021447e190">
+<p>Instance number for the snapshot</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e243" headers="d1021447e181">
+<p><code>TS#</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e243 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e243 d1021447e187">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1021447e243 d1021447e190">
+<p>Tablespace number</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e259" headers="d1021447e181">
+<p><code>OBJ#</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e259 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e259 d1021447e187">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1021447e259 d1021447e190">
+<p>Dictionary object number</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e275" headers="d1021447e181">
+<p><code>DATAOBJ#</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e275 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e275 d1021447e187">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1021447e275 d1021447e190">
+<p>Data object number</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e291" headers="d1021447e181">
+<p><code>LOGICAL_READS_TOTAL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e291 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e291 d1021447e187">&nbsp;</td>
+<td class="cellalignment3907" headers="d1021447e291 d1021447e190">
+<p>Cumulative value for logical reads</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e307" headers="d1021447e181">
+<p><code>LOGICAL_READS_DELTA</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e307 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e307 d1021447e187">&nbsp;</td>
+<td class="cellalignment3907" headers="d1021447e307 d1021447e190">
+<p>Delta value for logical reads</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e323" headers="d1021447e181">
+<p><code>BUFFER_BUSY_WAITS_TOTAL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e323 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e323 d1021447e187">&nbsp;</td>
+<td class="cellalignment3907" headers="d1021447e323 d1021447e190">
+<p>Cumulative value for buffer busy waits</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e339" headers="d1021447e181">
+<p><code>BUFFER_BUSY_WAITS_DELTA</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e339 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e339 d1021447e187">&nbsp;</td>
+<td class="cellalignment3907" headers="d1021447e339 d1021447e190">
+<p>Delta value for buffer busy waits</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e355" headers="d1021447e181">
+<p><code>DB_BLOCK_CHANGES_TOTAL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e355 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e355 d1021447e187">&nbsp;</td>
+<td class="cellalignment3907" headers="d1021447e355 d1021447e190">
+<p>Cumulative value for db block changes</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e372" headers="d1021447e181">
+<p><code>DB_BLOCK_CHANGES_DELTA</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e372 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e372 d1021447e187">&nbsp;</td>
+<td class="cellalignment3907" headers="d1021447e372 d1021447e190">
+<p>Delta value for db block changes</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e388" headers="d1021447e181">
+<p><code>PHYSICAL_READS_TOTAL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e388 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e388 d1021447e187">&nbsp;</td>
+<td class="cellalignment3907" headers="d1021447e388 d1021447e190">
+<p>Cumulative value for physical reads</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e404" headers="d1021447e181">
+<p><code>PHYSICAL_READS_DELTA</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e404 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e404 d1021447e187">&nbsp;</td>
+<td class="cellalignment3907" headers="d1021447e404 d1021447e190">
+<p>Delta value for physical reads</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e420" headers="d1021447e181">
+<p><code>PHYSICAL_WRITES_TOTAL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e420 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e420 d1021447e187">&nbsp;</td>
+<td class="cellalignment3907" headers="d1021447e420 d1021447e190">
+<p>Cumulative value for physical writes</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e436" headers="d1021447e181">
+<p><code>PHYSICAL_WRITES_DELTA</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e436 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e436 d1021447e187">&nbsp;</td>
+<td class="cellalignment3907" headers="d1021447e436 d1021447e190">
+<p>Delta value for physical writes</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e452" headers="d1021447e181">
+<p><code>PHYSICAL_READS_DIRECT_TOTAL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e452 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e452 d1021447e187">&nbsp;</td>
+<td class="cellalignment3907" headers="d1021447e452 d1021447e190">
+<p>Cumulative value for physical reads direct</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e468" headers="d1021447e181">
+<p><code>PHYSICAL_READS_DIRECT_DELTA</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e468 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e468 d1021447e187">&nbsp;</td>
+<td class="cellalignment3907" headers="d1021447e468 d1021447e190">
+<p>Delta value for physical reads direct</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e484" headers="d1021447e181">
+<p><code>PHYSICAL_WRITES_DIRECT_TOTAL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e484 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e484 d1021447e187">&nbsp;</td>
+<td class="cellalignment3907" headers="d1021447e484 d1021447e190">
+<p>Cumulative value for physical writes direct</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e500" headers="d1021447e181">
+<p><code>PHYSICAL_WRITES_DIRECT_DELTA</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e500 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e500 d1021447e187">&nbsp;</td>
+<td class="cellalignment3907" headers="d1021447e500 d1021447e190">
+<p>Delta value for physical writes direct</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e516" headers="d1021447e181">
+<p><code>ITL_WAITS_TOTAL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e516 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e516 d1021447e187">&nbsp;</td>
+<td class="cellalignment3907" headers="d1021447e516 d1021447e190">
+<p>Cumulative value for ITL waits</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e532" headers="d1021447e181">
+<p><code>ITL_WAITS_DELTA</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e532 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e532 d1021447e187">&nbsp;</td>
+<td class="cellalignment3907" headers="d1021447e532 d1021447e190">
+<p>Delta value for ITL waits</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e549" headers="d1021447e181">
+<p><code>ROW_LOCK_WAITS_TOTAL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e549 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e549 d1021447e187">&nbsp;</td>
+<td class="cellalignment3907" headers="d1021447e549 d1021447e190">
+<p>Cumulative value for row lock waits</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e565" headers="d1021447e181">
+<p><code>ROW_LOCK_WAITS_DELTA</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e565 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e565 d1021447e187">&nbsp;</td>
+<td class="cellalignment3907" headers="d1021447e565 d1021447e190">
+<p>Delta value for row lock waits</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e581" headers="d1021447e181">
+<p><code>GC_CR_BLOCKS_SERVED_TOTAL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e581 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e581 d1021447e187">&nbsp;</td>
+<td class="cellalignment3907" headers="d1021447e581 d1021447e190">
+<p>Cumulative value for global cache CR blocks served</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e597" headers="d1021447e181">
+<p><code>GC_CR_BLOCKS_SERVED_DELTA</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e597 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e597 d1021447e187">&nbsp;</td>
+<td class="cellalignment3907" headers="d1021447e597 d1021447e190">
+<p>Delta value for global cache CR blocks served</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e613" headers="d1021447e181">
+<p><code>GC_CU_BLOCKS_SERVED_TOTAL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e613 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e613 d1021447e187">&nbsp;</td>
+<td class="cellalignment3907" headers="d1021447e613 d1021447e190">
+<p>Cumulative value for global cache current blocks served</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e629" headers="d1021447e181">
+<p><code>GC_CU_BLOCKS_SERVED_DELTA</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e629 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e629 d1021447e187">&nbsp;</td>
+<td class="cellalignment3907" headers="d1021447e629 d1021447e190">
+<p>Delta value for global cache current blocks served</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e645" headers="d1021447e181">
+<p><code>GC_BUFFER_BUSY_TOTAL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e645 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e645 d1021447e187">&nbsp;</td>
+<td class="cellalignment3907" headers="d1021447e645 d1021447e190">
+<p>Cumulative value for global cache buffer busy</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e659" headers="d1021447e181">
+<p><code>GC_BUFFER_BUSY_DELTA</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e659 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e659 d1021447e187">&nbsp;</td>
+<td class="cellalignment3907" headers="d1021447e659 d1021447e190">
+<p>Delta value for global cache buffer busy</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e673" headers="d1021447e181">
+<p><code>GC_CR_BLOCKS_RECEIVED_TOTAL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e673 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e673 d1021447e187">&nbsp;</td>
+<td class="cellalignment3907" headers="d1021447e673 d1021447e190">
+<p>Cumulative value for global cache CR blocks received</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e687" headers="d1021447e181">
+<p><code>GC_CR_BLOCKS_RECEIVED_DELTA</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e687 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e687 d1021447e187">&nbsp;</td>
+<td class="cellalignment3907" headers="d1021447e687 d1021447e190">
+<p>Delta value for global cache CR blocks received</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e701" headers="d1021447e181">
+<p><code>GC_CU_BLOCKS_RECEIVED_TOTAL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e701 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e701 d1021447e187">&nbsp;</td>
+<td class="cellalignment3907" headers="d1021447e701 d1021447e190">
+<p>Cumulative value for global cache current blocks received</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e716" headers="d1021447e181">
+<p><code>GC_CU_BLOCKS_RECEIVED_DELTA</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e716 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e716 d1021447e187">&nbsp;</td>
+<td class="cellalignment3907" headers="d1021447e716 d1021447e190">
+<p>Delta value for global cache current blocks received</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e730" headers="d1021447e181">
+<p><code>SPACE_USED_TOTAL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e730 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e730 d1021447e187">&nbsp;</td>
+<td class="cellalignment3907" headers="d1021447e730 d1021447e190">
+<p>Cumulative value for space used</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e746" headers="d1021447e181">
+<p><code>SPACE_USED_DELTA</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e746 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e746 d1021447e187">&nbsp;</td>
+<td class="cellalignment3907" headers="d1021447e746 d1021447e190">
+<p>Delta value for space used</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e762" headers="d1021447e181">
+<p><code>SPACE_ALLOCATED_TOTAL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e762 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e762 d1021447e187">&nbsp;</td>
+<td class="cellalignment3907" headers="d1021447e762 d1021447e190">
+<p>Cumulative value for space allocated</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e778" headers="d1021447e181">
+<p><code>SPACE_ALLOCATED_DELTA</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e778 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e778 d1021447e187">&nbsp;</td>
+<td class="cellalignment3907" headers="d1021447e778 d1021447e190">
+<p>Delta value for space allocated</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e794" headers="d1021447e181">
+<p><code>TABLE_SCANS_TOTAL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e794 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e794 d1021447e187">&nbsp;</td>
+<td class="cellalignment3907" headers="d1021447e794 d1021447e190">
+<p>Cumulative value for table scans</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e810" headers="d1021447e181">
+<p><code>TABLE_SCANS_DELTA</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e810 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e810 d1021447e187">&nbsp;</td>
+<td class="cellalignment3907" headers="d1021447e810 d1021447e190">
+<p>Delta value for table scans</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e826" headers="d1021447e181">
+<p><code>CHAIN_ROW_EXCESS_TOTAL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e826 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e826 d1021447e187">&nbsp;</td>
+<td class="cellalignment3907" headers="d1021447e826 d1021447e190">
+<p>Cumulative value of number of chained row pieces that can be eliminated by table reorganization</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e842" headers="d1021447e181">
+<p><code>CHAIN_ROW_EXCESS_DELTA</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e842 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e842 d1021447e187">&nbsp;</td>
+<td class="cellalignment3907" headers="d1021447e842 d1021447e190">
+<p>Delta value of number of chained row pieces that can be eliminated by table reorganization</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e858" headers="d1021447e181">
+<p><code>PHYSICAL_READ_REQUESTS_TOTAL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e858 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e858 d1021447e187">&nbsp;</td>
+<td class="cellalignment3907" headers="d1021447e858 d1021447e190">
+<p>Cumulative value of number of physical read I/O requests issued for the monitored segment</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e874" headers="d1021447e181">
+<p><code>PHYSICAL_READ_REQUESTS_DELTA</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e874 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e874 d1021447e187">&nbsp;</td>
+<td class="cellalignment3907" headers="d1021447e874 d1021447e190">
+<p>Delta value of number of physical read I/O requests issued for the monitored segment</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e891" headers="d1021447e181">
+<p><code>PHYSICAL_WRITE_REQUESTS_TOTAL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e891 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e891 d1021447e187">&nbsp;</td>
+<td class="cellalignment3907" headers="d1021447e891 d1021447e190">
+<p>Cumulative value of number of physical write I/O requests issued for the monitored segment</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e907" headers="d1021447e181">
+<p><code>PHYSICAL_WRITE_REQUESTS_DELTA</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e907 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e907 d1021447e187">&nbsp;</td>
+<td class="cellalignment3907" headers="d1021447e907 d1021447e190">
+<p>Delta value of number of physical write I/O requests issued for the monitored segment</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e923" headers="d1021447e181">
+<p><code>OPTIMIZED_PHYSICAL_READS_TOTAL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e923 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e923 d1021447e187">&nbsp;</td>
+<td class="cellalignment3907" headers="d1021447e923 d1021447e190">
+<p>Cumulative value of number of physical reads from Database Smart Flash Cache for the monitored segment</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e939" headers="d1021447e181">
+<p><code>OPTIMIZED_PHYSICAL_READS_DELTA</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e939 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e939 d1021447e187">&nbsp;</td>
+<td class="cellalignment3907" headers="d1021447e939 d1021447e190">
+<p>Delta value of number of physical reads from Database Smart Flash Cache for the monitored segment</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e955" headers="d1021447e181">
+<p><code>CON_DBID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e955 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e955 d1021447e187">&nbsp;</td>
+<td class="cellalignment3907" headers="d1021447e955 d1021447e190">
+<p>The database ID of the PDB for the sampled session</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1021447e969" headers="d1021447e181">
+<p><code>CON_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1021447e969 d1021447e184">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1021447e969 d1021447e187">&nbsp;</td>
+<td class="cellalignment3907" headers="d1021447e969 d1021447e190">
+<p>The ID of the container that <code>CON_DBID</code> identifies. Possible values include:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>0</code>: This value is used for rows containing data that pertain to the entire CDB. This value is also used for rows in non-CDBs.</p>
+</li>
+<li>
+<p><code>1</code>: This value is used for rows containing data that pertain to only the root</p>
+</li>
+<li>
+<p><span class="italic">n</span>: Where <span class="italic">n</span> is the applicable container ID for the rows containing data</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<div class="section">
+<div class="infoboxnotealso" id="GUID-B0B7903A-727A-4F2A-A5DC-88937670DCFD__GUID-04A9F554-0310-4170-8435-63FE28059F73">
+<p class="notep1">See Also:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="q">"<a href="V-SEGSTAT.htm#GUID-097DB23C-7BA5-4C02-B595-90F1D3337AA2">V$SEGSTAT</a>"</span></p>
+</li>
+<li>
+<p><span class="q">"<a href="DBA_HIST_SNAPSHOT.htm#GUID-542B6CA6-793B-4D15-AAFD-4D3E6550C0B6">DBA_HIST_SNAPSHOT</a>"</span></p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="DBA_HIST_RULE_SET.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="DBA_HIST_SEG_STAT_OBJ.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

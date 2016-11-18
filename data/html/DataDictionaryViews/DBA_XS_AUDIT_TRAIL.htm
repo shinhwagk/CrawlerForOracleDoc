@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>DBA_XS_AUDIT_TRAIL</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="DBA_XS_AUDIT_TRAIL view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="DBA_XS_AUDIT_POLICY_OPTIONS.htm" title="Previous" type="text/html" />
+<link rel="Next" href="DBA_XS_ENABLED_AUDIT_POLICIES.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-3D257157-93F1-41AB-A2A2-52330B159DE5"></a> <span id="PAGE" style="display:none;">1636/2822</span> <!-- End Header -->
+<a id="REFRN23886"></a>
+<h1 id="REFRN-GUID-3D257157-93F1-41AB-A2A2-52330B159DE5" class="sect1"><span class="enumeration_section">6.154</span> DBA_XS_AUDIT_TRAIL</h1>
+<div>
+<div class="section">
+<p><code>DBA_XS_AUDIT_TRAIL</code> describes all audit records specific to Oracle Database Real Application Security.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-3D257157-93F1-41AB-A2A2-52330B159DE5__GUID-0514950E-1573-40AC-8233-E02CDDA65B86">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d1359906e169">Column</th>
+<th class="cellalignment3905" id="d1359906e172">Datatype</th>
+<th class="cellalignment3906" id="d1359906e175">NULL</th>
+<th class="cellalignment3907" id="d1359906e178">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d1359906e183" headers="d1359906e169">
+<p><code>USERID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1359906e183 d1359906e172">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1359906e183 d1359906e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1359906e183 d1359906e178">
+<p>Name of the database user whose actions were audited</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1359906e199" headers="d1359906e169">
+<p><code>ACTION</code></p>
+</td>
+<td class="cellalignment3905" headers="d1359906e199 d1359906e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1359906e199 d1359906e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1359906e199 d1359906e178">
+<p>Numeric audit trail action type code. The corresponding name of the action type is in the <code>ACTION_NAME</code> column.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1359906e218" headers="d1359906e169">
+<p><code>ACTION_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1359906e218 d1359906e172">
+<p><code>VARCHAR2(64)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1359906e218 d1359906e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1359906e218 d1359906e178">
+<p>Name of the action type corresponding to the numeric code in the <code>ACTION</code> column</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1359906e237" headers="d1359906e169">
+<p><code>OBJ_OWNER</code></p>
+</td>
+<td class="cellalignment3905" headers="d1359906e237 d1359906e172">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1359906e237 d1359906e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1359906e237 d1359906e178">
+<p>Owner of the object affected by the action</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1359906e253" headers="d1359906e169">
+<p><code>OBJ_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1359906e253 d1359906e172">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1359906e253 d1359906e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1359906e253 d1359906e178">
+<p>Name of the object affected by the action</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1359906e269" headers="d1359906e169">
+<p><code>RETURN_CODE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1359906e269 d1359906e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1359906e269 d1359906e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1359906e269 d1359906e178">
+<p>Oracle error code generated by the action</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1359906e285" headers="d1359906e169">
+<p><code>XS_USER_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1359906e285 d1359906e172">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1359906e285 d1359906e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1359906e285 d1359906e178">
+<p>Name of the Real Application Security user</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1359906e301" headers="d1359906e169">
+<p><code>XS_SESSIONID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1359906e301 d1359906e172">
+<p><code>RAW(33)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1359906e301 d1359906e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1359906e301 d1359906e178">
+<p>Identifer of the Real Application Security session</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1359906e317" headers="d1359906e169">
+<p><code>XS_INACTIVITY_TIMEOUT</code></p>
+</td>
+<td class="cellalignment3905" headers="d1359906e317 d1359906e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1359906e317 d1359906e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1359906e317 d1359906e178">
+<p>Inactivity timeout of the Real Application Security session</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1359906e333" headers="d1359906e169">
+<p><code>XS_ENTITY_TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1359906e333 d1359906e172">
+<p><code>VARCHAR2(32)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1359906e333 d1359906e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1359906e333 d1359906e178">
+<p>Type of the Real Application Security entity. Possible values are <code>USER</code>, <code>ROLE</code>, <code>ROLESET</code>, <code>SECURITYCLASS</code>, <code>ACL</code>, <code>DATASECURITY</code>, and <code>NSTEMPLATE</code>.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1359906e371" headers="d1359906e169">
+<p><code>XS_TARGET_PRINCIPAL_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1359906e371 d1359906e172">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1359906e371 d1359906e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1359906e371 d1359906e178">
+<p>Target principal name in Real Application Security operations. Possible operations are set verifier, set password, add proxy, remove proxy, switch user, assign user, create session, grant roles.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1359906e388" headers="d1359906e169">
+<p><code>XS_PROXY_USER_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1359906e388 d1359906e172">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1359906e388 d1359906e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1359906e388 d1359906e178">
+<p>Name of the Real Application Security proxy user.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1359906e404" headers="d1359906e169">
+<p><code>XS_DATASEC_POLICY_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1359906e404 d1359906e172">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1359906e404 d1359906e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1359906e404 d1359906e178">
+<p>Name of the Real Application Security data security policy enabled or disabled</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1359906e420" headers="d1359906e169">
+<p><code>XS_SCHEMA_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1359906e420 d1359906e172">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1359906e420 d1359906e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1359906e420 d1359906e178">
+<p>Name of the schema in enable, disable data security policy and global callback operation</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1359906e436" headers="d1359906e169">
+<p><code>XS_CALLBACK_EVENT_TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1359906e436 d1359906e172">
+<p><code>VARCHAR2(32)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1359906e436 d1359906e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1359906e436 d1359906e178">
+<p>Real Application Security global callback event type</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1359906e452" headers="d1359906e169">
+<p><code>XS_PACKAGE_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1359906e452 d1359906e172">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1359906e452 d1359906e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1359906e452 d1359906e178">
+<p>Real Application Security callback package name for the global callback</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1359906e468" headers="d1359906e169">
+<p><code>XS_PROCEDURE_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1359906e468 d1359906e172">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1359906e468 d1359906e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1359906e468 d1359906e178">
+<p>Real Application Security callback procedure name for the global callback</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1359906e484" headers="d1359906e169">
+<p><code>XS_ENABLED_ROLE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1359906e484 d1359906e172">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1359906e484 d1359906e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1359906e484 d1359906e178">
+<p>The role that is enabled</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1359906e500" headers="d1359906e169">
+<p><code>XS_COOKIE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1359906e500 d1359906e172">
+<p><code>VARCHAR2(1024)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1359906e500 d1359906e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1359906e500 d1359906e178">
+<p>Real Application Security session cookie</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1359906e516" headers="d1359906e169">
+<p><code>XS_NS_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1359906e516 d1359906e172">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1359906e516 d1359906e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1359906e516 d1359906e178">
+<p>Name of the Real Application Security session namespace</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1359906e532" headers="d1359906e169">
+<p><code>XS_NS_ATTRIBUTE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1359906e532 d1359906e172">
+<p><code>VARCHAR2(4000)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1359906e532 d1359906e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1359906e532 d1359906e178">
+<p>Name of the Real Application Security session namespace attribute</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1359906e548" headers="d1359906e169">
+<p><code>XS_NS_ATTRIBUTE_OLD_VAL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1359906e548 d1359906e172">
+<p><code>VARCHAR2(4000)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1359906e548 d1359906e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1359906e548 d1359906e178">
+<p>The old value of the Real Application Security session namespace attribute</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1359906e565" headers="d1359906e169">
+<p><code>XS_NS_ATTRIBUTE_NEW_VAL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1359906e565 d1359906e172">
+<p><code>VARCHAR2(4000)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1359906e565 d1359906e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1359906e565 d1359906e178">
+<p>The new value of the Real Application Security session namespace attribute</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1359906e581" headers="d1359906e169">
+<p><code>EVENT_TIMESTAMP</code></p>
+</td>
+<td class="cellalignment3905" headers="d1359906e581 d1359906e172">
+<p><code>TIMESTAMP(6) WITH TIME ZONE</code></p>
+</td>
+<td class="cellalignment3906" headers="d1359906e581 d1359906e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1359906e581 d1359906e178">
+<p>Timestamp of audit record</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<div class="section">
+<div class="infoboxnotealso" id="GUID-3D257157-93F1-41AB-A2A2-52330B159DE5__GUID-D3FB6192-51D8-4B67-845B-BCB84B16F0EA">
+<p class="notep1">See Also:</p>
+<p><a class="olink DBSEG006" target="_blank" href="../DBSEG/part_6.htm#DBSEG006"><span class="italic">Oracle Database Security Guide</span></a> for more information about auditing</p>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="DBA_XS_AUDIT_POLICY_OPTIONS.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="DBA_XS_ENABLED_AUDIT_POLICIES.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

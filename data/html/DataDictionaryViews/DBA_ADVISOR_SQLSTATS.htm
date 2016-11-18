@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>DBA_ADVISOR_SQLSTATS</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="DBA_ADVISOR_SQLSTATS view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="DBA_ADVISOR_SQLPLANS.htm" title="Previous" type="text/html" />
+<link rel="Next" href="DBA_ADVISOR_SQLW_JOURNAL.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-0E2C7809-B973-4EDE-9B4E-572193D06786"></a> <span id="PAGE" style="display:none;">802/2822</span> <!-- End Header -->
+<a id="REFRN23661"></a>
+<h1 id="REFRN-GUID-0E2C7809-B973-4EDE-9B4E-572193D06786" class="sect1"><span class="enumeration_section">4.35</span> DBA_ADVISOR_SQLSTATS</h1>
+<div>
+<div class="section">
+<p><code>DBA_ADVISOR_SQLSTATS</code> displays execution statistics for the test-execution of different SQL plans during the advisor analysis.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Related View</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p><code>USER_ADVISOR_SQLSTATS</code> displays execution statistics owned by the current user for the test-execution of different SQL plans during the advisor analysis.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-0E2C7809-B973-4EDE-9B4E-572193D06786__GUID-8DB243DF-95CD-4562-8565-2E4D3BAD7F9B">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d745068e177">Column</th>
+<th class="cellalignment3905" id="d745068e180">Datatype</th>
+<th class="cellalignment3906" id="d745068e183">NULL</th>
+<th class="cellalignment3907" id="d745068e186">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d745068e191" headers="d745068e177">
+<p><code>TASK_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d745068e191 d745068e180">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d745068e191 d745068e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d745068e191 d745068e186">
+<p>Advisor task name in which the SQL statement was executed (see <code>DBA_ADVISOR_TASKS</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d745068e210" headers="d745068e177">
+<p><code>TASK_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d745068e210 d745068e180">
+<p><code>NUMBER(38)</code></p>
+</td>
+<td class="cellalignment3906" headers="d745068e210 d745068e183">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d745068e210 d745068e186">
+<p>Advisor task ID in which the SQL statement was executed (see <code>DBA_ADVISOR_TASKS</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d745068e229" headers="d745068e177">
+<p><code>EXECUTION_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d745068e229 d745068e180">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d745068e229 d745068e183">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d745068e229 d745068e186">
+<p>Advisor task execution in which the SQL statement was executed (see <code>DBA_ADVISOR_EXECUTIONS</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d745068e248" headers="d745068e177">
+<p><code>EXECUTION_TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d745068e248 d745068e180">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d745068e248 d745068e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d745068e248 d745068e186">
+<p>Type of the advisor task execution in which the SQL statement was executed (see <code>DBA_ADVISOR_EXECUTIONS</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d745068e267" headers="d745068e177">
+<p><code>OBJECT_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d745068e267 d745068e180">
+<p><code>NUMBER(38)</code></p>
+</td>
+<td class="cellalignment3906" headers="d745068e267 d745068e183">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d745068e267 d745068e186">
+<p>Advisor object ID identifying the relevant SQL statement (see <code>DBA_ADVISOR_OBJECTS</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d745068e286" headers="d745068e177">
+<p><code>PLAN_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d745068e286 d745068e180">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d745068e286 d745068e183">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d745068e286 d745068e186">
+<p>Plan ID number generated to uniquely identify a plan for a particular SQL statement (foreign key to <code>DBA_ADVISOR_SQLPLANS</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d745068e305" headers="d745068e177">
+<p><code>SQL_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d745068e305 d745068e180">
+<p><code>VARCHAR2(13)</code></p>
+</td>
+<td class="cellalignment3906" headers="d745068e305 d745068e183">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d745068e305 d745068e186">
+<p>Identifier for the SQL statement executed</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d745068e321" headers="d745068e177">
+<p><code>PLAN_HASH_VALUE</code></p>
+</td>
+<td class="cellalignment3905" headers="d745068e321 d745068e180">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d745068e321 d745068e183">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d745068e321 d745068e186">
+<p>Hash value of the SQL execution plan</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d745068e337" headers="d745068e177">
+<p><code>ATTR1</code></p>
+</td>
+<td class="cellalignment3905" headers="d745068e337 d745068e180">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d745068e337 d745068e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d745068e337 d745068e186">
+<p>Reserved for internal use</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d745068e353" headers="d745068e177">
+<p><code>CON_DBID</code></p>
+</td>
+<td class="cellalignment3905" headers="d745068e353 d745068e180">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d745068e353 d745068e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d745068e353 d745068e186">
+<p>The database ID of the pluggable database (PDB)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d745068e367" headers="d745068e177">
+<p><code>PARSE_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d745068e367 d745068e180">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d745068e367 d745068e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d745068e367 d745068e186">
+<p>Parse time (in microseconds) measured for the SQL</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d745068e384" headers="d745068e177">
+<p><code>ELAPSED_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d745068e384 d745068e180">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d745068e384 d745068e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d745068e384 d745068e186">
+<p>Elapsed time (in microseconds) to execute the SQL and fetch all of its rows, after parsing</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d745068e400" headers="d745068e177">
+<p><code>CPU_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d745068e400 d745068e180">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d745068e400 d745068e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d745068e400 d745068e186">
+<p>CPU time (in microseconds) to execute the SQL and fetch all of its rows, after parsing</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d745068e416" headers="d745068e177">
+<p><code>USER_IO_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d745068e416 d745068e180">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d745068e416 d745068e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d745068e416 d745068e186">
+<p>I/O time (in microseconds) to execute the SQL and fetch all of its rows, after parsing</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d745068e432" headers="d745068e177">
+<p><code>BUFFER_GETS</code></p>
+</td>
+<td class="cellalignment3905" headers="d745068e432 d745068e180">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d745068e432 d745068e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d745068e432 d745068e186">
+<p>Number of buffer gets measured for executing the SQL and fetching all of its rows</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d745068e448" headers="d745068e177">
+<p><code>DISK_READS</code></p>
+</td>
+<td class="cellalignment3905" headers="d745068e448 d745068e180">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d745068e448 d745068e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d745068e448 d745068e186">
+<p>Number of disk reads measured for executing the SQL and fetching all of its rows</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d745068e464" headers="d745068e177">
+<p><code>DIRECT_WRITES</code></p>
+</td>
+<td class="cellalignment3905" headers="d745068e464 d745068e180">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d745068e464 d745068e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d745068e464 d745068e186">
+<p>Number of direct writes measured for executing the SQL and fetching all of its rows</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d745068e480" headers="d745068e177">
+<p><code>PHYSICAL_READ_REQUESTS</code></p>
+</td>
+<td class="cellalignment3905" headers="d745068e480 d745068e180">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d745068e480 d745068e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d745068e480 d745068e186">
+<p>Number of physical read I/O requests issued by the monitored SQL</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d745068e496" headers="d745068e177">
+<p><code>PHYSICAL_WRITE_REQUESTS</code></p>
+</td>
+<td class="cellalignment3905" headers="d745068e496 d745068e180">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d745068e496 d745068e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d745068e496 d745068e186">
+<p>Number of physical write I/O requests issued by the monitored SQL</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d745068e512" headers="d745068e177">
+<p><code>PHYSICAL_READ_BYTES</code></p>
+</td>
+<td class="cellalignment3905" headers="d745068e512 d745068e180">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d745068e512 d745068e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d745068e512 d745068e186">
+<p>Number of bytes read from disks by the monitored SQL</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d745068e528" headers="d745068e177">
+<p><code>PHYSICAL_WRITE_BYTES</code></p>
+</td>
+<td class="cellalignment3905" headers="d745068e528 d745068e180">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d745068e528 d745068e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d745068e528 d745068e186">
+<p>Number of bytes written to disks by the monitored SQL</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d745068e544" headers="d745068e177">
+<p><code>ROWS_PROCESSED</code></p>
+</td>
+<td class="cellalignment3905" headers="d745068e544 d745068e180">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d745068e544 d745068e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d745068e544 d745068e186">
+<p>Number of rows returned by the SQL execution</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d745068e561" headers="d745068e177">
+<p><code>FETCHES</code></p>
+</td>
+<td class="cellalignment3905" headers="d745068e561 d745068e180">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d745068e561 d745068e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d745068e561 d745068e186">
+<p>Number of fetches for the SQL execution</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d745068e577" headers="d745068e177">
+<p><code>EXECUTIONS</code></p>
+</td>
+<td class="cellalignment3905" headers="d745068e577 d745068e180">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d745068e577 d745068e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d745068e577 d745068e186">
+<p>Execution count for the SQL. This column will always have a value of <code>1</code> or <code>0</code>.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d745068e599" headers="d745068e177">
+<p><code>END_OF_FETCH_COUNT</code></p>
+</td>
+<td class="cellalignment3905" headers="d745068e599 d745068e180">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d745068e599 d745068e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d745068e599 d745068e186">
+<p>Indicates whether the SQL was executed to end-of-fetch (<code>1</code>) or not (<code>0</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d745068e621" headers="d745068e177">
+<p><code>OPTIMIZER_COST</code></p>
+</td>
+<td class="cellalignment3905" headers="d745068e621 d745068e180">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d745068e621 d745068e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d745068e621 d745068e186">
+<p>Optimizer cost for the execution plan</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d745068e637" headers="d745068e177">
+<p><code>OTHER</code></p>
+</td>
+<td class="cellalignment3905" headers="d745068e637 d745068e180">
+<p><code>CLOB</code></p>
+</td>
+<td class="cellalignment3906" headers="d745068e637 d745068e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d745068e637 d745068e186">
+<p>Reserved for future use</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d745068e653" headers="d745068e177">
+<p><code>TESTEXEC_TOTAL_EXECS</code></p>
+</td>
+<td class="cellalignment3905" headers="d745068e653 d745068e180">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d745068e653 d745068e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d745068e653 d745068e186">
+<p>Total number of executions during test execute</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d745068e669" headers="d745068e177">
+<p><code>IO_INTERCONNECT_BYTES</code></p>
+</td>
+<td class="cellalignment3905" headers="d745068e669 d745068e180">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d745068e669 d745068e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d745068e669 d745068e186">
+<p>Number of I/O bytes exchanged between Oracle Database and the storage system</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d745068e685" headers="d745068e177">
+<p><code>TESTEXEC_FIRST_EXEC_IGNORED</code></p>
+</td>
+<td class="cellalignment3905" headers="d745068e685 d745068e180">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d745068e685 d745068e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d745068e685 d745068e186">
+<p>Indicates whether the first execution in test execute is ignored (<code>Y</code>) or not (<code>N</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d745068e707" headers="d745068e177">
+<p><code>CON_DBID</code></p>
+</td>
+<td class="cellalignment3905" headers="d745068e707 d745068e180">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d745068e707 d745068e183">&nbsp;</td>
+<td class="cellalignment3907" headers="d745068e707 d745068e186">
+<p>The database ID of the PDB</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<div class="section">
+<div class="infoboxnotealso" id="GUID-0E2C7809-B973-4EDE-9B4E-572193D06786__GUID-FF88E77F-B715-4188-98CA-C4905CB069D2">
+<p class="notep1">See Also:</p>
+<p><span class="q">"<a href="USER_ADVISOR_SQLSTATS.htm#GUID-9C0F9EEC-66C1-45B7-A908-4FD3ECAB307F">USER_ADVISOR_SQLSTATS</a>"</span></p>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="DBA_ADVISOR_SQLPLANS.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="DBA_ADVISOR_SQLW_JOURNAL.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

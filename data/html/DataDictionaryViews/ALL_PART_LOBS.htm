@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>ALL_PART_LOBS</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="ALL_PART_LOBS view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="ALL_PART_KEY_COLUMNS.htm" title="Previous" type="text/html" />
+<link rel="Next" href="ALL_PART_TABLES.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-3ED89EAF-44BB-4C23-8655-B5C40AC17519"></a> <span id="PAGE" style="display:none;">584/2822</span> <!-- End Header -->
+<a id="REFRN20158"></a>
+<h1 id="REFRN-GUID-3ED89EAF-44BB-4C23-8655-B5C40AC17519" class="sect1"><span class="enumeration_section">3.5</span> ALL_PART_LOBS</h1>
+<div>
+<div class="section">
+<p><code>ALL_PART_LOBS</code> displays table-level information about the partitioned LOBs accessible to the current user, including default attributes for LOB data partitions.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Related Views</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<ul style="list-style-type: disc;">
+<li>
+<p><code>DBA_PART_LOBS</code> displays table-level information about all partitioned LOBs in the database.</p>
+</li>
+<li>
+<p><code>USER_PART_LOBS</code> displays table-level information about the partitioned LOBs owned by the current user. This view does not display the <code>TABLE_OWNER</code> column.</p>
+</li>
+</ul>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-3ED89EAF-44BB-4C23-8655-B5C40AC17519__GUID-D041057D-2431-4E15-9B0E-E4140D8B7D97">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d460185e187">Column</th>
+<th class="cellalignment3905" id="d460185e190">Datatype</th>
+<th class="cellalignment3906" id="d460185e193">NULL</th>
+<th class="cellalignment3907" id="d460185e196">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d460185e201" headers="d460185e187">
+<p><code>TABLE_OWNER</code></p>
+</td>
+<td class="cellalignment3905" headers="d460185e201 d460185e190">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d460185e201 d460185e193">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d460185e201 d460185e196">
+<p>Owner of the partitioned table containing the LOBs</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d460185e217" headers="d460185e187">
+<p><code>TABLE_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d460185e217 d460185e190">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d460185e217 d460185e193">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d460185e217 d460185e196">
+<p>Name of the partitioned table containing the LOBs</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d460185e233" headers="d460185e187">
+<p><code>COLUMN_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d460185e233 d460185e190">
+<p><code>VARCHAR2(4000)</code></p>
+</td>
+<td class="cellalignment3906" headers="d460185e233 d460185e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d460185e233 d460185e196">
+<p>Name of the LOB column</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d460185e249" headers="d460185e187">
+<p><code>LOB_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d460185e249 d460185e190">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d460185e249 d460185e193">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d460185e249 d460185e196">
+<p>Name of the partitioned LOB</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d460185e265" headers="d460185e187">
+<p><code>LOB_INDEX_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d460185e265 d460185e190">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d460185e265 d460185e193">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d460185e265 d460185e196">
+<p>Name of the partitioned LOB index</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d460185e281" headers="d460185e187">
+<p><code>DEF_CHUNK</code></p>
+</td>
+<td class="cellalignment3905" headers="d460185e281 d460185e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d460185e281 d460185e193">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d460185e281 d460185e196">
+<p>Default value of <code>CHUNK</code> for a LOB data partition to be used when adding a partition</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d460185e300" headers="d460185e187">
+<p><code>DEF_PCTVERSION</code></p>
+</td>
+<td class="cellalignment3905" headers="d460185e300 d460185e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d460185e300 d460185e193">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d460185e300 d460185e196">
+<p>Default value of <code>PCTVERSION</code> for a LOB data partition to be used when adding a partition</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d460185e319" headers="d460185e187">
+<p><code>DEF_CACHE</code></p>
+</td>
+<td class="cellalignment3905" headers="d460185e319 d460185e190">
+<p><code>VARCHAR2(10)</code></p>
+</td>
+<td class="cellalignment3906" headers="d460185e319 d460185e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d460185e319 d460185e196">
+<p>Indicates whether and how the LOB data is cached by default in the buffer cache:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>YES</code> - LOB data is placed in the buffer cache</p>
+</li>
+<li>
+<p><code>NO</code> - LOB data either is not brought into the buffer cache or is brought into the buffer cache and placed at the least recently used end of the LRU list</p>
+</li>
+<li>
+<p><code>CACHEREADS</code> - LOB data is brought into the buffer cache only during read operations but not during write operations</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d460185e351" headers="d460185e187">
+<p><code>DEF_IN_ROW</code></p>
+</td>
+<td class="cellalignment3905" headers="d460185e351 d460185e190">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3906" headers="d460185e351 d460185e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d460185e351 d460185e196">
+<p>Indicates whether LOB data &lt; 4000 bytes is stored by default inline (in the row) (<code>YES</code>) or not (<code>NO</code>); that is, whether or not <code>ENABLE STORAGE IN ROW</code> was specified when the LOB column was created or last altered</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d460185e376" headers="d460185e187">
+<p><code>DEF_TABLESPACE_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d460185e376 d460185e190">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3906" headers="d460185e376 d460185e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d460185e376 d460185e196">
+<p>Default tablespace for a LOB data partition to be used when adding a partition</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d460185e392" headers="d460185e187">
+<p><code>DEF_INITIAL_EXTENT</code></p>
+</td>
+<td class="cellalignment3905" headers="d460185e392 d460185e190">
+<p><code>VARCHAR2(40)</code></p>
+</td>
+<td class="cellalignment3906" headers="d460185e392 d460185e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d460185e392 d460185e196">
+<p>Default value of <code>INITIAL</code> for a LOB data partition to be used when adding a partition, or <code>DEFAULT</code> if no <code>INITIAL</code> value was specified</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d460185e418" headers="d460185e187">
+<p><code>DEF_NEXT_EXTENT</code></p>
+</td>
+<td class="cellalignment3905" headers="d460185e418 d460185e190">
+<p><code>VARCHAR2(40)</code></p>
+</td>
+<td class="cellalignment3906" headers="d460185e418 d460185e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d460185e418 d460185e196">
+<p>Default value of <code>NEXT</code> for a LOB data partition to be used when adding a partition, or <code>DEFAULT</code> if no <code>NEXT</code> value was specified</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d460185e443" headers="d460185e187">
+<p><code>DEF_MIN_EXTENTS</code></p>
+</td>
+<td class="cellalignment3905" headers="d460185e443 d460185e190">
+<p><code>VARCHAR2(40)</code></p>
+</td>
+<td class="cellalignment3906" headers="d460185e443 d460185e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d460185e443 d460185e196">
+<p>Default value of <code>MINEXTENTS</code> for a LOB data partition to be used when adding a partition, or <code>DEFAULT</code> if no <code>MINEXTENTS</code> value was specified</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d460185e468" headers="d460185e187">
+<p><code>DEF_MAX_EXTENTS</code></p>
+</td>
+<td class="cellalignment3905" headers="d460185e468 d460185e190">
+<p><code>VARCHAR2(40)</code></p>
+</td>
+<td class="cellalignment3906" headers="d460185e468 d460185e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d460185e468 d460185e196">
+<p>Default value of <code>MAXEXTENTS</code> for a LOB data partition to be used when adding a partition, or <code>DEFAULT</code> if no <code>MAXEXTENTS</code> value was specified</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d460185e493" headers="d460185e187">
+<p><code>DEF_MAX_SIZE</code></p>
+</td>
+<td class="cellalignment3905" headers="d460185e493 d460185e190">
+<p><code>VARCHAR2(40)</code></p>
+</td>
+<td class="cellalignment3906" headers="d460185e493 d460185e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d460185e493 d460185e196">
+<p>Default value of <code>MAXSIZE</code> for a LOB data partition to be used when adding a partition, or <code>DEFAULT</code> if no <code>MAXSIZE</code> value was specified</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d460185e518" headers="d460185e187">
+<p><code>DEF_RETENTION</code></p>
+</td>
+<td class="cellalignment3905" headers="d460185e518 d460185e190">
+<p><code>VARCHAR2(7)</code></p>
+</td>
+<td class="cellalignment3906" headers="d460185e518 d460185e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d460185e518 d460185e196">
+<p>Default value of <code>RETENTION</code> for a LOB data partition to be used when adding a partition.</p>
+<p>Possible values for SecureFiles:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>NONE</code></p>
+</li>
+<li>
+<p><code>AUTO</code></p>
+</li>
+<li>
+<p><code>MIN</code></p>
+</li>
+<li>
+<p><code>MAX</code></p>
+</li>
+<li>
+<p><code>DEFAULT</code></p>
+</li>
+<li>
+<p><code>INVALID</code></p>
+</li>
+</ul>
+<p>Possible values for BasicFiles:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>YES</code></p>
+</li>
+<li>
+<p><code>NO</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d460185e575" headers="d460185e187">
+<p><code>DEF_MINRET</code></p>
+</td>
+<td class="cellalignment3905" headers="d460185e575 d460185e190">
+<p><code>VARCHAR2(40)</code></p>
+</td>
+<td class="cellalignment3906" headers="d460185e575 d460185e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d460185e575 d460185e196">
+<p>Default value of <code>RETENTION MIN</code> for a LOB data partition to be used when adding a partition, or <code>DEFAULT</code> if no <code>RETENTION MIN</code> value was specified</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d460185e600" headers="d460185e187">
+<p><code>DEF_PCT_INCREASE</code></p>
+</td>
+<td class="cellalignment3905" headers="d460185e600 d460185e190">
+<p><code>VARCHAR2(40)</code></p>
+</td>
+<td class="cellalignment3906" headers="d460185e600 d460185e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d460185e600 d460185e196">
+<p>Default value of <code>PCTINCREASE</code> for a LOB data partition to be used when adding a partition, or <code>DEFAULT</code> if no <code>PCTINCREASE</code> value was specified</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d460185e625" headers="d460185e187">
+<p><code>DEF_FREELISTS</code></p>
+</td>
+<td class="cellalignment3905" headers="d460185e625 d460185e190">
+<p><code>VARCHAR2(40)</code></p>
+</td>
+<td class="cellalignment3906" headers="d460185e625 d460185e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d460185e625 d460185e196">
+<p>Default value of <code>FREELISTS</code> for a LOB data partition to be used when adding a partition, or <code>DEFAULT</code> if no <code>FREELISTS</code> value was specified</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d460185e650" headers="d460185e187">
+<p><code>DEF_FREELIST_GROUPS</code></p>
+</td>
+<td class="cellalignment3905" headers="d460185e650 d460185e190">
+<p><code>VARCHAR2(40)</code></p>
+</td>
+<td class="cellalignment3906" headers="d460185e650 d460185e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d460185e650 d460185e196">
+<p>Default value of <code>FREELIST GROUPS</code> for a LOB data partition to be used when adding a partition, or <code>DEFAULT</code> if no <code>FREELIST GROUPS</code> value was specified</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d460185e675" headers="d460185e187">
+<p><code>DEF_LOGGING</code></p>
+</td>
+<td class="cellalignment3905" headers="d460185e675 d460185e190">
+<p><code>VARCHAR2(7)</code></p>
+</td>
+<td class="cellalignment3906" headers="d460185e675 d460185e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d460185e675 d460185e196">
+<p>Default <code>LOGGING</code> attribute for a LOB data partition to be used when adding a partition:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>NONE</code> - Not specified</p>
+<p><span class="bold">See Also:</span> the <code>*_LOBS</code> and <code>*_LOB_PARTITIONS</code> views</p>
+</li>
+<li>
+<p><code>YES</code></p>
+</li>
+<li>
+<p><code>NO</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d460185e718" headers="d460185e187">
+<p><code>DEF_BUFFER_POOL</code></p>
+</td>
+<td class="cellalignment3905" headers="d460185e718 d460185e190">
+<p><code>VARCHAR2(7)</code></p>
+</td>
+<td class="cellalignment3906" headers="d460185e718 d460185e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d460185e718 d460185e196">
+<p>Default buffer pool for a LOB data partition to be used when adding a partition:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>DEFAULT</code></p>
+</li>
+<li>
+<p><code>KEEP</code></p>
+</li>
+<li>
+<p><code>RECYCLE</code></p>
+</li>
+<li>
+<p>NULL</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d460185e751" headers="d460185e187">
+<p><code>DEF_FLASH_CACHE</code></p>
+</td>
+<td class="cellalignment3905" headers="d460185e751 d460185e190">
+<p><code>VARCHAR2(7)</code></p>
+</td>
+<td class="cellalignment3906" headers="d460185e751 d460185e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d460185e751 d460185e196">
+<p>Default Database Smart Flash Cache hint to be used when adding a partition:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>DEFAULT</code></p>
+</li>
+<li>
+<p><code>KEEP</code></p>
+</li>
+<li>
+<p><code>NONE</code></p>
+</li>
+</ul>
+<p>Solaris and Oracle Linux functionality only.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d460185e782" headers="d460185e187">
+<p><code>DEF_CELL_FLASH_CACHE</code></p>
+</td>
+<td class="cellalignment3905" headers="d460185e782 d460185e190">
+<p><code>VARCHAR2(7)</code></p>
+</td>
+<td class="cellalignment3906" headers="d460185e782 d460185e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d460185e782 d460185e196">
+<p>Default cell flash cache hint to be used when adding a partition:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>DEFAULT</code></p>
+</li>
+<li>
+<p><code>KEEP</code></p>
+</li>
+<li>
+<p><code>NONE</code></p>
+</li>
+</ul>
+<p><span class="bold">See Also:</span> Oracle Exadata Storage Server Software documentation for more information</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d460185e815" headers="d460185e187">
+<p><code>DEF_ENCRYPT</code></p>
+</td>
+<td class="cellalignment3905" headers="d460185e815 d460185e190">
+<p><code>VARCHAR2(4)</code></p>
+</td>
+<td class="cellalignment3906" headers="d460185e815 d460185e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d460185e815 d460185e196">
+<p>Default value of <code>ENCRYPT</code> for a LOB data partition to be used when adding a partition.</p>
+<p>Possible values for SecureFiles:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>YES</code></p>
+</li>
+<li>
+<p><code>NO</code></p>
+</li>
+</ul>
+<p>Possible value for BasicFiles:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>NONE</code> - Not applicable</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d460185e853" headers="d460185e187">
+<p><code>DEF_COMPRESS</code></p>
+</td>
+<td class="cellalignment3905" headers="d460185e853 d460185e190">
+<p><code>VARCHAR2(6)</code></p>
+</td>
+<td class="cellalignment3906" headers="d460185e853 d460185e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d460185e853 d460185e196">
+<p>Default value of <code>COMPRESS</code> for a LOB data partition to be used when adding a partition.</p>
+<p>Possible values for SecureFiles:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>LOW</code></p>
+</li>
+<li>
+<p><code>MEDIUM</code></p>
+</li>
+<li>
+<p><code>HIGH</code></p>
+</li>
+<li>
+<p><code>NO</code> - Compression is off</p>
+</li>
+</ul>
+<p>Possible value for BasicFiles:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>NONE</code> - Not applicable</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d460185e900" headers="d460185e187">
+<p><code>DEF_DEDUPLICATE</code></p>
+</td>
+<td class="cellalignment3905" headers="d460185e900 d460185e190">
+<p><code>VARCHAR2(15)</code></p>
+</td>
+<td class="cellalignment3906" headers="d460185e900 d460185e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d460185e900 d460185e196">
+<p>Default value of <code>DEDUPLICATE</code> for a LOB data partition to be used when adding a partition.</p>
+<p>Possible values for SecureFiles:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>LOB</code> - Deduplicate</p>
+</li>
+<li>
+<p><code>NO</code> - Keep duplicates</p>
+</li>
+</ul>
+<p>Possible values for BasicFiles:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>NONE</code> - Not applicable</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d460185e940" headers="d460185e187">
+<p><code>DEF_SECUREFILE</code></p>
+</td>
+<td class="cellalignment3905" headers="d460185e940 d460185e190">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3906" headers="d460185e940 d460185e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d460185e940 d460185e196">
+<p>Indicates whether the LOB is SecureFiles (<code>YES</code>) or not (<code>NO</code>)</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<div class="section">
+<div class="infoboxnotealso" id="GUID-3ED89EAF-44BB-4C23-8655-B5C40AC17519__GUID-D324D4C3-8E2A-492E-B958-67A6CF92B14B">
+<p class="notep1">See Also:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="q">"<a href="DBA_PART_LOBS.htm#GUID-2CB0CE96-88EB-4873-9962-6DE9B18530D9">DBA_PART_LOBS</a>"</span></p>
+</li>
+<li>
+<p><span class="q">"<a href="USER_PART_LOBS.htm#GUID-C8D278CF-6462-49A4-950F-6AC0C829911B">USER_PART_LOBS</a>"</span></p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="ALL_PART_KEY_COLUMNS.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="ALL_PART_TABLES.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

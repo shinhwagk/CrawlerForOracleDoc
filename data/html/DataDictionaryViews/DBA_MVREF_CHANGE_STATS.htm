@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>DBA_MVREF_CHANGE_STATS</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="description" content="DBA_MVREF_CHANGE_STATS displays the change data load information on the base tables associated with a refresh run for all the materialized views for the database." />
+<meta name="keywords" content="DBA_MVREF_CHANGE_STATS view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="DBA_MVIEWS.htm" title="Previous" type="text/html" />
+<link rel="Next" href="DBA_MVREF_RUN_STATS.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-1343FE59-366F-4F2D-A539-51BEE0D8B204"></a> <span id="PAGE" style="display:none;">1291/2822</span> <!-- End Header -->
+<h1 id="REFRN-GUID-1343FE59-366F-4F2D-A539-51BEE0D8B204" class="sect1"><span class="enumeration_section">5.193</span> DBA_MVREF_CHANGE_STATS</h1>
+<div>
+<p><code>DBA_MVREF_CHANGE_STATS</code> displays the change data load information on the base tables associated with a refresh run for all the materialized views for the database.</p>
+<div class="section">
+<p class="subhead1">Related View</p>
+<p><code>USER_MVREF_CHANGE_STATS</code> displays the change data load information on the master tables associated with a refresh run for all the materialized views in the database that are accessible to the current user.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-1343FE59-366F-4F2D-A539-51BEE0D8B204__GUID-80E702D9-F9F4-48A2-890B-7DCE926D1F30">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d1127942e177">Column</th>
+<th class="cellalignment3905" id="d1127942e181">Datatype</th>
+<th class="cellalignment3906" id="d1127942e185">NULL</th>
+<th class="cellalignment3907" id="d1127942e189">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d1127942e195" headers="d1127942e177">
+<p><code>TBL_OWNER</code></p>
+</td>
+<td class="cellalignment3905" headers="d1127942e195 d1127942e181">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1127942e195 d1127942e185">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1127942e195 d1127942e189">
+<p>Owner of the master table for the materialized view</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1127942e215" headers="d1127942e177">
+<p><code>TBL_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1127942e215 d1127942e181">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1127942e215 d1127942e185">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1127942e215 d1127942e189">
+<p>Name of the master table for the materialized view</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1127942e234" headers="d1127942e177">
+<p><code>MV_OWNER</code></p>
+</td>
+<td class="cellalignment3905" headers="d1127942e234 d1127942e181">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1127942e234 d1127942e185">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1127942e234 d1127942e189">
+<p>Owner of the materialized view</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1127942e254" headers="d1127942e177">
+<p><code>MV_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1127942e254 d1127942e181">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1127942e254 d1127942e185">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1127942e254 d1127942e189">
+<p>Name of the materialized view</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1127942e274" headers="d1127942e177">
+<p><code>REFRESH_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1127942e274 d1127942e181">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1127942e274 d1127942e185">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1127942e274 d1127942e189">
+<p>The refresh ID of the refresh run</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1127942e294" headers="d1127942e177">
+<p><code>NUM_ROWS_INS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1127942e294 d1127942e181">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1127942e294 d1127942e185">&nbsp;</td>
+<td class="cellalignment3907" headers="d1127942e294 d1127942e189">
+<p>The number of inserts in the materialized view log of the table (applicable only if the table has a materialized view log)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1127942e310" headers="d1127942e177">
+<p><code>NUM_ROWS_UPD</code></p>
+</td>
+<td class="cellalignment3905" headers="d1127942e310 d1127942e181">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1127942e310 d1127942e185">&nbsp;</td>
+<td class="cellalignment3907" headers="d1127942e310 d1127942e189">
+<p>The number of updates in the materialized view log of the table (applicable only if the table has a materialized view log)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1127942e330" headers="d1127942e177">
+<p><code>NUM_ROWS_DEL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1127942e330 d1127942e181">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1127942e330 d1127942e185">&nbsp;</td>
+<td class="cellalignment3907" headers="d1127942e330 d1127942e189">
+<p>The number of deletes in the materialized view log of the table (applicable only if the table has a materialized view log)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1127942e350" headers="d1127942e177">
+<p><code>NUM_ROWS_DL_INS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1127942e350 d1127942e181">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1127942e350 d1127942e185">&nbsp;</td>
+<td class="cellalignment3907" headers="d1127942e350 d1127942e189">
+<p>The number of direct load inserts on the table</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1127942e370" headers="d1127942e177">
+<p><code>PMOPS_OCCURRED</code></p>
+</td>
+<td class="cellalignment3905" headers="d1127942e370 d1127942e181">
+<p><code>CHAR(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1127942e370 d1127942e185">&nbsp;</td>
+<td class="cellalignment3907" headers="d1127942e370 d1127942e189">
+<p>Indicates whether a partition-maintenance operation (PMOP) occurred. Possible values:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>Y</code></p>
+</li>
+<li>
+<p><code>N</code></p>
+</li>
+<li>
+<p><code>NULL</code>: Indicates an unknown value</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1127942e404" headers="d1127942e177">
+<p><code>PMOP_DETAILS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1127942e404 d1127942e181">
+<p><code>VARCHAR2(4000)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1127942e404 d1127942e185">&nbsp;</td>
+<td class="cellalignment3907" headers="d1127942e404 d1127942e189">
+<p>Details of the PMOPs in the following format:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>TRUNCATE(low_bound, high_bound)</code></p>
+</li>
+<li>
+<p><code>EXECHANGE(low_bound, high_bound)</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1127942e434" headers="d1127942e177">
+<p><code>NUM_ROWS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1127942e434 d1127942e181">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1127942e434 d1127942e185">&nbsp;</td>
+<td class="cellalignment3907" headers="d1127942e434 d1127942e189">
+<p>The number of rows in the table at the start of the refresh operation</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<div class="section">
+<div class="infobox-note" id="GUID-1343FE59-366F-4F2D-A539-51BEE0D8B204__GUID-BD750EB9-A971-4FFA-8C62-8CF0601AF92F">
+<p class="notep1">Note:</p>
+This view is available starting with Oracle Database 12<span class="italic">c</span> Release 2 (12.2.0.1).</div>
+<div class="infoboxnotealso" id="GUID-1343FE59-366F-4F2D-A539-51BEE0D8B204__GUID-FBBFD036-345A-4C32-9DD5-416B22AFBA01">
+<p class="notep1">See Also:</p>
+<p><span class="q">"<a href="USER_MVREF_CHANGE_STATS.htm#GUID-11336606-2D4E-4F78-9B36-E913D22A75BE" title="USER_MVREF_CHANGE_STATS displays the change data load information on the master tables associated with a refresh run for all the materialized views in the database that are accessible to the current user. Its columns are the same as those in DBA_MVREF_CHANGE_STATS.">USER_MVREF_CHANGE_STATS</a>"</span></p>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="DBA_MVIEWS.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="DBA_MVREF_RUN_STATS.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

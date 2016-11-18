@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>V$PERSISTENT_QUEUES</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="V$PERSISTENT_QUEUES view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="V-PERSISTENT_QMN_CACHE.htm" title="Previous" type="text/html" />
+<link rel="Next" href="V-PERSISTENT_SUBSCRIBERS.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-6F6BB02C-B2BC-4EF2-8A93-4EBD169C1474"></a> <span id="PAGE" style="display:none;">2571/2822</span> <!-- End Header -->
+<script  >
+//<![CDATA[
+window.name='V-PERSISTENT_QUEUES'
+//]]>
+</script> <script  >
+    function footdisplay(footnum,footnote) {
+    var msg = window.open('', 'NewWindow' + footnum,
+        'directories=no,height=120,location=no,menubar=no,resizable=yes,' +
+        'scrollbars=yes,status=no,toolbar=no,width=598');
+    msg.document.open('text/html');
+    msg.document.write('<!DOCTYPE html ');
+    msg.document.write('PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" ');
+
+    msg.document.write('"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">');
+    msg.document.write('<html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><title>');
+    msg.document.write('Footnote&amp;nbsp; ' + footnum);
+    msg.document.write('<\/title><meta http-equiv="Content-Type" ');
+    msg.document.write('content="text/html; charset=utf-8" />');
+    msg.document.write('');
+    msg.document.write('<style> <![CDATA[ ');
+    msg.document.write('h1 {text-align: center; font-size: 14pt;}');
+    msg.document.write('fieldset {border: none;}');
+    msg.document.write('form {text-align: center;}');
+    msg.document.write(' ]]\u003e <\/style>');
+    msg.document.write('<\/head><body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a><h1>Footnote&nbsp; ' + footnum + '<\/h1><p>');
+    msg.document.write(footnote);
+    msg.document.write('<\/p><form action="" method="post"><fieldset>');
+    msg.document.write('<input type="button" value="OK" ');
+    msg.document.write('onclick="window.close();" />');
+    msg.document.write('<\/fieldset><\/form><\/body><\/html>');
+    msg.document.close();
+    msg.focus();
+}
+</script><noscript>
+<p>The script content on this page is for navigation purposes only and does not alter the content in any way.</p>
+</noscript><a id="REFRN30460"></a>
+<h1 id="REFRN-GUID-6F6BB02C-B2BC-4EF2-8A93-4EBD169C1474" class="sect1"><span class="enumeration_section">8.115</span> V$PERSISTENT_QUEUES</h1>
+<div>
+<div class="section">
+<p><code>V$PERSISTENT_QUEUES</code> displays information about all active persistent queues in the database since the queues' first activity time. There is one row per queue. The rows are deleted when the database (or instance in an Oracle RAC environment) restarts.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-6F6BB02C-B2BC-4EF2-8A93-4EBD169C1474__GUID-4937C6C1-E6AA-4913-BBB4-A76D4EA23707">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d1879879e168">Column</th>
+<th class="cellalignment3905" id="d1879879e171">Datatype</th>
+<th class="cellalignment3908" id="d1879879e174">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d1879879e179" headers="d1879879e168">
+<p><code>QUEUE_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1879879e179 d1879879e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1879879e179 d1879879e174">
+<p>Identifier for the queue</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1879879e191" headers="d1879879e168">
+<p><code>QUEUE_TABLE_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1879879e191 d1879879e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1879879e191 d1879879e174">
+<p>Queue table identifier</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1879879e203" headers="d1879879e168">
+<p><code>QUEUE_SCHEMA</code></p>
+</td>
+<td class="cellalignment3905" headers="d1879879e203 d1879879e171">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1879879e203 d1879879e174">
+<p>Owner of the queue</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1879879e215" headers="d1879879e168">
+<p><code>QUEUE_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1879879e215 d1879879e171">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1879879e215 d1879879e174">
+<p>Name of the queue</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1879879e227" headers="d1879879e168">
+<p><code>FIRST_ACTIVITY_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1879879e227 d1879879e171">
+<p><code>TIMESTAMP(6)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1879879e227 d1879879e174">
+<p>First queue activity time since database startup</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1879879e239" headers="d1879879e168">
+<p><code>ENQUEUED_MSGS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1879879e239 d1879879e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1879879e239 d1879879e174">
+<p>Number of messages enqueued</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1879879e251" headers="d1879879e168">
+<p><code>DEQUEUED_MSGS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1879879e251 d1879879e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1879879e251 d1879879e174">
+<p>Number of messages dequeued</p>
+<p><span class="bold">Note:</span> This column will not be incremented until all the subscribers of the message have dequeued the message and its retention time has elapsed.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1879879e267" headers="d1879879e168">
+<p><code>BROWSED_MSGS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1879879e267 d1879879e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1879879e267 d1879879e174">
+<p>Number of messages that have been browsed</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1879879e279" headers="d1879879e168">
+<p><code>ELAPSED_ENQUEUE_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1879879e279 d1879879e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1879879e279 d1879879e174">
+<p>Total time (in hundredths of a second) spent doing enqueue</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1879879e291" headers="d1879879e168">
+<p><code>ELAPSED_DEQUEUE_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1879879e291 d1879879e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1879879e291 d1879879e174">
+<p>Total time (in hundredths of a second) spent doing dequeue</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1879879e303" headers="d1879879e168">
+<p><code>ENQUEUE_CPU_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1879879e303 d1879879e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1879879e303 d1879879e174">
+<p>Total CPU time for enqueue (in hundredths of a second)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1879879e316" headers="d1879879e168">
+<p><code>DEQUEUE_CPU_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1879879e316 d1879879e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1879879e316 d1879879e174">
+<p>Total CPU time for dequeue (in hundredths of a second)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1879879e328" headers="d1879879e168">
+<p><code>AVG_MSG_AGE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1879879e328 d1879879e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1879879e328 d1879879e174">
+<p>Average age of messages in the queue</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1879879e340" headers="d1879879e168">
+<p><code>DEQUEUED_MSG_LATENCY</code></p>
+</td>
+<td class="cellalignment3905" headers="d1879879e340 d1879879e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1879879e340 d1879879e174">
+<p>Last dequeued message latency (in seconds)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1879879e352" headers="d1879879e168">
+<p><code>ELAPSED_TRANSFORMATION_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1879879e352 d1879879e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1879879e352 d1879879e174">
+<p>Total time (in hundredths of a second) spent doing transformation</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1879879e364" headers="d1879879e168">
+<p><code>ELAPSED_RULE_EVALUATION_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1879879e364 d1879879e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1879879e364 d1879879e174">
+<p>Total time (in hundredths of a second) spent doing rule evaluation</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1879879e376" headers="d1879879e168">
+<p><code>ENQUEUED_EXPIRY_MSGS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1879879e376 d1879879e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1879879e376 d1879879e174">
+<p>Number of messages enqueued with expiry</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1879879e388" headers="d1879879e168">
+<p><code>ENQUEUED_DELAY_MSGS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1879879e388 d1879879e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1879879e388 d1879879e174">
+<p>Number of messages enqueued with delay</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1879879e400" headers="d1879879e168">
+<p><code>MSGS_MADE_EXPIRED</code></p>
+</td>
+<td class="cellalignment3905" headers="d1879879e400 d1879879e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1879879e400 d1879879e174">
+<p>Number of messages expired by time manager</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1879879e412" headers="d1879879e168">
+<p><code>MSGS_MADE_READY</code></p>
+</td>
+<td class="cellalignment3905" headers="d1879879e412 d1879879e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1879879e412 d1879879e174">
+<p>Number of messages made ready by time manager</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1879879e424" headers="d1879879e168">
+<p><code>LAST_ENQUEUE_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1879879e424 d1879879e171">
+<p><code>TIMESTAMP(6)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1879879e424 d1879879e174">
+<p>Last message enqueue time</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1879879e436" headers="d1879879e168">
+<p><code>LAST_DEQUEUE_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1879879e436 d1879879e171">
+<p><code>TIMESTAMP(6)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1879879e436 d1879879e174">
+<p>Last message dequeue time</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1879879e449" headers="d1879879e168">
+<p><code>LAST_TM_EXPIRY_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1879879e449 d1879879e171">
+<p><code>TIMESTAMP(6)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1879879e449 d1879879e174">
+<p>Last time message was expired by time manager</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1879879e461" headers="d1879879e168">
+<p><code>LAST_TM_READY_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1879879e461 d1879879e171">
+<p><code>TIMESTAMP(6)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1879879e461 d1879879e174">
+<p>Last time message was made ready by time manager</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1879879e473" headers="d1879879e168">
+<p><code>ENQUEUE_TRANSACTIONS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1879879e473 d1879879e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1879879e473 d1879879e174">
+<p>Number of enqueue transactions</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1879879e485" headers="d1879879e168">
+<p><code>DEQUEUE_TRANSACTIONS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1879879e485 d1879879e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1879879e485 d1879879e174">
+<p>Number of dequeue transactions</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1879879e497" headers="d1879879e168">
+<p><code>EXECUTION_COUNT</code></p>
+</td>
+<td class="cellalignment3905" headers="d1879879e497 d1879879e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1879879e497 d1879879e174">
+<p>Number of executions of the dequeue cursor</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1879879e509" headers="d1879879e168">
+<p><code>OLDEST_MSGID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1879879e509 d1879879e171">
+<p><code>RAW(16)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1879879e509 d1879879e174">
+<p>Message ID of the oldest message in the queue</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1879879e521" headers="d1879879e168">
+<p><code>OLDEST_MSG_ENQTM</code></p>
+</td>
+<td class="cellalignment3905" headers="d1879879e521 d1879879e171">
+<p><code>TIMESTAMP(6)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1879879e521 d1879879e174">
+<p>Enqueue time of the oldest message in the queue</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1879879e533" headers="d1879879e168">
+<p><code>MANDATORY_AFF_SWITCHES_OUT</code><a id="GUID-6F6BB02C-B2BC-4EF2-8A93-4EBD169C1474__THISCOLUMNISAVAILABLESTARTINGWITHOR-1B5C1894" href="#GUID-6F6BB02C-B2BC-4EF2-8A93-4EBD169C1474__THISCOLUMNISAVAILABLESTARTINGWITHOR-1B5C1894" onclick='footdisplay(1,"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Foot&nbsp;1</sup></a><a id="fnsrc_d1879879e543" href="#fnsrc_d1879879e543" onclick='footdisplay(, \"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+<td class="cellalignment3905" headers="d1879879e533 d1879879e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1879879e533 d1879879e174">
+<p>An affinity switch is a change in dequeue instance for a shard-subscriber pair. A mandatory affinity switch is when there are local enqueues in the queue at the instance but no local dequeues present, so the dequeue affinity is switched to another instance for that shard-subscriber pair. This column shows the number of times mandatory affinity switches were needed from this instance to another for this queue.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1879879e553" headers="d1879879e168">
+<p><code>OPTIONAL_AFF_SWITCHES_OUT</code><a id="fnsrc_d1879879e557" href="#fnsrc_d1879879e557" onclick='footdisplay(, \"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+<td class="cellalignment3905" headers="d1879879e553 d1879879e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1879879e553 d1879879e174">
+<p>Optional affinity switches are affinity switches that are not mandatory. Optional affinity switches are done for global load balancing across the Oracle Real Application Clusters (Oracle RAC) database. This column shows the number of times optional affinity switches were needed from this instance to another for this queue.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1879879e567" headers="d1879879e168">
+<p><code>AFF_SWITCHES_BACK_IN</code><a id="fnsrc_d1879879e571" href="#fnsrc_d1879879e571" onclick='footdisplay(, \"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+<td class="cellalignment3905" headers="d1879879e567 d1879879e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1879879e567 d1879879e174">
+<p>The number of times dequeue affinities have come back from other instances to this instance. (<code>MANDATORY_AFF_SWITCHES_OUT</code> + <code>OPTIONAL_AFF_SWITCHES_OUT</code> - <code>AFF_SWITCHES_BACK_IN</code>) is the number of cross instance affinities present across all shard-subscriber pair for shards owned by this instance for this queue.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1879879e590" headers="d1879879e168">
+<p><code>CROSS_STREAM_JOBS</code><a id="fnsrc_d1879879e594" href="#fnsrc_d1879879e594" onclick='footdisplay(, \"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+<td class="cellalignment3905" headers="d1879879e590 d1879879e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1879879e590 d1879879e174">
+<p>The number of times a shard is being forwarded to another instance due to cross instance dequeues for this queue</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1879879e605" headers="d1879879e168">
+<p><code>RESTORE_BITMAP_JOBS</code><a id="fnsrc_d1879879e609" href="#fnsrc_d1879879e609" onclick='footdisplay(, \"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+<td class="cellalignment3905" headers="d1879879e605 d1879879e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1879879e605 d1879879e174">
+<p>The number of times subscribers used existing shard forwarding to have cross instance dequeues for this queue</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1879879e619" headers="d1879879e168">
+<p><code>SHADOW_AFF_SWITCHES_IN</code><a id="fnsrc_d1879879e623" href="#fnsrc_d1879879e623" onclick='footdisplay(, \"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+<td class="cellalignment3905" headers="d1879879e619 d1879879e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1879879e619 d1879879e174">
+<p>The number of affinity switches for this queue where this instance is the dequeue instance for a shard-subscriber pair where the shard is being enqueued at another instance</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1879879e633" headers="d1879879e168">
+<p><code>SHADOW_AFF_SWITCHES_OUT</code><a id="fnsrc_d1879879e637" href="#fnsrc_d1879879e637" onclick='footdisplay(, \"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+<td class="cellalignment3905" headers="d1879879e633 d1879879e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1879879e633 d1879879e174">
+<p>The number of affinity switches for this queue where shadow affinity is switched back to source instance of the shard. (<code>SHADOW_AFF_SWITCHES_IN</code> - <code>SHADOW_AFF_SWITCHES_OUT</code>) is the number of dequeue affinities which are performing cross instance dequeues from non-local shards.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1879879e653" headers="d1879879e168">
+<p><code>SHADOW_SHARDS_RECEIVED</code><a id="fnsrc_d1879879e657" href="#fnsrc_d1879879e657" onclick='footdisplay(, \"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+<td class="cellalignment3905" headers="d1879879e653 d1879879e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1879879e653 d1879879e174">
+<p>The number of times a shard is being forwarded from another instance to this instance due to cross instance dequeues for this queue</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1879879e667" headers="d1879879e168">
+<p><code>SHADOW_SHARDS_FREED</code><a id="fnsrc_d1879879e671" href="#fnsrc_d1879879e671" onclick='footdisplay(, \"This column is available starting with Oracle Database 12c Release 2 (12.2.0.1). ")'><sup>Footref&nbsp;</sup></a></p>
+</td>
+<td class="cellalignment3905" headers="d1879879e667 d1879879e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1879879e667 d1879879e174">
+<p>The number of times a forwarded shard to this instance was stopped due to removal of cross instance dequeues for this queue</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1879879e681" headers="d1879879e168">
+<p><code>CON_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1879879e681 d1879879e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1879879e681 d1879879e174">
+<p>The ID of the container to which the data pertains. Possible values include:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>0</code>: This value is used for rows containing data that pertain to the entire CDB. This value is also used for rows in non-CDBs.</p>
+</li>
+<li>
+<p><code>1</code>: This value is used for rows containing data that pertain to only the root</p>
+</li>
+<li>
+<p><span class="italic">n</span>: Where <span class="italic">n</span> is the applicable container ID for the rows containing data</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<p class="tablefootnote"><sup class="tablefootnote">Footnote&nbsp;1</sup></p>
+<p>This column is available starting with Oracle Database 12<span class="italic">c</span> Release 2 (12.2.0.1).</p>
+</div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="V-PERSISTENT_QMN_CACHE.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="V-PERSISTENT_SUBSCRIBERS.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+</body>
+</html>

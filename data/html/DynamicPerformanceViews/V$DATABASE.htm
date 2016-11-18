@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>V$DATABASE</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="V$DATABASE view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="V-CURRENT_BLOCK_SERVER.htm" title="Previous" type="text/html" />
+<link rel="Next" href="V-DATABASE_BLOCK_CORRUPTION.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-C62A7B96-2DD4-4E70-A0D9-26EE4BFBE256"></a> <span id="PAGE" style="display:none;">2339/2822</span> <!-- End Header -->
+<a id="REFRN30047"></a>
+<h1 id="REFRN-GUID-C62A7B96-2DD4-4E70-A0D9-26EE4BFBE256" class="sect1"><span class="enumeration_section">7.150</span> V$DATABASE</h1>
+<div>
+<div class="section">
+<p><code>V$DATABASE</code> displays information about the database from the control file.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-C62A7B96-2DD4-4E70-A0D9-26EE4BFBE256__GUID-0DD99CF9-2D4B-4FF5-9399-BB3CD7CE25C1">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d1635510e168">Column</th>
+<th class="cellalignment3905" id="d1635510e171">Datatype</th>
+<th class="cellalignment3908" id="d1635510e174">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d1635510e179" headers="d1635510e168">
+<p><code>DBID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e179 d1635510e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e179 d1635510e174">
+<p>Database identifier calculated when the database is created and stored in all file headers</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e191" headers="d1635510e168">
+<p><code>NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e191 d1635510e171">
+<p><code>VARCHAR2(9)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e191 d1635510e174">
+<p>Name of the database</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e203" headers="d1635510e168">
+<p><code>CREATED</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e203 d1635510e171">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e203 d1635510e174">
+<p>Creation date of the database. If the control file was re-created using the <code>CREATE</code> <code>CONTROLFILE</code> statement, then this column displays the date that the control file was re-created.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e221" headers="d1635510e168">
+<p><code>RESETLOGS_CHANGE#</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e221 d1635510e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e221 d1635510e174">
+<p>System change number (SCN) at open resetlogs</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e233" headers="d1635510e168">
+<p><code>RESETLOGS_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e233 d1635510e171">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e233 d1635510e174">
+<p>Timestamp of open resetlogs</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e245" headers="d1635510e168">
+<p><code>PRIOR_RESETLOGS_CHANGE#</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e245 d1635510e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e245 d1635510e174">
+<p>SCN at prior resetlogs</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e257" headers="d1635510e168">
+<p><code>PRIOR_RESETLOGS_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e257 d1635510e171">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e257 d1635510e174">
+<p>Timestamp of prior resetlogs</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e269" headers="d1635510e168">
+<p><code>LOG_MODE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e269 d1635510e171">
+<p><code>VARCHAR2(12)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e269 d1635510e174">
+<p>Archive log mode:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>NOARCHIVELOG</code></p>
+</li>
+<li>
+<p><code>ARCHIVELOG</code></p>
+</li>
+<li>
+<p><code>MANUAL</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e294" headers="d1635510e168">
+<p><code>CHECKPOINT_CHANGE#</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e294 d1635510e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e294 d1635510e174">
+<p>Last SCN checkpointed</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e306" headers="d1635510e168">
+<p><code>ARCHIVE_CHANGE#</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e306 d1635510e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e306 d1635510e174">
+<p>Database force archiving SCN. Any redo log with a start SCN below this will be forced to archive out.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e318" headers="d1635510e168">
+<p><code>CONTROLFILE_TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e318 d1635510e171">
+<p><code>VARCHAR2(7)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e318 d1635510e174">
+<p>Type of control file:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>STANDBY</code> - Indicates that the database is in standby mode</p>
+</li>
+<li>
+<p><code>CLONE</code> - Indicates a clone database</p>
+</li>
+<li>
+<p><code>BACKUP</code> | <code>CREATED</code> - Indicates the database is being recovered using a backup or created control file</p>
+</li>
+<li>
+<p><code>CURRENT</code> - database is available for general use</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e355" headers="d1635510e168">
+<p><code>CONTROLFILE_CREATED</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e355 d1635510e171">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e355 d1635510e174">
+<p>Creation date of the control file</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e367" headers="d1635510e168">
+<p><code>CONTROLFILE_SEQUENCE#</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e367 d1635510e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e367 d1635510e174">
+<p>Control file sequence number incremented by control file transactions</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e379" headers="d1635510e168">
+<p><code>CONTROLFILE_CHANGE#</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e379 d1635510e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e379 d1635510e174">
+<p>Last SCN in backup control file; null if the control file is not a backup</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e391" headers="d1635510e168">
+<p><code>CONTROLFILE_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e391 d1635510e171">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e391 d1635510e174">
+<p>Last timestamp in backup control file; null if the control file is not a backup</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e403" headers="d1635510e168">
+<p><code>OPEN_RESETLOGS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e403 d1635510e171">
+<p><code>VARCHAR2(11)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e403 d1635510e174">
+<p>(<code>NOT ALLOWED</code> | <code>ALLOWED</code> | <code>REQUIRED</code>) Indicates whether the next database open allows or requires the resetlogs option</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e424" headers="d1635510e168">
+<p><code>VERSION_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e424 d1635510e171">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e424 d1635510e174">
+<p>Version time</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e436" headers="d1635510e168">
+<p><code>OPEN_MODE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e436 d1635510e171">
+<p><code>VARCHAR2(20)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e436 d1635510e174">
+<p>Open mode information:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>MOUNTED</code></p>
+</li>
+<li>
+<p><code>READ WRITE</code></p>
+</li>
+<li>
+<p><code>READ ONLY</code></p>
+</li>
+<li>
+<p><code>READ ONLY WITH APPLY</code> - A physical standby database is open in real-time query mode</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e466" headers="d1635510e168">
+<p><code>PROTECTION_MODE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e466 d1635510e171">
+<p><code>VARCHAR2(20)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e466 d1635510e174">
+<p>Protection mode currently in effect for the database:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>MAXIMUM PROTECTION</code> - Database is running in maximized protection mode</p>
+</li>
+<li>
+<p><code>MAXIMUM AVAILABILITY</code> - Database is running in maximized availability mode</p>
+</li>
+<li>
+<p><code>RESYNCHRONIZATION</code> - Database is running in resynchronization mode</p>
+</li>
+<li>
+<p><code>MAXIMUM PERFORMANCE</code> - Database is running in maximized performance mode</p>
+</li>
+<li>
+<p><code>UNPROTECTED</code> - Database is unprotected (this normally occurs when the primary database is mounted and not open)</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e504" headers="d1635510e168">
+<p><code>PROTECTION_LEVEL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e504 d1635510e171">
+<p><code>VARCHAR2(20)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e504 d1635510e174">
+<p>Aggregated protection mode currently in effect for the database:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>MAXIMUM PROTECTION</code> - Database is running in maximized protection mode</p>
+</li>
+<li>
+<p><code>MAXIMUM AVAILABILITY</code> - Database is running in maximized availability mode</p>
+</li>
+<li>
+<p><code>RESYNCHRONIZATION</code> - Database is running in resynchronization mode</p>
+</li>
+<li>
+<p><code>MAXIMUM PERFORMANCE</code> - Database is running in maximized performance mode</p>
+</li>
+<li>
+<p><code>UNPROTECTED</code> - Database is unprotected (this normally occurs when the primary database is mounted and not open)</p>
+</li>
+</ul>
+<p><span class="bold">Note:</span> This column is an aggregation of the <code>PROTECTION_MODE</code> of all standby archive log destinations.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e549" headers="d1635510e168">
+<p><code>REMOTE_ARCHIVE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e549 d1635510e171">
+<p><code>VARCHAR2(8)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e549 d1635510e174">
+<p>Value of the <code>REMOTE_ARCHIVE_ENABLE</code> initialization parameter</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e564" headers="d1635510e168">
+<p><code>ACTIVATION#</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e564 d1635510e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e564 d1635510e174">
+<p>Number assigned to the database instantiation</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e577" headers="d1635510e168">
+<p><code>SWITCHOVER#</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e577 d1635510e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e577 d1635510e174">
+<p>Number assigned to the database switchover</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e589" headers="d1635510e168">
+<p><code>DATABASE_ROLE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e589 d1635510e171">
+<p><code>VARCHAR2(16)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e589 d1635510e174">
+<p>Current role of the database:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>SNAPSHOT STANDBY</code></p>
+</li>
+<li>
+<p><code>LOGICAL STANDBY</code></p>
+</li>
+<li>
+<p><code>PHYSICAL STANDBY</code></p>
+</li>
+<li>
+<p><code>PRIMARY</code></p>
+</li>
+<li>
+<p><code>FAR SYNC</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e622" headers="d1635510e168">
+<p><code>ARCHIVELOG_CHANGE#</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e622 d1635510e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e622 d1635510e174">
+<p>Highest <code>NEXT_CHANGE#</code> (from the <code>V$ARCHIVED_LOG</code> view) for an archive log</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e640" headers="d1635510e168">
+<p><code>ARCHIVELOG_COMPRESSION</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e640 d1635510e171">
+<p><code>VARCHAR2(8)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e640 d1635510e174">
+<p>Status of the archive log compression (<code>ENABLED</code>) or (<code>DISABLED</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e658" headers="d1635510e168">
+<p><code>SWITCHOVER_STATUS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e658 d1635510e171">
+<p><code>VARCHAR2(20)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e658 d1635510e174">
+<p>Indicates whether switchover is allowed:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>NOT ALLOWED</code> - On a primary database, this status indicates that there are no valid and enabled standby databases. On a standby database, this status indicates that a switchover request has not been received from the primary database.</p>
+</li>
+<li>
+<p><code>SESSIONS ACTIVE</code> - The database has active sessions. On a physical standby database, the <code>WITH SESSION SHUTDOWN</code> SQL clause must be specified to perform a role transition while in this state. On a logical standby database, a role transition can be performed while in this state, but the role transition will not complete until all current transactions have committed.</p>
+</li>
+<li>
+<p><code>SWITCHOVER PENDING</code> - On a physical standby database, this status indicates that a switchover request has been received from the primary database and is being processed. A physical standby database cannot switch to the primary role while in this transient state.</p>
+</li>
+<li>
+<p><code>SWITCHOVER LATENT</code> - On a physical standby database, this status indicates that a switchover request was pending, but the original primary database has been switched back to the primary role.</p>
+</li>
+<li>
+<p><code>TO PRIMARY</code> - The database is ready to switch to the primary role.</p>
+</li>
+<li>
+<p><code>TO STANDBY</code> - The database is ready to switch to either the physical or logical standby role.</p>
+</li>
+<li>
+<p><code>TO LOGICAL STANDBY</code> - The database has received a data dictionary from a logical standby database and is ready to switch to the logical standby role.</p>
+</li>
+<li>
+<p><code>RECOVERY NEEDED</code> - On a physical standby database, this status indicates that additional redo must be applied before the database can switch to the primary role.</p>
+</li>
+<li>
+<p><code>PREPARING SWITCHOVER</code> - On a primary database, this status indicates that a data dictionary is being received from a logical standby database in preparation for switching to the logical standby role. On a logical standby database, this status indicates that the data dictionary has been sent to the primary database and other standby databases.</p>
+</li>
+<li>
+<p><code>PREPARING DICTIONARY</code> - On a logical standby database, this status indicates that the data dictionary is being sent to the primary database and other standby databases in preparation for switching to the primary role.</p>
+</li>
+<li>
+<p><code>FAILED DESTINATION</code> - On a primary database, this status indicates that one or more standby destinations are in an error state.</p>
+</li>
+<li>
+<p><code>RESOLVABLE GAP</code> - On a primary database, this status indicates that one or more standby databases have a redo gap that can be automatically resolved by fetching the missing redo from the primary database or from another standby database.</p>
+</li>
+<li>
+<p><code>UNRESOLVABLE GAP</code> - On a primary database, this status indicates that one or more standby databases have a redo gap that cannot be automatically resolved by fetching the missing redo from the primary database or from another standby database.</p>
+</li>
+<li>
+<p><code>LOG SWITCH GAP</code> - On a primary database, this status indicates that one or more standby databases are missing redo due to a recent log switch.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e745" headers="d1635510e168">
+<p><code>DATAGUARD_BROKER</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e745 d1635510e171">
+<p><code>VARCHAR2(8)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e745 d1635510e174">
+<p>Data Guard broker information:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>ENABLED</code> - Database is part of a broker configuration and broker management of the database is enabled</p>
+</li>
+<li>
+<p><code>DISABLED</code> - Database is part of a broker configuration and broker management of the database is disabled. This value is displayed if the user disabled broker management of the database or configuration, or if broker management was disabled due to a role change (for example, the old primary was disabled after a failover operation).</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e768" headers="d1635510e168">
+<p><code>GUARD_STATUS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e768 d1635510e171">
+<p><code>VARCHAR2(7)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e768 d1635510e174">
+<p>Protects data from being changed:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>ALL</code> - Indicates all users other than <code>SYS</code> are prevented from making changes to any data in the database.</p>
+</li>
+<li>
+<p><code>STANDBY</code> - Indicates all users other than <code>SYS</code> are prevented from making changes to any database object being maintained by logical standby.</p>
+</li>
+<li>
+<p><code>NONE</code> - Indicates normal security for all data in the database.</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e802" headers="d1635510e168">
+<p><code>SUPPLEMENTAL_LOG_DATA_MIN</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e802 d1635510e171">
+<p><code>VARCHAR2(8)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e802 d1635510e174">
+<p>Ensures that LogMiner (and any products building on LogMiner technology) will have sufficient information to support chained rows and various storage arrangements such as cluster tables:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>NO</code> - None of the database-wide supplemental logging directives are enabled.</p>
+<p>In a CDB, a value of <code>NO</code> means that minimal supplemental logging is not enabled in all of the PDBs in the CDB.</p>
+</li>
+<li>
+<p><code>IMPLICIT</code> - Minimal supplemental logging is enabled because all or a combination of primary key, unique key, and foreign key supplemental logging is enabled</p>
+</li>
+<li>
+<p><code>YES</code> - Minimal supplemental logging is enabled through an <code>ALTER DATABASE ADD SUPPLEMENTAL LOG DATA</code> statement.</p>
+<p>In a CDB, a value of <code>YES</code> means that minimal supplemental logging is enabled in all of the PDBs in the CDB.</p>
+</li>
+</ul>
+<p><span class="bold">See Also:</span> <a class="olink SQLRF52406" target="_blank" href="../SQLRF/ALTER-DATABASE.htm#SQLRF52406"><span class="italic">Oracle Database SQL Language Reference</span></a> for additional information about the <code>ALTER DATABASE ADD SUPPLEMENTAL LOG DATA</code> statement</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e855" headers="d1635510e168">
+<p><code>SUPPLEMENTAL_LOG_DATA_PK</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e855 d1635510e171">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e855 d1635510e174">
+<p>For all tables with a primary key, indicates whether all columns of the primary key are placed into the redo log whenever an update is performed (<code>YES</code>) or not (<code>NO</code>).</p>
+<p>When a value of <code>YES</code> appears in a CDB, it means that primary key supplemental logging is enabled in all of the PDBs in the CDB.</p>
+<p>When a value of <code>NO</code> appears in a CDB, query the <code>PRIMARY_KEY</code> column in the <code>DBA_SUPPLEMENTAL_LOGGING</code> view for each PDB in the CDB to see whether primary key supplemental logging is enabled in the PDB.</p>
+<p><span class="bold">See Also:</span> <a class="olink SQLRF52407" target="_blank" href="../SQLRF/ALTER-DATABASE.htm#SQLRF52407"><span class="italic">Oracle Database SQL Language Reference</span></a> for more information about the <code>ALTER DATABASE ADD SUPPLEMENTAL LOG</code> <span class="italic"><code>supplemental_id_key_clause</code></span> statement</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e904" headers="d1635510e168">
+<p><code>SUPPLEMENTAL_LOG_DATA_UI</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e904 d1635510e171">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e904 d1635510e174">
+<p>For all tables with a unique key, indicates whether all other columns belonging to the unique key are placed into the redo log if any of the unique key columns are modified (<code>YES</code>) or not (<code>NO</code>).</p>
+<p>When a value of <code>YES</code> appears in a CDB, it means that this value is enabled in all of the PDBs in the CDB.</p>
+<p>When a value of <code>NO</code> appears in a CDB, query the <code>UNIQUE_INDEX</code> column in the <code>DBA_SUPPLEMENTAL_LOGGING</code> view for each PDB in the CDB to see whether unique column supplemental logging is enabled in the PDB.</p>
+<p><span class="bold">See Also:</span> <a class="olink SQLRF52407" target="_blank" href="../SQLRF/ALTER-DATABASE.htm#SQLRF52407"><span class="italic">Oracle Database SQL Language Reference</span></a> for more information about the <code>ALTER DATABASE ADD SUPPLEMENTAL LOG</code> <span class="italic"><code>supplemental_id_key_clause</code></span> statement</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e953" headers="d1635510e168">
+<p><code>FORCE_LOGGING</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e953 d1635510e171">
+<p><code>VARCHAR2(39)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e953 d1635510e174">
+<p>Indicates whether the database is under force logging mode (<code>YES</code>) or not (<code>NO</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e972" headers="d1635510e168">
+<p><code>PLATFORM_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e972 d1635510e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e972 d1635510e174">
+<p>Platform identification number of the database</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e984" headers="d1635510e168">
+<p><code>PLATFORM_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e984 d1635510e171">
+<p><code>VARCHAR2(101)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e984 d1635510e174">
+<p>Platform name of the database</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e996" headers="d1635510e168">
+<p><code>RECOVERY_TARGET_INCARNATION#</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e996 d1635510e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e996 d1635510e174">
+<p>Incarnation number where all data files are recovered by the <code>RECOVER DATABASE</code> command</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e1011" headers="d1635510e168">
+<p><code>LAST_OPEN_INCARNATION#</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e1011 d1635510e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e1011 d1635510e174">
+<p>Record number of the incarnation in <code>V$DATABASE_INCARNATION</code> that was last opened successfully</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e1026" headers="d1635510e168">
+<p><code>CURRENT_SCN</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e1026 d1635510e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e1026 d1635510e174">
+<p>Current SCN; null if the database is not currently open. For a standby database, it is the checkpoint SCN of the mounted physical standby database during media recovery and is always less than the last applied SCN tracked in <code>V$RECOVERY_PROGRESS</code>.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e1041" headers="d1635510e168">
+<p><code>FLASHBACK_ON</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e1041 d1635510e171">
+<p><code>VARCHAR2(18)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e1041 d1635510e174">
+<p>Possible values are as follows:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>YES</code> - Flashback is on</p>
+</li>
+<li>
+<p><code>NO</code> - Flashback is off</p>
+</li>
+<li>
+<p><code>RESTORE POINT ONLY</code> - Flashback is on but one can only flashback to guaranteed restore points</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e1069" headers="d1635510e168">
+<p><code>SUPPLEMENTAL_LOG_DATA_FK</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e1069 d1635510e171">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e1069 d1635510e174">
+<p>For all tables with a foreign key, indicates whether all other columns belonging to the foreign key are placed into the redo log if any foreign key columns are modified (<code>YES</code>) or not (<code>NO</code>).</p>
+<p>When a value of <code>YES</code> appears in a CDB, it means that foreign key supplemental logging is enabled in all of the PDBs in the CDB.</p>
+<p>When a value of <code>NO</code> appears in a CDB, query the <code>FOREIGN_KEY</code> column in the <code>DBA_SUPPLEMENTAL_LOGGING</code> view for each PDB in the CDB to see whether foreign key supplemental logging is enabled in the PDB.</p>
+<p><span class="bold">See Also:</span> <a class="olink SQLRF52407" target="_blank" href="../SQLRF/ALTER-DATABASE.htm#SQLRF52407"><span class="italic">Oracle Database SQL Language Reference</span></a> for more information about the <code>ALTER DATABASE ADD SUPPLEMENTAL LOG</code> <span class="italic"><code>supplemental_id_key_clause</code></span> statement</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e1118" headers="d1635510e168">
+<p><code>SUPPLEMENTAL_LOG_DATA_ALL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e1118 d1635510e171">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e1118 d1635510e174">
+<p>For all columns, indicates whether all the fixed-length maximum size columns of that row are placed into the redo log (<code>YES</code>) or not (<code>NO</code>).</p>
+<p>When a value of <code>YES</code> appears in a CDB, it means that all column supplemental logging is enabled in all of the PDBs in the CDB.</p>
+<p>When a value of <code>NO</code> appears in a CDB, query the <code>ALL_COLUMN</code> column in the <code>DBA_SUPPLEMENTAL_LOGGING</code> view for each PDB in the CDB to see whether all column supplemental logging is enabled in the PDB.</p>
+<p><span class="bold">See Also:</span> <a class="olink SQLRF52407" target="_blank" href="../SQLRF/ALTER-DATABASE.htm#SQLRF52407"><span class="italic">Oracle Database SQL Language Reference</span></a> for more information about the <code>ALTER DATABASE ADD SUPPLEMENTAL LOG</code> <span class="italic"><code>supplemental_id_key_clause</code></span> statement</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e1167" headers="d1635510e168">
+<p><code>DB_UNIQUE_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e1167 d1635510e171">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e1167 d1635510e174">
+<p>Unique database name</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e1179" headers="d1635510e168">
+<p><code>STANDBY_BECAME_PRIMARY_SCN</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e1179 d1635510e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e1179 d1635510e174">
+<p>SCN at which a physical standby database became a primary database. This SCN is useful for converting a failed primary database into a physical standby database after a forced failover.</p>
+<p><span class="bold">See Also:</span> <a class="olink SBYDB00010" target="_blank" href="../SBYDB/introduction-to-oracle-data-guard-concepts.htm#SBYDB00010"><span class="italic">Oracle Data Guard Concepts and Administration</span></a> for more information about Oracle Data Guard.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e1200" headers="d1635510e168">
+<p><code>FS_FAILOVER_STATUS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e1200 d1635510e171">
+<p><code>VARCHAR2(22)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e1200 d1635510e174">
+<p>Fast-start failover status:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>DISABLED</code></p>
+</li>
+<li>
+<p><code>BYSTANDER</code></p>
+</li>
+<li>
+<p><code>SYNCHRONIZED</code></p>
+</li>
+<li>
+<p><code>UNSYNCHRONIZED</code></p>
+</li>
+<li>
+<p><code>SUSPENDED</code></p>
+</li>
+<li>
+<p><code>STALLED</code></p>
+</li>
+<li>
+<p><code>LOADING DICTIONARY</code></p>
+</li>
+<li>
+<p><code>PRIMARY UNOBSERVED</code></p>
+</li>
+<li>
+<p><code>REINSTATE REQUIRED</code></p>
+</li>
+<li>
+<p><code>REINSTATE FAILED</code></p>
+</li>
+<li>
+<p><code>TARGET OVER LAG LIMIT</code></p>
+</li>
+<li>
+<p><code>TARGET UNDER LAG LIMIT</code></p>
+</li>
+</ul>
+<p><span class="bold">See Also:</span> <a class="olink DGBKR390" target="_blank" href="../DGBKR/using-data-guard-broker-to-manage-switchovers-failovers.htm#DGBKR390"><span class="italic">Oracle Data Guard Broker</span></a> for detailed descriptions of these values</p>
+<p><span class="bold">Note:</span> If the value of this column is <code>DISABLED</code>, then the values for the <code>FS_FAILOVER_CURRENT_TARGET</code>, <code>FS_FAILOVER_THRESHOLD</code>, <code>FS_FAILOVER_OBSERVER_PRESENT</code>, and <code>FS_FAILOVER_OBSERVER_HOST</code> columns in this table are not meaningful.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e1291" headers="d1635510e168">
+<p><code>FS_FAILOVER_CURRENT_TARGET</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e1291 d1635510e171">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e1291 d1635510e174">
+<p><code>DB_UNIQUE_NAME</code> of the standby that is the current fail-safe failover observer target standby for the Data Guard configuration</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e1305" headers="d1635510e168">
+<p><code>FS_FAILOVER_THRESHOLD</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e1305 d1635510e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e1305 d1635510e174">
+<p>Time (in seconds) that the observer will attempt to reconnect with a disconnected primary before attempting fail-safe failover observer with the target standby</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e1317" headers="d1635510e168">
+<p><code>FS_FAILOVER_OBSERVER_PRESENT</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e1317 d1635510e171">
+<p><code>VARCHAR2(7)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e1317 d1635510e174">
+<p>Indicates whether the master observer is currently connected to the local database (<code>YES</code>) or not (<code>NO</code>)</p>
+<p><span class="bold">Note:</span> This column is consistent throughout an Oracle RAC environment; that is, if the observer is connected to any instance, then all instances will show a value of <code>YES</code>.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e1342" headers="d1635510e168">
+<p><code>FS_FAILOVER_OBSERVER_HOST</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e1342 d1635510e171">
+<p><code>VARCHAR2(512)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e1342 d1635510e174">
+<p>Machine name that is currently hosting the master observer process, if fast-start failover is enabled. If fast-start failover is not enabled, this column returns a NULL string.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e1354" headers="d1635510e168">
+<p><code>CONTROLFILE_CONVERTED</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e1354 d1635510e171">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e1354 d1635510e174">
+<p>Indicates whether the control file was implicitly converted from its original type during restore (<code>YES</code>) or not (<code>NO</code>)</p>
+<p>This column will be set to <code>YES</code> when RMAN restores a standby control file from a backup of the control file taken at the primary database or restores a backup control file from a backup taken at the physical standby database.</p>
+<p>This column will change to <code>NO</code> when the file names are fixed using information in the recovery catalog schema.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e1382" headers="d1635510e168">
+<p><code>PRIMARY_DB_UNIQUE_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e1382 d1635510e171">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e1382 d1635510e174">
+<p>For any Standby database (Physical, Logical, or Snapshot), this column will contain the <code>DB_UNIQUE_NAME</code> of the Primary database that this Standby last received current redo from.</p>
+<p>If this standby has not received any current redo since last being started, then this column will be null.</p>
+<p>For a Primary database that had previously been a Standby, this column will contain the <code>DB_UNIQUE_NAME</code> of the last Primary that this database received current redo from while acting as a Standby.</p>
+<p>For a Primary database that has never been a Standby, this column will be null.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e1406" headers="d1635510e168">
+<p><code>SUPPLEMENTAL_LOG_DATA_PL</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e1406 d1635510e171">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e1406 d1635510e174">
+<p>Indicates whether additional information is logged in the redo log (<code>YES</code>) or not (<code>NO</code>) during invocation of procedures in Oracle-supplied packages for which procedural replication is supported.</p>
+<p>When a value of <code>YES</code> appears in a CDB, it means that supplemental logging for procedural replication is enabled in all of the PDBs in the CDB.</p>
+<p>When a value of <code>NO</code> appears in a CDB, query the <code>PROCEDURAL</code> column in the <code>DBA_SUPPLEMENTAL_LOGGING</code> view for each PDB in the CDB to see whether supplemental logging for procedural replication is supported in the PDB.</p>
+<p><span class="bold">See Also:</span> <a class="olink SBYDB4945" target="_blank" href="../SBYDB/data-type-ddl-support-on-logical-standby-databases.htm#SBYDB4945"><span class="italic">Oracle Data Guard Concepts and Administration</span></a> for a list of Oracle-supplied packages that are procedurally replicated to a logical standby database</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e1449" headers="d1635510e168">
+<p><code>MIN_REQUIRED_CAPTURE_CHANGE#</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e1449 d1635510e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e1449 d1635510e174">
+<p>Minimum <code>REQUIRED_CHECKPOINT_SCN</code> for all local capture processes on the database</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e1464" headers="d1635510e168">
+<p><code>CDB</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e1464 d1635510e171">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e1464 d1635510e174">
+<p>Possible values are:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>YES</code> if the database is a CDB</p>
+</li>
+<li>
+<p><code>NO</code> if the database is not a CDB</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e1487" headers="d1635510e168">
+<p><code>CON_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e1487 d1635510e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e1487 d1635510e174">
+<p>The ID of the container to which the data pertains. Possible values include:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>0</code>: This value is used for rows containing data that pertain to the entire CDB. This value is also used for rows in non-CDBs.</p>
+</li>
+<li>
+<p><code>1</code>: This value is used for rows containing data that pertain to only the root</p>
+</li>
+<li>
+<p><span class="italic">n</span>: Where <span class="italic">n</span> is the applicable container ID for the rows containing data</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e1518" headers="d1635510e168">
+<p><code>PENDING_ROLE_CHANGE_TASKS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e1518 d1635510e171">
+<p><code>VARCHAR2(512)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e1518 d1635510e174">
+<p>Tasks remaining after an Oracle Data Guard role change. Possible values:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>NONE</code>: No pending tasks remain</p>
+</li>
+<li>
+<p><code>NOT APPLICABLE</code>: The database is either standby or is not a DG_CONFIG member</p>
+</li>
+<li>
+<p><code>BUILD_PENDING</code>: The database was formerly a logical standby and has not yet taken a snapshot of its data dictionary into the redo stream</p>
+</li>
+<li>
+<p><code>SRL_ARCHIVE_PENDING</code>: The database was formerly a logical standby and the standby redo logs associated with the earlier failover operation have not yet been archived</p>
+</li>
+<li>
+<p><code>ERROR</code>: The database was formerly a logical standby and the snapshot of the dictionary failed</p>
+</li>
+<li>
+<p><code>UNKNOWN</code>: The database is not open or the query failed</p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e1562" headers="d1635510e168">
+<p><code>CON_DBID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e1562 d1635510e171">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e1562 d1635510e174">
+<p>The database ID of the PDB</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1635510e1574" headers="d1635510e168">
+<p><code>FORCE_FULL_DB_CACHING</code></p>
+</td>
+<td class="cellalignment3905" headers="d1635510e1574 d1635510e171">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3908" headers="d1635510e1574 d1635510e174">
+<p>Indicates the status of the force full database caching feature in the database. Possible values:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>YES</code> - The database is in force full database caching mode.</p>
+</li>
+<li>
+<p><code>NO</code> - The database is not in force full database caching mode.</p>
+<p><span class="bold">See Also</span>: <a class="olink SQLRF56678" target="_blank" href="../SQLRF/ALTER-DATABASE.htm#SQLRF56678"><span class="italic">Oracle Database SQL Language Reference</span></a> for information about the <code>FORCE FULL DATABASE CACHING</code> clause for the <code>ALTER DATABASE</code> statement</p>
+</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<div class="section">
+<div class="infoboxnotealso" id="GUID-C62A7B96-2DD4-4E70-A0D9-26EE4BFBE256__GUID-F60D260F-52FC-4C47-BC1D-C69DBCB9C886">
+<p class="notep1">See Also:</p>
+<p><span class="q">"<a href="DBA_SUPPLEMENTAL_LOGGING.htm#GUID-6C561CEE-E5D0-4F61-B5C2-87A722DFBE26">DBA_SUPPLEMENTAL_LOGGING</a>"</span> for more information about supplemental logging in a PDB</p>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="V-CURRENT_BLOCK_SERVER.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="V-DATABASE_BLOCK_CORRUPTION.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

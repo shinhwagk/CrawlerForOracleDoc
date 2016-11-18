@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>DBA_WORKLOAD_SCHEDULE_CAPTURES</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="DBA_WORKLOAD_SCHEDULE_CAPTURES view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="DBA_WORKLOAD_REPLAYS.htm" title="Previous" type="text/html" />
+<link rel="Next" href="DBA_WORKLOAD_SCHEDULE_ORDERING.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-58441EE9-210B-45CB-8EEE-82A0E85FAF8F"></a> <span id="PAGE" style="display:none;">1615/2822</span> <!-- End Header -->
+<a id="REFRN23843"></a>
+<h1 id="REFRN-GUID-58441EE9-210B-45CB-8EEE-82A0E85FAF8F" class="sect1"><span class="enumeration_section">6.133</span> DBA_WORKLOAD_SCHEDULE_CAPTURES</h1>
+<div>
+<div class="section">
+<p><code>DBA_WORKLOAD_SCHEDULE_CAPTURES</code> displays the workload captures used by replay schedules. Each row in the view contains information about one workload capture.</p>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-58441EE9-210B-45CB-8EEE-82A0E85FAF8F__GUID-0C59201D-238E-4EAC-90C5-7C239A982932">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d1353456e169">Column</th>
+<th class="cellalignment3905" id="d1353456e172">Datatype</th>
+<th class="cellalignment3906" id="d1353456e175">NULL</th>
+<th class="cellalignment3907" id="d1353456e178">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d1353456e183" headers="d1353456e169">
+<p><code>SCHEDULE_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1353456e183 d1353456e172">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1353456e183 d1353456e175">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1353456e183 d1353456e178">
+<p>The name of a schedule to be replayed</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1353456e199" headers="d1353456e169">
+<p><code>SCHEDULE_CAP_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1353456e199 d1353456e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1353456e199 d1353456e175">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1353456e199 d1353456e178">
+<p>Identifies a workload capture added to a replay schedule. It starts with <code>1</code>. If the same capture is added multiple times to a schedule, there will be multiple rows with different <code>SCHEDULE_CAP_ID</code> columns and identical <code>CAPTURE_ID</code> columns.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1353456e224" headers="d1353456e169">
+<p><code>CAPTURE_ID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1353456e224 d1353456e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1353456e224 d1353456e175">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1353456e224 d1353456e178">
+<p>Points to the capture ID from <code>DBA_WORKLOAD_CAPTURES</code>.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1353456e243" headers="d1353456e169">
+<p><code>CAPTURE_DIR</code></p>
+</td>
+<td class="cellalignment3905" headers="d1353456e243 d1353456e172">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1353456e243 d1353456e175">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1353456e243 d1353456e178">
+<p>Name of the directory object for workload capture</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1353456e259" headers="d1353456e169">
+<p><code>OS_SUBDIR</code></p>
+</td>
+<td class="cellalignment3905" headers="d1353456e259 d1353456e172">
+<p><code>VARCHAR2(4000)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1353456e259 d1353456e175">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1353456e259 d1353456e178">
+<p>Name of the subdirectory under the replay directory for this workload capture</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1353456e275" headers="d1353456e169">
+<p><code>MAX_CONCURRENT_SESSIONS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1353456e275 d1353456e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1353456e275 d1353456e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1353456e275 d1353456e178">
+<p>The maximal number of concurrent sessions that was seen in this workload capture</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1353456e291" headers="d1353456e169">
+<p><code>NUM_CLIENTS_ASSIGNED</code></p>
+</td>
+<td class="cellalignment3905" headers="d1353456e291 d1353456e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1353456e291 d1353456e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1353456e291 d1353456e178">
+<p>Number of clients assigned to this workload capture before replay starts</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1353456e307" headers="d1353456e169">
+<p><code>NUM_CLIENTS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1353456e307 d1353456e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1353456e307 d1353456e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1353456e307 d1353456e178">
+<p>Number of clients that are running for this workload capture during replay</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1353456e321" headers="d1353456e169">
+<p><code>NUM_CLIENTS_DONE</code></p>
+</td>
+<td class="cellalignment3905" headers="d1353456e321 d1353456e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1353456e321 d1353456e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1353456e321 d1353456e178">
+<p>Number of clients that have finished the replay of this workload capture</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1353456e337" headers="d1353456e169">
+<p><code>STOP_REPLAY</code></p>
+</td>
+<td class="cellalignment3905" headers="d1353456e337 d1353456e172">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1353456e337 d1353456e175">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1353456e337 d1353456e178">
+<p>Indicates whether the whole replay will stop once the replay of this workload capture is done (<code>Y</code>) or not (<code>N</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1353456e359" headers="d1353456e169">
+<p><code>TAKE_BEGIN_SNAPSHOT</code></p>
+</td>
+<td class="cellalignment3905" headers="d1353456e359 d1353456e172">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1353456e359 d1353456e175">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1353456e359 d1353456e178">
+<p>Indicates whether an AWR snapshot will be taken when the replay of this capture starts (<code>Y</code>) or not (<code>N</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1353456e382" headers="d1353456e169">
+<p><code>TAKE_END_SNAPSHOT</code></p>
+</td>
+<td class="cellalignment3905" headers="d1353456e382 d1353456e172">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1353456e382 d1353456e175">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1353456e382 d1353456e178">
+<p>Indicates whether an AWR snapshot will be taken when the replay of this capture finishes (<code>Y</code>) or not (<code>N</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1353456e404" headers="d1353456e169">
+<p><code>QUERY_ONLY</code></p>
+</td>
+<td class="cellalignment3905" headers="d1353456e404 d1353456e172">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d1353456e404 d1353456e175">
+<p><code>NOT NULL</code></p>
+</td>
+<td class="cellalignment3907" headers="d1353456e404 d1353456e178">
+<p>Indicates whether only the query-only workload from the current workload capture will be replayed, skipping all the DML/DDL that might update the database (<code>Y</code>) or not (<code>N</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1353456e426" headers="d1353456e169">
+<p><code>START_DELAY_SECS</code></p>
+</td>
+<td class="cellalignment3905" headers="d1353456e426 d1353456e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1353456e426 d1353456e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1353456e426 d1353456e178">
+<p>Displays the wait time (in seconds) when the replay of a workload capture is ready to start. "Ready to start" means the capture does not wait for any other capture, or all the captures for which it should wait have already been replayed. The default value is 0.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1353456e442" headers="d1353456e169">
+<p><code>START_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1353456e442 d1353456e172">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3906" headers="d1353456e442 d1353456e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1353456e442 d1353456e178">
+<p>Start time for the replay of this capture</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1353456e456" headers="d1353456e169">
+<p><code>END_TIME</code></p>
+</td>
+<td class="cellalignment3905" headers="d1353456e456 d1353456e172">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3906" headers="d1353456e456 d1353456e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1353456e456 d1353456e178">
+<p>Finish time for the replay of this capture</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1353456e470" headers="d1353456e169">
+<p><code>AWR_DBID</code></p>
+</td>
+<td class="cellalignment3905" headers="d1353456e470 d1353456e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1353456e470 d1353456e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1353456e470 d1353456e178">
+<p>AWR database ID of the replay</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1353456e484" headers="d1353456e169">
+<p><code>AWR_BEGIN_SNAP</code></p>
+</td>
+<td class="cellalignment3905" headers="d1353456e484 d1353456e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1353456e484 d1353456e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1353456e484 d1353456e178">
+<p>AWR snapshot ID when the replay starts</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d1353456e498" headers="d1353456e169">
+<p><code>AWR_END_SNAP</code></p>
+</td>
+<td class="cellalignment3905" headers="d1353456e498 d1353456e172">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d1353456e498 d1353456e175">&nbsp;</td>
+<td class="cellalignment3907" headers="d1353456e498 d1353456e178">
+<p>AWR snapshot ID when the replay finishes</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="DBA_WORKLOAD_REPLAYS.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="DBA_WORKLOAD_SCHEDULE_ORDERING.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>

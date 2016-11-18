@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="UTF-8" />
+<title>ALL_ALL_TABLES</title>
+<meta name="generator" content="DITA Open Toolkit version 1.8.5 (Mode = doc)" />
+<meta name="keywords" content="ALL_ALL_TABLES view" />
+<meta name="dcterms.created" content="2016-10-18T15:54:59Z" />
+<meta name="robots" content="all" />
+<meta name="dcterms.title" content="Database Reference" />
+<meta name="dcterms.identifier" content="E49629-12" />
+<meta name="dcterms.isVersionOf" content="REFRN" />
+<link rel="Start" href="../index.htm" title="Home" type="text/html" />
+<link rel="Copyright" href="../dcommon/html/cpyr.htm" title="Copyright" type="text/html" />
+
+<script type="application/javascript"  src="../dcommon/js/headfoot.js"></script>
+<script type="application/javascript"  src="../nav/js/doccd.js" charset="UTF-8"></script>
+<link rel="Contents" href="toc.htm" title="Contents" type="text/html" />
+<link rel="Index" href="index.htm" title="Index" type="text/html" />
+<link rel="Prev" href="static-data-dictionary-view-descriptions.htm" title="Previous" type="text/html" />
+<link rel="Next" href="ALL_ANALYTIC_VIEW_ATTR_CLASS.htm" title="Next" type="text/html" />
+<link rel="alternate" href="REFRN.pdf" title="PDF version" type="application/pdf" />
+<link rel="alternate" href="REFRN.epub" title="ePub version" type="application/epub+zip">
+<link rel="alternate" href="REFRN.mobi" title="Mobipocket version" type="application/x-mobipocket-ebook">
+<link rel="schema.dcterms" href="http://purl.org/dc/terms/" />
+<link rel="stylesheet" href="../dcommon/css/fusiondoc.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/header.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/footer.css">
+<link rel="stylesheet" type="text/css"  href="../dcommon/css/fonts.css">
+<link rel="stylesheet" href="../dcommon/css/foundation.css">
+<link rel="stylesheet" href="../dcommon/css/codemirror.css">
+<link rel="stylesheet" type="text/css" title="Default" href="../nav/css/html5.css">
+<link rel="stylesheet" href="../dcommon/css/respond-480-tablet.css">
+<link rel="stylesheet" href="../dcommon/css/respond-768-laptop.css">
+<link rel="stylesheet" href="../dcommon/css/respond-1140-deskop.css">
+<script type="application/javascript" src="../dcommon/js/modernizr.js"></script>
+<script type="application/javascript" src="../dcommon/js/codemirror.js"></script>
+<script type="application/javascript" src="../dcommon/js/jquery.js"></script>
+<script type="application/javascript" src="../dcommon/js/foundation.min.js"></script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-552992c80ef99c8d" async="async"></script>
+<script type="application/javascript" src="../dcommon/js/jqfns.js"></script>
+<script type="application/javascript" src="../dcommon/js/ohc-inline-videos.js"></script>
+<!-- Add fancyBox -->
+<link rel="stylesheet" href="../dcommon/fancybox/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
+<!-- Optionally add helpers - button, thumbnail and/or media -->
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-buttons.css?v=1.0.5"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
+<link rel="stylesheet"  href="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.css?v=1.0.7"  type="text/css" media="screen" />
+<script type="text/javascript" src="../dcommon/fancybox/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+</head>
+<body>
+<a href="#BEGIN" class="accessibility-top skipto" tabindex="0">Go to main content</a>
+<header><!--
+<div class="zz-skip-header"><a id="top" href="#BEGIN">Go to main content</a>--></header>
+<div class="row" id="CONTENT">
+<div class="IND large-9 medium-8 columns">
+<a id="BEGIN" name="BEGIN"></a>
+<a id="GUID-B8CF1D2A-9AA0-4C94-BBBA-4672C7CF735F"></a> <span id="PAGE" style="display:none;">354/2822</span> <!-- End Header -->
+<a id="REFRN20003"></a>
+<h1 id="REFRN-GUID-B8CF1D2A-9AA0-4C94-BBBA-4672C7CF735F" class="sect1"><span class="enumeration_section">2.11</span> ALL_ALL_TABLES</h1>
+<div>
+<div class="section">
+<p><code>ALL_ALL_TABLES</code> describes the object tables and relational tables accessible to the current user.</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<p class="subhead1">Related Views</p>
+</div>
+<!-- class="section" -->
+<div class="section">
+<ul style="list-style-type: disc;">
+<li>
+<p><code>DBA_ALL_TABLES</code> describes all object tables and relational tables in the database.</p>
+</li>
+<li>
+<p><code>USER_ALL_TABLES</code> describes the object tables and relational tables owned by the current user. This view does not display the <code>OWNER</code> column.</p>
+</li>
+</ul>
+</div>
+<!-- class="section" -->
+<div class="tblformalwide" id="GUID-B8CF1D2A-9AA0-4C94-BBBA-4672C7CF735F__GUID-A19ED55F-3680-40A8-B17F-F4B7F6D62C15">
+<hr />
+<table class="cellalignment3903" summary="This table describes the columns for this database view">
+<thead align="left">
+<tr>
+<th class="cellalignment3904" id="d196878e187">Column</th>
+<th class="cellalignment3905" id="d196878e190">Datatype</th>
+<th class="cellalignment3906" id="d196878e193">NULL</th>
+<th class="cellalignment3907" id="d196878e196">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="cellalignment3904" id="d196878e201" headers="d196878e187">
+<p><code>OWNER</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e201 d196878e190">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e201 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e201 d196878e196">
+<p>Owner of the table</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e217" headers="d196878e187">
+<p><code>TABLE_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e217 d196878e190">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e217 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e217 d196878e196">
+<p>Name of the table</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e233" headers="d196878e187">
+<p><code>TABLESPACE_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e233 d196878e190">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e233 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e233 d196878e196">
+<p>Name of the tablespace containing the table; NULL for partitioned, temporary, and index-organized tables</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e249" headers="d196878e187">
+<p><code>CLUSTER_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e249 d196878e190">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e249 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e249 d196878e196">
+<p>Name of the cluster, if any, to which the table belongs</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e265" headers="d196878e187">
+<p><code>IOT_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e265 d196878e190">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e265 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e265 d196878e196">
+<p>Name of the index-organized table, if any, to which the overflow or mapping table entry belongs. If the <code>IOT_TYPE</code> column is not NULL, then this column contains the base table name.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e284" headers="d196878e187">
+<p><code>STATUS</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e284 d196878e190">
+<p><code>VARCHAR2(8)</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e284 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e284 d196878e196">
+<p>If a previous <code>DROP TABLE</code> operation failed, indicates whether the table is unusable (<code>UNUSABLE</code>) or valid (<code>VALID</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e309" headers="d196878e187">
+<p><code>PCT_FREE</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e309 d196878e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e309 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e309 d196878e196">
+<p>Minimum percentage of free space in a block; NULL for partitioned tables</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e325" headers="d196878e187">
+<p><code>PCT_USED</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e325 d196878e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e325 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e325 d196878e196">
+<p>Minimum percentage of used space in a block; NULL for partitioned tables</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e341" headers="d196878e187">
+<p><code>INI_TRANS</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e341 d196878e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e341 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e341 d196878e196">
+<p>Initial number of transactions; NULL for partitioned tables</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e357" headers="d196878e187">
+<p><code>MAX_TRANS</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e357 d196878e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e357 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e357 d196878e196">
+<p>Maximum number of transactions; NULL for partitioned tables</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e373" headers="d196878e187">
+<p><code>INITIAL_EXTENT</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e373 d196878e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e373 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e373 d196878e196">
+<p>Size of the initial extent (in bytes); NULL for partitioned tables</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e390" headers="d196878e187">
+<p><code>NEXT_EXTENT</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e390 d196878e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e390 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e390 d196878e196">
+<p>Size of secondary extents (in bytes); NULL for partitioned tables</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e406" headers="d196878e187">
+<p><code>MIN_EXTENTS</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e406 d196878e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e406 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e406 d196878e196">
+<p>Minimum number of extents allowed in the segment; NULL for partitioned tables</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e422" headers="d196878e187">
+<p><code>MAX_EXTENTS</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e422 d196878e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e422 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e422 d196878e196">
+<p>Maximum number of extents allowed in the segment; NULL for partitioned tables</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e438" headers="d196878e187">
+<p><code>PCT_INCREASE</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e438 d196878e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e438 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e438 d196878e196">
+<p>Percentage increase in extent size; NULL for partitioned tables</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e454" headers="d196878e187">
+<p><code>FREELISTS</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e454 d196878e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e454 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e454 d196878e196">
+<p>Number of process freelists allocated to the segment; NULL for partitioned tables</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e470" headers="d196878e187">
+<p><code>FREELIST_GROUPS</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e470 d196878e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e470 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e470 d196878e196">
+<p>Number of freelist groups allocated to the segment</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e486" headers="d196878e187">
+<p><code>LOGGING</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e486 d196878e190">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e486 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e486 d196878e196">
+<p>Indicates whether or not changes to the table are logged:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>YES</code></p>
+</li>
+<li>
+<p><code>NO</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e511" headers="d196878e187">
+<p><code>BACKED_UP</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e511 d196878e190">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e511 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e511 d196878e196">
+<p>Indicates whether the table has been backed up since the last modification (<code>Y</code>) or not (<code>N</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e533" headers="d196878e187">
+<p><code>NUM_ROWS</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e533 d196878e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e533 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e533 d196878e196">
+<p>Number of rows in the table</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e549" headers="d196878e187">
+<p><code>BLOCKS</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e549 d196878e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e549 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e549 d196878e196">
+<p>Number of used blocks in the table</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e565" headers="d196878e187">
+<p><code>EMPTY_BLOCKS</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e565 d196878e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e565 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e565 d196878e196">
+<p>Number of empty (never used) blocks in the table</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e582" headers="d196878e187">
+<p><code>AVG_SPACE</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e582 d196878e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e582 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e582 d196878e196">
+<p>Average available free space in the table</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e598" headers="d196878e187">
+<p><code>CHAIN_CNT</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e598 d196878e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e598 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e598 d196878e196">
+<p>Number of rows in the table that are chained from one data block to another or that have migrated to a new block, requiring a link to preserve the old rowid. This column is updated only after you analyze the table.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e614" headers="d196878e187">
+<p><code>AVG_ROW_LEN</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e614 d196878e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e614 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e614 d196878e196">
+<p>Average row length, including row overhead</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e630" headers="d196878e187">
+<p><code>AVG_SPACE_FREELIST_BLOCKS</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e630 d196878e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e630 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e630 d196878e196">
+<p>Average freespace of all blocks on a freelist</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e646" headers="d196878e187">
+<p><code>NUM_FREELIST_BLOCKS</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e646 d196878e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e646 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e646 d196878e196">
+<p>Number of blocks on the freelist</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e662" headers="d196878e187">
+<p><code>DEGREE</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e662 d196878e190">
+<p><code>VARCHAR2(10)</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e662 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e662 d196878e196">
+<p>Number of threads per instance for scanning the table, or <code>DEFAULT</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e680" headers="d196878e187">
+<p><code>INSTANCES</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e680 d196878e190">
+<p><code>VARCHAR2(10)</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e680 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e680 d196878e196">
+<p>Number of instances across which the table is to be scanned, or <code>DEFAULT</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e698" headers="d196878e187">
+<p><code>CACHE</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e698 d196878e190">
+<p><code>VARCHAR2(5)</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e698 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e698 d196878e196">
+<p>Indicates whether the table is to be cached in the buffer cache (<code>Y</code>) or not (<code>N</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e720" headers="d196878e187">
+<p><code>TABLE_LOCK</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e720 d196878e190">
+<p><code>VARCHAR2(8)</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e720 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e720 d196878e196">
+<p>Indicates whether table locking is enabled (<code>ENABLED</code>) or disabled (<code>DISABLED</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e742" headers="d196878e187">
+<p><code>SAMPLE_SIZE</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e742 d196878e190">
+<p><code>NUMBER</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e742 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e742 d196878e196">
+<p>Sample size used in analyzing the table</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e758" headers="d196878e187">
+<p><code>LAST_ANALYZED</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e758 d196878e190">
+<p><code>DATE</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e758 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e758 d196878e196">
+<p>Date on which the table was most recently analyzed</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e775" headers="d196878e187">
+<p><code>PARTITIONED</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e775 d196878e190">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e775 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e775 d196878e196">
+<p>Indicates whether the table is partitioned (<code>YES</code>) or not (<code>NO</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e797" headers="d196878e187">
+<p><code>IOT_TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e797 d196878e190">
+<p><code>VARCHAR2(12)</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e797 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e797 d196878e196">
+<p>If the table is an index-organized table, then <code>IOT_TYPE</code> is <code>IOT</code>, <code>IOT_OVERFLOW</code>, or <code>IOT_MAPPING</code>. If the table is not an index-organized table, then <code>IOT_TYPE</code> is NULL.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e828" headers="d196878e187">
+<p><code>OBJECT_ID_TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e828 d196878e190">
+<p><code>VARCHAR2(16)</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e828 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e828 d196878e196">
+<p>Indicates whether the object ID (OID) is <code>USER-DEFINED</code> or <code>SYSTEM GENERATED</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e849" headers="d196878e187">
+<p><code>TABLE_TYPE_OWNER</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e849 d196878e190">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e849 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e849 d196878e196">
+<p>If an object table, owner of the type from which the table is created</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e865" headers="d196878e187">
+<p><code>TABLE_TYPE</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e865 d196878e190">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e865 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e865 d196878e196">
+<p>If an object table, type of the table</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e881" headers="d196878e187">
+<p><code>TEMPORARY</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e881 d196878e190">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e881 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e881 d196878e196">
+<p>Indicates whether the table is temporary (<code>Y</code>) or not (<code>N</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e903" headers="d196878e187">
+<p><code>SECONDARY</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e903 d196878e190">
+<p><code>VARCHAR2(1)</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e903 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e903 d196878e196">
+<p>Indicates whether the table is a secondary object created by the <code>ODCIIndexCreate</code> method of the Oracle Data Cartridge to contain the contents of a domain index (<code>Y</code>) or not (<code>N</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e928" headers="d196878e187">
+<p><code>NESTED</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e928 d196878e190">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e928 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e928 d196878e196">
+<p>Indicates whether the table is a nested table (<code>YES</code>) or not (<code>NO</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e950" headers="d196878e187">
+<p><code>BUFFER_POOL</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e950 d196878e190">
+<p><code>VARCHAR2(7)</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e950 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e950 d196878e196">
+<p>Buffer pool to be used for table blocks:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>DEFAULT</code></p>
+</li>
+<li>
+<p><code>KEEP</code></p>
+</li>
+<li>
+<p><code>RECYCLE</code></p>
+</li>
+<li>
+<p><code>NULL</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e983" headers="d196878e187">
+<p><code>FLASH_CACHE</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e983 d196878e190">
+<p><code>VARCHAR2(7)</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e983 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e983 d196878e196">
+<p>Database Smart Flash Cache hint to be used for table blocks:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>DEFAULT</code></p>
+</li>
+<li>
+<p><code>KEEP</code></p>
+</li>
+<li>
+<p><code>NONE</code></p>
+</li>
+</ul>
+<p>Solaris and Oracle Linux functionality only.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e1014" headers="d196878e187">
+<p><code>CELL_FLASH_CACHE</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e1014 d196878e190">
+<p><code>VARCHAR2(7)</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e1014 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e1014 d196878e196">
+<p>Cell flash cache hint to be used for table blocks:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>DEFAULT</code></p>
+</li>
+<li>
+<p><code>KEEP</code></p>
+</li>
+<li>
+<p><code>NONE</code></p>
+</li>
+</ul>
+<p><span class="bold">See Also:</span> Oracle Exadata Storage Server Software documentation for more information</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e1048" headers="d196878e187">
+<p><code>ROW_MOVEMENT</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e1048 d196878e190">
+<p><code>VARCHAR2(8)</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e1048 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e1048 d196878e196">
+<p>If a partitioned table, indicates whether row movement is enabled (<code>ENABLED</code>) or disabled (<code>DISABLED</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e1070" headers="d196878e187">
+<p><code>GLOBAL_STATS</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e1070 d196878e190">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e1070 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e1070 d196878e196">
+<p><code>GLOBAL_STATS</code> will be <code>YES</code> if statistics are gathered or incrementally maintained, otherwise it will be <code>NO</code></p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e1093" headers="d196878e187">
+<p><code>USER_STATS</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e1093 d196878e190">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e1093 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e1093 d196878e196">
+<p>Indicates whether statistics were entered directly by the user (<code>YES</code>) or not (<code>NO</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e1115" headers="d196878e187">
+<p><code>DURATION</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e1115 d196878e190">
+<p><code>VARCHAR2(15)</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e1115 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e1115 d196878e196">
+<p>Indicates the duration of a temporary table:</p>
+<p><code>SYS$SESSION</code> - Rows are preserved for the duration of the session</p>
+<p><code>SYS$TRANSACTION</code> - Rows are deleted after <code>COMMIT</code></p>
+<p>Null - Permanent table</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e1143" headers="d196878e187">
+<p><code>SKIP_CORRUPT</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e1143 d196878e190">
+<p><code>VARCHAR2(8)</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e1143 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e1143 d196878e196">
+<p>Indicates whether Oracle Database ignores blocks marked corrupt during table and index scans (<code>ENABLED</code>) or raises an error (<code>DISABLED</code>). To enable this feature, run the <code>DBMS_REPAIR.skip_corrupt_blocks</code> procedure.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e1168" headers="d196878e187">
+<p><code>MONITORING</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e1168 d196878e190">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e1168 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e1168 d196878e196">
+<p>Indicates whether the table has the <code>MONITORING</code> attribute set (<code>YES</code>) or not (<code>NO</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e1193" headers="d196878e187">
+<p><code>CLUSTER_OWNER</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e1193 d196878e190">
+<p><code>VARCHAR2(128)</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e1193 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e1193 d196878e196">
+<p>Owner of the cluster, if any, to which the table belongs</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e1208" headers="d196878e187">
+<p><code>DEPENDENCIES</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e1208 d196878e190">
+<p><code>VARCHAR2(8)</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e1208 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e1208 d196878e196">
+<p>Indicates whether row-level dependency tracking is enabled (<code>ENABLED</code>) or disabled (<code>DISABLED</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e1229" headers="d196878e187">
+<p><code>COMPRESSION</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e1229 d196878e190">
+<p><code>VARCHAR2(8)</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e1229 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e1229 d196878e196">
+<p>Indicates whether table compression is enabled (<code>ENABLED</code>) or not (<code>DISABLED</code>); NULL for partitioned tables</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e1250" headers="d196878e187">
+<p><code>COMPRESS_FOR</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e1250 d196878e190">
+<p><code>VARCHAR2(30)</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e1250 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e1250 d196878e196">
+<p>Default compression for what kind of operations:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>BASIC</code></p>
+</li>
+<li>
+<p><code>ADVANCED</code></p>
+</li>
+<li>
+<p><code>QUERY LOW</code></p>
+</li>
+<li>
+<p><code>QUERY HIGH</code></p>
+</li>
+<li>
+<p><code>ARCHIVE LOW</code></p>
+</li>
+<li>
+<p><code>ARCHIVE HIGH</code></p>
+</li>
+<li>
+<p><code>NULL</code></p>
+</li>
+</ul>
+<p>The <code>QUERY LOW</code>, <code>QUERY HIGH</code>, <code>ARCHIVE LOW</code>, and <code>ARCHIVE HIGH</code> values are associated with Hybrid Columnar Compression, a feature of the Enterprise Edition of Oracle Database that is dependent on the underlying storage system. See <a class="olink CNCPT89198" target="_blank" href="../CNCPT/tables-and-table-clusters.htm#CNCPT89198"><span class="italic">Oracle Database Concepts</span></a> for more information.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e1314" headers="d196878e187">
+<p><code>DROPPED</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e1314 d196878e190">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e1314 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e1314 d196878e196">
+<p>Indicates whether the table has been dropped and is in the recycle bin (<code>YES</code>) or not (<code>NO</code>); NULL for partitioned tables</p>
+<p>This view does not return the names of tables that have been dropped.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e1339" headers="d196878e187">
+<p><code>SEGMENT_CREATED</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e1339 d196878e190">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e1339 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e1339 d196878e196">
+<p>Indicates whether the table segment has been created (<code>YES</code>) or not (<code>NO</code>)</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e1361" headers="d196878e187">
+<p><code>INMEMORY</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e1361 d196878e190">
+<p><code>VARCHAR2(8)</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e1361 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e1361 d196878e196">
+<p>Indicates whether the In-Memory Column Store (IM column store) is enabled (<code>ENABLED</code>) or disabled (<code>DISABLED</code>) for this table</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e1382" headers="d196878e187">
+<p><code>INMEMORY_PRIORITY</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e1382 d196878e190">
+<p><code>VARCHAR2(8)</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e1382 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e1382 d196878e196">
+<p>Indicates the priority at which this table is populated into the In-Memory Column Store (IM column store). Possible values:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>LOW</code></p>
+</li>
+<li>
+<p><code>MEDIUM</code></p>
+</li>
+<li>
+<p><code>HIGH</code></p>
+</li>
+<li>
+<p><code>CRITICAL</code></p>
+</li>
+<li>
+<p><code>NONE</code></p>
+</li>
+<li>
+<p><code>NULL</code></p>
+</li>
+</ul>
+<p>This column has a value based on where the segments lie for a table. For example, if the table is partitioned and is enabled for the IM column store, the value is <code>NULL</code> for <code>ALL_TABLES</code> but non-<code>NULL</code> for <code>ALL_TAB_PARTITIONS</code>.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e1436" headers="d196878e187">
+<p><code>INMEMORY_DISTRIBUTE</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e1436 d196878e190">
+<p><code>VARCHAR2(15)</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e1436 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e1436 d196878e196">
+<p>Indicates how the table will be distributed in the IM column stores in an Oracle Real Application Clusters (Oracle RAC) environment:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>AUTO</code></p>
+</li>
+<li>
+<p><code>BY ROWID RANGE</code></p>
+</li>
+<li>
+<p><code>BY PARTITION</code></p>
+</li>
+<li>
+<p><code>BY SUBPARTITION</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e1468" headers="d196878e187">
+<p><code>INMEMORY_COMPRESSION</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e1468 d196878e190">
+<p><code>VARCHAR2(17)</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e1468 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e1468 d196878e196">
+<p>Compression level for the in-memory store:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>NO MEMCOMPRESS</code></p>
+</li>
+<li>
+<p><code>FOR DML</code></p>
+</li>
+<li>
+<p><code>FOR QUERY [ LOW | HIGH ]</code></p>
+</li>
+<li>
+<p><code>FOR CAPACITY [ LOW | HIGH ]</code></p>
+</li>
+<li>
+<p><code>NULL</code></p>
+</li>
+</ul>
+<p>This column has a value based on where the segments lie for a table. For example, if the table is partitioned and is enabled for the IM column store, the value is <code>NULL</code> for <code>ALL_TABLES</code> but non-<code>NULL</code> for <code>ALL_TAB_PARTITIONS</code>.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e1518" headers="d196878e187">
+<p><code>INMEMORY_DUPLICATE</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e1518 d196878e190">
+<p><code>VARCHAR2(13)</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e1518 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e1518 d196878e196">
+<p>Indicates the duplicate setting for the In-Memory Column Store (IM column store) in an Oracle RAC environment:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>NO DUPLICATE</code></p>
+</li>
+<li>
+<p><code>DUPLICATE</code></p>
+</li>
+<li>
+<p><code>DUPLICATE ALL</code></p>
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e1546" headers="d196878e187">
+<p><code>EXTERNAL</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e1546 d196878e190">
+<p><code>VARCHAR2(3)</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e1546 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e1546 d196878e196">
+<p>Indicates whether the table is an external table (<code>YES</code>) or not (<code>NO</code>).</p>
+<p>This column is available starting with Oracle Database 12<span class="italic">c</span> Release 2 (12.2.0.1).</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e1572" headers="d196878e187">
+<p><code>CELLMEMORY</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e1572 d196878e190">
+<p><code>VARCHAR2(24)</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e1572 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e1572 d196878e196">
+<p>The value for columnar compression in the storage cell flash cache. Possible values:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>ENABLED</code>: Oracle Exadata Storage will decide automatically whether to cache in columnar form</p>
+</li>
+<li>
+<p><code>DISABLED</code>: Oracle Exadata Storage&nbsp;is prevented from caching in columnar form</p>
+</li>
+<li>
+<p><code>NO CACHECOMPRESS</code>: Oracle Exadata Storage will cache in HCC format (no recompression)</p>
+</li>
+<li>
+<p><code>FOR QUERY</code>: Oracle Exadata Storage will recompress and cache in INMEMORY query high format</p>
+</li>
+<li>
+<p><code>FOR CAPACITY</code>: Oracle Exadata Storage will recompress and cache in INMEMORY capacity low format</p>
+</li>
+</ul>
+<p>This column is available starting with Oracle Database 12<span class="italic">c</span> Release 2 (12.2.0.1).</p>
+<p>This column is intended for use with Oracle Exadata.</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e1620" headers="d196878e187">
+<p><code>INMEMORY_SERVICE</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e1620 d196878e190">
+<p><code>VARCHAR2(12)</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e1620 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e1620 d196878e196">
+<p>Indicates how the IM column store is populated on various instances. The possible values are:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><code>DEFAULT</code>: Data is populated on all instances specified with the <code>PARALLEL_INSTANCE_GROUP</code> initialization parameter. If that parameter is not set, then the data is populated on all instances. This is the default.</p>
+</li>
+<li>
+<p><code>NONE</code>: Data is not populated on any instance.</p>
+</li>
+<li>
+<p><code>ALL</code>: Data is populated on all instances, regardless of the value of the <code>PARALLEL_INSTANCE_GROUP</code> initialization parameter.</p>
+</li>
+<li>
+<p><code>USER_DEFINED</code>: Data is populated only on the instances on which the user-specified service is active. The service name corresponding to this is stored in the <code>INMEMORY_SERVICE_NAME</code> column.</p>
+</li>
+</ul>
+<p>This column is available starting with Oracle Database 12<span class="italic">c</span> Release 2 (12.2.0.1).</p>
+</td>
+</tr>
+<tr>
+<td class="cellalignment3904" id="d196878e1670" headers="d196878e187">
+<p><code>INMEMORY_SERVICE_NAME</code></p>
+</td>
+<td class="cellalignment3905" headers="d196878e1670 d196878e190">
+<p><code>VARCHAR2(1000)</code></p>
+</td>
+<td class="cellalignment3906" headers="d196878e1670 d196878e193">&nbsp;</td>
+<td class="cellalignment3907" headers="d196878e1670 d196878e196">
+<p>Indicates the service name for the service on which the IM column store should be populated. This column has a value only when the corresponding <code>INMEMORY_SERVICE</code> is <code>USER_DEFINED</code>. In all other cases, this column is null.</p>
+<p>This column is available starting with Oracle Database 12<span class="italic">c</span> Release 2 (12.2.0.1).</p>
+</td>
+</tr>
+</tbody>
+</table>
+<hr /></div>
+<!-- class="inftblhruleinformal" -->
+<div class="section">
+<div class="infoboxnotealso" id="GUID-B8CF1D2A-9AA0-4C94-BBBA-4672C7CF735F__GUID-6F75BE21-F572-4413-9569-C71CC0459471">
+<p class="notep1">See Also:</p>
+<ul style="list-style-type: disc;">
+<li>
+<p><span class="q">"<a href="DBA_ALL_TABLES.htm#GUID-02C037A1-A65F-4B1C-A19E-E8C91FB79129">DBA_ALL_TABLES</a>"</span></p>
+</li>
+<li>
+<p><span class="q">"<a href="USER_ALL_TABLES.htm#GUID-672E5D64-D9DC-4ECC-9E20-C484CCAEF9F3">USER_ALL_TABLES</a>"</span></p>
+</li>
+<li>
+<p><span class="q">"<a href="PARALLEL_INSTANCE_GROUP.htm#GUID-F568ECFA-1796-494A-8F45-F888F69032E4">PARALLEL_INSTANCE_GROUP</a>"</span></p>
+</li>
+<li>
+<p><a class="olink ARPLS67561" target="_blank" href="../ARPLS/DBMS_REPAIR.htm#ARPLS67561"><span class="italic">Oracle Database PL/SQL Packages and Types Reference</span></a> for more information about the <code>DBMS_REPAIR.SKIP_CORRUPT_BLOCKS</code> procedure</p>
+</li>
+<li>
+<p><a class="olink INMEM-GUID-BFA53515-7643-41E5-A296-654AB4A9F9E7" target="_blank" href="../INMEM/intro-to-in-memory-column-store.htm#INMEM-GUID-BFA53515-7643-41E5-A296-654AB4A9F9E7"><span><cite>Oracle Database In-Memory Guide</cite></span></a> for an introduction to the IM column store</p>
+</li>
+<li>
+<p><a class="olink INMEM-GUID-EEA265EE-8FBA-4457-8C3F-315B9EEA2224" target="_blank" href="../INMEM/in-memory-column-store-architecture.htm#INMEM-GUID-EEA265EE-8FBA-4457-8C3F-315B9EEA2224"><span><cite>Oracle Database In-Memory Guide</cite></span></a> for more information about the IM column store</p>
+</li>
+</ul>
+</div>
+</div>
+<!-- class="section" --></div>
+</div>
+<!-- class="ind" --><!-- Start Footer -->
+</div>
+<!-- add extra wrapper close div-->
+<footer><!--
+<hr />
+<table class="cellalignment3890">
+<tr>
+<td class="cellalignment3897">
+<table class="cellalignment3895">
+<tr>
+<td class="cellalignment3894"><a href="static-data-dictionary-view-descriptions.htm"><img width="24" height="24" src="../dcommon/gifs/leftnav.gif" alt="Go to previous page" /><br />
+<span class="icon">Previous</span></a></td>
+<td class="cellalignment3894"><a href="ALL_ANALYTIC_VIEW_ATTR_CLASS.htm"><img width="24" height="24" src="../dcommon/gifs/rightnav.gif" alt="Go to next page" /><br />
+<span class="icon">Next</span></a></td>
+</tr>
+</table>
+</td>
+<td class="cellalignment-copyrightlogo"><img width="144" height="18" src="../dcommon/gifs/oracle.gif" alt="Oracle" /><br />
+Copyright&nbsp;&copy;&nbsp;2002, 2016, Oracle&nbsp;and/or&nbsp;its&nbsp;affiliates.&nbsp;All&nbsp;rights&nbsp;reserved.<br />
+<a href="../dcommon/html/cpyr.htm">Legal Notices</a></td>
+<td class="cellalignment3899">
+<table class="cellalignment3893">
+<tr>
+<td class="cellalignment3894"><a href="../index.htm"><img width="24" height="24" src="../dcommon/gifs/doclib.gif" alt="Go to Documentation Home" /><br />
+<span class="icon">Home</span></a></td>
+<td class="cellalignment3894"><a href="../nav/portal_booklist.htm"><img width="24" height="24" src="../dcommon/gifs/booklist.gif" alt="Go to Book List" /><br />
+<span class="icon">Book List</span></a></td>
+<td class="cellalignment3894"><a href="toc.htm"><img width="24" height="24" src="../dcommon/gifs/toc.gif" alt="Go to Table of Contents" /><br />
+<span class="icon">Contents</span></a></td>
+<td class="cellalignment3894"><a href="index.htm"><img width="24" height="24" src="../dcommon/gifs/index.gif" alt="Go to Index" /><br />
+<span class="icon">Index</span></a></td>
+<td class="cellalignment3894"><a href="../nav/mindx.htm"><img width="24" height="24" src="../dcommon/gifs/masterix.gif" alt="Go to Master Index" /><br />
+<span class="icon">Master Index</span></a></td>
+<td class="cellalignment3894"><a href="../dcommon/html/feedback.htm"><img width="24" height="24" src="../dcommon/gifs/feedbck2.gif" alt="Go to Feedback page" /><br />
+<span class="icon">Contact Us</span></a></td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+--></footer>
+<noscript>
+<p>Scripting on this page enhances content navigation, but does not change the content in any way.</p>
+</noscript>
+</body>
+</html>
